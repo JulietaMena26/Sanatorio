@@ -1,12 +1,54 @@
 {
   "Version": 1,
   "WorkspaceRootPath": "C:\\Users\\camim\\OneDrive\\Documentos\\Sanatorio\\Sanatorio\\",
-  "Documents": [],
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{2D5752BA-BB7B-46F1-9175-9460AB73C69C}|Sanatorio\\Sanatorio.csproj|c:\\users\\camim\\onedrive\\documentos\\sanatorio\\sanatorio\\sanatorio\\datos\\datosmedico.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2D5752BA-BB7B-46F1-9175-9460AB73C69C}|Sanatorio\\Sanatorio.csproj|solutionrelative:sanatorio\\datos\\datosmedico.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2D5752BA-BB7B-46F1-9175-9460AB73C69C}|Sanatorio\\Sanatorio.csproj|c:\\users\\camim\\onedrive\\documentos\\sanatorio\\sanatorio\\sanatorio\\interfaz\\imedico.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2D5752BA-BB7B-46F1-9175-9460AB73C69C}|Sanatorio\\Sanatorio.csproj|solutionrelative:sanatorio\\interfaz\\imedico.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
   "DocumentGroupContainers": [
     {
       "Orientation": 0,
       "VerticalTabListWidth": 256,
-      "DocumentGroups": []
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "DatosMedico.cs",
+              "DocumentMoniker": "C:\\Users\\camim\\OneDrive\\Documentos\\Sanatorio\\Sanatorio\\Sanatorio\\Datos\\DatosMedico.cs",
+              "RelativeDocumentMoniker": "Sanatorio\\Datos\\DatosMedico.cs",
+              "ToolTip": "C:\\Users\\camim\\OneDrive\\Documentos\\Sanatorio\\Sanatorio\\Sanatorio\\Datos\\DatosMedico.cs",
+              "RelativeToolTip": "Sanatorio\\Datos\\DatosMedico.cs",
+              "ViewState": "AQIAABwAAAAAAAAAAAAAwDMAAAAFAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-18T14:09:38.677Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "IMedico.cs",
+              "DocumentMoniker": "C:\\Users\\camim\\OneDrive\\Documentos\\Sanatorio\\Sanatorio\\Sanatorio\\Interfaz\\IMedico.cs",
+              "RelativeDocumentMoniker": "Sanatorio\\Interfaz\\IMedico.cs",
+              "ToolTip": "C:\\Users\\camim\\OneDrive\\Documentos\\Sanatorio\\Sanatorio\\Sanatorio\\Interfaz\\IMedico.cs",
+              "RelativeToolTip": "Sanatorio\\Interfaz\\IMedico.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAYAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-18T13:54:34.666Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
     }
   ]
 }
