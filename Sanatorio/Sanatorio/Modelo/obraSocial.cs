@@ -6,16 +6,16 @@ using System.Threading.Tasks;
 
 namespace Sanatorio.Modelos
 {
-    internal class obraSocial
+    internal class ObraSocial
     {
-        private int idSocial { get; set; }
-        private string codigo { get; set; }
-        private string nombre { get; set; }
-        private bool activo { get; set; }
+        public int idSocial { get; set; }
+        public string codigo { get; set; }
+        public string nombre { get; set; }
+        public bool activo { get; set; }
 
-        public obraSocial() { }
+        public ObraSocial() { }
 
-        public obraSocial(int idSocial, string codigo, string nombre, bool activo)
+        public ObraSocial(int idSocial, string codigo, string nombre, bool activo)
         {
             this.idSocial = idSocial;
             this.codigo = codigo;
@@ -24,7 +24,7 @@ namespace Sanatorio.Modelos
         }
 
 
-        public obraSocial(string codigo, string nombre, bool activo)
+        public ObraSocial(string codigo, string nombre, bool activo)
         {
             
             this.codigo = codigo;

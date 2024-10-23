@@ -8,9 +8,9 @@ namespace Sanatorio.Modelos
 {
     internal class Especialidad
     {
-        private int idEspecialidad { get; set; }
-        private string especialidad { get; set; }
-        private string descripcion { get; set; }
+        public int idEspecialidad { get; set; }
+        public string especialidad { get; set; }
+        public string descripcion { get; set; }
 
         public Especialidad() { }
 

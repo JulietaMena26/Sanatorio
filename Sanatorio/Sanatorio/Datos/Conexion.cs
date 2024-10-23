@@ -10,9 +10,9 @@ using MySqlX.XDevAPI;
 
 namespace Sanatorio.Datos
 {
-    internal class Conexion
+     class Conexion
     {
-        private readonly string bd = "sanatorio";
+        private readonly string bd = "santarita";
         private readonly string servidor = "127.0.0.1";
         private readonly string puerto = "3306";
         private readonly string usuario = "root";
@@ -23,7 +23,7 @@ namespace Sanatorio.Datos
       
        public Conexion()
        {
-            cadenaConexion = "server=" + servidor + "¡Database=" + bd + "Uid=" + usuario + "Pwd" +pasword+ "¡";
+            cadenaConexion = "Server=" + servidor + ";Database=" + bd + ";Uid=" + usuario + ";Pwd=" +pasword+ ";";
        }
         public MySqlConnection crearConexion()
         {

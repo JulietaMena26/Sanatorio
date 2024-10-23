@@ -6,19 +6,19 @@ using System.Threading.Tasks;
 
 namespace Sanatorio.Modelos
 {
-    internal class Paciente
+    public class Paciente
     {
-        private int idPaciente { get; set; }
-        private string dni { get; set; }
-        private string apellido { get; set; }
-        private string nombre { get; set; }
-        private DateTime fechaNaci { get; set; }
-        private string domicilio { get; set; }
-        private string telefono { get; set; }
-        private string historiaClinica { get; set; }
-        private int id_obraSocial { get; set; }
-        private string afiliado { get; set; }
-        private bool activo { get; set; }
+        public int idPaciente { get; set; }
+        public string dni { get; set; }
+        public string apellido { get; set; }
+        public string nombre { get; set; }
+        public DateTime fechaNaci { get; set; }
+        public string domicilio { get; set; }
+        public string telefono { get; set; }
+        public string historiaClinica { get; set; }
+        public int id_obraSocial { get; set; }
+        public string afiliado { get; set; }
+        public bool activo { get; set; }
 
         public Paciente() { }
 

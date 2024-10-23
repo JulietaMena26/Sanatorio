@@ -8,17 +8,17 @@ namespace Sanatorio.Modelos
 {
     internal class Registro_Clinico
     {
-        private int idRegistro { get; set; }
-        private int id_paciente { get; set; }
-        private int id_medico { get; set; }
-        private DateTime fecha { get; set; }
-        private DateTime hora { get; set; }
-        private string motivo { get; set; }
-        private string diagnostico { get; set; }
-        private string tratamiento { get; set; }
-        private DateTime proxima_visita { get; set; }
-        private string observacion { get; set; }
-        private bool activo { get; set; }
+        public int idRegistro { get; set; }
+        public int id_paciente { get; set; }
+        public int id_medico { get; set; }
+        public DateTime fecha { get; set; }
+        public DateTime hora { get; set; }
+        public string motivo { get; set; }
+        public string diagnostico { get; set; }
+        public string tratamiento { get; set; }
+        public DateTime proxima_visita { get; set; }
+        public string observacion { get; set; }
+        public bool activo { get; set; }
 
         public Registro_Clinico() { }
 
