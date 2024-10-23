@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Sanatorio.Modelos
 {
-    internal class Internacion
+    public class Internacion
     {
         public int idinternacion { get; set; }
         public DateTime fechaIngreso { get; set; }

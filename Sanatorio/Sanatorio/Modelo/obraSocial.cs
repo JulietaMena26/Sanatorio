@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Sanatorio.Modelos
 {
-    internal class ObraSocial
+    public class ObraSocial
     {
         public int idSocial { get; set; }
         public string codigo { get; set; }

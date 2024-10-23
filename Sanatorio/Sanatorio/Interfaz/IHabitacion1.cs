@@ -7,8 +7,11 @@ using Sanatorio.Modelos;
 
 namespace Sanatorio.Interfaz
 {
-    internal interface IHabitacion1
+    public interface IHabitacion1
     {
+        bool agregarHabitacion(Habitacion habitacion);
+        bool actualizarHabitacion(Habitacion habitacion);
+        bool eliminar(int id_);
         Habitacion buscarHabitacionNumero(string numero);
         Habitacion buscarHabitacionPiso(int piso);
         List<Habitacion> listadoHabitacionTipo(int idHabitacion);

@@ -1,52 +1,46 @@
-﻿using System;
+﻿using Sanatorio.Interfaz;
+using Sanatorio.Modelos;
+using System;
 using System.Collections.Generic;
-using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using Sanatorio.Interfaz;
-using Sanatorio.Modelos;
 
 namespace Sanatorio.Datos
 {
-    class DatosMedico : IMedico1
+    public class DatosHabitacion : IHabitacion1
     {
-        public bool actualizarMedico(Medico medico)
+        public bool actualizarHabitacion(Habitacion habitacion)
         {
             throw new NotImplementedException();
         }
 
-        public bool agregarMedico(Medico medico)
+        public bool agregarHabitacion(Habitacion habitacion)
         {
             throw new NotImplementedException();
         }
 
-        public Medico buscarMedicoDni(string dni)
+        public Habitacion buscarHabitacionNumero(string numero)
         {
             throw new NotImplementedException();
         }
 
-        public Medico buscarMedicoId(int id)
+        public Habitacion buscarHabitacionPiso(int piso)
         {
             throw new NotImplementedException();
         }
 
-        public void eliminarMedico(string dni)
+        public bool eliminar(int id_)
         {
             throw new NotImplementedException();
         }
 
-        public DataTable listadoMedicoApellido(string apellido)
+        public List<Habitacion> listadoHabitacionTipo(int idHabitacion)
         {
             throw new NotImplementedException();
         }
 
-        public DataTable listarMedico()
-        {
-            throw new NotImplementedException();
-        }
-
-        public DataTable listarMedicoXespecialidad(string especialidad)
+        public List<Habitacion> listarHabitacion()
         {
             throw new NotImplementedException();
         }

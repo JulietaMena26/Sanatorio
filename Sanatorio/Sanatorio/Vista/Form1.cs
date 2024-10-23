@@ -13,9 +13,9 @@ using Sanatorio.Vista;
 
 namespace Sanatorio
 {
-    public partial class Form1 : Form
+    public partial class frm_Principal : Form
     {
-        public Form1()
+        public frm_Principal()
         {
             InitializeComponent();
         }

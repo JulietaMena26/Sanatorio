@@ -10,14 +10,15 @@ namespace Sanatorio.Interfaz
 {
     internal interface IPaciente1
     {
-        bool agregarPaciente(Paciente _paciente);
+        bool agregarPaciente(Paciente paciente);
         bool actualizarPaciente(Paciente paciente);
         void eliminarPaciente(string dni);
+        void eliminarPaciente(int id);
         Paciente buscarPacienteDni(string dni);
         Paciente buscarPacienteId(int idpaciente);
-        Paciente listadoPacienteApellido(string apellido);
+        DataTable listadoPacienteApellido(string apellido);
         DataTable listarPaciente();
-        List<Paciente> listarPacienteid_ObraSocial(int id_obraSocial);
+        DataTable listarPacienteid_ObraSocial(int id_obraSocial);
 
     }
 }

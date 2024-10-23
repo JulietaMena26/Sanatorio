@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -7,7 +8,7 @@ using Sanatorio.Modelos;
 
 namespace Sanatorio.Interfaz
 {
-    internal interface IMedico
+    internal interface IMedico1
     {
         bool agregarMedico(Medico medico);
         bool actualizarMedico(Medico medico);
@@ -15,9 +16,9 @@ namespace Sanatorio.Interfaz
         Medico buscarMedicoDni(string dni);
         Medico buscarMedicoId(int id);
 
-        List<Medico> listadoMedicoApellido(string apellido);
-        List<Medico> listarMedico();
-        List<Medico> listarMedicoXespecialidad(string especialidad);
+        DataTable listadoMedicoApellido(string apellido);
+        DataTable listarMedico();
+        DataTable listarMedicoXespecialidad(string especialidad);
 
     }
 }

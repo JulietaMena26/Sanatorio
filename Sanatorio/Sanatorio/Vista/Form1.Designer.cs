@@ -1,6 +1,6 @@
 ﻿namespace Sanatorio
 {
-    partial class Form1
+    partial class frm_Principal
     {
         /// <summary>
         /// Variable del diseñador necesaria.
@@ -58,7 +58,7 @@
             // salirToolStripMenuItem
             // 
             this.salirToolStripMenuItem.Name = "salirToolStripMenuItem";
-            this.salirToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.salirToolStripMenuItem.Size = new System.Drawing.Size(96, 22);
             this.salirToolStripMenuItem.Text = "Salir";
             this.salirToolStripMenuItem.Click += new System.EventHandler(this.salirToolStripMenuItem_Click);
             // 
@@ -77,7 +77,7 @@
             this.pacientesToolStripMenuItem.Text = "Pacientes";
             this.pacientesToolStripMenuItem.Click += new System.EventHandler(this.pacientesToolStripMenuItem_Click);
             // 
-            // Form1
+            // frm_Principal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -86,8 +86,8 @@
             this.Controls.Add(this.MenuPrincipal);
             this.IsMdiContainer = true;
             this.MainMenuStrip = this.MenuPrincipal;
-            this.Name = "Form1";
-            this.Text = "Principal";
+            this.Name = "frm_Principal";
+            this.Text = "Sanatorio Santa Rita";
             this.MenuPrincipal.ResumeLayout(false);
             this.MenuPrincipal.PerformLayout();
             this.ResumeLayout(false);

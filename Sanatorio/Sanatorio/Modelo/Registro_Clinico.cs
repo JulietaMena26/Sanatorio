@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Sanatorio.Modelos
 {
-    internal class Registro_Clinico
+    public class Registro_Clinico
     {
         public int idRegistro { get; set; }
         public int id_paciente { get; set; }

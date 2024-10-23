@@ -15,6 +15,7 @@ namespace Sanatorio.Datos
     public class DatosPaciente : IPaciente1
     {
         Conexion conexion = new Conexion();
+       
         public bool actualizarPaciente(Paciente paciente)
         {
             throw new NotImplementedException();
@@ -35,12 +36,17 @@ namespace Sanatorio.Datos
             throw new NotImplementedException();
         }
 
-        public void eliminarPaciente(string dni)
+        public void eliminarPacienteDni(string dni)
         {
             throw new NotImplementedException();
         }
 
-        public Paciente listadoPacienteApellido(string apellido)
+        public void eliminarPaciente(int id)
+        {
+            throw new NotImplementedException();
+        }
+
+        public DataTable listadoPacienteApellido(string apellido)
         {
             throw new NotImplementedException();
         }
@@ -76,7 +82,7 @@ namespace Sanatorio.Datos
             return table;
         }
 
-        public List<Paciente> listarPacienteid_ObraSocial(int id_obraSocial)
+        public DataTable listarPacienteid_ObraSocial(int id_obraSocial)
         {
             throw new NotImplementedException();
         }

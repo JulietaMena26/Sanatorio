@@ -1,52 +1,52 @@
-﻿using System;
+﻿using Sanatorio.Interfaz;
+using Sanatorio.Modelos;
+using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using Sanatorio.Interfaz;
-using Sanatorio.Modelos;
 
 namespace Sanatorio.Datos
 {
-    class DatosMedico : IMedico1
+    public class DatosRegistroClinico : IRegistroClinico1
     {
-        public bool actualizarMedico(Medico medico)
+        public bool actualizarRegistro(Registro_Clinico registro)
         {
             throw new NotImplementedException();
         }
 
-        public bool agregarMedico(Medico medico)
+        public bool agregarRegistro(Registro_Clinico registro)
         {
             throw new NotImplementedException();
         }
 
-        public Medico buscarMedicoDni(string dni)
+        public DataTable buscarRegistroFecha(DateTime inicial, DateTime final)
         {
             throw new NotImplementedException();
         }
 
-        public Medico buscarMedicoId(int id)
+        public DataTable buscarRegistroId(int id)
         {
             throw new NotImplementedException();
         }
 
-        public void eliminarMedico(string dni)
+        public DataTable buscarRegistroIdMedico(int id_medico)
         {
             throw new NotImplementedException();
         }
 
-        public DataTable listadoMedicoApellido(string apellido)
+        public DataTable buscarRegistroIdPaciente(int id_paciente)
         {
             throw new NotImplementedException();
         }
 
-        public DataTable listarMedico()
+        public void eliminarRegistroId(int id)
         {
             throw new NotImplementedException();
         }
 
-        public DataTable listarMedicoXespecialidad(string especialidad)
+        public DataTable listarRegistros()
         {
             throw new NotImplementedException();
         }
