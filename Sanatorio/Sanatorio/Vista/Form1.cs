@@ -7,6 +7,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using MySql.Data.MySqlClient;
+using Sanatorio.Datos;
+using Sanatorio.Vista;
 
 namespace Sanatorio
 {
@@ -15,6 +18,20 @@ namespace Sanatorio
         public Form1()
         {
             InitializeComponent();
+        }
+
+       
+
+        private void salirToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
+
+        private void pacientesToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmPaciente ventana = new frmPaciente();
+            ventana.MdiParent = this;
+            ventana.Show();
         }
     }
 }

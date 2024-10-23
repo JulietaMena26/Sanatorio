@@ -6,17 +6,17 @@ using System.Threading.Tasks;
 
 namespace Sanatorio.Modelos
 {
-    internal class especialidadMedico
+    internal class EspecialidadMedico
     {
-          
-        private int id_ { get; set; }
-        private int id_especialidad { get; set; }
-        private int id_medico { get; set; }
-        private string matricula { get; set; }
 
-        public especialidadMedico() { }
+        public int id_ { get; set; }
+        public int id_especialidad { get; set; }
+        public int id_medico { get; set; }
+        public string matricula { get; set; }
 
-        public especialidadMedico(int id_, int id_especialidad, int id_medico, string matricula)
+        public EspecialidadMedico() { }
+
+        public EspecialidadMedico(int id_, int id_especialidad, int id_medico, string matricula)
         {
             this.id_ = id_;
             this.id_especialidad = id_especialidad;
@@ -24,7 +24,7 @@ namespace Sanatorio.Modelos
             this.matricula = matricula;
         }
 
-        public especialidadMedico( int id_especialidad, int id_medico, string matricula)
+        public EspecialidadMedico( int id_especialidad, int id_medico, string matricula)
         {
             
             this.id_especialidad = id_especialidad;

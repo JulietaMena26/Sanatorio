@@ -8,19 +8,19 @@ namespace Sanatorio.Modelos
 {
     internal class Internacion
     {
-        private int idinternacion { get; set; }
-        private DateTime fechaIngreso { get; set; }
-        private DateTime horaIngreso { get; set; }
-        private int id_medico { get; set; }
-        private int id_paciente { get; set; }
-        private int id_habitacion { get; set; }
-        private string motivoInternacion { get; set; }
-        private string diagnostico { get; set; }
-        private bool deuda { get; set; }
-        private string estado { get; set; }
-        private DateTime fechaEgreso { get; set; }
-        private DateTime horaEgreso { get; set; }
-        private bool activo { get; set; }
+        public int idinternacion { get; set; }
+        public DateTime fechaIngreso { get; set; }
+        public DateTime horaIngreso { get; set; }
+        public int id_medico { get; set; }
+        public int id_paciente { get; set; }
+        public int id_habitacion { get; set; }
+        public string motivoInternacion { get; set; }
+        public string diagnostico { get; set; }
+        public bool deuda { get; set; }
+        public string estado { get; set; }
+        public DateTime fechaEgreso { get; set; }
+        public DateTime horaEgreso { get; set; }
+        public bool activo { get; set; }
 
         public Internacion() { }
 

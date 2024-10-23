@@ -8,16 +8,16 @@ namespace Sanatorio.Modelos
 {
     internal class Medico
     {
-        private int idMedico { get; set; }
-        private string dni { get; set; }
-        private string cuil { get; set; }
-        private string apellido { get; set; }
-        private string nombre { get; set; }
-        private string celular { get; set; }
-        private string telefono { get; set; }
-        private string direccion { get; set; }
-        private string email { get; set; }
-        private bool activo { get; set; }
+        public int idMedico { get; set; }
+        public string dni { get; set; }
+        public string cuil { get; set; }
+        public string apellido { get; set; }
+        public string nombre { get; set; }
+        public string celular { get; set; }
+        public string telefono { get; set; }
+        public string direccion { get; set; }
+        public string email { get; set; }
+        public bool activo { get; set; }
 
         public Medico() { }
 

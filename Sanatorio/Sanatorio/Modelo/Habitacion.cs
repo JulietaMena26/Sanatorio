@@ -8,16 +8,16 @@ namespace Sanatorio.Modelos
 {
     internal class Habitacion
     {
-        private int idHabitacion { get; set; }
-        private string numero { get; set; }
-        private int id_tipo { get; set; }
-        private int piso { get; set; }
-        private int capacidad { get; set; }
-        private string estado { get; set; }
-        private double precio { get; set; }
-        private string comodidad { get; set; }
-        private string observacion { get; set; }
-        private bool activo { get; set; }
+        public int idHabitacion { get; set; }
+        public string numero { get; set; }
+        public int id_tipo { get; set; }
+        public int piso { get; set; }
+        public int capacidad { get; set; }
+        public string estado { get; set; }
+        public double precio { get; set; }
+        public string comodidad { get; set; }
+        public string observacion { get; set; }
+        public bool activo { get; set; }
 
         public Habitacion() { }
 

@@ -8,8 +8,8 @@ namespace Sanatorio.Modelos
 {
     internal class TipoHabitacion
     {
-        private int idTipo { get; set; }
-        private string descripcion { get; set; }
+        public int idTipo { get; set; }
+        public string descripcion { get; set; }
 
         public TipoHabitacion() { }
 

@@ -6,18 +6,18 @@ using System.Threading.Tasks;
 
 namespace Sanatorio.Modelos
 {
-    internal class datosMedico
+    internal class DatosMedico
     {
-        private int idDato { get; set; }
-        private DateTime fechaNac{ get; set; }
-        private string horarioAtencion { get; set; }
-        private string convenio { get; set; }
-        private string observacion { get; set; }
-        private int id_medico { get; set; }
+        public int idDato { get; set; }
+        public DateTime fechaNac{ get; set; }
+        public string horarioAtencion { get; set; }
+        public string convenio { get; set; }
+        public string observacion { get; set; }
+        public int id_medico { get; set; }
 
-        public datosMedico() { }
+        public DatosMedico() { }
 
-        public datosMedico(int idDato, DateTime fechaNac, string horarioAtencion, string convenio, string observacion, int id_medico)
+        public DatosMedico(int idDato, DateTime fechaNac, string horarioAtencion, string convenio, string observacion, int id_medico)
         {
             this.idDato = idDato;
             this.fechaNac = fechaNac;
@@ -27,7 +27,7 @@ namespace Sanatorio.Modelos
             this.id_medico = id_medico;
         }
 
-        public datosMedico( DateTime fechaNac, string horarioAtencion, string convenio, string observacion, int id_medico)
+        public DatosMedico( DateTime fechaNac, string horarioAtencion, string convenio, string observacion, int id_medico)
         {
            
             this.fechaNac = fechaNac;
