@@ -15,10 +15,11 @@ namespace Sanatorio.Vista
 {
     public partial class frmPaciente : Form
     {
+        private ToolTip toolTip;
         public frmPaciente()
         {
             InitializeComponent();
-           
+            mensajestoolTip();
         }
 
         #region "Mis Métodos"
@@ -68,7 +69,16 @@ namespace Sanatorio.Vista
             }
         }
         #endregion
-          
+        
+        private void mensajestoolTip()
+        {
+            toolTip = new ToolTip();    
+            toolTip.SetToolTip(txtBuscar,"Ingrese un dni o apellido o parte");
+            toolTip.SetToolTip(btnBuscar, "Buscar precione F1");
+            toolTip.SetToolTip(btnNuevo, "Nuevo precione F2");
+            toolTip.SetToolTip(btnEditar, "Edita precione F3");
+            toolTip.SetToolTip(btnEliminar, "Eliminar precione F4");
+        }
 
         private void lblCerrar_Click(object sender, EventArgs e)
         {
@@ -121,6 +131,30 @@ namespace Sanatorio.Vista
         {
            
             this.actualizar_paciente();
+        }
+
+        private void frmPaciente_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.F1)
+            {
+                this.btnBuscar_Click(sender,e);
+            }
+            if (e.KeyCode == Keys.F2)
+            {
+                this.btnNuevo_Click(sender, e);
+            }
+            if (e.KeyCode == Keys.F3)
+            {
+                this.btnEditar_Click(sender, e);
+            }
+            if (e.KeyCode == Keys.F4)
+            {
+                this.btnEliminar_Click(sender, e);
+            }
+            if (e.KeyCode == Keys.Escape)
+            {
+                this.lblCerrar_Click(sender, e);
+            }
         }
     }
 }

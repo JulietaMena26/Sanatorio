@@ -68,6 +68,7 @@
             // 
             // button2
             // 
+            this.button2.Cursor = System.Windows.Forms.Cursors.Hand;
             this.button2.FlatAppearance.BorderSize = 0;
             this.button2.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(126)))), ((int)(((byte)(158)))), ((int)(((byte)(92)))));
             this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -95,6 +96,7 @@
             // 
             // button1
             // 
+            this.button1.Cursor = System.Windows.Forms.Cursors.Hand;
             this.button1.FlatAppearance.BorderSize = 0;
             this.button1.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(126)))), ((int)(((byte)(158)))), ((int)(((byte)(92)))));
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -112,6 +114,7 @@
             // 
             // btnInternacion
             // 
+            this.btnInternacion.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnInternacion.FlatAppearance.BorderSize = 0;
             this.btnInternacion.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(126)))), ((int)(((byte)(158)))), ((int)(((byte)(92)))));
             this.btnInternacion.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -129,6 +132,7 @@
             // 
             // btnMedico
             // 
+            this.btnMedico.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnMedico.FlatAppearance.BorderSize = 0;
             this.btnMedico.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(126)))), ((int)(((byte)(158)))), ((int)(((byte)(92)))));
             this.btnMedico.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -141,11 +145,12 @@
             this.btnMedico.Name = "btnMedico";
             this.btnMedico.Size = new System.Drawing.Size(250, 40);
             this.btnMedico.TabIndex = 2;
-            this.btnMedico.Text = "Pacientes";
+            this.btnMedico.Text = "Medicos";
             this.btnMedico.UseVisualStyleBackColor = true;
             // 
             // btnPaciente
             // 
+            this.btnPaciente.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnPaciente.FlatAppearance.BorderSize = 0;
             this.btnPaciente.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(126)))), ((int)(((byte)(158)))), ((int)(((byte)(92)))));
             this.btnPaciente.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -158,7 +163,7 @@
             this.btnPaciente.Name = "btnPaciente";
             this.btnPaciente.Size = new System.Drawing.Size(250, 40);
             this.btnPaciente.TabIndex = 1;
-            this.btnPaciente.Text = "Pacientes";
+            this.btnPaciente.Text = "Pacientes ";
             this.btnPaciente.UseVisualStyleBackColor = true;
             this.btnPaciente.Click += new System.EventHandler(this.btnPaciente_Click);
             // 
@@ -243,9 +248,11 @@
             this.Controls.Add(this.panelBarraTitulo);
             this.Controls.Add(this.panelMenuVertical);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.KeyPreview = true;
             this.Name = "frm_Principal";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Sanatorio Santa Rita";
+            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.frm_Principal_KeyDown);
             this.panelMenuVertical.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.panelBarraTitulo.ResumeLayout(false);

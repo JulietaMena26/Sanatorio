@@ -14,9 +14,14 @@ namespace Sanatorio
 {
     public partial class frm_Principal : Form
     {
+        private ToolTip toolTip;
         public frm_Principal()
         {
             InitializeComponent();
+            // Crear instancia de ToolTip ToolTip
+            toolTip = new ToolTip(); 
+            // Configurar mensaje del ToolTip para un botón
+            toolTip.SetToolTip(btnPaciente, "Precione F9");
         }
 
         #region "Mis métodos"
@@ -37,6 +42,7 @@ namespace Sanatorio
             this.panelContenedor.Controls.Add(ventana);
             this.panelContenedor.Tag = ventana;
             ventana.Show(); 
+            ventana.Focus();
 
         }
 
@@ -87,6 +93,14 @@ namespace Sanatorio
         private void btnPaciente_Click(object sender, EventArgs e)
         {
             abrirFormEnPanel(new frmPaciente());
+        }
+
+        private void frm_Principal_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.F9)
+            {
+                this.btnPaciente_Click(sender,e);
+            }
         }
     }
 }
