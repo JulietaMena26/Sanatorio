@@ -104,14 +104,20 @@
     <Compile Include="Modelo\Registro_Clinico.cs" />
     <Compile Include="Modelo\TipoHabitacion.cs" />
     <Compile Include="SqlServerTypes\Loader.cs" />
-    <Compile Include="Vista\Form1.cs">
+    <Compile Include="Vista\frm_Principal.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Vista\Form1.Designer.cs">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <Compile Include="Vista\frm_Principal.Designer.cs">
+      <DependentUpon>frm_Principal.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Vista\frmNewPaciente.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vista\frmNewPaciente.Designer.cs">
+      <DependentUpon>frmNewPaciente.cs</DependentUpon>
+    </Compile>
     <Compile Include="Vista\frmPaciente.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -127,8 +133,11 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="Vista\Form1.resx">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <EmbeddedResource Include="Vista\frm_Principal.resx">
+      <DependentUpon>frm_Principal.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vista\frmNewPaciente.resx">
+      <DependentUpon>frmNewPaciente.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Vista\frmPaciente.resx">
       <DependentUpon>frmPaciente.cs</DependentUpon>

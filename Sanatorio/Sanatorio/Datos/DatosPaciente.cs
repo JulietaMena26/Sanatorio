@@ -51,7 +51,7 @@ namespace Sanatorio.Datos
             throw new NotImplementedException();
         }
 
-        public DataTable listarPaciente()
+        public DataTable listarPaciente(string cTexto)
         {
             MySqlConnection SQLdatos = new MySqlConnection();
             SQLdatos = conexion.crearConexion();
@@ -60,8 +60,9 @@ namespace Sanatorio.Datos
 
             try
             {
-                MySqlCommand command =  new MySqlCommand("psa_listadoPacientes" , SQLdatos);
+                MySqlCommand command =  new MySqlCommand("psa_listado_pacientes", SQLdatos);
                 command.CommandType = CommandType.StoredProcedure;
+                command.Parameters.Add("cTexto",MySqlDbType.VarChar).Value=cTexto;
                 SQLdatos.Open();
 
                 resultado = command.ExecuteReader();
@@ -70,7 +71,8 @@ namespace Sanatorio.Datos
             }
             catch (Exception ex)
             {
-                Funciones.Logs("Datos_metodolistpaciente", ex.ToString());
+                //Funciones.Logs("Datos_metodolistpaciente", ex.ToString());
+                throw ex;
             }
             finally
             {
@@ -83,6 +85,11 @@ namespace Sanatorio.Datos
         }
 
         public DataTable listarPacienteid_ObraSocial(int id_obraSocial)
+        {
+            throw new NotImplementedException();
+        }
+
+        public void eliminarPaciente(string dni)
         {
             throw new NotImplementedException();
         }

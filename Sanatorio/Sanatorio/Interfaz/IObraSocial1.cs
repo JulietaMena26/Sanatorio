@@ -16,6 +16,6 @@ namespace Sanatorio.Interfaz
         ObraSocial buscaridSocial(int idSocial);
         ObraSocial buscaridSocial(string codigo);
         DataTable listaNombre(string nombre);
-        DataTable listarObraSocial();
+        DataTable listarObraSocial(string cTexto);
     }
 }
