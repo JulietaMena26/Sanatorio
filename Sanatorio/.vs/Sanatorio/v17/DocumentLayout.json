@@ -3,44 +3,20 @@
   "WorkspaceRootPath": "C:\\Users\\camim\\OneDrive\\Documentos\\Sanatorio\\Sanatorio\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{2D5752BA-BB7B-46F1-9175-9460AB73C69C}|Sanatorio\\Sanatorio.csproj|c:\\users\\camim\\onedrive\\documentos\\sanatorio\\sanatorio\\sanatorio\\datos\\datospaciente.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{2D5752BA-BB7B-46F1-9175-9460AB73C69C}|Sanatorio\\Sanatorio.csproj|solutionrelative:sanatorio\\datos\\datospaciente.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{2D5752BA-BB7B-46F1-9175-9460AB73C69C}|Sanatorio\\Sanatorio.csproj|c:\\users\\camim\\onedrive\\documentos\\sanatorio\\sanatorio\\sanatorio\\vista\\frm_principal.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2D5752BA-BB7B-46F1-9175-9460AB73C69C}|Sanatorio\\Sanatorio.csproj|solutionrelative:sanatorio\\vista\\frm_principal.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{2D5752BA-BB7B-46F1-9175-9460AB73C69C}|Sanatorio\\Sanatorio.csproj|C:\\Users\\camim\\OneDrive\\Documentos\\Sanatorio\\Sanatorio\\sanatorio\\datos\\conexion.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{2D5752BA-BB7B-46F1-9175-9460AB73C69C}|Sanatorio\\Sanatorio.csproj|solutionrelative:sanatorio\\datos\\conexion.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{2D5752BA-BB7B-46F1-9175-9460AB73C69C}|Sanatorio\\Sanatorio.csproj|C:\\Users\\camim\\OneDrive\\Documentos\\Sanatorio\\Sanatorio\\sanatorio\\vista\\frmtipohabitacion.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{2D5752BA-BB7B-46F1-9175-9460AB73C69C}|Sanatorio\\Sanatorio.csproj|solutionrelative:sanatorio\\vista\\frmtipohabitacion.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{2D5752BA-BB7B-46F1-9175-9460AB73C69C}|Sanatorio\\Sanatorio.csproj|C:\\Users\\camim\\OneDrive\\Documentos\\Sanatorio\\Sanatorio\\sanatorio\\vista\\frmpaciente.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{2D5752BA-BB7B-46F1-9175-9460AB73C69C}|Sanatorio\\Sanatorio.csproj|solutionrelative:sanatorio\\vista\\frmpaciente.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{2D5752BA-BB7B-46F1-9175-9460AB73C69C}|Sanatorio\\Sanatorio.csproj|C:\\Users\\camim\\OneDrive\\Documentos\\Sanatorio\\Sanatorio\\sanatorio\\vista\\frmtipohabitacion.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2D5752BA-BB7B-46F1-9175-9460AB73C69C}|Sanatorio\\Sanatorio.csproj|solutionrelative:sanatorio\\vista\\frmtipohabitacion.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{2D5752BA-BB7B-46F1-9175-9460AB73C69C}|Sanatorio\\Sanatorio.csproj|C:\\Users\\camim\\OneDrive\\Documentos\\Sanatorio\\Sanatorio\\sanatorio\\interfaz\\ipaciente1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{2D5752BA-BB7B-46F1-9175-9460AB73C69C}|Sanatorio\\Sanatorio.csproj|solutionrelative:sanatorio\\interfaz\\ipaciente1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{2D5752BA-BB7B-46F1-9175-9460AB73C69C}|Sanatorio\\Sanatorio.csproj|C:\\Users\\camim\\OneDrive\\Documentos\\Sanatorio\\Sanatorio\\sanatorio\\modelo\\tipohabitacion.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{2D5752BA-BB7B-46F1-9175-9460AB73C69C}|Sanatorio\\Sanatorio.csproj|solutionrelative:sanatorio\\modelo\\tipohabitacion.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{2D5752BA-BB7B-46F1-9175-9460AB73C69C}|Sanatorio\\Sanatorio.csproj|C:\\Users\\camim\\OneDrive\\Documentos\\Sanatorio\\Sanatorio\\sanatorio\\modelo\\habitacion.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{2D5752BA-BB7B-46F1-9175-9460AB73C69C}|Sanatorio\\Sanatorio.csproj|solutionrelative:sanatorio\\modelo\\habitacion.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{2D5752BA-BB7B-46F1-9175-9460AB73C69C}|Sanatorio\\Sanatorio.csproj|C:\\Users\\camim\\OneDrive\\Documentos\\Sanatorio\\Sanatorio\\sanatorio\\modelo\\especialidadmedico.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{2D5752BA-BB7B-46F1-9175-9460AB73C69C}|Sanatorio\\Sanatorio.csproj|solutionrelative:sanatorio\\modelo\\especialidadmedico.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{2D5752BA-BB7B-46F1-9175-9460AB73C69C}|Sanatorio\\Sanatorio.csproj|C:\\Users\\camim\\OneDrive\\Documentos\\Sanatorio\\Sanatorio\\sanatorio\\modelo\\especialidad.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{2D5752BA-BB7B-46F1-9175-9460AB73C69C}|Sanatorio\\Sanatorio.csproj|solutionrelative:sanatorio\\modelo\\especialidad.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{2D5752BA-BB7B-46F1-9175-9460AB73C69C}|Sanatorio\\Sanatorio.csproj|C:\\Users\\camim\\OneDrive\\Documentos\\Sanatorio\\Sanatorio\\sanatorio\\modelo\\datosmedico.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{2D5752BA-BB7B-46F1-9175-9460AB73C69C}|Sanatorio\\Sanatorio.csproj|solutionrelative:sanatorio\\modelo\\datosmedico.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{2D5752BA-BB7B-46F1-9175-9460AB73C69C}|Sanatorio\\Sanatorio.csproj|C:\\Users\\camim\\OneDrive\\Documentos\\Sanatorio\\Sanatorio\\sanatorio\\vista\\frmpaciente.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{2D5752BA-BB7B-46F1-9175-9460AB73C69C}|Sanatorio\\Sanatorio.csproj|solutionrelative:sanatorio\\vista\\frmpaciente.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{2D5752BA-BB7B-46F1-9175-9460AB73C69C}|Sanatorio\\Sanatorio.csproj|C:\\Users\\camim\\OneDrive\\Documentos\\Sanatorio\\Sanatorio\\sanatorio\\vista\\frm_principal.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{2D5752BA-BB7B-46F1-9175-9460AB73C69C}|Sanatorio\\Sanatorio.csproj|solutionrelative:sanatorio\\vista\\frm_principal.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     }
   ],
   "DocumentGroupContainers": [
@@ -50,128 +26,54 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 1,
+          "SelectedChildIndex": 2,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "Conexion.cs",
-              "DocumentMoniker": "C:\\Users\\camim\\OneDrive\\Documentos\\Sanatorio\\Sanatorio\\Sanatorio\\Datos\\Conexion.cs",
-              "RelativeDocumentMoniker": "Sanatorio\\Datos\\Conexion.cs",
-              "ToolTip": "C:\\Users\\camim\\OneDrive\\Documentos\\Sanatorio\\Sanatorio\\Sanatorio\\Datos\\Conexion.cs",
-              "RelativeToolTip": "Sanatorio\\Datos\\Conexion.cs",
-              "ViewState": "AQIAABAAAAAAAAAAAAAIwCEAAAAIAAAA",
+              "DocumentIndex": 2,
+              "Title": "frmTipoHabitacion.cs",
+              "DocumentMoniker": "C:\\Users\\camim\\OneDrive\\Documentos\\Sanatorio\\Sanatorio\\Sanatorio\\Vista\\frmTipoHabitacion.cs",
+              "RelativeDocumentMoniker": "Sanatorio\\Vista\\frmTipoHabitacion.cs",
+              "ToolTip": "C:\\Users\\camim\\OneDrive\\Documentos\\Sanatorio\\Sanatorio\\Sanatorio\\Vista\\frmTipoHabitacion.cs",
+              "RelativeToolTip": "Sanatorio\\Vista\\frmTipoHabitacion.cs",
+              "ViewState": "AQIAAI0AAAAAAAAAAAAwwCYAAAAgAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-23T04:04:55.825Z"
+              "WhenOpened": "2024-10-30T18:16:26.538Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "frmTipoHabitacion.cs [Dise\u00F1o]",
+              "DocumentMoniker": "C:\\Users\\camim\\OneDrive\\Documentos\\Sanatorio\\Sanatorio\\Sanatorio\\Vista\\frmTipoHabitacion.cs",
+              "RelativeDocumentMoniker": "Sanatorio\\Vista\\frmTipoHabitacion.cs",
+              "ToolTip": "C:\\Users\\camim\\OneDrive\\Documentos\\Sanatorio\\Sanatorio\\Sanatorio\\Vista\\frmTipoHabitacion.cs [Dise\u00F1o]",
+              "RelativeToolTip": "Sanatorio\\Vista\\frmTipoHabitacion.cs [Dise\u00F1o]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-30T18:16:24.399Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "DatosPaciente.cs",
-              "DocumentMoniker": "C:\\Users\\camim\\OneDrive\\Documentos\\Sanatorio\\Sanatorio\\Sanatorio\\Datos\\DatosPaciente.cs",
-              "RelativeDocumentMoniker": "Sanatorio\\Datos\\DatosPaciente.cs",
-              "ToolTip": "C:\\Users\\camim\\OneDrive\\Documentos\\Sanatorio\\Sanatorio\\Sanatorio\\Datos\\DatosPaciente.cs",
-              "RelativeToolTip": "Sanatorio\\Datos\\DatosPaciente.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA4AAAArAAAA",
+              "Title": "frm_Principal.cs",
+              "DocumentMoniker": "C:\\Users\\camim\\OneDrive\\Documentos\\Sanatorio\\Sanatorio\\Sanatorio\\Vista\\frm_Principal.cs",
+              "RelativeDocumentMoniker": "Sanatorio\\Vista\\frm_Principal.cs",
+              "ToolTip": "C:\\Users\\camim\\OneDrive\\Documentos\\Sanatorio\\Sanatorio\\Sanatorio\\Vista\\frm_Principal.cs",
+              "RelativeToolTip": "Sanatorio\\Vista\\frm_Principal.cs",
+              "ViewState": "AQIAAGsAAAAAAAAAAAAswHQAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-22T00:16:51.34Z",
+              "WhenOpened": "2024-10-30T18:14:00.563Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "frmPaciente.Designer.cs",
-              "DocumentMoniker": "C:\\Users\\camim\\OneDrive\\Documentos\\Sanatorio\\Sanatorio\\Sanatorio\\Vista\\frmPaciente.Designer.cs",
-              "RelativeDocumentMoniker": "Sanatorio\\Vista\\frmPaciente.Designer.cs",
-              "ToolTip": "C:\\Users\\camim\\OneDrive\\Documentos\\Sanatorio\\Sanatorio\\Sanatorio\\Vista\\frmPaciente.Designer.cs",
-              "RelativeToolTip": "Sanatorio\\Vista\\frmPaciente.Designer.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-23T03:34:25.102Z"
-            },
-            {
-              "$type": "Document",
               "DocumentIndex": 3,
-              "Title": "IPaciente1.cs",
-              "DocumentMoniker": "C:\\Users\\camim\\OneDrive\\Documentos\\Sanatorio\\Sanatorio\\Sanatorio\\Interfaz\\IPaciente1.cs",
-              "RelativeDocumentMoniker": "Sanatorio\\Interfaz\\IPaciente1.cs",
-              "ToolTip": "C:\\Users\\camim\\OneDrive\\Documentos\\Sanatorio\\Sanatorio\\Sanatorio\\Interfaz\\IPaciente1.cs",
-              "RelativeToolTip": "Sanatorio\\Interfaz\\IPaciente1.cs",
-              "ViewState": "AQIAAAwAAAAAAAAAAAAkwAwAAAAcAAAA",
+              "Title": "frm_Principal.cs [Dise\u00F1o]",
+              "DocumentMoniker": "C:\\Users\\camim\\OneDrive\\Documentos\\Sanatorio\\Sanatorio\\Sanatorio\\Vista\\frm_Principal.cs",
+              "RelativeDocumentMoniker": "Sanatorio\\Vista\\frm_Principal.cs",
+              "ToolTip": "C:\\Users\\camim\\OneDrive\\Documentos\\Sanatorio\\Sanatorio\\Sanatorio\\Vista\\frm_Principal.cs [Dise\u00F1o]",
+              "RelativeToolTip": "Sanatorio\\Vista\\frm_Principal.cs [Dise\u00F1o]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-23T02:44:47.659Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "Habitacion.cs",
-              "DocumentMoniker": "C:\\Users\\camim\\OneDrive\\Documentos\\Sanatorio\\Sanatorio\\Sanatorio\\Modelo\\Habitacion.cs",
-              "RelativeDocumentMoniker": "Sanatorio\\Modelo\\Habitacion.cs",
-              "ToolTip": "C:\\Users\\camim\\OneDrive\\Documentos\\Sanatorio\\Sanatorio\\Sanatorio\\Modelo\\Habitacion.cs",
-              "RelativeToolTip": "Sanatorio\\Modelo\\Habitacion.cs",
-              "ViewState": "AQIAAAoAAAAAAAAAAAA1wA8AAAAqAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-23T02:39:44.177Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "EspecialidadMedico.cs",
-              "DocumentMoniker": "C:\\Users\\camim\\OneDrive\\Documentos\\Sanatorio\\Sanatorio\\Sanatorio\\Modelo\\EspecialidadMedico.cs",
-              "RelativeDocumentMoniker": "Sanatorio\\Modelo\\EspecialidadMedico.cs",
-              "ToolTip": "C:\\Users\\camim\\OneDrive\\Documentos\\Sanatorio\\Sanatorio\\Sanatorio\\Modelo\\EspecialidadMedico.cs",
-              "RelativeToolTip": "Sanatorio\\Modelo\\EspecialidadMedico.cs",
-              "ViewState": "AQIAAAgAAAAAAAAAAAAxwA4AAAAtAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-23T02:38:42.572Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "TipoHabitacion.cs",
-              "DocumentMoniker": "C:\\Users\\camim\\OneDrive\\Documentos\\Sanatorio\\Sanatorio\\Sanatorio\\Modelo\\TipoHabitacion.cs",
-              "RelativeDocumentMoniker": "Sanatorio\\Modelo\\TipoHabitacion.cs",
-              "ToolTip": "C:\\Users\\camim\\OneDrive\\Documentos\\Sanatorio\\Sanatorio\\Sanatorio\\Modelo\\TipoHabitacion.cs",
-              "RelativeToolTip": "Sanatorio\\Modelo\\TipoHabitacion.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAsAAAAOAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-23T02:31:53.8Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "Especialidad.cs",
-              "DocumentMoniker": "C:\\Users\\camim\\OneDrive\\Documentos\\Sanatorio\\Sanatorio\\Sanatorio\\Modelo\\Especialidad.cs",
-              "RelativeDocumentMoniker": "Sanatorio\\Modelo\\Especialidad.cs",
-              "ToolTip": "C:\\Users\\camim\\OneDrive\\Documentos\\Sanatorio\\Sanatorio\\Sanatorio\\Modelo\\Especialidad.cs",
-              "RelativeToolTip": "Sanatorio\\Modelo\\Especialidad.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA0AAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-23T02:31:01.68Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 8,
-              "Title": "DatosMedico.cs",
-              "DocumentMoniker": "C:\\Users\\camim\\OneDrive\\Documentos\\Sanatorio\\Sanatorio\\Sanatorio\\Modelo\\DatosMedico.cs",
-              "RelativeDocumentMoniker": "Sanatorio\\Modelo\\DatosMedico.cs",
-              "ToolTip": "C:\\Users\\camim\\OneDrive\\Documentos\\Sanatorio\\Sanatorio\\Sanatorio\\Modelo\\DatosMedico.cs",
-              "RelativeToolTip": "Sanatorio\\Modelo\\DatosMedico.cs",
-              "ViewState": "AQIAAAgAAAAAAAAAAAAxwA4AAAAOAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-23T02:29:43.48Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 9,
-              "Title": "frmPaciente.cs",
-              "DocumentMoniker": "C:\\Users\\camim\\OneDrive\\Documentos\\Sanatorio\\Sanatorio\\Sanatorio\\Vista\\frmPaciente.cs",
-              "RelativeDocumentMoniker": "Sanatorio\\Vista\\frmPaciente.cs",
-              "ToolTip": "C:\\Users\\camim\\OneDrive\\Documentos\\Sanatorio\\Sanatorio\\Sanatorio\\Vista\\frmPaciente.cs",
-              "RelativeToolTip": "Sanatorio\\Vista\\frmPaciente.cs",
-              "ViewState": "AQIAAAkAAAAAAAAAAAAAwBoAAAAGAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-22T00:29:53.648Z"
+              "WhenOpened": "2024-10-30T18:13:33.559Z"
             }
           ]
         }

@@ -31,8 +31,9 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frm_Principal));
             this.panelMenuVertical = new System.Windows.Forms.Panel();
-            this.button2 = new System.Windows.Forms.Button();
+            this.button3 = new System.Windows.Forms.Button();
             this.listaImagenes = new System.Windows.Forms.ImageList(this.components);
+            this.button2 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.btnInternacion = new System.Windows.Forms.Button();
             this.btnMedico = new System.Windows.Forms.Button();
@@ -43,6 +44,7 @@
             this.pictureBoxCerrar = new System.Windows.Forms.PictureBox();
             this.pictureBoxMenu = new System.Windows.Forms.PictureBox();
             this.panelContenedor = new System.Windows.Forms.Panel();
+            this.button4 = new System.Windows.Forms.Button();
             this.panelMenuVertical.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.panelBarraTitulo.SuspendLayout();
@@ -54,6 +56,8 @@
             // panelMenuVertical
             // 
             this.panelMenuVertical.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(72)))), ((int)(((byte)(89)))), ((int)(((byte)(53)))));
+            this.panelMenuVertical.Controls.Add(this.button4);
+            this.panelMenuVertical.Controls.Add(this.button3);
             this.panelMenuVertical.Controls.Add(this.button2);
             this.panelMenuVertical.Controls.Add(this.button1);
             this.panelMenuVertical.Controls.Add(this.btnInternacion);
@@ -65,6 +69,35 @@
             this.panelMenuVertical.Name = "panelMenuVertical";
             this.panelMenuVertical.Size = new System.Drawing.Size(250, 650);
             this.panelMenuVertical.TabIndex = 0;
+            // 
+            // button3
+            // 
+            this.button3.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.button3.FlatAppearance.BorderSize = 0;
+            this.button3.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(126)))), ((int)(((byte)(158)))), ((int)(((byte)(92)))));
+            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button3.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(246)))), ((int)(((byte)(248)))), ((int)(((byte)(244)))));
+            this.button3.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button3.ImageIndex = 4;
+            this.button3.ImageList = this.listaImagenes;
+            this.button3.Location = new System.Drawing.Point(0, 322);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(250, 40);
+            this.button3.TabIndex = 6;
+            this.button3.Text = "Obra Social";
+            this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
+            // 
+            // listaImagenes
+            // 
+            this.listaImagenes.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("listaImagenes.ImageStream")));
+            this.listaImagenes.TransparentColor = System.Drawing.Color.Transparent;
+            this.listaImagenes.Images.SetKeyName(0, "pacientes.png");
+            this.listaImagenes.Images.SetKeyName(1, "medicos.png");
+            this.listaImagenes.Images.SetKeyName(2, "internaciones.png");
+            this.listaImagenes.Images.SetKeyName(3, "registroClinico.png");
+            this.listaImagenes.Images.SetKeyName(4, "habitacion.png");
             // 
             // button2
             // 
@@ -83,16 +116,6 @@
             this.button2.TabIndex = 5;
             this.button2.Text = "Habitación";
             this.button2.UseVisualStyleBackColor = true;
-            // 
-            // listaImagenes
-            // 
-            this.listaImagenes.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("listaImagenes.ImageStream")));
-            this.listaImagenes.TransparentColor = System.Drawing.Color.Transparent;
-            this.listaImagenes.Images.SetKeyName(0, "pacientes.png");
-            this.listaImagenes.Images.SetKeyName(1, "medicos.png");
-            this.listaImagenes.Images.SetKeyName(2, "internaciones.png");
-            this.listaImagenes.Images.SetKeyName(3, "registroClinico.png");
-            this.listaImagenes.Images.SetKeyName(4, "habitacion.png");
             // 
             // button1
             // 
@@ -159,7 +182,7 @@
             this.btnPaciente.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnPaciente.ImageIndex = 0;
             this.btnPaciente.ImageList = this.listaImagenes;
-            this.btnPaciente.Location = new System.Drawing.Point(0, 92);
+            this.btnPaciente.Location = new System.Drawing.Point(3, 92);
             this.btnPaciente.Name = "btnPaciente";
             this.btnPaciente.Size = new System.Drawing.Size(250, 40);
             this.btnPaciente.TabIndex = 1;
@@ -238,6 +261,25 @@
             this.panelContenedor.Size = new System.Drawing.Size(1050, 600);
             this.panelContenedor.TabIndex = 2;
             // 
+            // button4
+            // 
+            this.button4.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.button4.FlatAppearance.BorderSize = 0;
+            this.button4.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(126)))), ((int)(((byte)(158)))), ((int)(((byte)(92)))));
+            this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button4.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(246)))), ((int)(((byte)(248)))), ((int)(((byte)(244)))));
+            this.button4.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button4.ImageIndex = 4;
+            this.button4.ImageList = this.listaImagenes;
+            this.button4.Location = new System.Drawing.Point(3, 368);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(250, 40);
+            this.button4.TabIndex = 7;
+            this.button4.Text = "Tipo Habitación";
+            this.button4.UseVisualStyleBackColor = true;
+            this.button4.Click += new System.EventHandler(this.button4_Click);
+            // 
             // frm_Principal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -278,6 +320,8 @@
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button btnInternacion;
         private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Button button4;
     }
 }
 

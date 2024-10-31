@@ -181,7 +181,7 @@ namespace Sanatorio.Vista
             }
             else
             {
-                MessageBox.Show("Actualizar PAciente");
+                MessageBox.Show("Actualizar Paciente");
             }
             
            

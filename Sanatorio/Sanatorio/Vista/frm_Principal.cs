@@ -102,5 +102,15 @@ namespace Sanatorio
                 this.btnPaciente_Click(sender,e);
             }
         }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            abrirFormEnPanel(new frmTipoHabitacion());
+        }
     }
 }

@@ -10,9 +10,9 @@ namespace Sanatorio.Interfaz
 {
     public interface ITipoHabitacion1
     {
-        bool agregarHabitacion(Habitacion habitacion);
-        bool actualizarHabitacion(Habitacion habitacion);
-        void eliminarHabitacion(string Idhabitacion);
+        bool agregarHabitacion(TipoHabitacion habi);
+        bool actualizarHabitacion(TipoHabitacion habi);
+        void eliminarHabitacion(int _id);
         DataTable listarTipoHabitacion();
     }
 }

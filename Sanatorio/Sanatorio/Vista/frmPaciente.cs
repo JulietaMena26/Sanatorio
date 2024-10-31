@@ -40,7 +40,7 @@ namespace Sanatorio.Vista
             {
 
                 MessageBox.Show(ex.Message + " " + ex.StackTrace);
-                throw ex;
+               // throw ex;
             }
         }
 

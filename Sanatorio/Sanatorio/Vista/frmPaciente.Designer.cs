@@ -132,7 +132,7 @@
             this.id_obraSocial});
             this.dataGridPaciente.EnableHeadersVisualStyles = false;
             this.dataGridPaciente.GridColor = System.Drawing.Color.White;
-            this.dataGridPaciente.Location = new System.Drawing.Point(2, 62);
+            this.dataGridPaciente.Location = new System.Drawing.Point(2, 57);
             this.dataGridPaciente.Name = "dataGridPaciente";
             this.dataGridPaciente.ReadOnly = true;
             this.dataGridPaciente.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
