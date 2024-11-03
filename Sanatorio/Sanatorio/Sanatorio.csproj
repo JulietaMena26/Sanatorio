@@ -182,6 +182,18 @@
     <Compile Include="Vista\frmInternaciones.Designer.cs">
       <DependentUpon>frmInternaciones.cs</DependentUpon>
     </Compile>
+    <Compile Include="Vista\frm_Especialidades.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vista\frm_Especialidades.Designer.cs">
+      <DependentUpon>frm_Especialidades.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Vista\frm_DatosMedicos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vista\frm_DatosMedicos.Designer.cs">
+      <DependentUpon>frm_DatosMedicos.cs</DependentUpon>
+    </Compile>
     <Compile Include="Vista\frmRegistros.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -237,6 +249,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Vista\frmInternaciones.resx">
       <DependentUpon>frmInternaciones.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vista\frm_Especialidades.resx">
+      <DependentUpon>frm_Especialidades.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vista\frm_DatosMedicos.resx">
+      <DependentUpon>frm_DatosMedicos.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Vista\frmRegistros.resx">
       <DependentUpon>frmRegistros.cs</DependentUpon>
