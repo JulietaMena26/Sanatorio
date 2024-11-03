@@ -30,7 +30,7 @@ namespace Sanatorio.Datos
 
             try
             {
-                MySqlCommand command = new MySqlCommand("psa_guardar_paciente", SQLdatos);
+                MySqlCommand command = new MySqlCommand("psa_guardar_pacientes", SQLdatos);
                 command.CommandType = CommandType.StoredProcedure;
                 command.Parameters.Add("_dni", MySqlDbType.VarChar).Value = _paciente.dni;
                 command.Parameters.Add("_apellido", MySqlDbType.VarChar).Value = _paciente.apellido;

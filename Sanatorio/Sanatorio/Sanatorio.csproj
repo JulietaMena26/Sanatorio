@@ -164,6 +164,30 @@
     <Compile Include="Vista\frmObrassociales.Designer.cs">
       <DependentUpon>frmObrassociales.cs</DependentUpon>
     </Compile>
+    <Compile Include="Vista\frmHabitaciones.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vista\frmHabitaciones.Designer.cs">
+      <DependentUpon>frmHabitaciones.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Vista\frmMedicos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vista\frmMedicos.Designer.cs">
+      <DependentUpon>frmMedicos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Vista\frmInternaciones.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vista\frmInternaciones.Designer.cs">
+      <DependentUpon>frmInternaciones.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Vista\frmRegistros.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vista\frmRegistros.Designer.cs">
+      <DependentUpon>frmRegistros.cs</DependentUpon>
+    </Compile>
     <Compile Include="Vista\frmTipoHabitacion.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -204,6 +228,18 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Vista\frmObrassociales.resx">
       <DependentUpon>frmObrassociales.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vista\frmHabitaciones.resx">
+      <DependentUpon>frmHabitaciones.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vista\frmMedicos.resx">
+      <DependentUpon>frmMedicos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vista\frmInternaciones.resx">
+      <DependentUpon>frmInternaciones.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vista\frmRegistros.resx">
+      <DependentUpon>frmRegistros.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Vista\frmTipoHabitacion.resx">
       <DependentUpon>frmTipoHabitacion.cs</DependentUpon>

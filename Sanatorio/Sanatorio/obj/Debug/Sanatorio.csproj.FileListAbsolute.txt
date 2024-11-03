@@ -212,3 +212,7 @@ C:\Users\camim\OneDrive\Documentos\Sanatorio\Sanatorio\Sanatorio\obj\Debug\Sanat
 C:\Users\camim\OneDrive\Documentos\Sanatorio\Sanatorio\Sanatorio\obj\Debug\Sanatorio.Vista.frmObrasocial.resources
 C:\Users\camim\OneDrive\Documentos\Sanatorio\Sanatorio\Sanatorio\obj\Debug\Sanatorio.Vista.frmObrassociales.resources
 C:\Users\camim\OneDrive\Documentos\Sanatorio\Sanatorio\Sanatorio\obj\Debug\Sanatorio.Vista.frmTipoHabitacion.resources
+C:\Users\camim\OneDrive\Documentos\Sanatorio\Sanatorio\Sanatorio\obj\Debug\Sanatorio.Vista.frmHabitaciones.resources
+C:\Users\camim\OneDrive\Documentos\Sanatorio\Sanatorio\Sanatorio\obj\Debug\Sanatorio.Vista.frmMedicos.resources
+C:\Users\camim\OneDrive\Documentos\Sanatorio\Sanatorio\Sanatorio\obj\Debug\Sanatorio.Vista.frmInternaciones.resources
+C:\Users\camim\OneDrive\Documentos\Sanatorio\Sanatorio\Sanatorio\obj\Debug\Sanatorio.Vista.frmRegistros.resources

@@ -144,9 +144,15 @@ namespace Sanatorio.Vista
 
         private void btnGuardar_Click(object sender, EventArgs e)
         {
-
-            if (string.IsNullOrEmpty(txtId.Text.Trim()))
+            
+            if (!verificarControlesVacios())
             {
+                return ;
+            }
+
+           if (string.IsNullOrEmpty(txtId.Text.Trim()))
+             {
+                
                 if (existePaciente(txtDni.Text.Trim()))
                 {
                     MessageBox.Show("El paciente ya existe!!", "Sistema Santa Rita", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -154,8 +160,7 @@ namespace Sanatorio.Vista
                 }
                 else 
                 {
-                    if (verificarControlesVacios())
-                    {
+                                        
                         paciente = new Paciente();
                         paciente.historiaClinica = txtHistoriClinica.Text.Trim(); 
                         paciente.dni = txtDni.Text.Trim();
@@ -175,8 +180,7 @@ namespace Sanatorio.Vista
                         else
                         {
                             MessageBox.Show("Error al agregar!!", "Sistema Santa Rita", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                        }               
-                    }                    
+                        }                                          
                 }                
             }
             else
