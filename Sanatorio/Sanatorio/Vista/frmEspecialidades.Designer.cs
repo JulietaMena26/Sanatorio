@@ -1,6 +1,6 @@
 ﻿namespace Sanatorio.Vista
 {
-    partial class frm_DatosMedicos
+    partial class frmEspecialidades
     {
         /// <summary>
         /// Required designer variable.
@@ -60,9 +60,9 @@
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(12, 20);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(193, 25);
+            this.label1.Size = new System.Drawing.Size(244, 25);
             this.label1.TabIndex = 8;
-            this.label1.Text = "Listado de Pacientes";
+            this.label1.Text = "Listado de  Especialidades";
             // 
             // btnNuevo
             // 
@@ -146,7 +146,7 @@
             this.dataGridPaciente.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridPaciente.Size = new System.Drawing.Size(1045, 376);
             this.dataGridPaciente.TabIndex = 7;
-//            this.dataGridPaciente.DoubleClick += new System.EventHandler(this.dataGridPaciente_DoubleClick);
+            this.dataGridPaciente.DoubleClick += new System.EventHandler(this.dataGridPaciente_DoubleClick);
             // 
             // id
             // 
@@ -243,7 +243,7 @@
             this.btnBuscar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(246)))), ((int)(((byte)(248)))), ((int)(((byte)(244)))));
             this.btnBuscar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnBuscar.ImageIndex = 0;
-            this.btnBuscar.Location = new System.Drawing.Point(602, 17);
+            this.btnBuscar.Location = new System.Drawing.Point(658, 18);
             this.btnBuscar.Name = "btnBuscar";
             this.btnBuscar.Size = new System.Drawing.Size(133, 34);
             this.btnBuscar.TabIndex = 2;
@@ -256,7 +256,7 @@
             this.txtBuscar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(202)))), ((int)(((byte)(219)))), ((int)(((byte)(183)))));
             this.txtBuscar.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtBuscar.ForeColor = System.Drawing.Color.White;
-            this.txtBuscar.Location = new System.Drawing.Point(251, 20);
+            this.txtBuscar.Location = new System.Drawing.Point(272, 18);
             this.txtBuscar.Name = "txtBuscar";
             this.txtBuscar.Size = new System.Drawing.Size(304, 31);
             this.txtBuscar.TabIndex = 0;
@@ -301,7 +301,7 @@
             this.btnEliminar.UseVisualStyleBackColor = false;
             this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click);
             // 
-            // frmPaciente
+            // frmEspecialidades
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -317,9 +317,9 @@
             this.Controls.Add(this.label1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.KeyPreview = true;
-            this.Name = "frmPaciente";
+            this.Name = "frmEspecialidades";
             this.Text = "frmPaciente";
-//            this.Load += new System.EventHandler(this.frmPaciente_Load);
+            this.Load += new System.EventHandler(this.frmPaciente_Load);
             this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.frmPaciente_KeyDown);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridPaciente)).EndInit();
             this.ResumeLayout(false);

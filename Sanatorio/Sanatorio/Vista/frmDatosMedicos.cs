@@ -13,10 +13,10 @@ using Sanatorio.Modelos;
 
 namespace Sanatorio.Vista
 {
-    public partial class frm_DatosMedicos : Form
+    public partial class frmPaciente : Form
     {
         private ToolTip toolTip;
-        public frm_DatosMedicos()
+        public frmPaciente()
         {
             InitializeComponent();
             mensajestoolTip();
@@ -25,7 +25,7 @@ namespace Sanatorio.Vista
         #region "Mis Métodos"
         private void listado_Pacientes(string cTexto)
         {
-            dataGridPacien.Rows.Clear(); 
+            dataGridPaciente.Rows.Clear(); 
             try
             {
                DataTable tabla = new DataTable();
@@ -156,5 +156,7 @@ namespace Sanatorio.Vista
                 this.lblCerrar_Click(sender, e);
             }
         }
+
+     
     }
 }

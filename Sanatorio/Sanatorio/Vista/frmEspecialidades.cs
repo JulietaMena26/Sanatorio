@@ -13,10 +13,10 @@ using Sanatorio.Modelos;
 
 namespace Sanatorio.Vista
 {
-    public partial class frm_DatosMedicos : Form
+    public partial class frmEspecialidades : Form
     {
         private ToolTip toolTip;
-        public frm_DatosMedicos()
+        public frmEspecialidades()
         {
             InitializeComponent();
             mensajestoolTip();
@@ -25,7 +25,7 @@ namespace Sanatorio.Vista
         #region "Mis Métodos"
         private void listado_Pacientes(string cTexto)
         {
-            dataGridPaciente.Rows.Clear(); 
+            dataGridPacien.Rows.Clear(); 
             try
             {
                DataTable tabla = new DataTable();
@@ -85,10 +85,10 @@ namespace Sanatorio.Vista
             this.Close();
         }
 
-        private void frm_DatosMedicos_Load(object sender, EventArgs e)
+        private void frmPaciente_Load(object sender, EventArgs e)
         {
 
-            Listado_frm_DatosMedicos("%");
+            listado_Pacientes("%");
 
         }
 
@@ -109,31 +109,31 @@ namespace Sanatorio.Vista
         private void txtBuscar_Leave(object sender, EventArgs e)
         {
            // txtBuscar.Text = "";
-            // txtBuscar.BackColor = Color.FromArgb(202,219,183);
+            txtBuscar.BackColor = Color.FromArgb(202,219,183);
         }
 
         private void btnBuscar_Click(object sender, EventArgs e)
         {
-            listado_frm_DatosMedicos(txtBuscar.Text.Trim());           
+            listado_Pacientes(txtBuscar.Text.Trim());           
         }
 
         private void btnEditar_Click(object sender, EventArgs e)
         {
-            this.actualizar_frm_DatosMedicos();
+            this.actualizar_paciente();
         }
 
         private void btnEliminar_Click(object sender, EventArgs e)
         {
-            MessageBox.Show(dataGridfrmPaciente.CurrentRow.Cells[11].Value.ToString());
+            MessageBox.Show(dataGridPaciente.CurrentRow.Cells[11].Value.ToString());
         }
 
-        private void dataGridfrm_DatosMedicos_DoubleClick(object sender, EventArgs e)
+        private void dataGridPaciente_DoubleClick(object sender, EventArgs e)
         {
            
-            this.actualizar_frm_DatosMedicos();
+            this.actualizar_paciente();
         }
 
-        private void frmdatosmedicos_KeyDown(object sender, KeyEventArgs e)
+        private void frmPaciente_KeyDown(object sender, KeyEventArgs e)
         {
             if (e.KeyCode == Keys.F1)
             {
