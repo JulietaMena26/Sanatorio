@@ -25,7 +25,7 @@ namespace Sanatorio.Vista
         #region "Mis Métodos"
         private void listado_Pacientes(string cTexto)
         {
-            dataGridPacien.Rows.Clear(); 
+            dataGridPaciente.Rows.Clear(); 
             try
             {
                DataTable tabla = new DataTable();

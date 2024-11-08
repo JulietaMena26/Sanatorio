@@ -29,28 +29,18 @@
         private void InitializeComponent()
         {
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.label1 = new System.Windows.Forms.Label();
             this.btnNuevo = new System.Windows.Forms.Button();
             this.lblCerrar = new System.Windows.Forms.Label();
             this.dataGridPaciente = new System.Windows.Forms.DataGridView();
-            this.id = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.historia = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dni = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.apellido = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.fechaNaci = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.edad = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.domicilio = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.telefono = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.obrasocial = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.afiliado = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.id_obraSocial = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btnBuscar = new System.Windows.Forms.Button();
             this.txtBuscar = new System.Windows.Forms.TextBox();
             this.btnEditar = new System.Windows.Forms.Button();
             this.btnEliminar = new System.Windows.Forms.Button();
+            this.idEpecialidades = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.especialidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.descripcion = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridPaciente)).BeginInit();
             this.SuspendLayout();
             // 
@@ -118,119 +108,26 @@
             this.dataGridPaciente.ColumnHeadersHeight = 30;
             this.dataGridPaciente.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             this.dataGridPaciente.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.id,
-            this.historia,
-            this.dni,
-            this.apellido,
-            this.nombre,
-            this.fechaNaci,
-            this.edad,
-            this.domicilio,
-            this.telefono,
-            this.obrasocial,
-            this.afiliado,
-            this.id_obraSocial});
+            this.idEpecialidades,
+            this.especialidad,
+            this.descripcion});
             this.dataGridPaciente.EnableHeadersVisualStyles = false;
             this.dataGridPaciente.GridColor = System.Drawing.Color.White;
-            this.dataGridPaciente.Location = new System.Drawing.Point(2, 57);
+            this.dataGridPaciente.Location = new System.Drawing.Point(43, 68);
             this.dataGridPaciente.Name = "dataGridPaciente";
             this.dataGridPaciente.ReadOnly = true;
             this.dataGridPaciente.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
             this.dataGridPaciente.RowHeadersVisible = false;
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(147)))), ((int)(((byte)(162)))), ((int)(((byte)(103)))));
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(72)))), ((int)(((byte)(89)))), ((int)(((byte)(53)))));
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.White;
-            this.dataGridPaciente.RowsDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(147)))), ((int)(((byte)(162)))), ((int)(((byte)(103)))));
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(72)))), ((int)(((byte)(89)))), ((int)(((byte)(53)))));
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.White;
+            this.dataGridPaciente.RowsDefaultCellStyle = dataGridViewCellStyle2;
             this.dataGridPaciente.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridPaciente.Size = new System.Drawing.Size(1045, 376);
             this.dataGridPaciente.TabIndex = 7;
             this.dataGridPaciente.DoubleClick += new System.EventHandler(this.dataGridPaciente_DoubleClick);
-            // 
-            // id
-            // 
-            this.id.HeaderText = "ID";
-            this.id.Name = "id";
-            this.id.ReadOnly = true;
-            this.id.Width = 35;
-            // 
-            // historia
-            // 
-            this.historia.HeaderText = "Hist. Clinica";
-            this.historia.Name = "historia";
-            this.historia.ReadOnly = true;
-            this.historia.ToolTipText = "N° de Historial Medico";
-            this.historia.Width = 80;
-            // 
-            // dni
-            // 
-            this.dni.HeaderText = "D.N.I";
-            this.dni.Name = "dni";
-            this.dni.ReadOnly = true;
-            this.dni.Width = 70;
-            // 
-            // apellido
-            // 
-            this.apellido.HeaderText = "Apellido";
-            this.apellido.Name = "apellido";
-            this.apellido.ReadOnly = true;
-            // 
-            // nombre
-            // 
-            this.nombre.HeaderText = "Nombre";
-            this.nombre.Name = "nombre";
-            this.nombre.ReadOnly = true;
-            this.nombre.Width = 130;
-            // 
-            // fechaNaci
-            // 
-            this.fechaNaci.HeaderText = "Fecha Nac.";
-            this.fechaNaci.Name = "fechaNaci";
-            this.fechaNaci.ReadOnly = true;
-            this.fechaNaci.ToolTipText = "Fecha de Nacimiento";
-            this.fechaNaci.Width = 85;
-            // 
-            // edad
-            // 
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.edad.DefaultCellStyle = dataGridViewCellStyle2;
-            this.edad.HeaderText = "Edad";
-            this.edad.Name = "edad";
-            this.edad.ReadOnly = true;
-            this.edad.Width = 40;
-            // 
-            // domicilio
-            // 
-            this.domicilio.HeaderText = "Dirección";
-            this.domicilio.Name = "domicilio";
-            this.domicilio.ReadOnly = true;
-            this.domicilio.Width = 200;
-            // 
-            // telefono
-            // 
-            this.telefono.HeaderText = "Teléfono";
-            this.telefono.Name = "telefono";
-            this.telefono.ReadOnly = true;
-            // 
-            // obrasocial
-            // 
-            this.obrasocial.HeaderText = "Obra Social";
-            this.obrasocial.Name = "obrasocial";
-            this.obrasocial.ReadOnly = true;
-            // 
-            // afiliado
-            // 
-            this.afiliado.HeaderText = "N° Afiliado";
-            this.afiliado.Name = "afiliado";
-            this.afiliado.ReadOnly = true;
-            // 
-            // id_obraSocial
-            // 
-            this.id_obraSocial.HeaderText = "id_obraSocial";
-            this.id_obraSocial.Name = "id_obraSocial";
-            this.id_obraSocial.ReadOnly = true;
-            this.id_obraSocial.Visible = false;
             // 
             // btnBuscar
             // 
@@ -301,6 +198,28 @@
             this.btnEliminar.UseVisualStyleBackColor = false;
             this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click);
             // 
+            // idEpecialidades
+            // 
+            this.idEpecialidades.HeaderText = "ID";
+            this.idEpecialidades.Name = "idEpecialidades";
+            this.idEpecialidades.ReadOnly = true;
+            this.idEpecialidades.ToolTipText = "Id Especialidades";
+            this.idEpecialidades.Width = 35;
+            // 
+            // especialidad
+            // 
+            this.especialidad.HeaderText = "Especialidad";
+            this.especialidad.Name = "especialidad";
+            this.especialidad.ReadOnly = true;
+            this.especialidad.Width = 80;
+            // 
+            // descripcion
+            // 
+            this.descripcion.HeaderText = "Descripción";
+            this.descripcion.Name = "descripcion";
+            this.descripcion.ReadOnly = true;
+            this.descripcion.Width = 70;
+            // 
             // frmEspecialidades
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -337,17 +256,8 @@
         private System.Windows.Forms.TextBox txtBuscar;
         private System.Windows.Forms.Button btnEditar;
         private System.Windows.Forms.Button btnEliminar;
-        private System.Windows.Forms.DataGridViewTextBoxColumn id;
-        private System.Windows.Forms.DataGridViewTextBoxColumn historia;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dni;
-        private System.Windows.Forms.DataGridViewTextBoxColumn apellido;
-        private System.Windows.Forms.DataGridViewTextBoxColumn nombre;
-        private System.Windows.Forms.DataGridViewTextBoxColumn fechaNaci;
-        private System.Windows.Forms.DataGridViewTextBoxColumn edad;
-        private System.Windows.Forms.DataGridViewTextBoxColumn domicilio;
-        private System.Windows.Forms.DataGridViewTextBoxColumn telefono;
-        private System.Windows.Forms.DataGridViewTextBoxColumn obrasocial;
-        private System.Windows.Forms.DataGridViewTextBoxColumn afiliado;
-        private System.Windows.Forms.DataGridViewTextBoxColumn id_obraSocial;
+        private System.Windows.Forms.DataGridViewTextBoxColumn idEpecialidades;
+        private System.Windows.Forms.DataGridViewTextBoxColumn especialidad;
+        private System.Windows.Forms.DataGridViewTextBoxColumn descripcion;
     }
 }

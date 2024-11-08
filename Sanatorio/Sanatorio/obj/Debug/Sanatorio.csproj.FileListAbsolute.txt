@@ -216,3 +216,5 @@ C:\Users\camim\OneDrive\Documentos\Sanatorio\Sanatorio\Sanatorio\obj\Debug\Sanat
 C:\Users\camim\OneDrive\Documentos\Sanatorio\Sanatorio\Sanatorio\obj\Debug\Sanatorio.Vista.frmMedicos.resources
 C:\Users\camim\OneDrive\Documentos\Sanatorio\Sanatorio\Sanatorio\obj\Debug\Sanatorio.Vista.frmInternaciones.resources
 C:\Users\camim\OneDrive\Documentos\Sanatorio\Sanatorio\Sanatorio\obj\Debug\Sanatorio.Vista.frmRegistros.resources
+C:\Users\camim\OneDrive\Documentos\Sanatorio\Sanatorio\Sanatorio\obj\Debug\Sanatorio.Vista.frmEspecialidades.resources
+C:\Users\camim\OneDrive\Documentos\Sanatorio\Sanatorio\Sanatorio\obj\Debug\Sanatorio.Vista.frm_DatosMedicos.resources
