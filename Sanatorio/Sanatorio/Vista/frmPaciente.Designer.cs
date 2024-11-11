@@ -35,6 +35,10 @@
             this.btnNuevo = new System.Windows.Forms.Button();
             this.lblCerrar = new System.Windows.Forms.Label();
             this.dataGridPaciente = new System.Windows.Forms.DataGridView();
+            this.btnBuscar = new System.Windows.Forms.Button();
+            this.txtBuscar = new System.Windows.Forms.TextBox();
+            this.btnEditar = new System.Windows.Forms.Button();
+            this.btnEliminar = new System.Windows.Forms.Button();
             this.id = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.historia = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dni = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -47,10 +51,6 @@
             this.obrasocial = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.afiliado = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.id_obraSocial = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.btnBuscar = new System.Windows.Forms.Button();
-            this.txtBuscar = new System.Windows.Forms.TextBox();
-            this.btnEditar = new System.Windows.Forms.Button();
-            this.btnEliminar = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridPaciente)).BeginInit();
             this.SuspendLayout();
             // 
@@ -148,90 +148,6 @@
             this.dataGridPaciente.TabIndex = 7;
             this.dataGridPaciente.DoubleClick += new System.EventHandler(this.dataGridPaciente_DoubleClick);
             // 
-            // id
-            // 
-            this.id.HeaderText = "ID";
-            this.id.Name = "id";
-            this.id.ReadOnly = true;
-            this.id.Width = 35;
-            // 
-            // historia
-            // 
-            this.historia.HeaderText = "Hist. Clinica";
-            this.historia.Name = "historia";
-            this.historia.ReadOnly = true;
-            this.historia.ToolTipText = "N° de Historial Medico";
-            this.historia.Width = 80;
-            // 
-            // dni
-            // 
-            this.dni.HeaderText = "D.N.I";
-            this.dni.Name = "dni";
-            this.dni.ReadOnly = true;
-            this.dni.Width = 70;
-            // 
-            // apellido
-            // 
-            this.apellido.HeaderText = "Apellido";
-            this.apellido.Name = "apellido";
-            this.apellido.ReadOnly = true;
-            // 
-            // nombre
-            // 
-            this.nombre.HeaderText = "Nombre";
-            this.nombre.Name = "nombre";
-            this.nombre.ReadOnly = true;
-            this.nombre.Width = 130;
-            // 
-            // fechaNaci
-            // 
-            this.fechaNaci.HeaderText = "Fecha Nac.";
-            this.fechaNaci.Name = "fechaNaci";
-            this.fechaNaci.ReadOnly = true;
-            this.fechaNaci.ToolTipText = "Fecha de Nacimiento";
-            this.fechaNaci.Width = 85;
-            // 
-            // edad
-            // 
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.edad.DefaultCellStyle = dataGridViewCellStyle2;
-            this.edad.HeaderText = "Edad";
-            this.edad.Name = "edad";
-            this.edad.ReadOnly = true;
-            this.edad.Width = 40;
-            // 
-            // domicilio
-            // 
-            this.domicilio.HeaderText = "Dirección";
-            this.domicilio.Name = "domicilio";
-            this.domicilio.ReadOnly = true;
-            this.domicilio.Width = 200;
-            // 
-            // telefono
-            // 
-            this.telefono.HeaderText = "Teléfono";
-            this.telefono.Name = "telefono";
-            this.telefono.ReadOnly = true;
-            // 
-            // obrasocial
-            // 
-            this.obrasocial.HeaderText = "Obra Social";
-            this.obrasocial.Name = "obrasocial";
-            this.obrasocial.ReadOnly = true;
-            // 
-            // afiliado
-            // 
-            this.afiliado.HeaderText = "N° Afiliado";
-            this.afiliado.Name = "afiliado";
-            this.afiliado.ReadOnly = true;
-            // 
-            // id_obraSocial
-            // 
-            this.id_obraSocial.HeaderText = "id_obraSocial";
-            this.id_obraSocial.Name = "id_obraSocial";
-            this.id_obraSocial.ReadOnly = true;
-            this.id_obraSocial.Visible = false;
-            // 
             // btnBuscar
             // 
             this.btnBuscar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
@@ -300,6 +216,90 @@
             this.btnEliminar.Text = "Eliminar (F4)";
             this.btnEliminar.UseVisualStyleBackColor = false;
             this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click);
+            // 
+            // id
+            // 
+            this.id.HeaderText = "ID";
+            this.id.Name = "id";
+            this.id.ReadOnly = true;
+            this.id.Width = 35;
+            // 
+            // historia
+            // 
+            this.historia.HeaderText = "Hist. Clinica";
+            this.historia.Name = "historia";
+            this.historia.ReadOnly = true;
+            this.historia.ToolTipText = "N° de Historial Medico";
+            this.historia.Width = 80;
+            // 
+            // dni
+            // 
+            this.dni.HeaderText = "D.N.I";
+            this.dni.Name = "dni";
+            this.dni.ReadOnly = true;
+            // 
+            // apellido
+            // 
+            this.apellido.HeaderText = "Apellido";
+            this.apellido.Name = "apellido";
+            this.apellido.ReadOnly = true;
+            // 
+            // nombre
+            // 
+            this.nombre.HeaderText = "Nombre";
+            this.nombre.Name = "nombre";
+            this.nombre.ReadOnly = true;
+            this.nombre.Width = 80;
+            // 
+            // fechaNaci
+            // 
+            this.fechaNaci.HeaderText = "Fecha Nac.";
+            this.fechaNaci.Name = "fechaNaci";
+            this.fechaNaci.ReadOnly = true;
+            this.fechaNaci.ToolTipText = "Fecha de Nacimiento";
+            // 
+            // edad
+            // 
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.edad.DefaultCellStyle = dataGridViewCellStyle2;
+            this.edad.HeaderText = "Edad";
+            this.edad.Name = "edad";
+            this.edad.ReadOnly = true;
+            this.edad.Width = 50;
+            // 
+            // domicilio
+            // 
+            this.domicilio.HeaderText = "Dirección";
+            this.domicilio.Name = "domicilio";
+            this.domicilio.ReadOnly = true;
+            this.domicilio.Width = 80;
+            // 
+            // telefono
+            // 
+            this.telefono.HeaderText = "Teléfono";
+            this.telefono.Name = "telefono";
+            this.telefono.ReadOnly = true;
+            this.telefono.Width = 60;
+            // 
+            // obrasocial
+            // 
+            this.obrasocial.HeaderText = "Obra Social";
+            this.obrasocial.Name = "obrasocial";
+            this.obrasocial.ReadOnly = true;
+            this.obrasocial.Width = 150;
+            // 
+            // afiliado
+            // 
+            this.afiliado.HeaderText = "N° Afiliado";
+            this.afiliado.Name = "afiliado";
+            this.afiliado.ReadOnly = true;
+            // 
+            // id_obraSocial
+            // 
+            this.id_obraSocial.HeaderText = "id_obraSocial";
+            this.id_obraSocial.Name = "id_obraSocial";
+            this.id_obraSocial.ReadOnly = true;
+            this.id_obraSocial.Visible = false;
             // 
             // frmPaciente
             // 

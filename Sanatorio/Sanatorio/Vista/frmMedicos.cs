@@ -25,42 +25,42 @@ namespace Sanatorio.Vista
         #region "Mis Métodos"
         private void listado_Pacientes(string cTexto)
         {
-            dataGridPaciente.Rows.Clear(); 
+            dataGridMedico.Rows.Clear();
             try
             {
-               DataTable tabla = new DataTable();
-               tabla = (new DatosPaciente()).listarPaciente(cTexto);
+                DataTable tabla = new DataTable();
+                tabla = (new DatosPaciente()).listarPaciente(cTexto);
 
-               foreach (DataRow fila in tabla.Rows)
+                foreach (DataRow fila in tabla.Rows)
                 {
-                    dataGridPaciente.Rows.Add(fila[0], fila[1], fila[2], fila[3], fila[4], (DateTime.Parse(fila[5].ToString())).ToString("dd/MM/yyyy"), fila[6], fila[7], fila[8], fila[9], fila[10],fila[11]);
+                    dataGridMedico.Rows.Add(fila[0], fila[1], fila[2], fila[3], fila[4], (DateTime.Parse(fila[5].ToString())).ToString("dd/MM/yyyy"), fila[6], fila[7], fila[8], fila[9], fila[10], fila[11]);
                 }
             }
             catch (Exception ex)
             {
 
                 MessageBox.Show(ex.Message + " " + ex.StackTrace);
-               // throw ex;
+                // throw ex;
             }
         }
 
         private void actualizar_paciente()
         {
             frmNewPaciente nuevo = new frmNewPaciente();
-            if (dataGridPaciente.SelectedRows.Count > 0)
+            if (dataGridMedico.SelectedRows.Count > 0)
             {
-                nuevo.txtId.Text = dataGridPaciente.CurrentRow.Cells[0].Value.ToString();
-                nuevo.txtHistoriClinica.Text = dataGridPaciente.CurrentRow.Cells[1].Value.ToString();
-                nuevo.txtDni.Text = dataGridPaciente.CurrentRow.Cells[2].Value.ToString();
-                nuevo.txtApellido.Text = dataGridPaciente.CurrentRow.Cells[3].Value.ToString();
-                nuevo.txtNombre.Text = dataGridPaciente.CurrentRow.Cells[4].Value.ToString();
-                DateTime fechaDateTime = DateTime.ParseExact(dataGridPaciente.CurrentRow.Cells[5].Value.ToString(), "dd/MM/yyyy", CultureInfo.InvariantCulture);
+                nuevo.txtId.Text = dataGridMedico.CurrentRow.Cells[0].Value.ToString();
+                nuevo.txtHistoriClinica.Text = dataGridMedico.CurrentRow.Cells[1].Value.ToString();
+                nuevo.txtDni.Text = dataGridMedico.CurrentRow.Cells[2].Value.ToString();
+                nuevo.txtApellido.Text = dataGridMedico.CurrentRow.Cells[3].Value.ToString();
+                nuevo.txtNombre.Text = dataGridMedico.CurrentRow.Cells[4].Value.ToString();
+                DateTime fechaDateTime = DateTime.ParseExact(dataGridMedico.CurrentRow.Cells[5].Value.ToString(), "dd/MM/yyyy", CultureInfo.InvariantCulture);
                 nuevo.dateTimePickerFechaNaci.Value = fechaDateTime;
-                nuevo.txtEdad.Text = dataGridPaciente.CurrentRow.Cells[6].Value.ToString();
-                nuevo.txtDomicilio.Text = dataGridPaciente.CurrentRow.Cells[7].Value.ToString();
-                nuevo.txtTelefono.Text = dataGridPaciente.CurrentRow.Cells[8].Value.ToString();
-                nuevo.cmbObraSocial.Text = dataGridPaciente.CurrentRow.Cells[9].Value.ToString();
-                nuevo.txtNunAfiliado.Text = dataGridPaciente.CurrentRow.Cells[10].Value.ToString();
+                nuevo.txtEdad.Text = dataGridMedico.CurrentRow.Cells[6].Value.ToString();
+                nuevo.txtDomicilio.Text = dataGridMedico.CurrentRow.Cells[7].Value.ToString();
+                nuevo.txtTelefono.Text = dataGridMedico.CurrentRow.Cells[8].Value.ToString();
+                nuevo.cmbObraSocial.Text = dataGridMedico.CurrentRow.Cells[9].Value.ToString();
+                nuevo.txtNunAfiliado.Text = dataGridMedico.CurrentRow.Cells[10].Value.ToString();
                 nuevo.ShowDialog();
             }
             else
@@ -69,11 +69,11 @@ namespace Sanatorio.Vista
             }
         }
         #endregion
-        
+
         private void mensajestoolTip()
         {
-            toolTip = new ToolTip();    
-            toolTip.SetToolTip(txtBuscar,"Ingrese un dni o apellido o parte");
+            toolTip = new ToolTip();
+            toolTip.SetToolTip(txtBuscar, "Ingrese un dni o apellido o parte");
             toolTip.SetToolTip(btnBuscar, "Buscar precione F1");
             toolTip.SetToolTip(btnNuevo, "Nuevo precione F2");
             toolTip.SetToolTip(btnEditar, "Edita precione F3");
@@ -85,10 +85,39 @@ namespace Sanatorio.Vista
             this.Close();
         }
 
+        #region "mis Metodos"
+
+        private void listado_Medico(string texto)
+        {
+
+            dataGridMedico.Rows.Clear();
+            try
+            {
+                DataTable tabla = new DataTable();
+                tabla = (new DatosMedico()).listarMedico(texto);
+
+                foreach (DataRow fila in tabla.Rows)
+                {
+                    dataGridMedico.Rows.Add(fila[0], fila[1], fila[2], fila[3], fila[4], fila[5], fila[6], fila[7], fila[8]);
+                }
+            }
+
+            catch (Exception ex)
+            {
+
+                MessageBox.Show(ex.Message + " " + ex.StackTrace);
+                // throw ex;
+            }
+          dataGridMedico.ClearSelection();
+
+        }
+    
+        #endregion
+
         private void frmPaciente_Load(object sender, EventArgs e)
         {
 
-            listado_Pacientes("%");
+            this.listado_Medico("%");
 
         }
 
@@ -114,30 +143,51 @@ namespace Sanatorio.Vista
 
         private void btnBuscar_Click(object sender, EventArgs e)
         {
-            listado_Pacientes(txtBuscar.Text.Trim());           
+            listado_Medico(txtBuscar.Text.Trim());           
         }
 
         private void btnEditar_Click(object sender, EventArgs e)
         {
-            this.actualizar_paciente();
+            //this.actualizar_Medico();
         }
 
         private void btnEliminar_Click(object sender, EventArgs e)
         {
-            MessageBox.Show(dataGridPaciente.CurrentRow.Cells[11].Value.ToString());
+            DialogResult respuesta;
+            if (dataGridMedico.SelectedRows.Count > 0)
+            {
+                respuesta = MessageBox.Show("¿Desea eliminar al Paciente DNI: " + dataGridMedico.CurrentRow.Cells[2].Value.ToString() + " " + dataGridMedico.CurrentRow.Cells[3].Value.ToString() + " " + dataGridMedico.CurrentRow.Cells[4].Value.ToString() + "?", "Sistemas Santa Rita", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+
+                if (respuesta == DialogResult.Yes)
+                {
+                    DatosPaciente datos = new DatosPaciente();
+                    datos.eliminarPaciente(int.Parse(dataGridMedico.CurrentRow.Cells[0].Value.ToString()));
+                    MessageBox.Show("Cliente Eliminado", "Sistema Santa Rita", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+            }
+            else
+            {
+                MessageBox.Show("Seleccione una Paciente a Eliminar", "Sistema Santa Rita", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+            }
+
+            //this.listado_Medicos("%");
+
         }
 
-        private void dataGridPaciente_DoubleClick(object sender, EventArgs e)
+
+        // MessageBox.Show(dataGridMedico.CurrentRow.Cells[11].Value.ToString());
+    
+
+        private void dataGridMedico_DoubleClick(object sender, EventArgs e)
         {
-           
-            this.actualizar_paciente();
+            this.listado_Medico(txtBuscar.Text.Trim());           
         }
 
-        private void frmPaciente_KeyDown(object sender, KeyEventArgs e)
+        private void frmMedico_KeyDown(object sender, KeyEventArgs e)
         {
             if (e.KeyCode == Keys.F1)
             {
-                this.btnBuscar_Click(sender,e);
+               this.btnBuscar_Click(sender,e);
             }
             if (e.KeyCode == Keys.F2)
             {

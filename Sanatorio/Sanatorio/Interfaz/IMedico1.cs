@@ -17,7 +17,7 @@ namespace Sanatorio.Interfaz
         Medico buscarMedicoId(int id);
 
         DataTable listadoMedicoApellido(string apellido);
-        DataTable listarMedico();
+        DataTable listarMedico(string texto);
         DataTable listarMedicoXespecialidad(string especialidad);
 
     }

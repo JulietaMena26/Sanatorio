@@ -122,5 +122,10 @@ namespace Sanatorio
 		{
 			Application.Exit();
 		}
-	}
+
+        private void btnMedico_Click(object sender, EventArgs e)
+        {
+            abrirFormEnPanel(new frmMedicos());
+        }
+    }
 }
