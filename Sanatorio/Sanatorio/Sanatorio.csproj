@@ -152,6 +152,18 @@
     <Compile Include="Modelo\Registro_Clinico.cs" />
     <Compile Include="Modelo\TipoHabitacion.cs" />
     <Compile Include="SqlServerTypes\Loader.cs" />
+    <Compile Include="Vista\frmNewHabitacion.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vista\frmNewHabitacion.Designer.cs">
+      <DependentUpon>frmNewHabitacion.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Vista\frmNewTipoHabitacion.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vista\frmNewTipoHabitacion.Designer.cs">
+      <DependentUpon>frmNewTipoHabitacion.cs</DependentUpon>
+    </Compile>
     <Compile Include="Vista\frmObrasocial.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -235,6 +247,12 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Vista\frmNewHabitacion.resx">
+      <DependentUpon>frmNewHabitacion.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vista\frmNewTipoHabitacion.resx">
+      <DependentUpon>frmNewTipoHabitacion.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Vista\frmObrasocial.resx">
       <DependentUpon>frmObrasocial.cs</DependentUpon>
     </EmbeddedResource>

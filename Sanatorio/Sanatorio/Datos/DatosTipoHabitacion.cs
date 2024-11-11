@@ -16,8 +16,39 @@ namespace Sanatorio.Datos
 
         public bool actualizarHabitacion(TipoHabitacion habi)
         {
-            throw new NotImplementedException();
-        }
+			MySqlConnection SQLdatos = new MySqlConnection();
+			SQLdatos = conexion.crearConexion();
+			int resultado;
+
+			try
+			{
+				MySqlCommand command = new MySqlCommand("psa_actualizar_tipohabitacion", SQLdatos);
+				command.CommandType = CommandType.StoredProcedure;
+				command.Parameters.Add("_id", MySqlDbType.Int32).Value = habi.idTipo;
+				command.Parameters.Add("_descripcion", MySqlDbType.VarChar).Value = habi.descripcion;
+
+				SQLdatos.Open();
+
+				resultado = command.ExecuteNonQuery();
+				if (resultado > 0)
+					return true;
+				else
+					return false;
+
+			}
+			catch (Exception ex)
+			{
+				//Funciones.Logs("Datos_metodolistpaciente", ex.ToString());
+				throw ex;
+			}
+			finally
+			{
+				if (SQLdatos.State == ConnectionState.Open)
+				{
+					SQLdatos.Close();
+				}
+			}
+		}
 
         public bool agregarHabitacion(TipoHabitacion habi)
         {
@@ -56,10 +87,35 @@ namespace Sanatorio.Datos
 
         public void eliminarHabitacion(int _id)
         {
-            throw new NotImplementedException();
-        }
+			MySqlConnection SQLdatos = new MySqlConnection();
+			SQLdatos = conexion.crearConexion();
+			int resultado;
 
-        public DataTable listarTipoHabitacion()
+			try
+			{
+				MySqlCommand command = new MySqlCommand("psa_eliminar_tipohabitacion", SQLdatos);
+				command.CommandType = CommandType.StoredProcedure;
+				command.Parameters.Add("_id", MySqlDbType.Int32).Value = _id;				
+				SQLdatos.Open();
+
+				resultado = command.ExecuteNonQuery();				
+
+			}
+			catch (Exception ex)
+			{
+				//Funciones.Logs("Datos_metodolistpaciente", ex.ToString());
+				throw ex;
+			}
+			finally
+			{
+				if (SQLdatos.State == ConnectionState.Open)
+				{
+					SQLdatos.Close();
+				}
+			}
+		}
+
+        public DataTable listarTipoHabitacion(string cTexto)
         {
             MySqlConnection SQLdatos = new MySqlConnection();
             SQLdatos = conexion.crearConexion();
@@ -70,7 +126,7 @@ namespace Sanatorio.Datos
             {
                 MySqlCommand command = new MySqlCommand("psa_listado_tipoHabitacion", SQLdatos);
                 command.CommandType = CommandType.StoredProcedure;
-                //command.Parameters.Add("cTexto", MySqlDbType.VarChar).Value = cTexto;
+                command.Parameters.Add("cTexto", MySqlDbType.VarChar).Value = cTexto;
                 SQLdatos.Open();
                 resultado = command.ExecuteReader();
                 table.Load(resultado);

@@ -14,14 +14,14 @@ namespace Sanatorio.Modelos
         public int piso { get; set; }
         public int capacidad { get; set; }
         public string estado { get; set; }
-        public double precio { get; set; }
+        public decimal precio { get; set; }
         public string comodidad { get; set; }
         public string observacion { get; set; }
         public bool activo { get; set; }
 
         public Habitacion() { }
 
-        public Habitacion(int idHabitacion, string numero, int id_tipo, int piso, int capacidad, string estado, double precio, string comodidad, string observacion, bool activo)
+        public Habitacion(int idHabitacion, string numero, int id_tipo, int piso, int capacidad, string estado, decimal precio, string comodidad, string observacion, bool activo)
         {
             this.idHabitacion = idHabitacion;
             this.numero = numero;
@@ -34,7 +34,7 @@ namespace Sanatorio.Modelos
             this.observacion = observacion;
             this.activo = activo;
         }
-        public Habitacion( string numero, int id_tipo, int piso, int capacidad, string estado, double precio, string comodidad, string observacion, bool activo)
+        public Habitacion( string numero, int id_tipo, int piso, int capacidad, string estado, decimal precio, string comodidad, string observacion, bool activo)
         {
             
             this.numero = numero;
@@ -47,5 +47,11 @@ namespace Sanatorio.Modelos
             this.observacion = observacion;
             this.activo = activo;
         }
-    }
+        public override string ToString()
+		{
+			return $"idhabitacion: {this.idHabitacion}\nid_tipo: {this.id_tipo}\npiso: {this.piso}\ncapacidad: {this.capacidad}\n" +
+                $"estado: {this.estado}\nprecio: {this.precio}\ncomodidad: {this.comodidad}\nobservacion: {this.observacion}\nactivo: {this.activo}";
+		}
+
+	}
 }

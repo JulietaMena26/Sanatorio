@@ -13,6 +13,6 @@ namespace Sanatorio.Interfaz
         bool agregarHabitacion(TipoHabitacion habi);
         bool actualizarHabitacion(TipoHabitacion habi);
         void eliminarHabitacion(int _id);
-        DataTable listarTipoHabitacion();
+        DataTable listarTipoHabitacion(string cTexto);
     }
 }

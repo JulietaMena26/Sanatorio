@@ -10,30 +10,31 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using Sanatorio.Datos;
 using Sanatorio.Modelos;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace Sanatorio.Vista
 {
     public partial class frmTipoHabitacion : Form
     {
-        private ToolTip toolTip;
+        //private ToolTip toolTip;
         public frmTipoHabitacion()
         {
             InitializeComponent();
-            mensajestoolTip();
+            //mensajestoolTip();
         }
 
         #region "Mis Métodos"
         private void listado_tipoHabitacion()
         {
-            dataGridPaciente.Rows.Clear(); 
+            dataGridTipoHabitacion.Rows.Clear(); 
             try
             {
                DataTable tabla = new DataTable();
-               tabla = (new DatosTipoHabitacion()).listarTipoHabitacion();
+               tabla = (new DatosTipoHabitacion()).listarTipoHabitacion("%");
 
                foreach (DataRow fila in tabla.Rows)
                 {
-                    dataGridPaciente.Rows.Add(fila[0], fila[1]);
+                    dataGridTipoHabitacion.Rows.Add(fila[0], fila[1]);
                 }
             }
             catch (Exception ex)
@@ -44,23 +45,13 @@ namespace Sanatorio.Vista
             }
         }
 
-        private void actualizar_paciente()
+        private void actualizar_tipoHabitacion()
         {
-            frmNewPaciente nuevo = new frmNewPaciente();
-            if (dataGridPaciente.SelectedRows.Count > 0)
+            frmNewTipoHabitacion nuevo = new frmNewTipoHabitacion();
+            if (dataGridTipoHabitacion.SelectedRows.Count > 0)
             {
-                nuevo.txtId.Text = dataGridPaciente.CurrentRow.Cells[0].Value.ToString();
-                nuevo.txtHistoriClinica.Text = dataGridPaciente.CurrentRow.Cells[1].Value.ToString();
-                nuevo.txtDni.Text = dataGridPaciente.CurrentRow.Cells[2].Value.ToString();
-                nuevo.txtApellido.Text = dataGridPaciente.CurrentRow.Cells[3].Value.ToString();
-                nuevo.txtNombre.Text = dataGridPaciente.CurrentRow.Cells[4].Value.ToString();
-                DateTime fechaDateTime = DateTime.ParseExact(dataGridPaciente.CurrentRow.Cells[5].Value.ToString(), "dd/MM/yyyy", CultureInfo.InvariantCulture);
-                nuevo.dateTimePickerFechaNaci.Value = fechaDateTime;
-                nuevo.txtEdad.Text = dataGridPaciente.CurrentRow.Cells[6].Value.ToString();
-                nuevo.txtDomicilio.Text = dataGridPaciente.CurrentRow.Cells[7].Value.ToString();
-                nuevo.txtTelefono.Text = dataGridPaciente.CurrentRow.Cells[8].Value.ToString();
-                nuevo.cmbObraSocial.Text = dataGridPaciente.CurrentRow.Cells[9].Value.ToString();
-                nuevo.txtNunAfiliado.Text = dataGridPaciente.CurrentRow.Cells[10].Value.ToString();
+                nuevo.txtId.Text = dataGridTipoHabitacion.CurrentRow.Cells[0].Value.ToString();
+                nuevo.txtDescripcion.Text = dataGridTipoHabitacion.CurrentRow.Cells[1].Value.ToString();
                 nuevo.ShowDialog();
             }
             else
@@ -70,15 +61,15 @@ namespace Sanatorio.Vista
         }
         #endregion
         
-        private void mensajestoolTip()
-        {
-            toolTip = new ToolTip();    
-            //toolTip.SetToolTip(txtBuscar,"Ingrese un dni o apellido o parte");
-            toolTip.SetToolTip(btnBuscar, "Buscar precione F1");
-            toolTip.SetToolTip(btnNuevo, "Nuevo precione F2");
-            toolTip.SetToolTip(btnEditar, "Edita precione F3");
-            toolTip.SetToolTip(btnEliminar, "Eliminar precione F4");
-        }
+        //private void mensajestoolTip()
+        //{
+        //    toolTip = new ToolTip();    
+        //    //toolTip.SetToolTip(txtBuscar,"Ingrese un dni o apellido o parte");
+        //    //toolTip.SetToolTip(btnBuscar, "Buscar precione F1");
+        //    toolTip.SetToolTip(btnNuevo, "Nuevo precione F2");
+        //    toolTip.SetToolTip(btnEditar, "Edita precione F3");
+        //    toolTip.SetToolTip(btnEliminar, "Eliminar precione F4");
+        //}
 
         private void lblCerrar_Click(object sender, EventArgs e)
         {
@@ -94,10 +85,10 @@ namespace Sanatorio.Vista
 
         private void btnNuevo_Click(object sender, EventArgs e)
         {
-            frmNewPaciente nuevo = new frmNewPaciente();
-            nuevo.txtHistoriClinica.Focus();
-            nuevo.ShowDialog();     
-            
+            frmNewTipoHabitacion nuevo = new frmNewTipoHabitacion();
+            nuevo.txtDescripcion.Focus();
+            nuevo.ShowDialog();
+
         }
 
         private void txtBuscar_Enter(object sender, EventArgs e)
@@ -119,18 +110,25 @@ namespace Sanatorio.Vista
 
         private void btnEditar_Click(object sender, EventArgs e)
         {
-            this.actualizar_paciente();
-        }
+            this.actualizar_tipoHabitacion();
+			
+		}
 
         private void btnEliminar_Click(object sender, EventArgs e)
         {
-            MessageBox.Show(dataGridPaciente.CurrentRow.Cells[11].Value.ToString());
+            DialogResult respuesta = MessageBox.Show("¿Desea eliminar la descripción seleccionada?","Sistema Santa Rita",MessageBoxButtons.YesNoCancel,MessageBoxIcon.Warning);
+            if (respuesta == DialogResult.Yes)
+            { 
+                DatosTipoHabitacion tipo = new DatosTipoHabitacion();
+                tipo.eliminarHabitacion(int.Parse(dataGridTipoHabitacion.CurrentRow.Cells[0].Value.ToString()));
+				listado_tipoHabitacion();
+			}            
         }
 
         private void dataGridPaciente_DoubleClick(object sender, EventArgs e)
         {
            
-            this.actualizar_paciente();
+            this.actualizar_tipoHabitacion();
         }
 
         private void frmPaciente_KeyDown(object sender, KeyEventArgs e)
@@ -156,5 +154,23 @@ namespace Sanatorio.Vista
                 this.lblCerrar_Click(sender, e);
             }
         }
-    }
+
+		private void dataGridTipoHabitacion_CellClick(object sender, DataGridViewCellEventArgs e)
+		{
+			// Verifica si se hizo clic en una fila válida
+			if (e.RowIndex >= 0)
+			{
+				// Obtén el valor de la celda que deseas mostrar (ajusta el nombre de la columna según tu caso)
+				string valorCelda = dataGridTipoHabitacion.Rows[e.RowIndex].Cells["descripcion"].Value.ToString();
+
+				// Asigna el valor al TextBox
+				txtDetalle.Text = valorCelda;
+			}
+		}
+
+		private void dataGridTipoHabitacion_MouseLeave(object sender, EventArgs e)
+		{
+            txtDetalle.Text = "";
+		}
+	}
 }

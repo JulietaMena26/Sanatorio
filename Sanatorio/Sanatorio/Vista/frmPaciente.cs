@@ -42,6 +42,7 @@ namespace Sanatorio.Vista
                 MessageBox.Show(ex.Message + " " + ex.StackTrace);
                // throw ex;
             }
+            dataGridPaciente.ClearSelection();
         }
 
         private void actualizar_paciente()
@@ -65,7 +66,7 @@ namespace Sanatorio.Vista
             }
             else
             {
-                MessageBox.Show("Seleccione una fila");
+                MessageBox.Show("Seleccione un Paciente");
             }
         }
         #endregion
@@ -124,8 +125,27 @@ namespace Sanatorio.Vista
 
         private void btnEliminar_Click(object sender, EventArgs e)
         {
-            MessageBox.Show(dataGridPaciente.CurrentRow.Cells[11].Value.ToString());
-        }
+			DialogResult respuesta;
+
+			if (dataGridPaciente.SelectedRows.Count > 0)
+			{
+				respuesta = MessageBox.Show("¿Desea eliminar al Paciente DNI: " + dataGridPaciente.CurrentRow.Cells[2].Value.ToString() + " " + dataGridPaciente.CurrentRow.Cells[3].Value.ToString() + " " + dataGridPaciente.CurrentRow.Cells[4].Value.ToString() + "?", "Sistemas Santa Rita", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+
+				if (respuesta == DialogResult.Yes)
+				{
+                    DatosPaciente datos = new DatosPaciente();
+                    datos.eliminarPaciente(int.Parse(dataGridPaciente.CurrentRow.Cells[0].Value.ToString()));
+					MessageBox.Show("Cliente Eliminado", "Sistema Santa Rita", MessageBoxButtons.OK, MessageBoxIcon.Information);					
+				}
+			}
+			else
+			{
+				MessageBox.Show("Seleccione una Paciente a Eliminar", "Sistema Santa Rita", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+			}
+
+            this.listado_Pacientes("%");
+			
+		}
 
         private void dataGridPaciente_DoubleClick(object sender, EventArgs e)
         {

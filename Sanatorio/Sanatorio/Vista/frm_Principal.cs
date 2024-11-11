@@ -112,5 +112,15 @@ namespace Sanatorio
         {
             abrirFormEnPanel(new frmTipoHabitacion());
         }
-    }
+
+		private void button2_Click(object sender, EventArgs e)
+		{
+			abrirFormEnPanel(new frmHabitaciones());
+		}
+
+		private void button5_Click(object sender, EventArgs e)
+		{
+			Application.Exit();
+		}
+	}
 }

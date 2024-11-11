@@ -17,10 +17,48 @@ namespace Sanatorio.Datos
     {
         Conexion conexion = new Conexion();
        
-        public bool actualizarPaciente(Paciente paciente)
+        public bool actualizarPaciente(Paciente _paciente) // actualiza los datos de un cliente
         {
-            throw new NotImplementedException();
-        }
+			MySqlConnection SQLdatos = new MySqlConnection();
+			SQLdatos = conexion.crearConexion();
+			int resultado;
+
+			try
+			{
+				MySqlCommand command = new MySqlCommand("psa_actualizar_paciente", SQLdatos);
+				command.CommandType = CommandType.StoredProcedure;
+				command.Parameters.Add("_id", MySqlDbType.Int32).Value = _paciente.idPaciente;
+				command.Parameters.Add("_dni", MySqlDbType.VarChar).Value = _paciente.dni;
+				command.Parameters.Add("_apellido", MySqlDbType.VarChar).Value = _paciente.apellido;
+				command.Parameters.Add("_nombre", MySqlDbType.VarChar).Value = _paciente.nombre;
+				command.Parameters.Add("_fechaNaci", MySqlDbType.Date).Value = _paciente.fechaNaci;
+				command.Parameters.Add("_domicilio", MySqlDbType.VarChar).Value = _paciente.domicilio;
+				command.Parameters.Add("_telefono", MySqlDbType.VarChar).Value = _paciente.telefono;
+				command.Parameters.Add("_historiClinica", MySqlDbType.VarChar).Value = _paciente.historiaClinica;
+				command.Parameters.Add("_id_obraSocial", MySqlDbType.Int16).Value = _paciente.id_obraSocial;
+				command.Parameters.Add("_afiliadoN", MySqlDbType.VarChar).Value = _paciente.afiliado;
+				SQLdatos.Open();
+
+				resultado = command.ExecuteNonQuery();
+				if (resultado > 0)
+					return true;
+				else
+					return false;
+
+			}
+			catch (Exception ex)
+			{
+				//Funciones.Logs("actualizar_paciente", ex.ToString());
+				throw ex;
+			}
+			finally
+			{
+				if (SQLdatos.State == ConnectionState.Open)
+				{
+					SQLdatos.Close();
+				}
+			}
+		}
 
         public bool agregarPaciente(Paciente _paciente)
         {
@@ -124,8 +162,32 @@ namespace Sanatorio.Datos
 
         public void eliminarPaciente(int id)
         {
-            throw new NotImplementedException();
-        }
+			MySqlConnection SQLdatos = new MySqlConnection();
+			SQLdatos = conexion.crearConexion();
+			int resultado;
+
+			try
+			{
+				MySqlCommand command = new MySqlCommand("psa_eliminar_paciente", SQLdatos);
+				command.CommandType = CommandType.StoredProcedure;
+				command.Parameters.Add("_id", MySqlDbType.Int32).Value = id;
+				SQLdatos.Open();
+
+				resultado = command.ExecuteNonQuery();				
+			}
+			catch (Exception ex)
+			{
+				//Funciones.Logs("actualizar_paciente", ex.ToString());
+				throw ex;
+			}
+			finally
+			{
+				if (SQLdatos.State == ConnectionState.Open)
+				{
+					SQLdatos.Close();
+				}
+			}
+		}
 
         public DataTable listadoPacienteApellido(string apellido)
         {

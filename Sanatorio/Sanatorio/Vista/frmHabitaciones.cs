@@ -23,17 +23,16 @@ namespace Sanatorio.Vista
         }
 
         #region "Mis Métodos"
-        private void listado_Pacientes(string cTexto)
+        private void cargar_habitaciones()
         {
             dataGridHabitaciones.Rows.Clear(); 
             try
             {
-               DataTable tabla = new DataTable();
-               tabla = (new DatosPaciente()).listarPaciente(cTexto);
-
-               foreach (DataRow fila in tabla.Rows)
+                DataTable tabla = new DataTable();
+                tabla = (new DatosHabitacion()).listarHabitacion();
+                foreach (DataRow fila in tabla.Rows)
                 {
-                    dataGridHabitaciones.Rows.Add(fila[0], fila[1], fila[2], fila[3], fila[4], (DateTime.Parse(fila[5].ToString())).ToString("dd/MM/yyyy"), fila[6], fila[7], fila[8], fila[9], fila[10],fila[11]);
+                    dataGridHabitaciones.Rows.Add(fila[0], fila[1], fila[2], fila[3], fila[4], fila[5], fila[6], fila[7], fila[8], fila[9]);
                 }
             }
             catch (Exception ex)
@@ -42,59 +41,58 @@ namespace Sanatorio.Vista
                 MessageBox.Show(ex.Message + " " + ex.StackTrace);
                // throw ex;
             }
+            dataGridHabitaciones.ClearSelection();
         }
 
-        private void actualizar_paciente()
+        private void actualizar_habitacion() // Método con el cual se carga la ventana para actualizar los datos
         {
-            frmNewPaciente nuevo = new frmNewPaciente();
+
+            
             if (dataGridHabitaciones.SelectedRows.Count > 0)
             {
-                nuevo.txtId.Text = dataGridHabitaciones.CurrentRow.Cells[0].Value.ToString();
-                nuevo.txtHistoriClinica.Text = dataGridHabitaciones.CurrentRow.Cells[1].Value.ToString();
-                nuevo.txtDni.Text = dataGridHabitaciones.CurrentRow.Cells[2].Value.ToString();
-                nuevo.txtApellido.Text = dataGridHabitaciones.CurrentRow.Cells[3].Value.ToString();
-                nuevo.txtNombre.Text = dataGridHabitaciones.CurrentRow.Cells[4].Value.ToString();
-                DateTime fechaDateTime = DateTime.ParseExact(dataGridHabitaciones.CurrentRow.Cells[5].Value.ToString(), "dd/MM/yyyy", CultureInfo.InvariantCulture);
-                nuevo.dateTimePickerFechaNaci.Value = fechaDateTime;
-                nuevo.txtEdad.Text = dataGridHabitaciones.CurrentRow.Cells[6].Value.ToString();
-                nuevo.txtDomicilio.Text = dataGridHabitaciones.CurrentRow.Cells[7].Value.ToString();
-                nuevo.txtTelefono.Text = dataGridHabitaciones.CurrentRow.Cells[8].Value.ToString();
-                nuevo.cmbObraSocial.Text = dataGridHabitaciones.CurrentRow.Cells[9].Value.ToString();
-                nuevo.txtNunAfiliado.Text = dataGridHabitaciones.CurrentRow.Cells[10].Value.ToString();
-                nuevo.ShowDialog();
+                Habitacion habitacion = new Habitacion();
+                habitacion.idHabitacion = int.Parse(dataGridHabitaciones.CurrentRow.Cells[0].Value.ToString());
+                habitacion.numero = dataGridHabitaciones.CurrentRow.Cells[1].Value.ToString();
+                habitacion.id_tipo = int.Parse(dataGridHabitaciones.CurrentRow.Cells[9].Value.ToString());
+                habitacion.piso = int.Parse(dataGridHabitaciones.CurrentRow.Cells[3].Value.ToString());
+                habitacion.capacidad = int.Parse(dataGridHabitaciones.CurrentRow.Cells[4].Value.ToString());
+                habitacion.estado = dataGridHabitaciones.CurrentRow.Cells[5].Value.ToString();
+                habitacion.precio = decimal.Parse(dataGridHabitaciones.CurrentRow.Cells[6].Value.ToString());
+                habitacion.comodidad = dataGridHabitaciones.CurrentRow.Cells[7].Value.ToString();
+                habitacion.observacion = dataGridHabitaciones.CurrentRow.Cells[8].Value.ToString();
+                //MessageBox.Show(habitacion.ToString());
+				frmNewHabitacion nuevo = new frmNewHabitacion(habitacion);
+				nuevo.ShowDialog();
             }
             else
             {
-                MessageBox.Show("Seleccione una fila");
+                MessageBox.Show("Seleccione una habitación","Sistema Santa Rita",MessageBoxButtons.OK,MessageBoxIcon.Exclamation);
             }
         }
-        #endregion
-        
         private void mensajestoolTip()
-        {
-            toolTip = new ToolTip();    
-            toolTip.SetToolTip(txtBuscar,"Ingrese un dni o apellido o parte");
-            toolTip.SetToolTip(btnBuscar, "Buscar precione F1");
-            toolTip.SetToolTip(btnNuevo, "Nuevo precione F2");
-            toolTip.SetToolTip(btnEditar, "Edita precione F3");
-            toolTip.SetToolTip(btnEliminar, "Eliminar precione F4");
-        }
+		{
+			toolTip = new ToolTip();
+			toolTip.SetToolTip(txtBuscar, "Ingrese un dni o apellido o parte");
+			toolTip.SetToolTip(btnBuscar, "Buscar precione F1");
+			toolTip.SetToolTip(btnNuevo, "Nuevo precione F2");
+			toolTip.SetToolTip(btnEditar, "Edita precione F3");
+			toolTip.SetToolTip(btnEliminar, "Eliminar precione F4");
+		}
+		#endregion
 
-        private void lblCerrar_Click(object sender, EventArgs e)
+		private void lblCerrar_Click(object sender, EventArgs e)
         {
             this.Close();
         }
-
-        private void frmMedicos_Load(object sender, EventArgs e)
-        {
-            
-        }
+        
 
         private void btnNuevo_Click(object sender, EventArgs e)
         {
-             
-            
-        }
+			frmNewHabitacion nuevo = new frmNewHabitacion();
+            nuevo.txtNumero.Focus();;
+			nuevo.ShowDialog();
+
+		}
 
         private void txtBuscar_Enter(object sender, EventArgs e)
         {
@@ -110,25 +108,43 @@ namespace Sanatorio.Vista
 
         private void btnBuscar_Click(object sender, EventArgs e)
         {
-            listado_Pacientes(txtBuscar.Text.Trim());           
+            //listado_Pacientes(txtBuscar.Text.Trim());
         }
 
-        private void btnEditar_Click(object sender, EventArgs e)
+		private void btnEditar_Click(object sender, EventArgs e)
         {
-            //this.actualizar_Habitacion();
+            this.actualizar_habitacion();
         }
 
         private void btnEliminar_Click(object sender, EventArgs e)
         {
-            MessageBox.Show(dataGridHabitaciones.CurrentRow.Cells[11].Value.ToString());
-        }
+            DialogResult respuesta;
+             
+			if (dataGridHabitaciones.SelectedRows.Count > 0)
+			{
+				respuesta = MessageBox.Show("¿Desea eliminar la habitación N° "+ dataGridHabitaciones.CurrentRow.Cells[1].Value.ToString() + "?", "Sistemas Santa Rita",MessageBoxButtons.YesNo,MessageBoxIcon.Warning);
 
-        private void dataGridHabitacion_DoubleClick(object sender, EventArgs e)
-        {
-           
-            this.actualizar_paciente();
-        }
+                if (respuesta == DialogResult.Yes)
+                {
+                    DatosHabitacion habitacion = new DatosHabitacion();
+                    if (habitacion.eliminar(int.Parse(dataGridHabitaciones.CurrentRow.Cells[0].Value.ToString())))
+                    {
+                        MessageBox.Show("Habitación Eliminada", "Sistema Santa Rita", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
+                    else 
+                    {
+						MessageBox.Show("No se pudo eliminar la habitación", "Sistema Santa Rita", MessageBoxButtons.OK, MessageBoxIcon.Information);
+					}                    
+                }
+			}
+			else
+			{
+				MessageBox.Show("Seleccione una habitación", "Sistema Santa Rita", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+            }
 
+            this.cargar_habitaciones();
+        }
+        
         private void frmHabitaciones_KeyDown(object sender, KeyEventArgs e)
         {
             if (e.KeyCode == Keys.F1)
@@ -162,5 +178,15 @@ namespace Sanatorio.Vista
         {
 
         }
-    }
+
+		private void frmHabitaciones_Load(object sender, EventArgs e)
+		{
+			this.cargar_habitaciones();
+		}
+
+		private void dataGridHabitaciones_DoubleClick(object sender, EventArgs e)
+		{
+			this.actualizar_habitacion();
+		}
+	}
 }

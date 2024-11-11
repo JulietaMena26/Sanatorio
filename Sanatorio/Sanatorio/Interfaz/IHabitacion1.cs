@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -15,6 +16,7 @@ namespace Sanatorio.Interfaz
         Habitacion buscarHabitacionNumero(string numero);
         Habitacion buscarHabitacionPiso(int piso);
         List<Habitacion> listadoHabitacionTipo(int idHabitacion);
-        List<Habitacion> listarHabitacion();
-    }
+        DataTable listarHabitacion();
+		DataTable listarHabitacionDisponible();
+	}
 }

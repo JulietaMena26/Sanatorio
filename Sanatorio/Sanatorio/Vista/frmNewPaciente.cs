@@ -159,37 +159,55 @@ namespace Sanatorio.Vista
                     txtDni.Focus();
                 }
                 else 
-                {
-                                        
-                        paciente = new Paciente();
-                        paciente.historiaClinica = txtHistoriClinica.Text.Trim(); 
-                        paciente.dni = txtDni.Text.Trim();
-                        paciente.apellido = txtApellido.Text.Trim();
-                        paciente.nombre = txtNombre.Text.Trim();
-                        paciente.fechaNaci = dateTimePickerFechaNaci.Value;
-                        paciente.domicilio = txtDomicilio.Text.Trim();
-                        paciente.telefono = txtTelefono.Text.Trim();
-                        paciente.id_obraSocial = int.Parse(cmbObraSocial.SelectedValue.ToString());
-                        paciente.afiliado = txtNunAfiliado.Text.Trim();
-                        DatosPaciente datos = new DatosPaciente();
+                {                                        
+                     paciente = new Paciente();
+                     paciente.historiaClinica = txtHistoriClinica.Text.Trim(); 
+                     paciente.dni = txtDni.Text.Trim();
+                     paciente.apellido = txtApellido.Text.Trim();
+                     paciente.nombre = txtNombre.Text.Trim();
+                     paciente.fechaNaci = dateTimePickerFechaNaci.Value;
+                     paciente.domicilio = txtDomicilio.Text.Trim();
+                     paciente.telefono = txtTelefono.Text.Trim();
+                     paciente.id_obraSocial = int.Parse(cmbObraSocial.SelectedValue.ToString());
+                     paciente.afiliado = txtNunAfiliado.Text.Trim();
+                     DatosPaciente datos = new DatosPaciente();
 
-                        if (datos.agregarPaciente(paciente))
-                        {
-                            MessageBox.Show("Se agrego con exito!!","Sistema Santa Rita",MessageBoxButtons.OK,MessageBoxIcon.Information);
-                        }
-                        else
-                        {
-                            MessageBox.Show("Error al agregar!!", "Sistema Santa Rita", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                        }                                          
+                     if (datos.agregarPaciente(paciente))
+                     {
+                        MessageBox.Show("Se agrego con exito!!","Sistema Santa Rita",MessageBoxButtons.OK,MessageBoxIcon.Information);
+                     }
+                     else
+                     {
+                        MessageBox.Show("Error al agregar!!", "Sistema Santa Rita", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                     }                                          
                 }                
             }
-            else
+            else // sucede si se esta por actualizar un cliente
             {
-                MessageBox.Show("Actualizar Paciente");
-            }
-            
-           
-        }
+				paciente = new Paciente();
+                paciente.idPaciente = int.Parse(txtId.Text.Trim());
+				paciente.historiaClinica = txtHistoriClinica.Text.Trim();
+				paciente.dni = txtDni.Text.Trim();
+				paciente.apellido = txtApellido.Text.Trim();
+				paciente.nombre = txtNombre.Text.Trim();
+				paciente.fechaNaci = dateTimePickerFechaNaci.Value;
+				paciente.domicilio = txtDomicilio.Text.Trim();
+				paciente.telefono = txtTelefono.Text.Trim();
+				paciente.id_obraSocial = int.Parse(cmbObraSocial.SelectedValue.ToString());
+				paciente.afiliado = txtNunAfiliado.Text.Trim();
+				DatosPaciente datos = new DatosPaciente();
+
+				if (datos.actualizarPaciente(paciente))
+				{
+					MessageBox.Show("Se actualizo con exito!!", "Sistema Santa Rita", MessageBoxButtons.OK, MessageBoxIcon.Information);
+				}
+				else
+				{
+					MessageBox.Show("Error al Actualizar!!", "Sistema Santa Rita", MessageBoxButtons.OK, MessageBoxIcon.Error);
+				}
+			}
+			this.Close();
+		}
 
         private void cmbObraSocial_Click(object sender, EventArgs e)
         {
