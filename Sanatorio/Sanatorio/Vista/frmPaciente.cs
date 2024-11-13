@@ -110,7 +110,7 @@ namespace Sanatorio.Vista
 
         private void txtBuscar_Leave(object sender, EventArgs e)
         {
-           // txtBuscar.Text = "";
+            txtBuscar.Text = "";
             txtBuscar.BackColor = Color.FromArgb(202,219,183);
         }
 

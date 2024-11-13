@@ -23,13 +23,13 @@ namespace Sanatorio.Vista
         }
 
         #region "Mis Métodos"
-        private void listado_Pacientes(string cTexto)
+        private void listado_Medico(string cTexto)
         {
             dataGridMedico.Rows.Clear();
             try
             {
                 DataTable tabla = new DataTable();
-                tabla = (new DatosPaciente()).listarPaciente(cTexto);
+                tabla = (new DatosMedico()).listarMedico(cTexto);
 
                 foreach (DataRow fila in tabla.Rows)
                 {
@@ -87,7 +87,7 @@ namespace Sanatorio.Vista
 
         #region "mis Metodos"
 
-        private void listado_Medico(string texto)
+        private void listar_Medico(string texto)
         {
 
             dataGridMedico.Rows.Clear();
@@ -106,7 +106,7 @@ namespace Sanatorio.Vista
             {
 
                 MessageBox.Show(ex.Message + " " + ex.StackTrace);
-                // throw ex;
+                throw ex;
             }
           dataGridMedico.ClearSelection();
 
@@ -137,7 +137,7 @@ namespace Sanatorio.Vista
 
         private void txtBuscar_Leave(object sender, EventArgs e)
         {
-           // txtBuscar.Text = "";
+            txtBuscar.Text = "";
             txtBuscar.BackColor = Color.FromArgb(202,219,183);
         }
 
@@ -156,26 +156,26 @@ namespace Sanatorio.Vista
             DialogResult respuesta;
             if (dataGridMedico.SelectedRows.Count > 0)
             {
-                respuesta = MessageBox.Show("¿Desea eliminar al Paciente DNI: " + dataGridMedico.CurrentRow.Cells[2].Value.ToString() + " " + dataGridMedico.CurrentRow.Cells[3].Value.ToString() + " " + dataGridMedico.CurrentRow.Cells[4].Value.ToString() + "?", "Sistemas Santa Rita", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+                respuesta = MessageBox.Show("¿Desea eliminar al Medico DNI: " + dataGridMedico.CurrentRow.Cells[2].Value.ToString() + " " + dataGridMedico.CurrentRow.Cells[3].Value.ToString() + " " + dataGridMedico.CurrentRow.Cells[4].Value.ToString() + "?", "Sistemas Santa Rita", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
 
                 if (respuesta == DialogResult.Yes)
                 {
                     DatosPaciente datos = new DatosPaciente();
                     datos.eliminarPaciente(int.Parse(dataGridMedico.CurrentRow.Cells[0].Value.ToString()));
-                    MessageBox.Show("Cliente Eliminado", "Sistema Santa Rita", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MessageBox.Show("Medico Eliminado", "Sistema Santa Rita", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
             }
             else
             {
-                MessageBox.Show("Seleccione una Paciente a Eliminar", "Sistema Santa Rita", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                MessageBox.Show("Seleccione una Medico a Eliminar", "Sistema Santa Rita", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
             }
 
-            //this.listado_Medicos("%");
+            this.listado_Medico("%");
 
         }
 
 
-        // MessageBox.Show(dataGridMedico.CurrentRow.Cells[11].Value.ToString());
+        // MessageBox.Show(dataGridMedico.CurrentRow.Cells[8].Value.toInt32());
     
 
         private void dataGridMedico_DoubleClick(object sender, EventArgs e)

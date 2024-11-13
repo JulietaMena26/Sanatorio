@@ -34,16 +34,16 @@
             this.btnNuevo = new System.Windows.Forms.Button();
             this.lblCerrar = new System.Windows.Forms.Label();
             this.dataGridDatosMedicos = new System.Windows.Forms.DataGridView();
-            this.btnBuscar = new System.Windows.Forms.Button();
-            this.txtBuscar = new System.Windows.Forms.TextBox();
-            this.btnEditar = new System.Windows.Forms.Button();
-            this.btnEliminar = new System.Windows.Forms.Button();
             this.idDato = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.fechaNac = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.horarioAtencion = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.convenio = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.observacion = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.id_medico = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.btnBuscar = new System.Windows.Forms.Button();
+            this.txtBuscar = new System.Windows.Forms.TextBox();
+            this.btnEditar = new System.Windows.Forms.Button();
+            this.btnEliminar = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridDatosMedicos)).BeginInit();
             this.SuspendLayout();
             // 
@@ -119,7 +119,7 @@
             this.id_medico});
             this.dataGridDatosMedicos.EnableHeadersVisualStyles = false;
             this.dataGridDatosMedicos.GridColor = System.Drawing.Color.White;
-            this.dataGridDatosMedicos.Location = new System.Drawing.Point(91, 68);
+            this.dataGridDatosMedicos.Location = new System.Drawing.Point(162, 84);
             this.dataGridDatosMedicos.Name = "dataGridDatosMedicos";
             this.dataGridDatosMedicos.ReadOnly = true;
             this.dataGridDatosMedicos.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
@@ -131,9 +131,51 @@
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.White;
             this.dataGridDatosMedicos.RowsDefaultCellStyle = dataGridViewCellStyle2;
             this.dataGridDatosMedicos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridDatosMedicos.Size = new System.Drawing.Size(1045, 340);
+            this.dataGridDatosMedicos.Size = new System.Drawing.Size(520, 340);
             this.dataGridDatosMedicos.TabIndex = 7;
             this.dataGridDatosMedicos.DoubleClick += new System.EventHandler(this.dataGridPaciente_DoubleClick);
+            // 
+            // idDato
+            // 
+            this.idDato.HeaderText = "IDdato";
+            this.idDato.Name = "idDato";
+            this.idDato.ReadOnly = true;
+            this.idDato.Width = 50;
+            // 
+            // fechaNac
+            // 
+            this.fechaNac.HeaderText = "Fecha Nacim.";
+            this.fechaNac.Name = "fechaNac";
+            this.fechaNac.ReadOnly = true;
+            this.fechaNac.ToolTipText = "Fecha de nacimiento";
+            this.fechaNac.Width = 80;
+            // 
+            // horarioAtencion
+            // 
+            this.horarioAtencion.HeaderText = "Horario de Atención";
+            this.horarioAtencion.Name = "horarioAtencion";
+            this.horarioAtencion.ReadOnly = true;
+            this.horarioAtencion.Width = 70;
+            // 
+            // convenio
+            // 
+            this.convenio.HeaderText = "Convenio";
+            this.convenio.Name = "convenio";
+            this.convenio.ReadOnly = true;
+            // 
+            // observacion
+            // 
+            this.observacion.HeaderText = "Observación";
+            this.observacion.Name = "observacion";
+            this.observacion.ReadOnly = true;
+            this.observacion.Width = 130;
+            // 
+            // id_medico
+            // 
+            this.id_medico.HeaderText = "ID Medico";
+            this.id_medico.Name = "id_medico";
+            this.id_medico.ReadOnly = true;
+            this.id_medico.Width = 85;
             // 
             // btnBuscar
             // 
@@ -203,48 +245,6 @@
             this.btnEliminar.Text = "Eliminar (F4)";
             this.btnEliminar.UseVisualStyleBackColor = false;
             this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click);
-            // 
-            // idDato
-            // 
-            this.idDato.HeaderText = "IDdato";
-            this.idDato.Name = "idDato";
-            this.idDato.ReadOnly = true;
-            this.idDato.Width = 50;
-            // 
-            // fechaNac
-            // 
-            this.fechaNac.HeaderText = "Fecha Nacim.";
-            this.fechaNac.Name = "fechaNac";
-            this.fechaNac.ReadOnly = true;
-            this.fechaNac.ToolTipText = "Fecha de nacimiento";
-            this.fechaNac.Width = 80;
-            // 
-            // horarioAtencion
-            // 
-            this.horarioAtencion.HeaderText = "Horario de Atención";
-            this.horarioAtencion.Name = "horarioAtencion";
-            this.horarioAtencion.ReadOnly = true;
-            this.horarioAtencion.Width = 70;
-            // 
-            // convenio
-            // 
-            this.convenio.HeaderText = "Convenio";
-            this.convenio.Name = "convenio";
-            this.convenio.ReadOnly = true;
-            // 
-            // observacion
-            // 
-            this.observacion.HeaderText = "Observación";
-            this.observacion.Name = "observacion";
-            this.observacion.ReadOnly = true;
-            this.observacion.Width = 130;
-            // 
-            // id_medico
-            // 
-            this.id_medico.HeaderText = "ID Medico";
-            this.id_medico.Name = "id_medico";
-            this.id_medico.ReadOnly = true;
-            this.id_medico.Width = 85;
             // 
             // frm_DatosMedicos
             // 

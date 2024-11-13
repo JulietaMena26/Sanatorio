@@ -1,70 +1,12 @@
 {
   "Version": 1,
   "WorkspaceRootPath": "C:\\Sanatorio\\Sanatorio\\Sanatorio\\",
-  "Documents": [
-    {
-      "AbsoluteMoniker": "D:0:0:{2D5752BA-BB7B-46F1-9175-9460AB73C69C}|Sanatorio\\Sanatorio.csproj|C:\\Sanatorio\\Sanatorio\\Sanatorio\\sanatorio\\vista\\frmmedicos.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{2D5752BA-BB7B-46F1-9175-9460AB73C69C}|Sanatorio\\Sanatorio.csproj|solutionrelative:sanatorio\\vista\\frmmedicos.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{2D5752BA-BB7B-46F1-9175-9460AB73C69C}|Sanatorio\\Sanatorio.csproj|C:\\Sanatorio\\Sanatorio\\Sanatorio\\sanatorio\\vista\\frmpaciente.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{2D5752BA-BB7B-46F1-9175-9460AB73C69C}|Sanatorio\\Sanatorio.csproj|solutionrelative:sanatorio\\vista\\frmpaciente.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{2D5752BA-BB7B-46F1-9175-9460AB73C69C}|Sanatorio\\Sanatorio.csproj|c:\\sanatorio\\sanatorio\\sanatorio\\sanatorio\\vista\\frmpaciente.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{2D5752BA-BB7B-46F1-9175-9460AB73C69C}|Sanatorio\\Sanatorio.csproj|solutionrelative:sanatorio\\vista\\frmpaciente.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-    }
-  ],
+  "Documents": [],
   "DocumentGroupContainers": [
     {
       "Orientation": 0,
       "VerticalTabListWidth": 256,
-      "DocumentGroups": [
-        {
-          "DockedWidth": 200,
-          "SelectedChildIndex": 2,
-          "Children": [
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "frmPaciente.cs [Dise\u00F1o]",
-              "DocumentMoniker": "C:\\Sanatorio\\Sanatorio\\Sanatorio\\Sanatorio\\Vista\\frmPaciente.cs",
-              "RelativeDocumentMoniker": "Sanatorio\\Vista\\frmPaciente.cs",
-              "ToolTip": "C:\\Sanatorio\\Sanatorio\\Sanatorio\\Sanatorio\\Vista\\frmPaciente.cs [Dise\u00F1o]*",
-              "RelativeToolTip": "Sanatorio\\Vista\\frmPaciente.cs [Dise\u00F1o]*",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-11T14:08:18.833Z",
-              "EditorCaption": " [Dise\u00F1o]"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "frmPaciente.cs",
-              "DocumentMoniker": "C:\\Sanatorio\\Sanatorio\\Sanatorio\\Sanatorio\\Vista\\frmPaciente.cs",
-              "RelativeDocumentMoniker": "Sanatorio\\Vista\\frmPaciente.cs",
-              "ToolTip": "C:\\Sanatorio\\Sanatorio\\Sanatorio\\Sanatorio\\Vista\\frmPaciente.cs*",
-              "RelativeToolTip": "Sanatorio\\Vista\\frmPaciente.cs*",
-              "ViewState": "AgIAABIAAAAAAAAAAAAAACUAAAAMAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-11T12:10:08.506Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "frmMedicos.cs",
-              "DocumentMoniker": "C:\\Sanatorio\\Sanatorio\\Sanatorio\\Sanatorio\\Vista\\frmMedicos.cs",
-              "RelativeDocumentMoniker": "Sanatorio\\Vista\\frmMedicos.cs",
-              "ToolTip": "C:\\Sanatorio\\Sanatorio\\Sanatorio\\Sanatorio\\Vista\\frmMedicos.cs*",
-              "RelativeToolTip": "Sanatorio\\Vista\\frmMedicos.cs*",
-              "ViewState": "AgIAAFgAAAAAAAAAAAAAAGYAAAANAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-11T12:08:58.584Z",
-              "EditorCaption": ""
-            }
-          ]
-        }
-      ]
+      "DocumentGroups": []
     }
   ]
 }
