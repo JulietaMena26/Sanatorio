@@ -22,7 +22,7 @@ namespace Sanatorio.Vista
             mensajestoolTip();
         }
 
-        public frmNewPaciente(Paciente paciente)
+		public frmNewPaciente(Paciente paciente)
         {
             this.paciente = paciente;
             InitializeComponent();

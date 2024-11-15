@@ -106,7 +106,6 @@ D:\Sanatorio\Sanatorio\Sanatorio\Sanatorio\bin\Debug\pt\Microsoft.ReportViewer.W
 D:\Sanatorio\Sanatorio\Sanatorio\Sanatorio\bin\Debug\ru\Microsoft.ReportViewer.WinForms.resources.dll
 D:\Sanatorio\Sanatorio\Sanatorio\Sanatorio\bin\Debug\zh-CHS\Microsoft.ReportViewer.WinForms.resources.dll
 D:\Sanatorio\Sanatorio\Sanatorio\Sanatorio\bin\Debug\zh-CHT\Microsoft.ReportViewer.WinForms.resources.dll
-D:\Sanatorio\Sanatorio\Sanatorio\Sanatorio\obj\Debug\Sanatorio.csproj.CopyComplete
 D:\Sanatorio\Sanatorio\Sanatorio\Sanatorio\obj\Debug\Sanatorio.Vista.frmNewPaciente.resources
 C:\Users\camim\OneDrive\Documentos\Sanatorio\Sanatorio\Sanatorio\bin\Debug\SqlServerTypes\x64\msvcr120.dll
 C:\Users\camim\OneDrive\Documentos\Sanatorio\Sanatorio\Sanatorio\bin\Debug\SqlServerTypes\x64\SqlServerSpatial140.dll
@@ -385,3 +384,6 @@ C:\Sanatorio\Sanatorio\Sanatorio\Sanatorio\obj\Debug\Sanatorio.csproj.CoreCompil
 C:\Sanatorio\Sanatorio\Sanatorio\Sanatorio\obj\Debug\Sanatorio.csproj.Up2Date
 C:\Sanatorio\Sanatorio\Sanatorio\Sanatorio\obj\Debug\Sanatorio.exe
 C:\Sanatorio\Sanatorio\Sanatorio\Sanatorio\obj\Debug\Sanatorio.pdb
+D:\Sanatorio\Sanatorio\Sanatorio\Sanatorio\obj\Debug\Sanatorio.csproj.Up2Date
+D:\Sanatorio\Sanatorio\Sanatorio\Sanatorio\obj\Debug\Sanatorio.Vista.frmNewMedico.resources
+D:\Sanatorio\Sanatorio\Sanatorio\Sanatorio\obj\Debug\Sanatorio.Vista.frmNewAsignarEsp.resources

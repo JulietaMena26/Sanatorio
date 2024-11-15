@@ -19,6 +19,7 @@ namespace Sanatorio.Interfaz
         DataTable buscarFechaEgreso(DateTime fecha);
         DataTable buscarPaciente(int id);
         DataTable buscarMedico(int id);
-        DataTable listarInternacion();
-    }
+        DataTable listarInternacion();        
+
+	}
 }

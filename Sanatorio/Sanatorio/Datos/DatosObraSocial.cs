@@ -13,7 +13,7 @@ namespace Sanatorio.Datos
     public class DatosObraSocial : IObraSocial1
     {
         Conexion conexion = new Conexion();
-        public bool actualizarObraSocial(ObraSocial obrasocial)
+        public bool actualizarObraSocial(ObraSocial _obrasocial)
         {
             MySqlConnection SQLdatos = new MySqlConnection();
             SQLdatos = conexion.crearConexion();
@@ -23,9 +23,9 @@ namespace Sanatorio.Datos
             {
                 MySqlCommand command = new MySqlCommand("psa_actualizar_obrasocial", SQLdatos);
                 command.CommandType = CommandType.StoredProcedure;
-                command.Parameters.Add("_id", MySqlDbType.Int32).Value = _obrasocial.idObrasocial;
+                command.Parameters.Add("_id", MySqlDbType.Int32).Value = _obrasocial.idSocial;
                 command.Parameters.Add("_dni", MySqlDbType.VarChar).Value = _obrasocial.codigo;
-                command.Parameters.Add("_apellido", MySqlDbType.VarChar).Value = _obrasocial.;
+                command.Parameters.Add("_apellido", MySqlDbType.VarChar).Value = _obrasocial.nombre;
 
                 SQLdatos.Open();
 
@@ -47,8 +47,9 @@ namespace Sanatorio.Datos
                     SQLdatos.Close();
                 }
             }
+        }
 
-        public bool agregarObraSocial(ObraSocial obrasocial)
+        public bool agregarObraSocial(ObraSocial _obrasocial)
         {
                 MySqlConnection SQLdatos = new MySqlConnection();
                 SQLdatos = conexion.crearConexion();
@@ -58,8 +59,8 @@ namespace Sanatorio.Datos
                 {
                     MySqlCommand command = new MySqlCommand("psa_guardar_obrasocial", SQLdatos);
                     command.CommandType = CommandType.StoredProcedure;
-                    command.Parameters.Add("_idObraSocial", MySqlDbType.VarChar).Value = _obrasocial.IdObraSocial;
-                    command.Parameters.Add("_codigo", MySqlDbType.VarChar).Value = _obrasocial.apellido;
+                    command.Parameters.Add("_idObraSocial", MySqlDbType.VarChar).Value = _obrasocial.idSocial;
+                    command.Parameters.Add("_codigo", MySqlDbType.VarChar).Value = _obrasocial.codigo;
                     command.Parameters.Add("_nombre", MySqlDbType.VarChar).Value = _obrasocial.nombre;
                     SQLdatos.Open();
 

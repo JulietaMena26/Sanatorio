@@ -43,6 +43,7 @@ namespace Sanatorio.Vista
                 MessageBox.Show(ex.Message + " " + ex.StackTrace);
                // throw ex;
             }
+            dataGridTipoHabitacion.ClearSelection();
         }
 
         private void actualizar_tipoHabitacion()

@@ -47,7 +47,7 @@ namespace Sanatorio.Vista
 
         private void actualizar_paciente()
         {
-            frmNewPaciente nuevo = new frmNewPaciente();
+			frmNewPaciente nuevo = new frmNewPaciente();
             if (dataGridobrasocial.SelectedRows.Count > 0)
             {
                 nuevo.txtId.Text = dataGridobrasocial.CurrentRow.Cells[0].Value.ToString();
@@ -64,11 +64,11 @@ namespace Sanatorio.Vista
         private void mensajestoolTip()
         {
             toolTip = new ToolTip();
-            toolTip.SetToolTip(txtBuscar, "Ingrese una obra social");
-            toolTip.SetToolTip(btnBuscar, "Buscar precione F1");
-            toolTip.SetToolTip(btnNuevo, "Nuevo precione F2");
-            toolTip.SetToolTip(btnEditar, "Edita precione F3");
-            toolTip.SetToolTip(btnEliminar, "Eliminar precione F4");
+            //toolTip.SetToolTip(txtBuscar, "Ingrese una obra social");
+            //toolTip.SetToolTip(btnBuscar, "Buscar precione F1");
+            //toolTip.SetToolTip(btnNuevo, "Nuevo precione F2");
+            //toolTip.SetToolTip(btnEditar, "Edita precione F3");
+            //toolTip.SetToolTip(btnEliminar, "Eliminar precione F4");
         }
 
         private void lblCerrar_Click(object sender, EventArgs e)
@@ -79,13 +79,13 @@ namespace Sanatorio.Vista
         private void frmObrassociales_Load(object sender, EventArgs e)
         {
 
-           listado_ObraSocial("%");
+           //listado_ObraSocial("%");
 
         }
 
         private void btnNuevo_Click(object sender, EventArgs e)
         {
-            frmNewPaciente nuevo = new frmNewPaciente();
+			frmNewPaciente nuevo = new frmNewPaciente();
             nuevo.txtHistoriClinica.Focus();
             nuevo.ShowDialog();
 
@@ -93,19 +93,19 @@ namespace Sanatorio.Vista
 
         private void txtBuscar_Enter(object sender, EventArgs e)
         {
-            txtBuscar.ForeColor = Color.White;
-            txtBuscar.BackColor = Color.FromArgb(72, 89, 53);
+            //txtBuscar.ForeColor = Color.White;
+            //txtBuscar.BackColor = Color.FromArgb(72, 89, 53);
         }
 
         private void txtBuscar_Leave(object sender, EventArgs e)
         {
-            txtBuscar.Text = "";
-            txtBuscar.BackColor = Color.FromArgb(202, 219, 183);
+            //txtBuscar.Text = "";
+            //txtBuscar.BackColor = Color.FromArgb(202, 219, 183);
         }
 
         private void btnBuscar_Click(object sender, EventArgs e)
         {
-            listado_ObrasSociales(txtBuscar.Text.Trim());
+            //listado_ObrasSociales(txtBuscar.Text.Trim());
         }
 
         private void btnEditar_Click(object sender, EventArgs e)
@@ -133,14 +133,14 @@ namespace Sanatorio.Vista
                 MessageBox.Show("Seleccione una Paciente a Eliminar", "Sistema Santa Rita", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
             }
 
-            this.listado_ObraSocial("%");
+            //this.listado_ObraSocial("%");
 
         }
 
         private void dataGridObrasocial_DoubleClick(object sender, EventArgs e)
         {
 
-            this.actualizar_obraSocial();
+            //this.actualizar_obraSocial();
         }
 
         private void frmObrassociales_KeyDown(object sender, KeyEventArgs e)

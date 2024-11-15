@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Sanatorio.Modelos
 {
-    internal class Medico
+   public class Medico
     {
         public int idMedico { get; set; }
         public string dni { get; set; }

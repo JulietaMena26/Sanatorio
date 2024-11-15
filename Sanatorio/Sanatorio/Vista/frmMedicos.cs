@@ -31,9 +31,10 @@ namespace Sanatorio.Vista
                 DataTable tabla = new DataTable();
                 tabla = (new DatosMedico()).listarMedico(cTexto);
 
+                //MessageBox.Show("Numero de filas: " + tabla.Rows.Count);
                 foreach (DataRow fila in tabla.Rows)
                 {
-                    dataGridMedico.Rows.Add(fila[0], fila[1], fila[2], fila[3], fila[4], (DateTime.Parse(fila[5].ToString())).ToString("dd/MM/yyyy"), fila[6], fila[7], fila[8], fila[9], fila[10], fila[11]);
+                    dataGridMedico.Rows.Add(fila[0], fila[1], fila[2], fila[3], fila[4],fila[5],fila[6], fila[7]);
                 }
             }
             catch (Exception ex)
@@ -42,11 +43,12 @@ namespace Sanatorio.Vista
                 MessageBox.Show(ex.Message + " " + ex.StackTrace);
                 // throw ex;
             }
+            dataGridMedico.ClearSelection();
         }
 
         private void actualizar_paciente()
         {
-            frmNewPaciente nuevo = new frmNewPaciente();
+			frmNewPaciente nuevo = new frmNewPaciente();
             if (dataGridMedico.SelectedRows.Count > 0)
             {
                 nuevo.txtId.Text = dataGridMedico.CurrentRow.Cells[0].Value.ToString();
@@ -73,7 +75,7 @@ namespace Sanatorio.Vista
         private void mensajestoolTip()
         {
             toolTip = new ToolTip();
-            toolTip.SetToolTip(txtBuscar, "Ingrese un dni o apellido o parte");
+            toolTip.SetToolTip(txtBuscar, "Ingrese apellido, nombre, especialidad o parte");
             toolTip.SetToolTip(btnBuscar, "Buscar precione F1");
             toolTip.SetToolTip(btnNuevo, "Nuevo precione F2");
             toolTip.SetToolTip(btnEditar, "Edita precione F3");
@@ -111,10 +113,36 @@ namespace Sanatorio.Vista
           dataGridMedico.ClearSelection();
 
         }
-    
-        #endregion
 
-        private void frmPaciente_Load(object sender, EventArgs e)
+		private void actualizar_Medico()
+		{
+			if (dataGridMedico.SelectedRows.Count > 0)
+			{
+                Medico medico = new Medico();
+                DatosMedico datos = new DatosMedico();
+                medico = datos.buscarMedicoId(int.Parse(dataGridMedico.CurrentRow.Cells[0].Value.ToString()));
+				frmNewMedico nuevo = new frmNewMedico(medico);
+                nuevo.ShowDialog();
+			}
+			else
+			{
+				MessageBox.Show("Seleccione un Medico");
+			}
+		}
+
+        private void asignarEspecialidad()
+        {		
+		    
+			frmNewAsignarEsp nuevo = new frmNewAsignarEsp();
+			//nuevo.txtDNI.Focus();
+			nuevo.ShowDialog();
+			
+
+		}
+
+		#endregion
+
+		private void frmPaciente_Load(object sender, EventArgs e)
         {
 
             this.listado_Medico("%");
@@ -123,8 +151,8 @@ namespace Sanatorio.Vista
 
         private void btnNuevo_Click(object sender, EventArgs e)
         {
-            frmNewPaciente nuevo = new frmNewPaciente();
-            nuevo.txtHistoriClinica.Focus();
+			frmNewMedico nuevo = new frmNewMedico();
+            nuevo.txtDNI.Focus();
             nuevo.ShowDialog();     
             
         }
@@ -137,18 +165,17 @@ namespace Sanatorio.Vista
 
         private void txtBuscar_Leave(object sender, EventArgs e)
         {
-            txtBuscar.Text = "";
-            txtBuscar.BackColor = Color.FromArgb(202,219,183);
+           txtBuscar.BackColor = Color.FromArgb(202,219,183);
         }
 
         private void btnBuscar_Click(object sender, EventArgs e)
         {
-            listado_Medico(txtBuscar.Text.Trim());           
+            this.listado_Medico(txtBuscar.Text.Trim());
         }
 
         private void btnEditar_Click(object sender, EventArgs e)
         {
-            //this.actualizar_Medico();
+            this.actualizar_Medico();
         }
 
         private void btnEliminar_Click(object sender, EventArgs e)
@@ -156,12 +183,13 @@ namespace Sanatorio.Vista
             DialogResult respuesta;
             if (dataGridMedico.SelectedRows.Count > 0)
             {
-                respuesta = MessageBox.Show("¿Desea eliminar al Medico DNI: " + dataGridMedico.CurrentRow.Cells[2].Value.ToString() + " " + dataGridMedico.CurrentRow.Cells[3].Value.ToString() + " " + dataGridMedico.CurrentRow.Cells[4].Value.ToString() + "?", "Sistemas Santa Rita", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+                respuesta = MessageBox.Show("¿Desea eliminar al Medico: " + dataGridMedico.CurrentRow.Cells[2].Value.ToString() + " " + dataGridMedico.CurrentRow.Cells[3].Value.ToString() + "?", "Sistemas Santa Rita", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
 
                 if (respuesta == DialogResult.Yes)
                 {
-                    DatosPaciente datos = new DatosPaciente();
-                    datos.eliminarPaciente(int.Parse(dataGridMedico.CurrentRow.Cells[0].Value.ToString()));
+                    DatosMedico datos = new DatosMedico();
+					//MessageBox.Show(dataGridMedico.CurrentRow.Cells[0].Value.ToString());
+					datos.eliminarMedico(int.Parse(dataGridMedico.CurrentRow.Cells[0].Value.ToString()));
                     MessageBox.Show("Medico Eliminado", "Sistema Santa Rita", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
             }
@@ -206,5 +234,48 @@ namespace Sanatorio.Vista
                 this.lblCerrar_Click(sender, e);
             }
         }
-    }
+
+		private void btnBuscar_Click_1(object sender, EventArgs e)
+		{
+            this.listado_Medico(txtBuscar.Text.Trim());
+            txtBuscar.Text = "";
+            btnNuevo.Focus();
+		}
+
+		private void dataGridMedico_DoubleClick_1(object sender, EventArgs e)
+		{
+            this.actualizar_Medico();
+		}
+
+		private void frmMedicos_KeyDown(object sender, KeyEventArgs e)
+		{
+			if (e.KeyCode == Keys.F1)
+			{
+				this.btnBuscar_Click(sender, e);
+			}
+			if (e.KeyCode == Keys.F2)
+			{
+				this.btnNuevo_Click(sender, e);
+			}
+			if (e.KeyCode == Keys.F3)
+			{
+				this.btnEditar_Click(sender, e);
+			}
+			if (e.KeyCode == Keys.F4)
+			{
+				this.btnEliminar_Click(sender, e);
+			}			
+			if (e.KeyCode == Keys.Escape)
+			{
+				this.lblCerrar_Click(sender, e);
+			}            
+		}
+
+		private void btnAsignar_Click(object sender, EventArgs e)
+		{
+
+            this.asignarEspecialidad();            
+            			
+		}
+	}
 }

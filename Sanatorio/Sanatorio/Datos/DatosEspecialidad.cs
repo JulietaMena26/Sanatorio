@@ -1,4 +1,5 @@
-﻿using Sanatorio.Interfaz;
+﻿using MySql.Data.MySqlClient;
+using Sanatorio.Interfaz;
 using Sanatorio.Modelos;
 using System;
 using System.Collections.Generic;
@@ -11,7 +12,8 @@ namespace Sanatorio.Datos
 {
     public class DatosEspecialidad : IEspecialidad1
     {
-        public bool actualizarEspecialidad(Especialidad especialidad)
+		Conexion conexion = new Conexion();
+		public bool actualizarEspecialidad(Especialidad especialidad)
         {
             throw new NotImplementedException();
         }
@@ -36,9 +38,37 @@ namespace Sanatorio.Datos
             throw new NotImplementedException();
         }
 
-        public DataTable listarEspecialidad()
+        public DataTable listarEspecialidad(string cTexto)
         {
-            throw new NotImplementedException();
-        }
+			MySqlConnection SQLdatos = new MySqlConnection();
+			SQLdatos = conexion.crearConexion();
+			MySqlDataReader resultado;
+			DataTable table = new DataTable();
+
+			try
+			{
+				MySqlCommand command = new MySqlCommand("psa_listar_especialidad", SQLdatos);
+				command.CommandType = CommandType.StoredProcedure;
+				command.Parameters.Add("cTexto", MySqlDbType.VarChar).Value = cTexto;
+				SQLdatos.Open();
+
+				resultado = command.ExecuteReader();
+				table.Load(resultado);
+				command.Dispose();
+			}
+			catch (Exception ex)
+			{
+				//Funciones.Logs("Datos_metodolistpaciente", ex.ToString());
+				throw ex;
+			}
+			finally
+			{
+				if (SQLdatos.State == ConnectionState.Open)
+				{
+					SQLdatos.Close();
+				}
+			}
+			return table;
+		}
     }
 }

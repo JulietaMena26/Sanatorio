@@ -12,13 +12,14 @@ namespace Sanatorio.Interfaz
     {
         bool agregarMedico(Medico medico);
         bool actualizarMedico(Medico medico);
-        void eliminarMedico(string dni);
+        void eliminarMedico(int id);
         Medico buscarMedicoDni(string dni);
         Medico buscarMedicoId(int id);
 
         DataTable listadoMedicoApellido(string apellido);
         DataTable listarMedico(string texto);
-        DataTable listarMedicoXespecialidad(string especialidad);
+		DataTable listarMedico(); // lista los medicos sin especialidad
+		DataTable listarMedicoXespecialidad(string especialidad);
 
     }
 }

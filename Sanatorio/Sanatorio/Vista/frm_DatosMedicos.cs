@@ -46,7 +46,7 @@ namespace Sanatorio.Vista
 
         private void actualizar_paciente()
         {
-            frmNewPaciente nuevo = new frmNewPaciente();
+			frmNewPaciente nuevo = new frmNewPaciente();
             if (dataGridDatosMedicos.SelectedRows.Count > 0)
             {
                 nuevo.txtId.Text = dataGridDatosMedicos.CurrentRow.Cells[0].Value.ToString();
@@ -99,7 +99,7 @@ namespace Sanatorio.Vista
 
         private void btnNuevo_Click(object sender, EventArgs e)
         {
-            frmNewPaciente nuevo = new frmNewPaciente();
+			frmNewPaciente nuevo = new frmNewPaciente();
             nuevo.txtHistoriClinica.Focus();
             nuevo.ShowDialog();     
             

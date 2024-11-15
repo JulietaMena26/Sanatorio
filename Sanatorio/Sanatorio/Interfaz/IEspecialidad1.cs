@@ -15,6 +15,6 @@ namespace Sanatorio.Interfaz
         void eliminarEspecialidad(string especialidad);
         Especialidad buscarEspecialidadId(int id);
         DataTable buscarEspecialidad(string Especialidad);
-        DataTable listarEspecialidad();
+        DataTable listarEspecialidad(string cTexto);
     }
 }
