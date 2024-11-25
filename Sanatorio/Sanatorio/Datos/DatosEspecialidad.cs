@@ -5,6 +5,7 @@ using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Linq;
+using System.Net;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -15,12 +16,75 @@ namespace Sanatorio.Datos
 		Conexion conexion = new Conexion();
 		public bool actualizarEspecialidad(Especialidad especialidad)
         {
-            throw new NotImplementedException();
+            MySqlConnection SQLdatos = new MySqlConnection();
+            SQLdatos = conexion.crearConexion();
+            int resultado;
+
+            try
+            {
+                MySqlCommand command = new MySqlCommand("psa_actualizar_paciente", SQLdatos);
+                command.CommandType = CommandType.StoredProcedure;
+                command.Parameters.Add("_id", MySqlDbType.Int32).Value = _especialidad._id;
+                command.Parameters.Add("_id_especialidad", MySqlDbType.VarChar).Value = _especialidad.id_especialidad;
+                command.Parameters.Add("_id_medico", MySqlDbType.VarChar).Value = _especialidad.id_medico;
+                SQLdatos.Open();
+
+                resultado = command.ExecuteNonQuery();
+                if (resultado > 0)
+                    return true;
+                else
+                    return false;
+
+            }
+            catch (Exception ex)
+            {
+                //Funciones.Logs("actualizar_paciente", ex.ToString());
+                throw ex;
+            }
+            finally
+            {
+                if (SQLdatos.State == ConnectionState.Open)
+                {
+                    SQLdatos.Close();
+                }
+            }
         }
 
         public bool agregarEspecialidad(Especialidad especialidad)
         {
-            throw new NotImplementedException();
+            MySqlConnection SQLdatos = new MySqlConnection();
+            SQLdatos = conexion.crearConexion();
+            int resultado;
+
+            try
+            {
+                MySqlCommand command = new MySqlCommand("psa_guardar_pacientes", SQLdatos);
+                command.CommandType = CommandType.StoredProcedure;
+                command.Parameters.Add("_id", MySqlDbType.VarChar).Value = _especialidad._id;
+                command.Parameters.Add("_id_especialidad", MySqlDbType.VarChar).Value = _especialidad.id_especialidad;
+                command.Parameters.Add("_id_medico", MySqlDbType.VarChar).Value = _especialidad.id_medico;
+            
+                SQLdatos.Open();
+
+                resultado = command.ExecuteNonQuery();
+                if (resultado > 0)
+                    return true;
+                else
+                    return false;
+
+            }
+            catch (Exception ex)
+            {
+                //Funciones.Logs("Datos_metodolistpaciente", ex.ToString());
+                throw ex;
+            }
+            finally
+            {
+                if (SQLdatos.State == ConnectionState.Open)
+                {
+                    SQLdatos.Close();
+                }
+            }
         }
 
         public DataTable buscarEspecialidad(string Especialidad)
@@ -30,12 +94,72 @@ namespace Sanatorio.Datos
 
         public Especialidad buscarEspecialidadId(int id)
         {
-            throw new NotImplementedException();
+            MySqlConnection SQLdatos = new MySqlConnection();
+            SQLdatos = conexion.crearConexion();
+            MySqlDataReader resultado;
+            Paciente paciente = new Paciente();
+
+            try
+            {
+                MySqlCommand command = new MySqlCommand("psa_buscar_paciente_dni", SQLdatos);
+                command.CommandType = CommandType.StoredProcedure;
+                command.Parameters.Add("_dni", MySqlDbType.VarChar).Value = dni;
+                SQLdatos.Open();
+
+                resultado = command.ExecuteReader();
+                while (resultado.Read())
+                {
+                    Especialidad._id = resultado.GetInt32(0):
+                    Especialidad.id_especialidad = resultado.GetInt32(1);
+                    Especialidad.id_medico = resultado.GetInt32(2);
+                
+                }
+
+
+                command.Dispose();
+            }
+            catch (Exception ex)
+            {
+                //Funciones.Logs("Datos_metodolistpaciente", ex.ToString());
+                throw ex;
+            }
+            finally
+            {
+                if (SQLdatos.State == ConnectionState.Open)
+                {
+                    SQLdatos.Close();
+                }
+            }
+            return paciente;
         }
 
         public void eliminarEspecialidad(string especialidad)
         {
-            throw new NotImplementedException();
+            MySqlConnection SQLdatos = new MySqlConnection();
+            SQLdatos = conexion.crearConexion();
+            int resultado;
+
+            try
+            {
+                MySqlCommand command = new MySqlCommand("psa_eliminar_especialidad", SQLdatos);
+                command.CommandType = CommandType.StoredProcedure;
+                command.Parameters.Add("_id", MySqlDbType.Int32).Value = id;
+                SQLdatos.Open();
+
+                resultado = command.ExecuteNonQuery();
+            }
+            catch (Exception ex)
+            {
+                //Funciones.Logs("actualizar_paciente", ex.ToString());
+                throw ex;
+            }
+            finally
+            {
+                if (SQLdatos.State == ConnectionState.Open)
+                {
+                    SQLdatos.Close();
+                }
+            }
         }
 
         public DataTable listarEspecialidad(string cTexto)
