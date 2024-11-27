@@ -130,7 +130,7 @@ namespace Sanatorio.Datos
             }
             catch (Exception ex)
             {
-                //Funciones.Logs("Datos_metodolistpaciente", ex.ToString());
+                Funciones.Logs("Datos_metodolistpaciente", ex.ToString());
                 throw ex;
             }
             finally

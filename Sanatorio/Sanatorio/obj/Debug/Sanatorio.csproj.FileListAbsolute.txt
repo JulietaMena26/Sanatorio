@@ -387,3 +387,5 @@ C:\Sanatorio\Sanatorio\Sanatorio\Sanatorio\obj\Debug\Sanatorio.pdb
 D:\Sanatorio\Sanatorio\Sanatorio\Sanatorio\obj\Debug\Sanatorio.csproj.Up2Date
 D:\Sanatorio\Sanatorio\Sanatorio\Sanatorio\obj\Debug\Sanatorio.Vista.frmNewMedico.resources
 D:\Sanatorio\Sanatorio\Sanatorio\Sanatorio\obj\Debug\Sanatorio.Vista.frmNewAsignarEsp.resources
+C:\Sanatorio\Sanatorio\Sanatorio\Sanatorio\obj\Debug\Sanatorio.Vista.frmNewAsignarEsp.resources
+C:\Sanatorio\Sanatorio\Sanatorio\Sanatorio\obj\Debug\Sanatorio.Vista.frmNewMedico.resources

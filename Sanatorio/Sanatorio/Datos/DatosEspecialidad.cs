@@ -1,4 +1,5 @@
 ﻿using MySql.Data.MySqlClient;
+using Org.BouncyCastle.Asn1.CryptoPro;
 using Sanatorio.Interfaz;
 using Sanatorio.Modelos;
 using System;
@@ -14,7 +15,7 @@ namespace Sanatorio.Datos
     public class DatosEspecialidad : IEspecialidad1
     {
 		Conexion conexion = new Conexion();
-		public bool actualizarEspecialidad(Especialidad especialidad)
+		public bool actualizarEspecialidad(Especialidad _especialidad)
         {
             MySqlConnection SQLdatos = new MySqlConnection();
             SQLdatos = conexion.crearConexion();
@@ -22,11 +23,11 @@ namespace Sanatorio.Datos
 
             try
             {
-                MySqlCommand command = new MySqlCommand("psa_actualizar_paciente", SQLdatos);
+                MySqlCommand command = new MySqlCommand("psa_actualizar_especialidad", SQLdatos);
                 command.CommandType = CommandType.StoredProcedure;
-                command.Parameters.Add("_id", MySqlDbType.Int32).Value = _especialidad._id;
-                command.Parameters.Add("_id_especialidad", MySqlDbType.VarChar).Value = _especialidad.id_especialidad;
-                command.Parameters.Add("_id_medico", MySqlDbType.VarChar).Value = _especialidad.id_medico;
+                command.Parameters.Add("_id", MySqlDbType.Int32).Value = _especialidad.idEspecialidad;
+                command.Parameters.Add("especialidad", MySqlDbType.VarChar).Value = _especialidad.especialidad;
+                command.Parameters.Add("_descripcion", MySqlDbType.VarChar).Value = _especialidad.descripcion;
                 SQLdatos.Open();
 
                 resultado = command.ExecuteNonQuery();
@@ -50,7 +51,7 @@ namespace Sanatorio.Datos
             }
         }
 
-        public bool agregarEspecialidad(Especialidad especialidad)
+        public bool agregarEspecialidad(Especialidad _especialidad)
         {
             MySqlConnection SQLdatos = new MySqlConnection();
             SQLdatos = conexion.crearConexion();
@@ -60,9 +61,9 @@ namespace Sanatorio.Datos
             {
                 MySqlCommand command = new MySqlCommand("psa_guardar_pacientes", SQLdatos);
                 command.CommandType = CommandType.StoredProcedure;
-                command.Parameters.Add("_id", MySqlDbType.VarChar).Value = _especialidad._id;
-                command.Parameters.Add("_id_especialidad", MySqlDbType.VarChar).Value = _especialidad.id_especialidad;
-                command.Parameters.Add("_id_medico", MySqlDbType.VarChar).Value = _especialidad.id_medico;
+               // command.Parameters.Add("_id", MySqlDbType.VarChar).Value = _especialidad._id;
+                command.Parameters.Add("_id_especialidad", MySqlDbType.VarChar).Value = _especialidad.especialidad;
+                command.Parameters.Add("_id_medico", MySqlDbType.VarChar).Value = _especialidad.descripcion;
             
                 SQLdatos.Open();
 
@@ -97,22 +98,22 @@ namespace Sanatorio.Datos
             MySqlConnection SQLdatos = new MySqlConnection();
             SQLdatos = conexion.crearConexion();
             MySqlDataReader resultado;
-            Paciente paciente = new Paciente();
+            Especialidad esp = new Especialidad();
 
             try
             {
-                MySqlCommand command = new MySqlCommand("psa_buscar_paciente_dni", SQLdatos);
+                MySqlCommand command = new MySqlCommand("psa_buscar_especiadlidad_id", SQLdatos);
                 command.CommandType = CommandType.StoredProcedure;
-                command.Parameters.Add("_dni", MySqlDbType.VarChar).Value = dni;
+                command.Parameters.Add("_id", MySqlDbType.VarChar).Value = id;
                 SQLdatos.Open();
 
                 resultado = command.ExecuteReader();
                 while (resultado.Read())
                 {
-                    Especialidad._id = resultado.GetInt32(0):
-                    Especialidad.id_especialidad = resultado.GetInt32(1);
-                    Especialidad.id_medico = resultado.GetInt32(2);
-                
+                    esp.idEspecialidad = resultado.GetInt32(0);
+                    esp.especialidad= resultado.GetString(1);
+                    esp.descripcion = resultado.GetString(2);
+
                 }
 
 
@@ -130,10 +131,10 @@ namespace Sanatorio.Datos
                     SQLdatos.Close();
                 }
             }
-            return paciente;
+            return esp;
         }
 
-        public void eliminarEspecialidad(string especialidad)
+        public void eliminarEspecialidad(int id)
         {
             MySqlConnection SQLdatos = new MySqlConnection();
             SQLdatos = conexion.crearConexion();

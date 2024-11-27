@@ -33,7 +33,7 @@ namespace Sanatorio.Vista
 
                foreach (DataRow fila in tabla.Rows)
                 {
-                    dataGridPaciente.Rows.Add(fila[0], fila[1], fila[2], fila[3], fila[4], (DateTime.Parse(fila[5].ToString())).ToString("dd/MM/yyyy"), fila[6], fila[7], fila[8], fila[9], fila[10], fila[11]);
+                    dataGridPaciente.Rows.Add(fila[0], fila[1], fila[2], fila[3], fila[4], ((DateTime.Parse(fila[5].ToString()).ToString("dd/MM/yyyy"))), fila[6], fila[7], fila[8], fila[9], fila[10], fila[11]);
                 }
             
             }

@@ -34,7 +34,7 @@ namespace Sanatorio.Datos
 				command.Parameters.Add("_fechaNaci", MySqlDbType.Date).Value = _paciente.fechaNaci;
 				command.Parameters.Add("_domicilio", MySqlDbType.VarChar).Value = _paciente.domicilio;
 				command.Parameters.Add("_telefono", MySqlDbType.VarChar).Value = _paciente.telefono;
-				command.Parameters.Add("_historiClinica", MySqlDbType.VarChar).Value = _paciente.historiaClinica;
+				command.Parameters.Add("_historiaClinica", MySqlDbType.VarChar).Value = _paciente.historiaClinica;
 				command.Parameters.Add("_id_obraSocial", MySqlDbType.Int16).Value = _paciente.id_obraSocial;
 				command.Parameters.Add("_afiliadoN", MySqlDbType.VarChar).Value = _paciente.afiliado;
 				SQLdatos.Open();
@@ -48,7 +48,7 @@ namespace Sanatorio.Datos
 			}
 			catch (Exception ex)
 			{
-				//Funciones.Logs("actualizar_paciente", ex.ToString());
+				Funciones.Logs("actualizar_paciente", ex.ToString());
 				throw ex;
 			}
 			finally
@@ -76,7 +76,7 @@ namespace Sanatorio.Datos
                 command.Parameters.Add("_fechaNaci", MySqlDbType.Date).Value= _paciente.fechaNaci;
                 command.Parameters.Add("_domicilio", MySqlDbType.VarChar).Value = _paciente.domicilio;
                 command.Parameters.Add("_telefono", MySqlDbType.VarChar).Value = _paciente.telefono;
-                command.Parameters.Add("_historiClinica", MySqlDbType.VarChar).Value = _paciente.historiaClinica;
+                command.Parameters.Add("_historiaClinica", MySqlDbType.VarChar).Value = _paciente.historiaClinica;
                 command.Parameters.Add("_id_obraSocial", MySqlDbType.Int16).Value = _paciente.id_obraSocial;
                 command.Parameters.Add("_afiliadoN", MySqlDbType.VarChar).Value = _paciente.afiliado;
                 SQLdatos.Open();
@@ -214,7 +214,7 @@ namespace Sanatorio.Datos
             }
             catch (Exception ex)
             {
-                //Funciones.Logs("Datos_metodolistpaciente", ex.ToString());
+                Funciones.Logs("Datos_metodolistpaciente", ex.ToString());
                 throw ex;
             }
             finally

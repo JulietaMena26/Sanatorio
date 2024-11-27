@@ -23,17 +23,17 @@ namespace Sanatorio.Vista
         }
 
         #region "Mis Métodos"
-        private void listado_Pacientes(string cTexto)
+        private void listado_Especialidad(string cTexto)
         {
             dataGridEspecialidad.Rows.Clear(); 
             try
             {
                DataTable tabla = new DataTable();
-               tabla = (new DatosPaciente()).listarPaciente(cTexto);
+               tabla = (new DatosEspecialidad()).listarEspecialidad(cTexto);
 
                foreach (DataRow fila in tabla.Rows)
                 {
-                    dataGridEspecialidad.Rows.Add(fila[0], fila[1], fila[2], fila[3], fila[4], (DateTime.Parse(fila[5].ToString())).ToString("dd/MM/yyyy"), fila[6], fila[7], fila[8], fila[9], fila[10],fila[11]);
+                    dataGridEspecialidad.Rows.Add(fila[0], fila[1], fila[2]);
                 }
             }
             catch (Exception ex)
@@ -44,7 +44,7 @@ namespace Sanatorio.Vista
             }
         }
 
-        private void actualizar_paciente()
+        private void actualizar_especialidad()
         {
 			frmNewPaciente nuevo = new frmNewPaciente();
             if (dataGridEspecialidad.SelectedRows.Count > 0)
@@ -127,7 +127,7 @@ namespace Sanatorio.Vista
            
             DialogResult respuesta;
 
-            if (dataGridPaciente.SelectedRows.Count > 0)
+            if (dataGridEspecialidad.SelectedRows.Count > 0)
             {
                 respuesta = MessageBox.Show("¿Desea eliminar al Paciente DNI: " + dataGridEspecialidad.CurrentRow.Cells[2].Value.ToString() + " " + dataGridEspecialidad.CurrentRow.Cells[3].Value.ToString() + " " + "?", "Sistemas Santa Rita", MessageBoxButtons.YesNo, MessageBoxIcon.Warning); 
 
@@ -143,7 +143,7 @@ namespace Sanatorio.Vista
                 MessageBox.Show("Seleccione una Paciente a Eliminar", "Sistema Santa Rita", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
             }
 
-            this.listado_Pacientes("%");
+            this.listado_Especialidad("%");
         }
 
         private void dataGridEspecialidad_DoubleClick(object sender, EventArgs e)
