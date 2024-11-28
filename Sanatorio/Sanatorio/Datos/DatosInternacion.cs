@@ -55,9 +55,35 @@ namespace Sanatorio.Datos
 			throw new NotImplementedException();
 		}
 
-		public DataTable listarInternacion()
+		public DataTable listarInternacion() // retorna todo los pacientes que esten internado
 		{
-			throw new NotImplementedException();
+			MySqlConnection SQLdatos = new MySqlConnection();
+			SQLdatos = conexion.crearConexion();
+			MySqlDataReader resultado;
+			DataTable table = new DataTable();
+
+			try
+			{
+				MySqlCommand command = new MySqlCommand("psa_listar_internados", SQLdatos);
+				command.CommandType = CommandType.StoredProcedure;
+				SQLdatos.Open();
+				resultado = command.ExecuteReader();
+				table.Load(resultado);
+				command.Dispose();
+			}
+			catch (Exception ex)
+			{
+				//Funciones.Logs("Datos_metodolistpaciente", ex.ToString());
+				throw ex;
+			}
+			finally
+			{
+				if (SQLdatos.State == ConnectionState.Open)
+				{
+					SQLdatos.Close();
+				}
+			}
+			return table;
 		}
 	}
 }

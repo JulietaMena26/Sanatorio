@@ -23,17 +23,24 @@ namespace Sanatorio.Vista
         }
 
         #region "Mis Métodos"
-        private void listado_Pacientes(string cTexto)
+        private void listado_Internaciones()
         {
-            dataGridPaciente.Rows.Clear(); 
+            dataGridInternacion.Rows.Clear(); 
             try
             {
                DataTable tabla = new DataTable();
-               tabla = (new DatosPaciente()).listarPaciente(cTexto);
+               tabla = (new DatosInternacion()).listarInternacion();
 
                foreach (DataRow fila in tabla.Rows)
                 {
-                    dataGridPaciente.Rows.Add(fila[0], fila[1], fila[2], fila[3], fila[4], (DateTime.Parse(fila[5].ToString())).ToString("dd/MM/yyyy"), fila[6], fila[7], fila[8], fila[9], fila[10],fila[11]);
+
+                    string fechaAlta = "";
+
+                    if (!string.IsNullOrEmpty(fila[8].ToString()))
+                    {
+                        fechaAlta = (DateTime.Parse(fila[8].ToString())).ToString("dd/MM/yyyy");
+					}
+                    dataGridInternacion.Rows.Add(fila[0], (DateTime.Parse(fila[1].ToString())).ToString("dd/MM/yyyy"), DateTime.Parse(fila[2].ToString()).ToString("HH:mm:ss"), fila[3], fila[4], fila[5], fila[6],fila[7], fechaAlta);
                 }
             }
             catch (Exception ex)
@@ -42,25 +49,26 @@ namespace Sanatorio.Vista
                 MessageBox.Show(ex.Message + " " + ex.StackTrace);
                // throw ex;
             }
+            dataGridInternacion.ClearSelection();
         }
 
         private void actualizar_paciente()
         {
 			frmNewPaciente nuevo = new frmNewPaciente();
-            if (dataGridPaciente.SelectedRows.Count > 0)
+            if (dataGridInternacion.SelectedRows.Count > 0)
             {
-                nuevo.txtId.Text = dataGridPaciente.CurrentRow.Cells[0].Value.ToString();
-                nuevo.txtHistoriClinica.Text = dataGridPaciente.CurrentRow.Cells[1].Value.ToString();
-                nuevo.txtDni.Text = dataGridPaciente.CurrentRow.Cells[2].Value.ToString();
-                nuevo.txtApellido.Text = dataGridPaciente.CurrentRow.Cells[3].Value.ToString();
-                nuevo.txtNombre.Text = dataGridPaciente.CurrentRow.Cells[4].Value.ToString();
-                DateTime fechaDateTime = DateTime.ParseExact(dataGridPaciente.CurrentRow.Cells[5].Value.ToString(), "dd/MM/yyyy", CultureInfo.InvariantCulture);
+                nuevo.txtId.Text = dataGridInternacion.CurrentRow.Cells[0].Value.ToString();
+                nuevo.txtHistoriClinica.Text = dataGridInternacion.CurrentRow.Cells[1].Value.ToString();
+                nuevo.txtDni.Text = dataGridInternacion.CurrentRow.Cells[2].Value.ToString();
+                nuevo.txtApellido.Text = dataGridInternacion.CurrentRow.Cells[3].Value.ToString();
+                nuevo.txtNombre.Text = dataGridInternacion.CurrentRow.Cells[4].Value.ToString();
+                DateTime fechaDateTime = DateTime.ParseExact(dataGridInternacion.CurrentRow.Cells[5].Value.ToString(), "dd/MM/yyyy", CultureInfo.InvariantCulture);
                 nuevo.dateTimePickerFechaNaci.Value = fechaDateTime;
-                nuevo.txtEdad.Text = dataGridPaciente.CurrentRow.Cells[6].Value.ToString();
-                nuevo.txtDomicilio.Text = dataGridPaciente.CurrentRow.Cells[7].Value.ToString();
-                nuevo.txtTelefono.Text = dataGridPaciente.CurrentRow.Cells[8].Value.ToString();
-                nuevo.cmbObraSocial.Text = dataGridPaciente.CurrentRow.Cells[9].Value.ToString();
-                nuevo.txtNunAfiliado.Text = dataGridPaciente.CurrentRow.Cells[10].Value.ToString();
+                nuevo.txtEdad.Text = dataGridInternacion.CurrentRow.Cells[6].Value.ToString();
+                nuevo.txtDomicilio.Text = dataGridInternacion.CurrentRow.Cells[7].Value.ToString();
+                nuevo.txtTelefono.Text = dataGridInternacion.CurrentRow.Cells[8].Value.ToString();
+                nuevo.cmbObraSocial.Text = dataGridInternacion.CurrentRow.Cells[9].Value.ToString();
+                nuevo.txtNunAfiliado.Text = dataGridInternacion.CurrentRow.Cells[10].Value.ToString();
                 nuevo.ShowDialog();
             }
             else
@@ -88,7 +96,7 @@ namespace Sanatorio.Vista
         private void frmPaciente_Load(object sender, EventArgs e)
         {
 
-            listado_Pacientes("%");
+            this.listado_Internaciones();
 
         }
 
@@ -114,7 +122,7 @@ namespace Sanatorio.Vista
 
         private void btnBuscar_Click(object sender, EventArgs e)
         {
-            listado_Pacientes(txtBuscar.Text.Trim());           
+            //listado_Pacientes(txtBuscar.Text.Trim());           
         }
 
         private void btnEditar_Click(object sender, EventArgs e)
@@ -124,7 +132,7 @@ namespace Sanatorio.Vista
 
         private void btnEliminar_Click(object sender, EventArgs e)
         {
-            MessageBox.Show(dataGridPaciente.CurrentRow.Cells[11].Value.ToString());
+            MessageBox.Show(dataGridInternacion.CurrentRow.Cells[11].Value.ToString());
         }
 
         private void dataGridPaciente_DoubleClick(object sender, EventArgs e)

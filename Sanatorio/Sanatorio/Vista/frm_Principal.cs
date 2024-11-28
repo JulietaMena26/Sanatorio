@@ -127,5 +127,10 @@ namespace Sanatorio
         {
             abrirFormEnPanel(new frmMedicos());
         }
-    }
+
+		private void btnInternacion_Click(object sender, EventArgs e)
+		{
+			abrirFormEnPanel(new frmInternaciones());
+		}
+	}
 }

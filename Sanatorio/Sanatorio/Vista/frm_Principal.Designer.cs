@@ -195,6 +195,7 @@
 			this.btnInternacion.TabIndex = 3;
 			this.btnInternacion.Text = "Internación";
 			this.btnInternacion.UseVisualStyleBackColor = true;
+			this.btnInternacion.Click += new System.EventHandler(this.btnInternacion_Click);
 			// 
 			// btnMedico
 			// 

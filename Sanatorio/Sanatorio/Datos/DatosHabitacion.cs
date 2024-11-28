@@ -177,7 +177,7 @@ namespace Sanatorio.Datos
 				}
 			}
 		}
-
+		
 		public List<Habitacion> listadoHabitacionTipo(int idHabitacion)
 		{
 			throw new NotImplementedException();
@@ -215,9 +215,92 @@ namespace Sanatorio.Datos
 			return table;
 		}
 
-		public DataTable listarHabitacionDisponible() // retona todas las habitaciones con cama disponible
+		public DataTable listarHabitacionDisponible() // retorna todas las habitaciones con cama disponible
 		{
-			throw new NotImplementedException();
+			MySqlConnection SQLdatos = new MySqlConnection();
+			SQLdatos = conexion.crearConexion();
+			MySqlDataReader resultado;
+			DataTable table = new DataTable();
+
+			try
+			{
+				MySqlCommand command = new MySqlCommand("psa_listar_habitacion_cama_disponible", SQLdatos);
+				command.CommandType = CommandType.StoredProcedure;				
+				SQLdatos.Open();
+				resultado = command.ExecuteReader();
+				table.Load(resultado);
+				command.Dispose();
+			}
+			catch (Exception ex)
+			{
+				//Funciones.Logs("Datos_metodolistpaciente", ex.ToString());
+				throw ex;
+			}
+			finally
+			{
+				if (SQLdatos.State == ConnectionState.Open)
+				{
+					SQLdatos.Close();
+				}
+			}
+			return table;
+		}
+
+		public void ocuparCama(int idHabitacion) // método que actualizar la camas disponibles, si es ocupada una cama.
+		{
+			MySqlConnection SQLdatos = new MySqlConnection();
+			SQLdatos = conexion.crearConexion();
+			int resultado;
+
+			try
+			{
+				MySqlCommand command = new MySqlCommand("psa_actualizar_cama_disponible", SQLdatos);
+				command.CommandType = CommandType.StoredProcedure;
+				command.Parameters.Add("_id", MySqlDbType.Int32).Value = idHabitacion;				
+				SQLdatos.Open();
+				resultado = command.ExecuteNonQuery();
+				command.Dispose();				
+			}
+			catch (Exception ex)
+			{
+				//Funciones.Logs("Datos_metodolistpaciente", ex.ToString());
+				throw ex;
+			}
+			finally
+			{
+				if (SQLdatos.State == ConnectionState.Open)
+				{
+					SQLdatos.Close();
+				}
+			}
+		}
+		public void liberarCama(int idHabitacion) // método que libera una cama cuando es dado de alta paciente
+		{
+			MySqlConnection SQLdatos = new MySqlConnection();
+			SQLdatos = conexion.crearConexion();
+			int resultado;
+
+			try
+			{
+				MySqlCommand command = new MySqlCommand("psa_actualizar_libera_cama", SQLdatos);
+				command.CommandType = CommandType.StoredProcedure;
+				command.Parameters.Add("_id", MySqlDbType.Int32).Value = idHabitacion;
+				SQLdatos.Open();
+				resultado = command.ExecuteNonQuery();
+				command.Dispose();
+			}
+			catch (Exception ex)
+			{
+				//Funciones.Logs("Datos_metodolistpaciente", ex.ToString());
+				throw ex;
+			}
+			finally
+			{
+				if (SQLdatos.State == ConnectionState.Open)
+				{
+					SQLdatos.Close();
+				}
+			}
 		}
 	}
 }
