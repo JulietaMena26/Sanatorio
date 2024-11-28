@@ -33,7 +33,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.btnNuevo = new System.Windows.Forms.Button();
             this.lblCerrar = new System.Windows.Forms.Label();
-            this.dataGridPaciente = new System.Windows.Forms.DataGridView();
+            this.dataGridEspecialidad = new System.Windows.Forms.DataGridView();
             this.btnBuscar = new System.Windows.Forms.Button();
             this.txtBuscar = new System.Windows.Forms.TextBox();
             this.btnEditar = new System.Windows.Forms.Button();
@@ -41,7 +41,7 @@
             this.idEpecialidades = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.especialidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.descripcion = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridPaciente)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridEspecialidad)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -88,15 +88,15 @@
             this.lblCerrar.Text = "X";
             this.lblCerrar.Click += new System.EventHandler(this.lblCerrar_Click);
             // 
-            // dataGridPaciente
+            // dataGridEspecialidad
             // 
-            this.dataGridPaciente.AllowUserToAddRows = false;
-            this.dataGridPaciente.AllowUserToDeleteRows = false;
-            this.dataGridPaciente.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.DisplayedCells;
-            this.dataGridPaciente.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(202)))), ((int)(((byte)(219)))), ((int)(((byte)(183)))));
-            this.dataGridPaciente.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.dataGridPaciente.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
-            this.dataGridPaciente.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            this.dataGridEspecialidad.AllowUserToAddRows = false;
+            this.dataGridEspecialidad.AllowUserToDeleteRows = false;
+            this.dataGridEspecialidad.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.DisplayedCells;
+            this.dataGridEspecialidad.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(202)))), ((int)(((byte)(219)))), ((int)(((byte)(183)))));
+            this.dataGridEspecialidad.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.dataGridEspecialidad.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
+            this.dataGridEspecialidad.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
             dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(72)))), ((int)(((byte)(89)))), ((int)(((byte)(53)))));
             dataGridViewCellStyle1.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -104,30 +104,30 @@
             dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(72)))), ((int)(((byte)(89)))), ((int)(((byte)(53)))));
             dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.White;
             dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridPaciente.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
-            this.dataGridPaciente.ColumnHeadersHeight = 30;
-            this.dataGridPaciente.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
-            this.dataGridPaciente.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dataGridEspecialidad.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            this.dataGridEspecialidad.ColumnHeadersHeight = 30;
+            this.dataGridEspecialidad.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
+            this.dataGridEspecialidad.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.idEpecialidades,
             this.especialidad,
             this.descripcion});
-            this.dataGridPaciente.EnableHeadersVisualStyles = false;
-            this.dataGridPaciente.GridColor = System.Drawing.Color.White;
-            this.dataGridPaciente.Location = new System.Drawing.Point(43, 68);
-            this.dataGridPaciente.Name = "dataGridPaciente";
-            this.dataGridPaciente.ReadOnly = true;
-            this.dataGridPaciente.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            this.dataGridPaciente.RowHeadersVisible = false;
+            this.dataGridEspecialidad.EnableHeadersVisualStyles = false;
+            this.dataGridEspecialidad.GridColor = System.Drawing.Color.White;
+            this.dataGridEspecialidad.Location = new System.Drawing.Point(43, 68);
+            this.dataGridEspecialidad.Name = "dataGridEspecialidad";
+            this.dataGridEspecialidad.ReadOnly = true;
+            this.dataGridEspecialidad.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            this.dataGridEspecialidad.RowHeadersVisible = false;
             dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(147)))), ((int)(((byte)(162)))), ((int)(((byte)(103)))));
             dataGridViewCellStyle2.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
             dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(72)))), ((int)(((byte)(89)))), ((int)(((byte)(53)))));
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.White;
-            this.dataGridPaciente.RowsDefaultCellStyle = dataGridViewCellStyle2;
-            this.dataGridPaciente.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridPaciente.Size = new System.Drawing.Size(1045, 376);
-            this.dataGridPaciente.TabIndex = 7;
-            this.dataGridPaciente.DoubleClick += new System.EventHandler(this.dataGridPaciente_DoubleClick);
+            this.dataGridEspecialidad.RowsDefaultCellStyle = dataGridViewCellStyle2;
+            this.dataGridEspecialidad.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dataGridEspecialidad.Size = new System.Drawing.Size(870, 376);
+            this.dataGridEspecialidad.TabIndex = 7;
+            this.dataGridEspecialidad.DoubleClick += new System.EventHandler(this.dataGridEspecialidad_DoubleClick);
             // 
             // btnBuscar
             // 
@@ -211,14 +211,12 @@
             this.especialidad.HeaderText = "Especialidad";
             this.especialidad.Name = "especialidad";
             this.especialidad.ReadOnly = true;
-            this.especialidad.Width = 80;
             // 
             // descripcion
             // 
             this.descripcion.HeaderText = "Descripción";
             this.descripcion.Name = "descripcion";
             this.descripcion.ReadOnly = true;
-            this.descripcion.Width = 70;
             // 
             // frmEspecialidades
             // 
@@ -230,7 +228,7 @@
             this.Controls.Add(this.btnEditar);
             this.Controls.Add(this.txtBuscar);
             this.Controls.Add(this.btnBuscar);
-            this.Controls.Add(this.dataGridPaciente);
+            this.Controls.Add(this.dataGridEspecialidad);
             this.Controls.Add(this.lblCerrar);
             this.Controls.Add(this.btnNuevo);
             this.Controls.Add(this.label1);
@@ -239,8 +237,8 @@
             this.Name = "frmEspecialidades";
             this.Text = "frmPaciente";
             this.Load += new System.EventHandler(this.frmPaciente_Load);
-            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.frmPaciente_KeyDown);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridPaciente)).EndInit();
+            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.frmEspecialidad_KeyDown);
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridEspecialidad)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -251,7 +249,7 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button btnNuevo;
         private System.Windows.Forms.Label lblCerrar;
-        private System.Windows.Forms.DataGridView dataGridPaciente;
+        private System.Windows.Forms.DataGridView dataGridEspecialidad;
         private System.Windows.Forms.Button btnBuscar;
         private System.Windows.Forms.TextBox txtBuscar;
         private System.Windows.Forms.Button btnEditar;

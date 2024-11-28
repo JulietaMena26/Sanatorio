@@ -16,7 +16,7 @@ namespace Sanatorio.Datos
                 DateTime.Now.Year.ToString() + "/" +
                 DateTime.Now.Month.ToString() + "/" +
                 DateTime.Now.Day.ToString() + "/";
-            if (Directory.Exists(directorio))
+            if (!Directory.Exists(directorio))
             {
                 Directory.Delete(directorio);
             }

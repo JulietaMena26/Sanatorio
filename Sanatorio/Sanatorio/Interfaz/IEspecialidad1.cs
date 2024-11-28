@@ -12,7 +12,7 @@ namespace Sanatorio.Interfaz
     {
         bool agregarEspecialidad(Especialidad especialidad);
         bool actualizarEspecialidad(Especialidad especialidad);
-        void eliminarEspecialidad(string especialidad);
+        void eliminarEspecialidad(int id);
         Especialidad buscarEspecialidadId(int id);
         DataTable buscarEspecialidad(string Especialidad);
         DataTable listarEspecialidad(string cTexto);

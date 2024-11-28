@@ -23,17 +23,17 @@ namespace Sanatorio.Vista
         }
 
         #region "Mis Métodos"
-        private void listado_Pacientes(string cTexto)
+        private void listado_Especialidad(string cTexto)
         {
-            dataGridPaciente.Rows.Clear(); 
+            dataGridEspecialidad.Rows.Clear(); 
             try
             {
                DataTable tabla = new DataTable();
-               tabla = (new DatosPaciente()).listarPaciente(cTexto);
+               tabla = (new DatosEspecialidad()).listarEspecialidad(cTexto);
 
                foreach (DataRow fila in tabla.Rows)
                 {
-                    dataGridPaciente.Rows.Add(fila[0], fila[1], fila[2], fila[3], fila[4], (DateTime.Parse(fila[5].ToString())).ToString("dd/MM/yyyy"), fila[6], fila[7], fila[8], fila[9], fila[10],fila[11]);
+                    dataGridEspecialidad.Rows.Add(fila[0], fila[1], fila[2]);
                 }
             }
             catch (Exception ex)
@@ -44,23 +44,23 @@ namespace Sanatorio.Vista
             }
         }
 
-        private void actualizar_paciente()
+        private void actualizar_especialidad()
         {
 			frmNewPaciente nuevo = new frmNewPaciente();
-            if (dataGridPaciente.SelectedRows.Count > 0)
+            if (dataGridEspecialidad.SelectedRows.Count > 0)
             {
-                nuevo.txtId.Text = dataGridPaciente.CurrentRow.Cells[0].Value.ToString();
-                nuevo.txtHistoriClinica.Text = dataGridPaciente.CurrentRow.Cells[1].Value.ToString();
-                nuevo.txtDni.Text = dataGridPaciente.CurrentRow.Cells[2].Value.ToString();
-                nuevo.txtApellido.Text = dataGridPaciente.CurrentRow.Cells[3].Value.ToString();
-                nuevo.txtNombre.Text = dataGridPaciente.CurrentRow.Cells[4].Value.ToString();
-                DateTime fechaDateTime = DateTime.ParseExact(dataGridPaciente.CurrentRow.Cells[5].Value.ToString(), "dd/MM/yyyy", CultureInfo.InvariantCulture);
+                nuevo.txtId.Text = dataGridEspecialidad.CurrentRow.Cells[0].Value.ToString();
+                nuevo.txtHistoriClinica.Text = dataGridEspecialidad.CurrentRow.Cells[1].Value.ToString();
+                nuevo.txtDni.Text = dataGridEspecialidad.CurrentRow.Cells[2].Value.ToString();
+                nuevo.txtApellido.Text = dataGridEspecialidad.CurrentRow.Cells[3].Value.ToString();
+                nuevo.txtNombre.Text = dataGridEspecialidad.CurrentRow.Cells[4].Value.ToString();
+                DateTime fechaDateTime = DateTime.ParseExact(dataGridEspecialidad.CurrentRow.Cells[5].Value.ToString(), "dd/MM/yyyy", CultureInfo.InvariantCulture);
                 nuevo.dateTimePickerFechaNaci.Value = fechaDateTime;
-                nuevo.txtEdad.Text = dataGridPaciente.CurrentRow.Cells[6].Value.ToString();
-                nuevo.txtDomicilio.Text = dataGridPaciente.CurrentRow.Cells[7].Value.ToString();
-                nuevo.txtTelefono.Text = dataGridPaciente.CurrentRow.Cells[8].Value.ToString();
-                nuevo.cmbObraSocial.Text = dataGridPaciente.CurrentRow.Cells[9].Value.ToString();
-                nuevo.txtNunAfiliado.Text = dataGridPaciente.CurrentRow.Cells[10].Value.ToString();
+                nuevo.txtEdad.Text = dataGridEspecialidad.CurrentRow.Cells[6].Value.ToString();
+                nuevo.txtDomicilio.Text = dataGridEspecialidad.CurrentRow.Cells[7].Value.ToString();
+                nuevo.txtTelefono.Text = dataGridEspecialidad.CurrentRow.Cells[8].Value.ToString();
+                nuevo.cmbObraSocial.Text = dataGridEspecialidad.CurrentRow.Cells[9].Value.ToString();
+                nuevo.txtNunAfiliado.Text = dataGridEspecialidad.CurrentRow.Cells[10].Value.ToString();
                 nuevo.ShowDialog();
             }
             else
@@ -88,7 +88,7 @@ namespace Sanatorio.Vista
         private void frmPaciente_Load(object sender, EventArgs e)
         {
 
-            listado_Pacientes("%");
+            listado_Especialidad("%");
 
         }
 
@@ -114,26 +114,45 @@ namespace Sanatorio.Vista
 
         private void btnBuscar_Click(object sender, EventArgs e)
         {
-            listado_Pacientes(txtBuscar.Text.Trim());           
+            listado_Especialidad(txtBuscar.Text.Trim());           
         }
 
         private void btnEditar_Click(object sender, EventArgs e)
         {
-            this.actualizar_paciente();
+            this.actualizar_especialidad();
         }
 
         private void btnEliminar_Click(object sender, EventArgs e)
         {
-            MessageBox.Show(dataGridPaciente.CurrentRow.Cells[11].Value.ToString());
+           
+            DialogResult respuesta;
+
+            if (dataGridEspecialidad.SelectedRows.Count > 0)
+            {
+                respuesta = MessageBox.Show("¿Desea eliminar al Paciente DNI: " + dataGridEspecialidad.CurrentRow.Cells[2].Value.ToString() + " " + dataGridEspecialidad.CurrentRow.Cells[3].Value.ToString() + " " + "?", "Sistemas Santa Rita", MessageBoxButtons.YesNo, MessageBoxIcon.Warning); 
+
+                if (respuesta == DialogResult.Yes)
+                {
+                    DatosPaciente datos = new DatosPaciente();
+                    datos.eliminarPaciente(int.Parse(dataGridEspecialidad.CurrentRow.Cells[0].Value.ToString()));
+                    MessageBox.Show("Cliente Eliminado", "Sistema Santa Rita", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+            }
+            else
+            {
+                MessageBox.Show("Seleccione una Paciente a Eliminar", "Sistema Santa Rita", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+            }
+
+            this.listado_Especialidad("%");
         }
 
-        private void dataGridPaciente_DoubleClick(object sender, EventArgs e)
+        private void dataGridEspecialidad_DoubleClick(object sender, EventArgs e)
         {
            
-            this.actualizar_paciente();
+            this.actualizar_especialidad();
         }
 
-        private void frmPaciente_KeyDown(object sender, KeyEventArgs e)
+        private void frmEspecialidad_KeyDown(object sender, KeyEventArgs e)
         {
             if (e.KeyCode == Keys.F1)
             {
