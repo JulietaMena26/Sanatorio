@@ -156,5 +156,10 @@ namespace Sanatorio.Vista
                 this.lblCerrar_Click(sender, e);
             }
         }
+
+        private void dataGridPaciente_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
     }
 }
