@@ -170,6 +170,12 @@
     <Compile Include="Vista\frmNewMedico.Designer.cs">
       <DependentUpon>frmNewMedico.cs</DependentUpon>
     </Compile>
+    <Compile Include="Vista\frmNewPacienteInternaciones.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vista\frmNewPacienteInternaciones.Designer.cs">
+      <DependentUpon>frmNewPacienteInternaciones.cs</DependentUpon>
+    </Compile>
     <Compile Include="Vista\frmNewTipoHabitacion.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -211,6 +217,12 @@
     </Compile>
     <Compile Include="Vista\frmEspecialidades.Designer.cs">
       <DependentUpon>frmEspecialidades.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Vista\frmPacientesInternacionSeleccionar.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vista\frmPacientesInternacionSeleccionar.Designer.cs">
+      <DependentUpon>frmPacientesInternacionSeleccionar.cs</DependentUpon>
     </Compile>
     <Compile Include="Vista\frm_DatosMedicos.cs">
       <SubType>Form</SubType>
@@ -268,6 +280,9 @@
     <EmbeddedResource Include="Vista\frmNewMedico.resx">
       <DependentUpon>frmNewMedico.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Vista\frmNewPacienteInternaciones.resx">
+      <DependentUpon>frmNewPacienteInternaciones.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Vista\frmNewTipoHabitacion.resx">
       <DependentUpon>frmNewTipoHabitacion.cs</DependentUpon>
     </EmbeddedResource>
@@ -288,6 +303,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Vista\frmEspecialidades.resx">
       <DependentUpon>frmEspecialidades.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vista\frmPacientesInternacionSeleccionar.resx">
+      <DependentUpon>frmPacientesInternacionSeleccionar.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Vista\frm_DatosMedicos.resx">
       <DependentUpon>frm_DatosMedicos.cs</DependentUpon>

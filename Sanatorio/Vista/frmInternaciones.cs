@@ -102,8 +102,7 @@ namespace Sanatorio.Vista
 
         private void btnNuevo_Click(object sender, EventArgs e)
         {
-			frmNewPaciente nuevo = new frmNewPaciente();
-            nuevo.txtHistoriClinica.Focus();
+            frmNewPacienteInternaciones nuevo = new frmNewPacienteInternaciones();
             nuevo.ShowDialog();     
             
         }

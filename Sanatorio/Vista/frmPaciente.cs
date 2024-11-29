@@ -177,5 +177,15 @@ namespace Sanatorio.Vista
                 this.lblCerrar_Click(sender, e);
             }
         }
+
+        private void txtBuscar_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void dataGridPaciente_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
     }
 }

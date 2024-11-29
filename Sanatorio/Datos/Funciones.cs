@@ -4,6 +4,7 @@ using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace Sanatorio.Datos
 {
@@ -26,6 +27,16 @@ namespace Sanatorio.Datos
             mi_archivo.WriteLine(descripcion);
             mi_archivo.Close();
 
+        }
+
+        public static void AbrirVentanaEmergente(object formHijo)
+        {
+            Form fh = formHijo as Form;
+            if (fh != null)
+            {
+                fh.StartPosition = FormStartPosition.CenterParent;
+                fh.ShowDialog();
+            }
         }
     }
 }
