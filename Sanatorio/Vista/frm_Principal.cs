@@ -105,7 +105,7 @@ namespace Sanatorio
 
         private void button3_Click(object sender, EventArgs e)
         {
-            abrirFormEnPanel(new frmObrasocial());
+            abrirFormEnPanel(new frmObrassociales());
         }
 
         private void button4_Click(object sender, EventArgs e)

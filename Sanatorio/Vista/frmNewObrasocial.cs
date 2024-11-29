@@ -9,10 +9,10 @@ using Sanatorio.Datos;
 
 namespace Sanatorio.Vista
 {
-    public partial class frmObrasocial : Form
+    public partial class frmNewObrasocial : Form
     {
         Conexion conexion = new Conexion();
-        public frmObrasocial()
+        public frmNewObrasocial()
         {
             InitializeComponent();
         }

@@ -182,11 +182,11 @@
     <Compile Include="Vista\frmNewTipoHabitacion.Designer.cs">
       <DependentUpon>frmNewTipoHabitacion.cs</DependentUpon>
     </Compile>
-    <Compile Include="Vista\frmObrasocial.cs">
+    <Compile Include="Vista\frmNewObrasocial.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Vista\frmObrasocial.Designer.cs">
-      <DependentUpon>frmObrasocial.cs</DependentUpon>
+    <Compile Include="Vista\frmNewObrasocial.Designer.cs">
+      <DependentUpon>frmNewObrasocial.cs</DependentUpon>
     </Compile>
     <Compile Include="Vista\frmObrassociales.cs">
       <SubType>Form</SubType>
@@ -286,8 +286,8 @@
     <EmbeddedResource Include="Vista\frmNewTipoHabitacion.resx">
       <DependentUpon>frmNewTipoHabitacion.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Vista\frmObrasocial.resx">
-      <DependentUpon>frmObrasocial.cs</DependentUpon>
+    <EmbeddedResource Include="Vista\frmNewObrasocial.resx">
+      <DependentUpon>frmNewObrasocial.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Vista\frmObrassociales.resx">
       <DependentUpon>frmObrassociales.cs</DependentUpon>
