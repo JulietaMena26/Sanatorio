@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             this.lblObraSocial = new System.Windows.Forms.Label();
-            this.txtIdSocial = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.txtCodigo = new System.Windows.Forms.TextBox();
@@ -37,6 +36,7 @@
             this.lblCerrar = new System.Windows.Forms.Label();
             this.btnGuardar = new System.Windows.Forms.Button();
             this.btnCancelar = new System.Windows.Forms.Button();
+            this.txtId = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // lblObraSocial
@@ -48,13 +48,6 @@
             this.lblObraSocial.Size = new System.Drawing.Size(55, 13);
             this.lblObraSocial.TabIndex = 13;
             this.lblObraSocial.Text = "IDSocial";
-            // 
-            // txtIdSocial
-            // 
-            this.txtIdSocial.Location = new System.Drawing.Point(104, 20);
-            this.txtIdSocial.Name = "txtIdSocial";
-            this.txtIdSocial.Size = new System.Drawing.Size(133, 20);
-            this.txtIdSocial.TabIndex = 14;
             // 
             // label1
             // 
@@ -122,6 +115,7 @@
             this.btnGuardar.TabIndex = 23;
             this.btnGuardar.Text = "Guardar";
             this.btnGuardar.UseVisualStyleBackColor = false;
+            this.btnGuardar.Click += new System.EventHandler(this.btnGuardar_Click);
             // 
             // btnCancelar
             // 
@@ -141,6 +135,16 @@
             this.btnCancelar.TabIndex = 24;
             this.btnCancelar.Text = "Cancelar";
             this.btnCancelar.UseVisualStyleBackColor = false;
+            //this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
+            // 
+            // txtId
+            // 
+            this.txtId.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtId.Location = new System.Drawing.Point(104, 22);
+            this.txtId.Name = "txtId";
+            this.txtId.ReadOnly = true;
+            this.txtId.Size = new System.Drawing.Size(133, 23);
+            this.txtId.TabIndex = 25;
             // 
             // frmNewObrasocial
             // 
@@ -148,6 +152,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(202)))), ((int)(((byte)(219)))), ((int)(((byte)(183)))));
             this.ClientSize = new System.Drawing.Size(408, 275);
+            this.Controls.Add(this.txtId);
             this.Controls.Add(this.btnCancelar);
             this.Controls.Add(this.btnGuardar);
             this.Controls.Add(this.lblCerrar);
@@ -155,7 +160,6 @@
             this.Controls.Add(this.txtCodigo);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.txtIdSocial);
             this.Controls.Add(this.lblObraSocial);
             this.ForeColor = System.Drawing.Color.Black;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
@@ -169,7 +173,6 @@
         #endregion
 
         private System.Windows.Forms.Label lblObraSocial;
-        private System.Windows.Forms.TextBox txtIdSocial;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox txtCodigo;
@@ -177,5 +180,6 @@
         private System.Windows.Forms.Label lblCerrar;
         private System.Windows.Forms.Button btnGuardar;
         private System.Windows.Forms.Button btnCancelar;
+        public System.Windows.Forms.TextBox txtId;
     }
 }

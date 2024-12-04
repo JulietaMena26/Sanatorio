@@ -6,6 +6,8 @@ using System.Data;
 using System.Windows.Forms;
 using MySql.Data.MySqlClient;
 using Sanatorio.Datos;
+using Sanatorio.Modelos;
+using Sanatorio.Interfaz;
 
 namespace Sanatorio.Vista
 {
@@ -17,7 +19,7 @@ namespace Sanatorio.Vista
             InitializeComponent();
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void btnGuardar_Click(object sender, EventArgs e)
         {
             if (!verificarControlesVacios())
             {
@@ -34,7 +36,7 @@ namespace Sanatorio.Vista
 
                 command.Parameters.AddWithValue("pCodigo", txtCodigo.Text.Trim());
                 command.Parameters.AddWithValue("pNombre", txtNombre.Text.Trim());
-                command.Parameters.AddWithValue("pActivo", 1); 
+                command.Parameters.AddWithValue("pActivo", 1);
 
                 command.ExecuteNonQuery();
                 MessageBox.Show("Obra social agregada con éxito.", "Sistema Santa Rita", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -72,5 +74,10 @@ namespace Sanatorio.Vista
         {
             this.Close();
         }
+
+        
     }
 }
+
+      
+

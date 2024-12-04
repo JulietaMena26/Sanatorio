@@ -156,5 +156,6 @@ namespace Sanatorio.Vista
                 this.lblCerrar_Click(sender, e);
             }
         }
+
     }
 }
