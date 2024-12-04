@@ -35,6 +35,7 @@ namespace Sanatorio.Vista
                     dataGridobrasocial.Rows.Add(fila[0], fila[1], fila[2]);
                 }
 
+                dataGridobrasocial.RowHeadersVisible = false;
             }
             catch (Exception ex)
             {
@@ -190,7 +191,15 @@ namespace Sanatorio.Vista
 
         }
 
-      
+        private void frmObrassociales_Load_1(object sender, EventArgs e)
+        {
+            listado_ObraSocial("%");
+        }
+
+        private void dataGridobrasocial_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
     }
     
 }

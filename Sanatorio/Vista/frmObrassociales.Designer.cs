@@ -67,7 +67,7 @@
             this.Column2,
             this.Column3});
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(202)))), ((int)(((byte)(219)))), ((int)(((byte)(183)))));
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(147)))), ((int)(((byte)(162)))), ((int)(((byte)(103)))));
             dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
             dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
@@ -83,6 +83,7 @@
             this.dataGridobrasocial.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridobrasocial.Size = new System.Drawing.Size(383, 232);
             this.dataGridobrasocial.TabIndex = 3;
+            this.dataGridobrasocial.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridobrasocial_CellContentClick);
             // 
             // Column1
             // 
@@ -215,6 +216,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "frmObrassociales";
             this.Text = "frmObrassociales";
+            this.Load += new System.EventHandler(this.frmObrassociales_Load_1);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridobrasocial)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

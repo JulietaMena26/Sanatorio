@@ -42,7 +42,7 @@ namespace Sanatorio.Vista
 
                // command.Parameters.AddWithValue("pCodigo", txtCodigo.Text.Trim());
                // command.Parameters.AddWithValue("pNombre", txtNombre.Text.Trim());
-               // command.Parameters.AddWithValue("pActivo", 1);
+                command.Parameters.AddWithValue("pActivo", 1);
 
                 command.ExecuteNonQuery();
                 MessageBox.Show("Registro clinico agregada con éxito.", "Sistema Santa Rita", MessageBoxButtons.OK, MessageBoxIcon.Information);
