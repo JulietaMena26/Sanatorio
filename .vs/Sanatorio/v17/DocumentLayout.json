@@ -3,20 +3,20 @@
   "WorkspaceRootPath": "C:\\Users\\camim\\OneDrive\\Documentos\\Sanatorio\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{2D5752BA-BB7B-46F1-9175-9460AB73C69C}|Sanatorio\\Sanatorio.csproj|c:\\users\\camim\\onedrive\\documentos\\sanatorio\\sanatorio\\vista\\frmobrassociales.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{2D5752BA-BB7B-46F1-9175-9460AB73C69C}|Sanatorio\\Sanatorio.csproj|solutionrelative:sanatorio\\vista\\frmobrassociales.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+      "AbsoluteMoniker": "D:0:0:{2D5752BA-BB7B-46F1-9175-9460AB73C69C}|Sanatorio\\Sanatorio.csproj|c:\\users\\camim\\onedrive\\documentos\\sanatorio\\sanatorio\\vista\\frmnewobrasocial.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2D5752BA-BB7B-46F1-9175-9460AB73C69C}|Sanatorio\\Sanatorio.csproj|solutionrelative:sanatorio\\vista\\frmnewobrasocial.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{2D5752BA-BB7B-46F1-9175-9460AB73C69C}|Sanatorio\\Sanatorio.csproj|c:\\users\\camim\\onedrive\\documentos\\sanatorio\\sanatorio\\vista\\frmregistros.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{2D5752BA-BB7B-46F1-9175-9460AB73C69C}|Sanatorio\\Sanatorio.csproj|solutionrelative:sanatorio\\vista\\frmregistros.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+      "AbsoluteMoniker": "D:0:0:{2D5752BA-BB7B-46F1-9175-9460AB73C69C}|Sanatorio\\Sanatorio.csproj|c:\\users\\camim\\onedrive\\documentos\\sanatorio\\sanatorio\\vista\\frmnewobrasocial.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{2D5752BA-BB7B-46F1-9175-9460AB73C69C}|Sanatorio\\Sanatorio.csproj|solutionrelative:sanatorio\\vista\\frmnewobrasocial.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{2D5752BA-BB7B-46F1-9175-9460AB73C69C}|Sanatorio\\Sanatorio.csproj|c:\\users\\camim\\onedrive\\documentos\\sanatorio\\sanatorio\\vista\\frm_principal.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{2D5752BA-BB7B-46F1-9175-9460AB73C69C}|Sanatorio\\Sanatorio.csproj|solutionrelative:sanatorio\\vista\\frm_principal.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{2D5752BA-BB7B-46F1-9175-9460AB73C69C}|Sanatorio\\Sanatorio.csproj|c:\\users\\camim\\onedrive\\documentos\\sanatorio\\sanatorio\\vista\\frmnewregsitros.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2D5752BA-BB7B-46F1-9175-9460AB73C69C}|Sanatorio\\Sanatorio.csproj|solutionrelative:sanatorio\\vista\\frmnewregsitros.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{2D5752BA-BB7B-46F1-9175-9460AB73C69C}|Sanatorio\\Sanatorio.csproj|c:\\users\\camim\\onedrive\\documentos\\sanatorio\\sanatorio\\vista\\frmobrassociales.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{2D5752BA-BB7B-46F1-9175-9460AB73C69C}|Sanatorio\\Sanatorio.csproj|solutionrelative:sanatorio\\vista\\frmobrassociales.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{2D5752BA-BB7B-46F1-9175-9460AB73C69C}|Sanatorio\\Sanatorio.csproj|c:\\users\\camim\\onedrive\\documentos\\sanatorio\\sanatorio\\vista\\frmnewregsitros.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{2D5752BA-BB7B-46F1-9175-9460AB73C69C}|Sanatorio\\Sanatorio.csproj|solutionrelative:sanatorio\\vista\\frmnewregsitros.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     }
   ],
   "DocumentGroupContainers": [
@@ -26,7 +26,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 4,
+          "SelectedChildIndex": 1,
           "Children": [
             {
               "$type": "Bookmark",
@@ -34,52 +34,52 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "frmObrassociales.cs",
-              "DocumentMoniker": "C:\\Users\\camim\\OneDrive\\Documentos\\Sanatorio\\Sanatorio\\Vista\\frmObrassociales.cs",
-              "RelativeDocumentMoniker": "Sanatorio\\Vista\\frmObrassociales.cs",
-              "ToolTip": "C:\\Users\\camim\\OneDrive\\Documentos\\Sanatorio\\Sanatorio\\Vista\\frmObrassociales.cs",
-              "RelativeToolTip": "Sanatorio\\Vista\\frmObrassociales.cs",
-              "ViewState": "AQIAADIAAAAAAAAAAAAwwCoAAAAPAAAA",
+              "DocumentIndex": 0,
+              "Title": "frmNewObrasocial.cs",
+              "DocumentMoniker": "C:\\Users\\camim\\OneDrive\\Documentos\\Sanatorio\\Sanatorio\\Vista\\frmNewObrasocial.cs",
+              "RelativeDocumentMoniker": "Sanatorio\\Vista\\frmNewObrasocial.cs",
+              "ToolTip": "C:\\Users\\camim\\OneDrive\\Documentos\\Sanatorio\\Sanatorio\\Vista\\frmNewObrasocial.cs",
+              "RelativeToolTip": "Sanatorio\\Vista\\frmNewObrasocial.cs",
+              "ViewState": "AQIAAEYAAAAAAAAAAAAAwBcAAAAMAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-04T13:10:33.618Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "frm_Principal.cs",
-              "DocumentMoniker": "C:\\Users\\camim\\OneDrive\\Documentos\\Sanatorio\\Sanatorio\\Vista\\frm_Principal.cs",
-              "RelativeDocumentMoniker": "Sanatorio\\Vista\\frm_Principal.cs",
-              "ToolTip": "C:\\Users\\camim\\OneDrive\\Documentos\\Sanatorio\\Sanatorio\\Vista\\frm_Principal.cs",
-              "RelativeToolTip": "Sanatorio\\Vista\\frm_Principal.cs",
-              "ViewState": "AQIAAF8AAAAAAAAAAAAAwAAAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-04T13:07:55.647Z",
+              "WhenOpened": "2024-12-04T17:43:00.338Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "frmRegistros.cs [Dise\u00F1o]",
-              "DocumentMoniker": "C:\\Users\\camim\\OneDrive\\Documentos\\Sanatorio\\Sanatorio\\Vista\\frmRegistros.cs",
-              "RelativeDocumentMoniker": "Sanatorio\\Vista\\frmRegistros.cs",
-              "ToolTip": "C:\\Users\\camim\\OneDrive\\Documentos\\Sanatorio\\Sanatorio\\Vista\\frmRegistros.cs [Dise\u00F1o]",
-              "RelativeToolTip": "Sanatorio\\Vista\\frmRegistros.cs [Dise\u00F1o]",
+              "Title": "frmNewObrasocial.cs [Dise\u00F1o]",
+              "DocumentMoniker": "C:\\Users\\camim\\OneDrive\\Documentos\\Sanatorio\\Sanatorio\\Vista\\frmNewObrasocial.cs",
+              "RelativeDocumentMoniker": "Sanatorio\\Vista\\frmNewObrasocial.cs",
+              "ToolTip": "C:\\Users\\camim\\OneDrive\\Documentos\\Sanatorio\\Sanatorio\\Vista\\frmNewObrasocial.cs [Dise\u00F1o]",
+              "RelativeToolTip": "Sanatorio\\Vista\\frmNewObrasocial.cs [Dise\u00F1o]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-04T13:00:41.756Z",
+              "WhenOpened": "2024-12-04T17:42:53.909Z",
               "EditorCaption": " [Dise\u00F1o]"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "frmObrassociales.cs [Dise\u00F1o]",
-              "DocumentMoniker": "C:\\Users\\camim\\OneDrive\\Documentos\\Sanatorio\\Sanatorio\\Vista\\frmObrassociales.cs",
-              "RelativeDocumentMoniker": "Sanatorio\\Vista\\frmObrassociales.cs",
-              "ToolTip": "C:\\Users\\camim\\OneDrive\\Documentos\\Sanatorio\\Sanatorio\\Vista\\frmObrassociales.cs [Dise\u00F1o]",
-              "RelativeToolTip": "Sanatorio\\Vista\\frmObrassociales.cs [Dise\u00F1o]",
+              "DocumentIndex": 2,
+              "Title": "frmNewRegsitros.cs",
+              "DocumentMoniker": "C:\\Users\\camim\\OneDrive\\Documentos\\Sanatorio\\Sanatorio\\Vista\\frmNewRegsitros.cs",
+              "RelativeDocumentMoniker": "Sanatorio\\Vista\\frmNewRegsitros.cs",
+              "ToolTip": "C:\\Users\\camim\\OneDrive\\Documentos\\Sanatorio\\Sanatorio\\Vista\\frmNewRegsitros.cs",
+              "RelativeToolTip": "Sanatorio\\Vista\\frmNewRegsitros.cs",
+              "ViewState": "AQIAAAkAAAAAAAAAAAAWwD8AAAAOAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-04T12:58:41.906Z",
+              "WhenOpened": "2024-12-04T17:37:12.323Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "frmNewRegsitros.cs [Dise\u00F1o]",
+              "DocumentMoniker": "C:\\Users\\camim\\OneDrive\\Documentos\\Sanatorio\\Sanatorio\\Vista\\frmNewRegsitros.cs",
+              "RelativeDocumentMoniker": "Sanatorio\\Vista\\frmNewRegsitros.cs",
+              "ToolTip": "C:\\Users\\camim\\OneDrive\\Documentos\\Sanatorio\\Sanatorio\\Vista\\frmNewRegsitros.cs [Dise\u00F1o]",
+              "RelativeToolTip": "Sanatorio\\Vista\\frmNewRegsitros.cs [Dise\u00F1o]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-04T17:29:46.434Z",
               "EditorCaption": " [Dise\u00F1o]"
             }
           ]

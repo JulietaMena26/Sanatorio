@@ -176,6 +176,12 @@
     <Compile Include="Vista\frmNewPacienteInternaciones.Designer.cs">
       <DependentUpon>frmNewPacienteInternaciones.cs</DependentUpon>
     </Compile>
+    <Compile Include="Vista\frmNewRegsitros.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vista\frmNewRegsitros.Designer.cs">
+      <DependentUpon>frmNewRegsitros.cs</DependentUpon>
+    </Compile>
     <Compile Include="Vista\frmNewTipoHabitacion.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -282,6 +288,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Vista\frmNewPacienteInternaciones.resx">
       <DependentUpon>frmNewPacienteInternaciones.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vista\frmNewRegsitros.resx">
+      <DependentUpon>frmNewRegsitros.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Vista\frmNewTipoHabitacion.resx">
       <DependentUpon>frmNewTipoHabitacion.cs</DependentUpon>
