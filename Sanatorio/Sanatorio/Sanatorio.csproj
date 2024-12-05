@@ -152,6 +152,12 @@
     <Compile Include="Modelo\Registro_Clinico.cs" />
     <Compile Include="Modelo\TipoHabitacion.cs" />
     <Compile Include="SqlServerTypes\Loader.cs" />
+    <Compile Include="Vista\frmBuscarPaciente.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vista\frmBuscarPaciente.Designer.cs">
+      <DependentUpon>frmBuscarPaciente.cs</DependentUpon>
+    </Compile>
     <Compile Include="Vista\frmNewAsignarEsp.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -163,6 +169,12 @@
     </Compile>
     <Compile Include="Vista\frmNewHabitacion.Designer.cs">
       <DependentUpon>frmNewHabitacion.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Vista\frmNewInternacion.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vista\frmNewInternacion.Designer.cs">
+      <DependentUpon>frmNewInternacion.cs</DependentUpon>
     </Compile>
     <Compile Include="Vista\frmNewMedico.cs">
       <SubType>Form</SubType>
@@ -259,11 +271,17 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Vista\frmBuscarPaciente.resx">
+      <DependentUpon>frmBuscarPaciente.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Vista\frmNewAsignarEsp.resx">
       <DependentUpon>frmNewAsignarEsp.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Vista\frmNewHabitacion.resx">
       <DependentUpon>frmNewHabitacion.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vista\frmNewInternacion.resx">
+      <DependentUpon>frmNewInternacion.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Vista\frmNewMedico.resx">
       <DependentUpon>frmNewMedico.cs</DependentUpon>

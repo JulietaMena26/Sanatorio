@@ -28,17 +28,13 @@
         /// </summary>
         private void InitializeComponent()
         {
-			System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-			System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
-			System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+			System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+			System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
+			System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
 			this.label1 = new System.Windows.Forms.Label();
 			this.btnNuevo = new System.Windows.Forms.Button();
 			this.lblCerrar = new System.Windows.Forms.Label();
 			this.dataGridInternacion = new System.Windows.Forms.DataGridView();
-			this.btnBuscar = new System.Windows.Forms.Button();
-			this.txtBuscar = new System.Windows.Forms.TextBox();
-			this.btnEditar = new System.Windows.Forms.Button();
-			this.btnEliminar = new System.Windows.Forms.Button();
 			this.id = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.fechaIngreso = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.horaIngreso = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -48,7 +44,15 @@
 			this.motivoInternacion = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.estado = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.fechaEgreso = new System.Windows.Forms.DataGridViewTextBoxColumn();
+			this.btnBuscar = new System.Windows.Forms.Button();
+			this.txtBuscar = new System.Windows.Forms.TextBox();
+			this.btnEditar = new System.Windows.Forms.Button();
+			this.btnEliminar = new System.Windows.Forms.Button();
+			this.groupBox1 = new System.Windows.Forms.GroupBox();
+			this.rdbInternado = new System.Windows.Forms.RadioButton();
+			this.rdbAlta = new System.Windows.Forms.RadioButton();
 			((System.ComponentModel.ISupportInitialize)(this.dataGridInternacion)).BeginInit();
+			this.groupBox1.SuspendLayout();
 			this.SuspendLayout();
 			// 
 			// label1
@@ -104,14 +108,14 @@
 			this.dataGridInternacion.BorderStyle = System.Windows.Forms.BorderStyle.None;
 			this.dataGridInternacion.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
 			this.dataGridInternacion.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-			dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-			dataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(72)))), ((int)(((byte)(89)))), ((int)(((byte)(53)))));
-			dataGridViewCellStyle4.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			dataGridViewCellStyle4.ForeColor = System.Drawing.Color.White;
-			dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(72)))), ((int)(((byte)(89)))), ((int)(((byte)(53)))));
-			dataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.White;
-			dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-			this.dataGridInternacion.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
+			dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+			dataGridViewCellStyle7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(72)))), ((int)(((byte)(89)))), ((int)(((byte)(53)))));
+			dataGridViewCellStyle7.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			dataGridViewCellStyle7.ForeColor = System.Drawing.Color.White;
+			dataGridViewCellStyle7.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(72)))), ((int)(((byte)(89)))), ((int)(((byte)(53)))));
+			dataGridViewCellStyle7.SelectionForeColor = System.Drawing.Color.White;
+			dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+			this.dataGridInternacion.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle7;
 			this.dataGridInternacion.ColumnHeadersHeight = 35;
 			this.dataGridInternacion.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
 			this.dataGridInternacion.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -131,16 +135,81 @@
 			this.dataGridInternacion.ReadOnly = true;
 			this.dataGridInternacion.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
 			this.dataGridInternacion.RowHeadersVisible = false;
-			dataGridViewCellStyle6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(147)))), ((int)(((byte)(162)))), ((int)(((byte)(103)))));
-			dataGridViewCellStyle6.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			dataGridViewCellStyle6.ForeColor = System.Drawing.Color.White;
-			dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(72)))), ((int)(((byte)(89)))), ((int)(((byte)(53)))));
-			dataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.White;
-			this.dataGridInternacion.RowsDefaultCellStyle = dataGridViewCellStyle6;
+			dataGridViewCellStyle9.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(147)))), ((int)(((byte)(162)))), ((int)(((byte)(103)))));
+			dataGridViewCellStyle9.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			dataGridViewCellStyle9.ForeColor = System.Drawing.Color.White;
+			dataGridViewCellStyle9.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(72)))), ((int)(((byte)(89)))), ((int)(((byte)(53)))));
+			dataGridViewCellStyle9.SelectionForeColor = System.Drawing.Color.White;
+			this.dataGridInternacion.RowsDefaultCellStyle = dataGridViewCellStyle9;
 			this.dataGridInternacion.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
 			this.dataGridInternacion.Size = new System.Drawing.Size(1009, 376);
 			this.dataGridInternacion.TabIndex = 7;
 			this.dataGridInternacion.DoubleClick += new System.EventHandler(this.dataGridPaciente_DoubleClick);
+			// 
+			// id
+			// 
+			this.id.FillWeight = 120F;
+			this.id.HeaderText = "ID";
+			this.id.Name = "id";
+			this.id.ReadOnly = true;
+			this.id.Width = 40;
+			// 
+			// fechaIngreso
+			// 
+			this.fechaIngreso.HeaderText = "Fecha de Ingreso";
+			this.fechaIngreso.Name = "fechaIngreso";
+			this.fechaIngreso.ReadOnly = true;
+			this.fechaIngreso.ToolTipText = "Fecha de Ingreso";
+			this.fechaIngreso.Width = 80;
+			// 
+			// horaIngreso
+			// 
+			this.horaIngreso.HeaderText = "Hora de Ingreso";
+			this.horaIngreso.Name = "horaIngreso";
+			this.horaIngreso.ReadOnly = true;
+			this.horaIngreso.Width = 70;
+			// 
+			// id_medico
+			// 
+			this.id_medico.HeaderText = "Medico";
+			this.id_medico.Name = "id_medico";
+			this.id_medico.ReadOnly = true;
+			this.id_medico.Width = 150;
+			// 
+			// id_paciente
+			// 
+			this.id_paciente.HeaderText = "Paciente";
+			this.id_paciente.Name = "id_paciente";
+			this.id_paciente.ReadOnly = true;
+			this.id_paciente.Width = 150;
+			// 
+			// id_habitacion
+			// 
+			this.id_habitacion.HeaderText = "Habitación";
+			this.id_habitacion.Name = "id_habitacion";
+			this.id_habitacion.ReadOnly = true;
+			this.id_habitacion.Width = 85;
+			// 
+			// motivoInternacion
+			// 
+			dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+			this.motivoInternacion.DefaultCellStyle = dataGridViewCellStyle8;
+			this.motivoInternacion.HeaderText = "Motivo de Internación";
+			this.motivoInternacion.Name = "motivoInternacion";
+			this.motivoInternacion.ReadOnly = true;
+			this.motivoInternacion.Width = 150;
+			// 
+			// estado
+			// 
+			this.estado.HeaderText = "Estado";
+			this.estado.Name = "estado";
+			this.estado.ReadOnly = true;
+			// 
+			// fechaEgreso
+			// 
+			this.fechaEgreso.HeaderText = "Fecha de Egreso";
+			this.fechaEgreso.Name = "fechaEgreso";
+			this.fechaEgreso.ReadOnly = true;
 			// 
 			// btnBuscar
 			// 
@@ -211,70 +280,43 @@
 			this.btnEliminar.UseVisualStyleBackColor = false;
 			this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click);
 			// 
-			// id
+			// groupBox1
 			// 
-			this.id.FillWeight = 120F;
-			this.id.HeaderText = "ID";
-			this.id.Name = "id";
-			this.id.ReadOnly = true;
-			this.id.Width = 40;
+			this.groupBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(72)))), ((int)(((byte)(89)))), ((int)(((byte)(53)))));
+			this.groupBox1.Controls.Add(this.rdbAlta);
+			this.groupBox1.Controls.Add(this.rdbInternado);
+			this.groupBox1.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.groupBox1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(246)))), ((int)(((byte)(248)))), ((int)(((byte)(244)))));
+			this.groupBox1.Location = new System.Drawing.Point(717, 517);
+			this.groupBox1.Name = "groupBox1";
+			this.groupBox1.Size = new System.Drawing.Size(292, 43);
+			this.groupBox1.TabIndex = 9;
+			this.groupBox1.TabStop = false;
+			this.groupBox1.Text = "Estado";
 			// 
-			// fechaIngreso
+			// rdbInternado
 			// 
-			this.fechaIngreso.HeaderText = "Fecha de Ingreso";
-			this.fechaIngreso.Name = "fechaIngreso";
-			this.fechaIngreso.ReadOnly = true;
-			this.fechaIngreso.ToolTipText = "Fecha de Ingreso";
-			this.fechaIngreso.Width = 80;
+			this.rdbInternado.AutoSize = true;
+			this.rdbInternado.Checked = true;
+			this.rdbInternado.Location = new System.Drawing.Point(16, 16);
+			this.rdbInternado.Name = "rdbInternado";
+			this.rdbInternado.Size = new System.Drawing.Size(88, 20);
+			this.rdbInternado.TabIndex = 0;
+			this.rdbInternado.TabStop = true;
+			this.rdbInternado.Text = "Internado";
+			this.rdbInternado.UseVisualStyleBackColor = true;
+			this.rdbInternado.CheckedChanged += new System.EventHandler(this.rdbInternado_CheckedChanged);
 			// 
-			// horaIngreso
+			// rdbAlta
 			// 
-			this.horaIngreso.HeaderText = "Hora de Ingreso";
-			this.horaIngreso.Name = "horaIngreso";
-			this.horaIngreso.ReadOnly = true;
-			this.horaIngreso.Width = 70;
-			// 
-			// id_medico
-			// 
-			this.id_medico.HeaderText = "Medico";
-			this.id_medico.Name = "id_medico";
-			this.id_medico.ReadOnly = true;
-			this.id_medico.Width = 150;
-			// 
-			// id_paciente
-			// 
-			this.id_paciente.HeaderText = "Paciente";
-			this.id_paciente.Name = "id_paciente";
-			this.id_paciente.ReadOnly = true;
-			this.id_paciente.Width = 150;
-			// 
-			// id_habitacion
-			// 
-			this.id_habitacion.HeaderText = "Habitación";
-			this.id_habitacion.Name = "id_habitacion";
-			this.id_habitacion.ReadOnly = true;
-			this.id_habitacion.Width = 85;
-			// 
-			// motivoInternacion
-			// 
-			dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-			this.motivoInternacion.DefaultCellStyle = dataGridViewCellStyle5;
-			this.motivoInternacion.HeaderText = "Motivo de Internación";
-			this.motivoInternacion.Name = "motivoInternacion";
-			this.motivoInternacion.ReadOnly = true;
-			this.motivoInternacion.Width = 150;
-			// 
-			// estado
-			// 
-			this.estado.HeaderText = "Estado";
-			this.estado.Name = "estado";
-			this.estado.ReadOnly = true;
-			// 
-			// fechaEgreso
-			// 
-			this.fechaEgreso.HeaderText = "Fecha de Egreso";
-			this.fechaEgreso.Name = "fechaEgreso";
-			this.fechaEgreso.ReadOnly = true;
+			this.rdbAlta.AutoSize = true;
+			this.rdbAlta.Location = new System.Drawing.Point(169, 17);
+			this.rdbAlta.Name = "rdbAlta";
+			this.rdbAlta.Size = new System.Drawing.Size(52, 20);
+			this.rdbAlta.TabIndex = 1;
+			this.rdbAlta.Text = "Alta";
+			this.rdbAlta.UseVisualStyleBackColor = true;
+			this.rdbAlta.CheckedChanged += new System.EventHandler(this.rdbAlta_CheckedChanged);
 			// 
 			// frmInternaciones
 			// 
@@ -282,6 +324,7 @@
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(202)))), ((int)(((byte)(219)))), ((int)(((byte)(183)))));
 			this.ClientSize = new System.Drawing.Size(1050, 600);
+			this.Controls.Add(this.groupBox1);
 			this.Controls.Add(this.btnEliminar);
 			this.Controls.Add(this.btnEditar);
 			this.Controls.Add(this.txtBuscar);
@@ -297,6 +340,8 @@
 			this.Load += new System.EventHandler(this.frmPaciente_Load);
 			this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.frmPaciente_KeyDown);
 			((System.ComponentModel.ISupportInitialize)(this.dataGridInternacion)).EndInit();
+			this.groupBox1.ResumeLayout(false);
+			this.groupBox1.PerformLayout();
 			this.ResumeLayout(false);
 			this.PerformLayout();
 
@@ -321,5 +366,8 @@
 		private System.Windows.Forms.DataGridViewTextBoxColumn motivoInternacion;
 		private System.Windows.Forms.DataGridViewTextBoxColumn estado;
 		private System.Windows.Forms.DataGridViewTextBoxColumn fechaEgreso;
+		private System.Windows.Forms.GroupBox groupBox1;
+		private System.Windows.Forms.RadioButton rdbAlta;
+		private System.Windows.Forms.RadioButton rdbInternado;
 	}
 }

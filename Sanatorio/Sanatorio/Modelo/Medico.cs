@@ -19,7 +19,8 @@ namespace Sanatorio.Modelos
         public string email { get; set; }
         public bool activo { get; set; }
 
-        public Medico() { }
+		
+		public Medico() { }
 
         public Medico(int idMedico, string dni, string cuil, string apellido, string nombre, string celular, string telefono, string direccion, string email, bool activo)
         {
@@ -47,6 +48,6 @@ namespace Sanatorio.Modelos
             this.direccion = direccion;
             this.email = email;
             this.activo = activo;
-        }
-    }
+        }        	
+	}
 }

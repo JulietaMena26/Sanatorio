@@ -393,3 +393,5 @@ C:\Users\camim\OneDrive\Documentos\Sanatorio\Sanatorio\Sanatorio\obj\Debug\Sanat
 C:\Users\camim\OneDrive\Documentos\Sanatorio\Sanatorio\Sanatorio\obj\Debug\Sanatorio.Vista.frmNewHabitacion.resources
 C:\Users\camim\OneDrive\Documentos\Sanatorio\Sanatorio\Sanatorio\obj\Debug\Sanatorio.Vista.frmNewMedico.resources
 C:\Users\camim\OneDrive\Documentos\Sanatorio\Sanatorio\Sanatorio\obj\Debug\Sanatorio.Vista.frmNewTipoHabitacion.resources
+D:\Sanatorio\Sanatorio\Sanatorio\Sanatorio\obj\Debug\Sanatorio.Vista.frmNewInternacion.resources
+D:\Sanatorio\Sanatorio\Sanatorio\Sanatorio\obj\Debug\Sanatorio.Vista.frmBuscarPaciente.resources

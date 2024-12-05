@@ -3,16 +3,16 @@
   "WorkspaceRootPath": "D:\\Sanatorio\\Sanatorio\\Sanatorio\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{2D5752BA-BB7B-46F1-9175-9460AB73C69C}|Sanatorio\\Sanatorio.csproj|d:\\sanatorio\\sanatorio\\sanatorio\\sanatorio\\vista\\frminternaciones.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{2D5752BA-BB7B-46F1-9175-9460AB73C69C}|Sanatorio\\Sanatorio.csproj|solutionrelative:sanatorio\\vista\\frminternaciones.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+      "AbsoluteMoniker": "D:0:0:{2D5752BA-BB7B-46F1-9175-9460AB73C69C}|Sanatorio\\Sanatorio.csproj|d:\\sanatorio\\sanatorio\\sanatorio\\sanatorio\\vista\\frmnewinternacion.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{2D5752BA-BB7B-46F1-9175-9460AB73C69C}|Sanatorio\\Sanatorio.csproj|solutionrelative:sanatorio\\vista\\frmnewinternacion.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{2D5752BA-BB7B-46F1-9175-9460AB73C69C}|Sanatorio\\Sanatorio.csproj|d:\\sanatorio\\sanatorio\\sanatorio\\sanatorio\\vista\\frminternaciones.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{2D5752BA-BB7B-46F1-9175-9460AB73C69C}|Sanatorio\\Sanatorio.csproj|solutionrelative:sanatorio\\vista\\frminternaciones.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{2D5752BA-BB7B-46F1-9175-9460AB73C69C}|Sanatorio\\Sanatorio.csproj|d:\\sanatorio\\sanatorio\\sanatorio\\sanatorio\\vista\\frmnewinternacion.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2D5752BA-BB7B-46F1-9175-9460AB73C69C}|Sanatorio\\Sanatorio.csproj|solutionrelative:sanatorio\\vista\\frmnewinternacion.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{2D5752BA-BB7B-46F1-9175-9460AB73C69C}|Sanatorio\\Sanatorio.csproj|d:\\sanatorio\\sanatorio\\sanatorio\\sanatorio\\datos\\datosinternacion.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{2D5752BA-BB7B-46F1-9175-9460AB73C69C}|Sanatorio\\Sanatorio.csproj|solutionrelative:sanatorio\\datos\\datosinternacion.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{2D5752BA-BB7B-46F1-9175-9460AB73C69C}|Sanatorio\\Sanatorio.csproj|d:\\sanatorio\\sanatorio\\sanatorio\\sanatorio\\datos\\datoshabitacion.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2D5752BA-BB7B-46F1-9175-9460AB73C69C}|Sanatorio\\Sanatorio.csproj|solutionrelative:sanatorio\\datos\\datoshabitacion.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -22,7 +22,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 2,
+          "SelectedChildIndex": 3,
           "Children": [
             {
               "$type": "Bookmark",
@@ -30,41 +30,41 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "frmInternaciones.cs",
-              "DocumentMoniker": "D:\\Sanatorio\\Sanatorio\\Sanatorio\\Sanatorio\\Vista\\frmInternaciones.cs",
-              "RelativeDocumentMoniker": "Sanatorio\\Vista\\frmInternaciones.cs",
-              "ToolTip": "D:\\Sanatorio\\Sanatorio\\Sanatorio\\Sanatorio\\Vista\\frmInternaciones.cs",
-              "RelativeToolTip": "Sanatorio\\Vista\\frmInternaciones.cs",
-              "ViewState": "AgIAADQAAAAAAAAAAAAlwD8AAABgAAAAAAAAAA==",
+              "DocumentIndex": 2,
+              "Title": "DatosHabitacion.cs",
+              "DocumentMoniker": "D:\\Sanatorio\\Sanatorio\\Sanatorio\\Sanatorio\\Datos\\DatosHabitacion.cs",
+              "RelativeDocumentMoniker": "Sanatorio\\Datos\\DatosHabitacion.cs",
+              "ToolTip": "D:\\Sanatorio\\Sanatorio\\Sanatorio\\Sanatorio\\Datos\\DatosHabitacion.cs",
+              "RelativeToolTip": "Sanatorio\\Datos\\DatosHabitacion.cs",
+              "ViewState": "AgIAANYAAAAAAAAAAAAAAOwAAAAEAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-23T02:00:18.436Z",
+              "WhenOpened": "2024-12-05T06:31:28.459Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "frmNewInternacion.cs",
+              "DocumentMoniker": "D:\\Sanatorio\\Sanatorio\\Sanatorio\\Sanatorio\\Vista\\frmNewInternacion.cs",
+              "RelativeDocumentMoniker": "Sanatorio\\Vista\\frmNewInternacion.cs",
+              "ToolTip": "D:\\Sanatorio\\Sanatorio\\Sanatorio\\Sanatorio\\Vista\\frmNewInternacion.cs",
+              "RelativeToolTip": "Sanatorio\\Vista\\frmNewInternacion.cs",
+              "ViewState": "AgIAAHEAAAAAAAAAAAAAwIkAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-05T04:14:43.089Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "frmInternaciones.cs [Dise\u00F1o]",
-              "DocumentMoniker": "D:\\Sanatorio\\Sanatorio\\Sanatorio\\Sanatorio\\Vista\\frmInternaciones.cs",
-              "RelativeDocumentMoniker": "Sanatorio\\Vista\\frmInternaciones.cs",
-              "ToolTip": "D:\\Sanatorio\\Sanatorio\\Sanatorio\\Sanatorio\\Vista\\frmInternaciones.cs [Dise\u00F1o]",
-              "RelativeToolTip": "Sanatorio\\Vista\\frmInternaciones.cs [Dise\u00F1o]",
+              "Title": "frmNewInternacion.cs [Dise\u00F1o]",
+              "DocumentMoniker": "D:\\Sanatorio\\Sanatorio\\Sanatorio\\Sanatorio\\Vista\\frmNewInternacion.cs",
+              "RelativeDocumentMoniker": "Sanatorio\\Vista\\frmNewInternacion.cs",
+              "ToolTip": "D:\\Sanatorio\\Sanatorio\\Sanatorio\\Sanatorio\\Vista\\frmNewInternacion.cs [Dise\u00F1o]",
+              "RelativeToolTip": "Sanatorio\\Vista\\frmNewInternacion.cs [Dise\u00F1o]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-23T00:50:07.608Z",
+              "WhenOpened": "2024-12-05T04:14:22.694Z",
               "EditorCaption": " [Dise\u00F1o]"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "DatosInternacion.cs",
-              "DocumentMoniker": "D:\\Sanatorio\\Sanatorio\\Sanatorio\\Sanatorio\\Datos\\DatosInternacion.cs",
-              "RelativeDocumentMoniker": "Sanatorio\\Datos\\DatosInternacion.cs",
-              "ToolTip": "D:\\Sanatorio\\Sanatorio\\Sanatorio\\Sanatorio\\Datos\\DatosInternacion.cs",
-              "RelativeToolTip": "Sanatorio\\Datos\\DatosInternacion.cs",
-              "ViewState": "AgIAACYAAAAAAAAAAAAuwDkAAAATAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-23T01:44:14.414Z",
-              "EditorCaption": ""
             }
           ]
         }

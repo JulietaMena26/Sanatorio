@@ -55,7 +55,7 @@ namespace Sanatorio.Datos
 			throw new NotImplementedException();
 		}
 
-		public DataTable listarInternacion() // retorna todo los pacientes que esten internado
+		public DataTable listarInternacion(string cTexto, string _estado) // retorna todo los pacientes que esten internado
 		{
 			MySqlConnection SQLdatos = new MySqlConnection();
 			SQLdatos = conexion.crearConexion();
@@ -66,6 +66,8 @@ namespace Sanatorio.Datos
 			{
 				MySqlCommand command = new MySqlCommand("psa_listar_internados", SQLdatos);
 				command.CommandType = CommandType.StoredProcedure;
+				command.Parameters.Add("_estado", MySqlDbType.VarChar).Value = _estado;
+				command.Parameters.Add("cTexto", MySqlDbType.VarChar).Value = cTexto;
 				SQLdatos.Open();
 				resultado = command.ExecuteReader();
 				table.Load(resultado);

@@ -52,5 +52,10 @@ namespace Sanatorio.Modelos
             this.afiliado = afiliado;
             this.activo = activo;
         }
-    }
+
+		public override string ToString() 
+        { 
+            return $"Paciente{{idPaciente={idPaciente}, dni='{dni}', apellido='{apellido}', nombre='{nombre}', fechaNaci={fechaNaci}, edad={edad}, domicilio='{domicilio}', telefono='{telefono}', historiaClinica='{historiaClinica}', id_obraSocial={id_obraSocial}, afiliado='{afiliado}', activo={activo}}}"; 
+        }
+	}
 }

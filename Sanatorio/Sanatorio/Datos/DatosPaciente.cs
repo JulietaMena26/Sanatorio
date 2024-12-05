@@ -150,10 +150,52 @@ namespace Sanatorio.Datos
             return paciente;
         }
 
-        public Paciente buscarPacienteId(int idpaciente)
+        public Paciente buscarPacienteId(int idpaciente) // Buscar el paciente por el id. 
         {
-            throw new NotImplementedException();
-        }
+			MySqlConnection SQLdatos = new MySqlConnection();
+			SQLdatos = conexion.crearConexion();
+			MySqlDataReader resultado;
+			Paciente paciente = new Paciente();
+
+			try
+			{
+				MySqlCommand command = new MySqlCommand("psa_buscar_paciente_id", SQLdatos);
+				command.CommandType = CommandType.StoredProcedure;
+				command.Parameters.Add("_id", MySqlDbType.Int32).Value = idpaciente;
+				SQLdatos.Open();
+
+				resultado = command.ExecuteReader();
+				while (resultado.Read())
+				{
+					paciente.idPaciente = resultado.GetInt32(0);
+					paciente.dni = resultado.GetString(1);
+					paciente.apellido = resultado.GetString(2);
+					paciente.nombre = resultado.GetString(3);
+					paciente.fechaNaci = resultado.GetDateTime(4);
+					paciente.domicilio = resultado.GetString(5);
+					paciente.telefono = resultado.GetString(6);
+					paciente.historiaClinica = resultado.GetString(7);
+					paciente.id_obraSocial = resultado.GetInt32(8);
+					paciente.afiliado = resultado.GetString(9);
+					paciente.activo = resultado.GetBoolean(10);
+				}
+
+				command.Dispose();
+			}
+			catch (Exception ex)
+			{
+				//Funciones.Logs("Datos_metodolistpaciente", ex.ToString());
+				throw ex;
+			}
+			finally
+			{
+				if (SQLdatos.State == ConnectionState.Open)
+				{
+					SQLdatos.Close();
+				}
+			}
+			return paciente;
+		}
 
         public void eliminarPacienteDni(string dni)
         {

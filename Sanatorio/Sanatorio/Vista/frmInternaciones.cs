@@ -23,13 +23,13 @@ namespace Sanatorio.Vista
         }
 
         #region "Mis Métodos"
-        private void listado_Internaciones()
+        private void listado_Internaciones(string cTexto,string _estado)
         {
             dataGridInternacion.Rows.Clear(); 
             try
             {
                DataTable tabla = new DataTable();
-               tabla = (new DatosInternacion()).listarInternacion();
+               tabla = (new DatosInternacion()).listarInternacion(cTexto,_estado);
 
                foreach (DataRow fila in tabla.Rows)
                 {
@@ -96,14 +96,14 @@ namespace Sanatorio.Vista
         private void frmPaciente_Load(object sender, EventArgs e)
         {
 
-            this.listado_Internaciones();
+            this.listado_Internaciones("%","Internación");
 
         }
 
         private void btnNuevo_Click(object sender, EventArgs e)
         {
-			frmNewPaciente nuevo = new frmNewPaciente();
-            nuevo.txtHistoriClinica.Focus();
+			frmNewInternacion nuevo = new frmNewInternacion();
+            nuevo.dateTimePickerFechIngreso.Focus();
             nuevo.ShowDialog();     
             
         }
@@ -122,7 +122,16 @@ namespace Sanatorio.Vista
 
         private void btnBuscar_Click(object sender, EventArgs e)
         {
-            //listado_Pacientes(txtBuscar.Text.Trim());           
+            if(rdbInternado.Checked)
+            {
+				this.listado_Internaciones(txtBuscar.Text.Trim(), "Internación");
+			}
+
+            if(rdbAlta.Checked)
+            {
+		        this.listado_Internaciones(txtBuscar.Text.Trim(), "Alta");
+			}      
+           
         }
 
         private void btnEditar_Click(object sender, EventArgs e)
@@ -164,5 +173,29 @@ namespace Sanatorio.Vista
                 this.lblCerrar_Click(sender, e);
             }
         }
-    }
+
+		private void rdbAlta_CheckedChanged(object sender, EventArgs e)
+		{
+            if (string.IsNullOrEmpty(txtBuscar.Text.Trim()))
+            {
+                this.listado_Internaciones("%", "Alta");
+            }
+            else 
+            {
+				this.listado_Internaciones(txtBuscar.Text.Trim(), "Alta");
+			}			
+		}
+
+		private void rdbInternado_CheckedChanged(object sender, EventArgs e)
+		{
+			if (string.IsNullOrEmpty(txtBuscar.Text.Trim()))
+			{
+				this.listado_Internaciones("%", "Internación");
+			}
+			else
+			{
+				this.listado_Internaciones(txtBuscar.Text.Trim(), "Internación");
+			}			
+		}
+	}
 }

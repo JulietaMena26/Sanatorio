@@ -215,7 +215,7 @@ namespace Sanatorio.Datos
 			return table;
 		}
 
-		public DataTable listarHabitacionDisponible() // retorna todas las habitaciones con cama disponible
+		public DataTable listarCamasDisponible() // retorna todas las habitaciones con cama disponible
 		{
 			MySqlConnection SQLdatos = new MySqlConnection();
 			SQLdatos = conexion.crearConexion();

@@ -17,7 +17,7 @@ namespace Sanatorio.Interfaz
         Habitacion buscarHabitacionPiso(int piso);
         List<Habitacion> listadoHabitacionTipo(int idHabitacion);
         DataTable listarHabitacion();
-		DataTable listarHabitacionDisponible();
+		DataTable listarCamasDisponible();
         void ocuparCama(int idHabitacion);
         void liberarCama(int idHabitacion);
 
