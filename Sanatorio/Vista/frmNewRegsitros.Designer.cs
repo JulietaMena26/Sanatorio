@@ -36,20 +36,20 @@
             this.label2 = new System.Windows.Forms.Label();
             this.txtId = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.txtIdPaciente = new System.Windows.Forms.TextBox();
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.label6 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.textBox4 = new System.Windows.Forms.TextBox();
-            this.textBox5 = new System.Windows.Forms.TextBox();
+            this.txtMotivo = new System.Windows.Forms.TextBox();
+            this.txtdiagnostico = new System.Windows.Forms.TextBox();
+            this.txttratamiento = new System.Windows.Forms.TextBox();
             this.textBox6 = new System.Windows.Forms.TextBox();
             this.btnGuardar = new System.Windows.Forms.Button();
             this.btnCancelar = new System.Windows.Forms.Button();
-            this.dateTimePicker = new System.Windows.Forms.DateTimePicker();
+            this.txtproxima_visita = new System.Windows.Forms.DateTimePicker();
             this.SuspendLayout();
             // 
             // label8
@@ -135,14 +135,14 @@
             this.label1.TabIndex = 25;
             this.label1.Text = "IDRegsitros:";
             // 
-            // textBox1
+            // txtIdPaciente
             // 
-            this.textBox1.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.Location = new System.Drawing.Point(139, 72);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.ReadOnly = true;
-            this.textBox1.Size = new System.Drawing.Size(137, 23);
-            this.textBox1.TabIndex = 31;
+            this.txtIdPaciente.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtIdPaciente.Location = new System.Drawing.Point(139, 72);
+            this.txtIdPaciente.Name = "txtIdPaciente";
+            this.txtIdPaciente.ReadOnly = true;
+            this.txtIdPaciente.Size = new System.Drawing.Size(137, 23);
+            this.txtIdPaciente.TabIndex = 31;
             // 
             // textBox2
             // 
@@ -206,32 +206,32 @@
             this.label10.TabIndex = 56;
             this.label10.Text = "Observación:";
             // 
-            // textBox3
+            // txtMotivo
             // 
-            this.textBox3.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox3.Location = new System.Drawing.Point(125, 248);
-            this.textBox3.Multiline = true;
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(324, 71);
-            this.textBox3.TabIndex = 60;
+            this.txtMotivo.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtMotivo.Location = new System.Drawing.Point(125, 248);
+            this.txtMotivo.Multiline = true;
+            this.txtMotivo.Name = "txtMotivo";
+            this.txtMotivo.Size = new System.Drawing.Size(324, 71);
+            this.txtMotivo.TabIndex = 60;
             // 
-            // textBox4
+            // txtdiagnostico
             // 
-            this.textBox4.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox4.Location = new System.Drawing.Point(125, 339);
-            this.textBox4.Multiline = true;
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(324, 71);
-            this.textBox4.TabIndex = 61;
+            this.txtdiagnostico.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtdiagnostico.Location = new System.Drawing.Point(125, 339);
+            this.txtdiagnostico.Multiline = true;
+            this.txtdiagnostico.Name = "txtdiagnostico";
+            this.txtdiagnostico.Size = new System.Drawing.Size(324, 71);
+            this.txtdiagnostico.TabIndex = 61;
             // 
-            // textBox5
+            // txttratamiento
             // 
-            this.textBox5.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox5.Location = new System.Drawing.Point(125, 433);
-            this.textBox5.Multiline = true;
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(324, 48);
-            this.textBox5.TabIndex = 62;
+            this.txttratamiento.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txttratamiento.Location = new System.Drawing.Point(125, 433);
+            this.txttratamiento.Multiline = true;
+            this.txttratamiento.Name = "txttratamiento";
+            this.txttratamiento.Size = new System.Drawing.Size(324, 48);
+            this.txttratamiento.TabIndex = 62;
             // 
             // textBox6
             // 
@@ -280,13 +280,13 @@
             this.btnCancelar.Text = "Cancelar";
             this.btnCancelar.UseVisualStyleBackColor = false;
             // 
-            // dateTimePicker
+            // txtproxima_visita
             // 
-            this.dateTimePicker.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dateTimePicker.Location = new System.Drawing.Point(125, 503);
-            this.dateTimePicker.Name = "dateTimePicker";
-            this.dateTimePicker.Size = new System.Drawing.Size(271, 23);
-            this.dateTimePicker.TabIndex = 66;
+            this.txtproxima_visita.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtproxima_visita.Location = new System.Drawing.Point(125, 503);
+            this.txtproxima_visita.Name = "txtproxima_visita";
+            this.txtproxima_visita.Size = new System.Drawing.Size(271, 23);
+            this.txtproxima_visita.TabIndex = 66;
             // 
             // frmNewRegsitros
             // 
@@ -294,20 +294,20 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(202)))), ((int)(((byte)(219)))), ((int)(((byte)(183)))));
             this.ClientSize = new System.Drawing.Size(474, 749);
-            this.Controls.Add(this.dateTimePicker);
+            this.Controls.Add(this.txtproxima_visita);
             this.Controls.Add(this.btnCancelar);
             this.Controls.Add(this.btnGuardar);
             this.Controls.Add(this.textBox6);
-            this.Controls.Add(this.textBox5);
-            this.Controls.Add(this.textBox4);
-            this.Controls.Add(this.textBox3);
+            this.Controls.Add(this.txttratamiento);
+            this.Controls.Add(this.txtdiagnostico);
+            this.Controls.Add(this.txtMotivo);
             this.Controls.Add(this.label10);
             this.Controls.Add(this.label9);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.dateTimePicker1);
             this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.txtIdPaciente);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.dateTimePickerFechaNaci);
             this.Controls.Add(this.label5);
@@ -334,19 +334,19 @@
         private System.Windows.Forms.Label label2;
         public System.Windows.Forms.TextBox txtId;
         private System.Windows.Forms.Label label1;
-        public System.Windows.Forms.TextBox textBox1;
+        public System.Windows.Forms.TextBox txtIdPaciente;
         public System.Windows.Forms.TextBox textBox2;
         public System.Windows.Forms.DateTimePicker dateTimePicker1;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label10;
-        public System.Windows.Forms.TextBox textBox3;
-        public System.Windows.Forms.TextBox textBox4;
-        public System.Windows.Forms.TextBox textBox5;
+        public System.Windows.Forms.TextBox txtMotivo;
+        public System.Windows.Forms.TextBox txtdiagnostico;
+        public System.Windows.Forms.TextBox txttratamiento;
         public System.Windows.Forms.TextBox textBox6;
         private System.Windows.Forms.Button btnGuardar;
         private System.Windows.Forms.Button btnCancelar;
-        public System.Windows.Forms.DateTimePicker dateTimePicker;
+        public System.Windows.Forms.DateTimePicker txtproxima_visita;
     }
 }
