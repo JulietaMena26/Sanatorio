@@ -787,3 +787,4 @@ C:\Sanatorio\Sanatorio\Sanatorio\obj\Debug\Sanatorio.csproj.Up2Date
 C:\Sanatorio\Sanatorio\Sanatorio\obj\Debug\Sanatorio.exe
 C:\Sanatorio\Sanatorio\Sanatorio\obj\Debug\Sanatorio.pdb
 C:\Users\camim\OneDrive\Documentos\Sanatorio\Sanatorio\obj\Debug\Sanatorio.Vista.frmNewRegsitros.resources
+C:\Sanatorio\Sanatorio\Sanatorio\obj\Debug\Sanatorio.Vista.frmNewRegsitros.resources

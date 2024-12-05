@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using MySql.Data.MySqlClient;
 using Sanatorio.Datos;
+using Sanatorio.Modelos;
 
 namespace Sanatorio.Vista
 {
@@ -25,49 +26,78 @@ namespace Sanatorio.Vista
 
         }
 
+        #region 
+        
         private void btnGuardar_Click(object sender, EventArgs e)
         {
+
 
             if (!verificarControlesVacios())
             {
                 return;
             }
-            MySqlConnection SQLdatos = new MySqlConnection();
-            SQLdatos = conexion.crearConexion();
-            try
-            {
-                SQLdatos.Open();
-                MySqlCommand command = new MySqlCommand("psa_guardar_registros_clinicos", SQLdatos);
-                command.CommandType = CommandType.StoredProcedure;
 
-               // command.Parameters.AddWithValue("pCodigo", txtCodigo.Text.Trim());
-               // command.Parameters.AddWithValue("pNombre", txtNombre.Text.Trim());
-                command.Parameters.AddWithValue("pActivo", 1);
+            if (string.IsNullOrEmpty(txtId.Text.Trim()))
+            {
 
-                command.ExecuteNonQuery();
-                MessageBox.Show("Registro clinico agregada con éxito.", "Sistema Santa Rita", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Error al guardar los datos: " + ex.Message);
-            }
-            finally
-            {
-                if (SQLdatos.State == ConnectionState.Open)
+                if (Registro_Clinico(txtId.Trim()))
                 {
-                    SQLdatos.Close();
+                    MessageBox.Show("El registro ya existe!!", "Sistema Santa Rita", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    txtId.Focus();
+                }
+                else
+                {
+                    Registro_Clinico = new Registro_Clinico();
+                    Registro_Clinico.IdRegistro = txtIdRegristro.text.trim();
+                    Registro_Clinico.id_paciente = int.Parse(cmbPaciente.SelectedValues.ToString());
+                    Registro_Clinico.id_medico = int.Parse(cmbPaciente.SelectedValues.ToString());
+                    Registro_Clinico.fecha = dateTimePickerfecha();
+                    Registro_Clinico.hora = datetimePickerhora();
+                    Registro_Clinico.motivo = txtmotivo();
+                    Registro_Clinico.diagnostico = txtdiagnostico();
+                    Registro_Clinico.tratamiento = txttratamiento();
+                    Registro_Clinico.proxima_visita = txtproxima_visita();
+                    Registro_Clinico.observacion = txtobservacion();
+                    DatosRegistroClinico datos = DatosRegistroClinico();
+                    
+
+                    if (datos.agregarRegistro(Registro_Clinico))
+                    {
+                        MessageBox.Show("Se agrego con exito!!", "Sistema Santa Rita", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
+                    else
+                    {
+                        MessageBox.Show("Error al agregar!!", "Sistema Santa Rita", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
                 }
             }
-        }
-        private bool verificarControlesVacios()
-        {
-            //if (//string.IsNullOrWhiteSpace(txtNombre.Text) ||
-               // string.IsNullOrWhiteSpace(txtCodigo.Text))
+            else // sucede si se esta por actualizar un cliente
             {
-                MessageBox.Show("Por favor, complete todos los campos.");
-                return false;
+                Registro_Clinico = new Registro_Clinico();
+                Registro_Clinico.IdRegistro = txtIdRegristro.text.trim();
+                Registro_Clinico.id_paciente = int.Parse(cmbPaciente.SelectedValues.ToString());
+                Registro_Clinico.id_medico = int.Parse(cmbPaciente.SelectedValues.ToString());
+                Registro_Clinico.fecha = dateTimePickerfecha();
+                Registro_Clinico.hora = datetimePickerhora();
+                Registro_Clinico.motivo = txtmotivo();
+                Registro_Clinico.diagnostico = txtdiagnostico();
+                Registro_Clinico.tratamiento = txttratamiento();
+                Registro_Clinico.proxima_visita = txtproxima_visita();
+                Registro_Clinico.observacion = txtobservacion();
+                DatosRegistroClinico datos = DatosRegistroClinico();
+
+
+                if (datos.actualizarRegistro(Registro_Clinico))
+                {
+                    MessageBox.Show("Se actualizo con exito!!", "Sistema Santa Rita", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                else
+                {
+                    MessageBox.Show("Error al Actualizar!!", "Sistema Santa Rita", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
             }
-            return true;
+            this.Close();
         }
     }
 }
+

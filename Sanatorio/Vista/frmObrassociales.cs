@@ -53,7 +53,7 @@ namespace Sanatorio.Vista
             {
                 //nuevo.txtBuscar.Text = dataGridobrasocial.CurrentRow.Cells[0].Value.ToString();
                 nuevo.txtBuscar.Text = dataGridobrasocial.CurrentRow.Cells[1].Value.ToString();
-               // nuevo.txtCodigo.Text = dataGridobrasocial.CurrentRow.Cells[2].Value.ToString();
+               //nuevo.txtCodigo.Text = dataGridobrasocial.CurrentRow.Cells[2].Value.ToString();
             }
             else
             {
