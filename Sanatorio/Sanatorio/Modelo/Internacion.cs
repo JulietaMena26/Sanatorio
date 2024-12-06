@@ -18,8 +18,8 @@ namespace Sanatorio.Modelos
         public string diagnostico { get; set; }
         public bool deuda { get; set; }
         public string estado { get; set; }
-        public DateTime fechaEgreso { get; set; }
-        public DateTime horaEgreso { get; set; }
+        public DateTime? fechaEgreso { get; set; }
+        public DateTime? horaEgreso { get; set; }
         public bool activo { get; set; }
 
         public Internacion() { }

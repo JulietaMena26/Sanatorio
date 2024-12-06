@@ -52,15 +52,95 @@ namespace Sanatorio.Datos
 
 		public bool guardarInternacion(Internacion internacion)
 		{
-			throw new NotImplementedException();
+			MySqlConnection SQLdatos = new MySqlConnection();
+			SQLdatos = conexion.crearConexion();
+			int resultado;
+
+			// Obtener la fecha seleccionada en el DateTimePicker
+			DateTime fechaIngreso = internacion.fechaIngreso;
+			// Obtener la hora seleccionada en el DateTimePicker
+			DateTime horaIngreso = internacion.horaIngreso;
+
+			try
+			{
+				MySqlCommand command = new MySqlCommand("psa_guardar_internacion", SQLdatos);
+				command.CommandType = CommandType.StoredProcedure;
+				command.Parameters.Add("fechaIngreso_", MySqlDbType.Date).Value = fechaIngreso.ToString("yyyy-MM-dd");
+				command.Parameters.Add("horaIngreso_", MySqlDbType.Time).Value = horaIngreso.ToString("HH:mm:ss"); ;
+				command.Parameters.Add("id_medico_", MySqlDbType.Int16).Value = internacion.id_medico;
+				command.Parameters.Add("id_paciente_", MySqlDbType.Int16).Value = internacion.id_paciente;
+				command.Parameters.Add("id_habitacion_", MySqlDbType.Int16).Value = internacion.id_habitacion;
+				command.Parameters.Add("motivoInternacion_", MySqlDbType.VarChar).Value = internacion.motivoInternacion;
+				command.Parameters.Add("diagnostico_", MySqlDbType.VarChar).Value = internacion.diagnostico;
+				command.Parameters.Add("deuda_", MySqlDbType.Byte).Value = internacion.deuda;
+				command.Parameters.Add("estado_", MySqlDbType.VarChar).Value = internacion.estado;
+				command.Parameters.Add("fechaEgreso_", MySqlDbType.Date).Value = internacion.fechaEgreso;
+				command.Parameters.Add("horaEgreso_", MySqlDbType.Time).Value = internacion.horaEgreso;
+				SQLdatos.Open();
+
+				resultado = command.ExecuteNonQuery();
+				if (resultado > 0)
+					return true;
+				else
+					return false;
+
+			}
+			catch (Exception ex)
+			{
+				//Funciones.Logs("Datos_metodolistpaciente", ex.ToString());
+				throw ex;
+			}
+			finally
+			{
+				if (SQLdatos.State == ConnectionState.Open)
+				{
+					SQLdatos.Close();
+				}
+			}
+
+		}
+
+		public bool isInternadoPaciente(int idPaciente) // método que busca un paciente, returna True si el paciente ya esta internado coso contrario retorna false
+		{
+			MySqlConnection SQLdatos = new MySqlConnection();
+			SQLdatos = conexion.crearConexion();
+			MySqlDataReader resultado;
+			
+			try
+			{
+				MySqlCommand command = new MySqlCommand("psa_buscar_paciente_internado", SQLdatos);
+				command.CommandType = CommandType.StoredProcedure;
+				command.Parameters.Add("_id", MySqlDbType.Int32).Value = idPaciente;
+				SQLdatos.Open();
+
+				resultado = command.ExecuteReader();
+				while (resultado.Read())
+				{
+					return true; // retorna true si esta internado
+				}
+				command.Dispose();
+			}
+			catch (Exception ex)
+			{
+				//Funciones.Logs("Datos_metodolistpaciente", ex.ToString());
+				throw ex;
+			}
+			finally
+			{
+				if (SQLdatos.State == ConnectionState.Open)
+				{
+					SQLdatos.Close();
+				}
+			}
+			return false; // retorna false si no esta internado
 		}
 
 		public DataTable listarInternacion(string cTexto, string _estado) // retorna todo los pacientes que esten internado
 		{
 			MySqlConnection SQLdatos = new MySqlConnection();
 			SQLdatos = conexion.crearConexion();
-			MySqlDataReader resultado;
 			DataTable table = new DataTable();
+			MySqlDataReader resultado;
 
 			try
 			{

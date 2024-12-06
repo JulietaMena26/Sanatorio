@@ -17,7 +17,8 @@ namespace Sanatorio.Vista
     {
         private Paciente paciente;
         private int pacienteId { set; get; } // atributo para guardar el id del paciente 
-        private int medicoId { set; get; } // atrubuto para guardar el id del medico
+        private int medicoId { set; get; } // atributo para guardar el id del medico
+		private int habitacionId { set; get; } // atributo para guardar el id de la habitación
 
 
 		private System.Windows.Forms.ToolTip toolTip;
@@ -136,6 +137,42 @@ namespace Sanatorio.Vista
                 return ;
             }
 
+			Internacion internacion = new Internacion();
+
+			this.medicoId = (int)cmbMedico.SelectedValue; // guardamos el id del medico
+			this.habitacionId = (int)cmbHabitacion.SelectedValue; // guardamos el id del habitacion
+																  // Cargamos con los datos la nueva internación
+			internacion.fechaEgreso = dateTimePickerFechIngreso.Value;
+            internacion.horaIngreso = dateTimePickerHoraIngreso.Value;
+            internacion.id_medico =  this.medicoId;
+            internacion.id_paciente = this.pacienteId;
+            internacion.id_habitacion = this.habitacionId;
+            internacion.motivoInternacion = txtMotivo.Text.Trim();
+            internacion.diagnostico = txtDiagnostico.Text.Trim();
+            internacion.deuda = chcDeuda.Checked;
+            internacion.estado = cmbEstado.SelectedItem.ToString();
+            internacion.fechaEgreso = null;
+            internacion.horaEgreso = null;
+
+            DatosInternacion datos = new DatosInternacion();
+
+
+            if (string.IsNullOrEmpty(txtId.Text.Trim())) // si esta vacia el texbox txtId es porque se va crear una nueva internación
+            {
+                // Verificar que le paciente no este internado
+                if (!datos.isInternadoPaciente(internacion.id_paciente))
+                {
+                    MessageBox.Show("Paciente No internado");
+                }
+                else 
+                {
+					MessageBox.Show("Paciente Esta Internado");
+				}
+            }
+			else // NO esta vacia el texbox txtId entonces se va actualizar la internación
+			{
+                internacion.idinternacion = int.Parse(txtId.Text.Trim()); // obtengo el id de la internación para actualizar
+            }
 
 			this.Close();
 		}       
@@ -155,13 +192,13 @@ namespace Sanatorio.Vista
 			{
 				if (formBuscar.ShowDialog() == DialogResult.OK)
 				{
-					int pacienteId = formBuscar.idPaciente; 
+					 this.pacienteId = formBuscar.idPaciente; 
                     // Utiliza el ID del paciente
-                    this.paciente = (new DatosPaciente()).buscarPacienteId(pacienteId);
+                    this.paciente = (new DatosPaciente()).buscarPacienteId(this.pacienteId);
                     //MessageBox.Show("ID del paciente seleccionado: " + paciente.ToString()); 
                     txtPaciente.Text = paciente.apellido + " " + paciente.nombre;
                 } 
-            }		
+            }			
 		}
 
 		private void dateTimePickerFechaAlta_ValueChanged(object sender, EventArgs e)
