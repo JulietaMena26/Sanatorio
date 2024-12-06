@@ -14,6 +14,7 @@ namespace Sanatorio.Interfaz
         bool actualizarHabitacion(Habitacion habitacion);
         bool eliminar(int id_);
         Habitacion buscarHabitacionNumero(string numero);
+        Habitacion buscarHabitacionId(int idHabitacion);
         Habitacion buscarHabitacionPiso(int piso);
         List<Habitacion> listadoHabitacionTipo(int idHabitacion);
         DataTable listarHabitacion();

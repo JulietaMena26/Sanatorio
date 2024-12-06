@@ -302,5 +302,49 @@ namespace Sanatorio.Datos
 				}
 			}
 		}
-	}
+
+        public Habitacion buscarHabitacionId(int idHabitacion)
+        { // falta crear el procedimiento almacenado
+            MySqlConnection SQLdatos = new MySqlConnection();
+            SQLdatos = conexion.crearConexion();
+            MySqlDataReader resultado;
+            Habitacion habitacion = new Habitacion();
+
+            try
+            {
+                MySqlCommand command = new MySqlCommand("psa_buscar_Habitacion_id", SQLdatos);
+                command.CommandType = CommandType.StoredProcedure;
+                command.Parameters.Add("_id", MySqlDbType.Int24).Value = idHabitacion;
+                SQLdatos.Open();
+                resultado = command.ExecuteReader();
+                while (resultado.Read())
+                {
+                    habitacion.idHabitacion = resultado.GetInt16(0);
+                    habitacion.numero = resultado.GetString(1);
+                    habitacion.id_tipo = resultado.GetInt16(2);
+                    habitacion.piso = resultado.GetInt16(3);
+                    habitacion.capacidad = resultado.GetInt16(4);
+                    habitacion.estado = resultado.GetString(5);
+                    habitacion.precio = resultado.GetDecimal(6);
+                    habitacion.comodidad = resultado.GetString(7);
+                    habitacion.observacion = resultado.GetString(8);
+                    habitacion.activo = resultado.GetBoolean(9);
+                }
+                command.Dispose();
+            }
+            catch (Exception ex)
+            {
+                //Funciones.Logs("Datos_metodolistpaciente", ex.ToString());
+                throw ex;
+            }
+            finally
+            {
+                if (SQLdatos.State == ConnectionState.Open)
+                {
+                    SQLdatos.Close();
+                }
+            }
+            return habitacion;
+        }
+    }    
 }
