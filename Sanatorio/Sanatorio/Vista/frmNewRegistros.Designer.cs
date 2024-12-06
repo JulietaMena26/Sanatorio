@@ -38,7 +38,7 @@
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.txtId = new System.Windows.Forms.TextBox();
+            this.txtIdRegistro = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.txtproxima_visita = new System.Windows.Forms.DateTimePicker();
             this.cmbObservacion = new System.Windows.Forms.TextBox();
@@ -151,14 +151,14 @@
             this.label2.TabIndex = 65;
             this.label2.Text = "Id_medico:";
             // 
-            // txtId
+            // txtIdRegistro
             // 
-            this.txtId.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtId.Location = new System.Drawing.Point(149, 20);
-            this.txtId.Name = "txtId";
-            this.txtId.ReadOnly = true;
-            this.txtId.Size = new System.Drawing.Size(137, 23);
-            this.txtId.TabIndex = 61;
+            this.txtIdRegistro.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtIdRegistro.Location = new System.Drawing.Point(149, 20);
+            this.txtIdRegistro.Name = "txtIdRegistro";
+            this.txtIdRegistro.ReadOnly = true;
+            this.txtIdRegistro.Size = new System.Drawing.Size(137, 23);
+            this.txtIdRegistro.TabIndex = 61;
             // 
             // label1
             // 
@@ -315,7 +315,7 @@
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.txtId);
+            this.Controls.Add(this.txtIdRegistro);
             this.Controls.Add(this.label1);
             this.Name = "frmNewRegistros";
             this.Text = "frmNewRegistros";
@@ -336,7 +336,7 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
-        public System.Windows.Forms.TextBox txtId;
+        public System.Windows.Forms.TextBox txtIdRegistro;
         private System.Windows.Forms.Label label1;
         public System.Windows.Forms.DateTimePicker txtproxima_visita;
         public System.Windows.Forms.TextBox cmbObservacion;

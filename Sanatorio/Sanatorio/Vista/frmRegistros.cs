@@ -21,6 +21,56 @@ namespace Sanatorio.Vista
             InitializeComponent();
             mensajestoolTip();
         }
+        #region "Mis Métodos"
+     
+        private void listado_frmRegistros(string cTexto)
+        {
+            dataGridRegsitros.Rows.Clear();
+            try
+            {
+                DataTable tabla = new DataTable();
+                tabla = (new DatosPaciente()).listarPaciente(cTexto);
+
+                foreach (DataRow fila in tabla.Rows)
+                {
+                    dataGridRegsitros.Rows.Add(fila[0], fila[1], fila[2], fila[3], fila[4], fila[5], fila[6], fila[7], fila[8], fila[9]);
+                }
+
+            }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show(ex.Message + " " + ex.StackTrace);
+                // throw ex;
+            }
+            dataGridRegsitros.ClearSelection();
+        }
+        private void actualizar_frmRegistros() // Método con el cual se carga la ventana para actualizar los datos
+        {
+
+
+            if (dataGridRegsitros.SelectedRows.Count > 0)
+            {
+                frmRegistros Registros = new frmRegistros();
+                Registros.id.ToolTipText = (dataGridRegsitros.CurrentRow.Cells[0].Value.ToString());
+                Registros.id_paciente.ToolTipText = (dataGridRegsitros.CurrentRow.Cells[1].Value.ToString());
+                Registros.id_medico.ToolTipText = (dataGridRegsitros.CurrentRow.Cells[2].Value.ToString());
+                Registros.fecha.ToolTipText = (dataGridRegsitros.CurrentRow.Cells[3].Value.ToString());
+                Registros.hora.ToolTipText = (dataGridRegsitros.CurrentRow.Cells[4].Value.ToString());
+                Registros.motivo.ToolTipText = (dataGridRegsitros.CurrentRow.Cells[5].Value.ToString());
+                Registros.diagnostico.ToolTipText = (dataGridRegsitros.CurrentRow.Cells[6].Value.ToString());
+                Registros.tratamiento.ToolTipText = (dataGridRegsitros.CurrentRow.Cells[7].Value.ToString());
+                Registros.proxima_visita.ToolTipText = (dataGridRegsitros.CurrentRow.Cells[8].Value.ToString());
+                Registros.observacion.ToolTipText = (dataGridRegsitros.CurrentRow.Cells[9].Value.ToString());
+
+                Registros.ShowDialog();
+            }
+            else
+            {
+                MessageBox.Show("Seleccione una fila");
+            }
+        }
+        #endregion
 
         private void mensajestoolTip()
         {
@@ -40,7 +90,7 @@ namespace Sanatorio.Vista
         private void frmRegistros_Load(object sender, EventArgs e)
         {
 
-            listado_Registros("%");
+            listado_frmRegistros("%");
 
         }
 
@@ -66,26 +116,26 @@ namespace Sanatorio.Vista
 
         private void btnBuscar_Click(object sender, EventArgs e)
         {
-            listado_Pacientes(txtBuscar.Text.Trim());
+            listado_frmRegistros(txtBuscar.Text.Trim());
         }
 
         private void btnEditar_Click(object sender, EventArgs e)
         {
-            this.actualizarRegistro();
+            this.actualizar_frmRegistros();
         }
 
         private void btnEliminar_Click(object sender, EventArgs e)
         {
-            MessageBox.Show(dataGridRegistros.CurrentRow.Cells[11].Value.ToString());
+            MessageBox.Show(dataGridRegsitros.CurrentRow.Cells[11].Value.ToString());
         }
 
-        private void dataGridPaciente_DoubleClick(object sender, EventArgs e)
+        private void dataGridRegsitros_DoubleClick(object sender, EventArgs e)
         {
 
-            this.actualizarRegistro();
+            this.actualizar_frmRegistros();
         }
 
-        private void frmPaciente_KeyDown(object sender, KeyEventArgs e)
+        private void frmRegistros_KeyDown(object sender, KeyEventArgs e)
         {
             if (e.KeyCode == Keys.F1)
             {
