@@ -33,9 +33,9 @@
             this.label2 = new System.Windows.Forms.Label();
             this.txtCodigo = new System.Windows.Forms.TextBox();
             this.txtNombre = new System.Windows.Forms.TextBox();
-            this.lblCerrar = new System.Windows.Forms.Label();
             this.btnGuardar = new System.Windows.Forms.Button();
             this.btnCancelar = new System.Windows.Forms.Button();
+            this.lblCerrar = new System.Windows.Forms.Label();
             this.txtId = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
@@ -83,21 +83,6 @@
             this.txtNombre.Size = new System.Drawing.Size(133, 20);
             this.txtNombre.TabIndex = 21;
             // 
-            // lblCerrar
-            // 
-            this.lblCerrar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.lblCerrar.AutoSize = true;
-            this.lblCerrar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(202)))), ((int)(((byte)(219)))), ((int)(((byte)(183)))));
-            this.lblCerrar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.lblCerrar.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblCerrar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.lblCerrar.Location = new System.Drawing.Point(389, -1);
-            this.lblCerrar.Name = "lblCerrar";
-            this.lblCerrar.Size = new System.Drawing.Size(19, 18);
-            this.lblCerrar.TabIndex = 22;
-            this.lblCerrar.Text = "X";
-            this.lblCerrar.Click += new System.EventHandler(this.lblCerrar_Click);
-            // 
             // btnGuardar
             // 
             this.btnGuardar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
@@ -109,10 +94,10 @@
             this.btnGuardar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(246)))), ((int)(((byte)(248)))), ((int)(((byte)(244)))));
             this.btnGuardar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnGuardar.ImageIndex = 0;
-            this.btnGuardar.Location = new System.Drawing.Point(28, 183);
+            this.btnGuardar.Location = new System.Drawing.Point(28, 193);
             this.btnGuardar.Name = "btnGuardar";
             this.btnGuardar.Size = new System.Drawing.Size(144, 34);
-            this.btnGuardar.TabIndex = 23;
+            this.btnGuardar.TabIndex = 22;
             this.btnGuardar.Text = "Guardar";
             this.btnGuardar.UseVisualStyleBackColor = false;
             this.btnGuardar.Click += new System.EventHandler(this.btnGuardar_Click);
@@ -129,12 +114,23 @@
             this.btnCancelar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(246)))), ((int)(((byte)(248)))), ((int)(((byte)(244)))));
             this.btnCancelar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnCancelar.ImageIndex = 0;
-            this.btnCancelar.Location = new System.Drawing.Point(219, 183);
+            this.btnCancelar.Location = new System.Drawing.Point(213, 193);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(144, 34);
-            this.btnCancelar.TabIndex = 24;
+            this.btnCancelar.TabIndex = 23;
             this.btnCancelar.Text = "Cancelar";
             this.btnCancelar.UseVisualStyleBackColor = false;
+            // 
+            // lblCerrar
+            // 
+            this.lblCerrar.AutoSize = true;
+            this.lblCerrar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblCerrar.Location = new System.Drawing.Point(392, -1);
+            this.lblCerrar.Name = "lblCerrar";
+            this.lblCerrar.Size = new System.Drawing.Size(15, 13);
+            this.lblCerrar.TabIndex = 25;
+            this.lblCerrar.Text = "X";
+            this.lblCerrar.Click += new System.EventHandler(this.lblCerrar_Click);
             // 
             // txtId
             // 
@@ -143,8 +139,7 @@
             this.txtId.Name = "txtId";
             this.txtId.ReadOnly = true;
             this.txtId.Size = new System.Drawing.Size(133, 23);
-            this.txtId.TabIndex = 25;
-           // this.txtId.TextChanged += new System.EventHandler(this.txtId_TextChanged);
+            this.txtId.TabIndex = 26;
             // 
             // frmNewObrasocial
             // 
@@ -153,16 +148,15 @@
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(202)))), ((int)(((byte)(219)))), ((int)(((byte)(183)))));
             this.ClientSize = new System.Drawing.Size(408, 275);
             this.Controls.Add(this.txtId);
+            this.Controls.Add(this.lblCerrar);
             this.Controls.Add(this.btnCancelar);
             this.Controls.Add(this.btnGuardar);
-            this.Controls.Add(this.lblCerrar);
             this.Controls.Add(this.txtNombre);
             this.Controls.Add(this.txtCodigo);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.lblObraSocial);
             this.ForeColor = System.Drawing.Color.Black;
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "frmNewObrasocial";
             this.Text = "Obra Social";
             this.ResumeLayout(false);
@@ -177,9 +171,9 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox txtCodigo;
         private System.Windows.Forms.TextBox txtNombre;
-        private System.Windows.Forms.Label lblCerrar;
         private System.Windows.Forms.Button btnGuardar;
         private System.Windows.Forms.Button btnCancelar;
+        private System.Windows.Forms.Label lblCerrar;
         public System.Windows.Forms.TextBox txtId;
     }
 }

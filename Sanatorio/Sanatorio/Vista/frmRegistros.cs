@@ -22,58 +22,10 @@ namespace Sanatorio.Vista
             mensajestoolTip();
         }
 
-        #region "Mis Métodos"
-        private void listado_Pacientes(string cTexto)
-        {
-            dataGridPaciente.Rows.Clear(); 
-            try
-            {
-               DataTable tabla = new DataTable();
-               tabla = (new DatosPaciente()).listarPaciente(cTexto);
-
-               foreach (DataRow fila in tabla.Rows)
-                {
-                    dataGridPaciente.Rows.Add(fila[0], fila[1], fila[2], fila[3], fila[4], (DateTime.Parse(fila[5].ToString())).ToString("dd/MM/yyyy"), fila[6], fila[7], fila[8], fila[9], fila[10],fila[11]);
-                }
-            }
-            catch (Exception ex)
-            {
-
-                MessageBox.Show(ex.Message + " " + ex.StackTrace);
-               // throw ex;
-            }
-        }
-
-        private void actualizar_paciente()
-        {
-			frmNewPaciente nuevo = new frmNewPaciente();
-            if (dataGridPaciente.SelectedRows.Count > 0)
-            {
-                nuevo.txtId.Text = dataGridPaciente.CurrentRow.Cells[0].Value.ToString();
-                nuevo.txtHistoriClinica.Text = dataGridPaciente.CurrentRow.Cells[1].Value.ToString();
-                nuevo.txtDni.Text = dataGridPaciente.CurrentRow.Cells[2].Value.ToString();
-                nuevo.txtApellido.Text = dataGridPaciente.CurrentRow.Cells[3].Value.ToString();
-                nuevo.txtNombre.Text = dataGridPaciente.CurrentRow.Cells[4].Value.ToString();
-                DateTime fechaDateTime = DateTime.ParseExact(dataGridPaciente.CurrentRow.Cells[5].Value.ToString(), "dd/MM/yyyy", CultureInfo.InvariantCulture);
-                nuevo.dateTimePickerFechaNaci.Value = fechaDateTime;
-                nuevo.txtEdad.Text = dataGridPaciente.CurrentRow.Cells[6].Value.ToString();
-                nuevo.txtDomicilio.Text = dataGridPaciente.CurrentRow.Cells[7].Value.ToString();
-                nuevo.txtTelefono.Text = dataGridPaciente.CurrentRow.Cells[8].Value.ToString();
-                nuevo.cmbObraSocial.Text = dataGridPaciente.CurrentRow.Cells[9].Value.ToString();
-                nuevo.txtNunAfiliado.Text = dataGridPaciente.CurrentRow.Cells[10].Value.ToString();
-                nuevo.ShowDialog();
-            }
-            else
-            {
-                MessageBox.Show("Seleccione una fila");
-            }
-        }
-        #endregion
-        
         private void mensajestoolTip()
         {
-            toolTip = new ToolTip();    
-            toolTip.SetToolTip(txtBuscar,"Ingrese un dni o apellido o parte");
+            toolTip = new ToolTip();
+            toolTip.SetToolTip(txtBuscar, "Ingrese un dni o apellido o parte");
             toolTip.SetToolTip(btnBuscar, "Buscar precione F1");
             toolTip.SetToolTip(btnNuevo, "Nuevo precione F2");
             toolTip.SetToolTip(btnEditar, "Edita precione F3");
@@ -85,19 +37,19 @@ namespace Sanatorio.Vista
             this.Close();
         }
 
-        private void frmPaciente_Load(object sender, EventArgs e)
+        private void frmRegistros_Load(object sender, EventArgs e)
         {
 
-            listado_Pacientes("%");
+            listado_Registros("%");
 
         }
 
         private void btnNuevo_Click(object sender, EventArgs e)
         {
-			frmNewPaciente nuevo = new frmNewPaciente();
-            nuevo.txtHistoriClinica.Focus();
-            nuevo.ShowDialog();     
-            
+            frmNewRegistros nuevo = new frmNewRegistros();
+            //nuevo.txtHistoriClinica.Focus();
+            nuevo.ShowDialog();
+
         }
 
         private void txtBuscar_Enter(object sender, EventArgs e)
@@ -108,36 +60,36 @@ namespace Sanatorio.Vista
 
         private void txtBuscar_Leave(object sender, EventArgs e)
         {
-           // txtBuscar.Text = "";
-            txtBuscar.BackColor = Color.FromArgb(202,219,183);
+            // txtBuscar.Text = "";
+            txtBuscar.BackColor = Color.FromArgb(202, 219, 183);
         }
 
         private void btnBuscar_Click(object sender, EventArgs e)
         {
-            listado_Pacientes(txtBuscar.Text.Trim());           
+            listado_Pacientes(txtBuscar.Text.Trim());
         }
 
         private void btnEditar_Click(object sender, EventArgs e)
         {
-            this.actualizar_paciente();
+            this.actualizarRegistro();
         }
 
         private void btnEliminar_Click(object sender, EventArgs e)
         {
-            MessageBox.Show(dataGridPaciente.CurrentRow.Cells[11].Value.ToString());
+            MessageBox.Show(dataGridRegistros.CurrentRow.Cells[11].Value.ToString());
         }
 
         private void dataGridPaciente_DoubleClick(object sender, EventArgs e)
         {
-           
-            this.actualizar_paciente();
+
+            this.actualizarRegistro();
         }
 
         private void frmPaciente_KeyDown(object sender, KeyEventArgs e)
         {
             if (e.KeyCode == Keys.F1)
             {
-                this.btnBuscar_Click(sender,e);
+                this.btnBuscar_Click(sender, e);
             }
             if (e.KeyCode == Keys.F2)
             {
@@ -157,9 +109,6 @@ namespace Sanatorio.Vista
             }
         }
 
-        private void dataGridPaciente_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
 
-        }
     }
 }

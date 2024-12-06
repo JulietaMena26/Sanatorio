@@ -142,6 +142,7 @@
             this.btnBuscar.TabIndex = 11;
             this.btnBuscar.Text = "Buscar (F1)";
             this.btnBuscar.UseVisualStyleBackColor = false;
+            this.btnBuscar.Click += new System.EventHandler(this.btnBuscar_Click_1);
             // 
             // btnNuevo
             // 

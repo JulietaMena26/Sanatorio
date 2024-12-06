@@ -1,20 +1,7 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "D:\\Sanatorio\\Sanatorio\\Sanatorio\\",
-  "Documents": [
-    {
-      "AbsoluteMoniker": "D:0:0:{2D5752BA-BB7B-46F1-9175-9460AB73C69C}|Sanatorio\\Sanatorio.csproj|d:\\sanatorio\\sanatorio\\sanatorio\\sanatorio\\vista\\frmnewinternacion.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{2D5752BA-BB7B-46F1-9175-9460AB73C69C}|Sanatorio\\Sanatorio.csproj|solutionrelative:sanatorio\\vista\\frmnewinternacion.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{2D5752BA-BB7B-46F1-9175-9460AB73C69C}|Sanatorio\\Sanatorio.csproj|d:\\sanatorio\\sanatorio\\sanatorio\\sanatorio\\vista\\frmnewinternacion.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{2D5752BA-BB7B-46F1-9175-9460AB73C69C}|Sanatorio\\Sanatorio.csproj|solutionrelative:sanatorio\\vista\\frmnewinternacion.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{2D5752BA-BB7B-46F1-9175-9460AB73C69C}|Sanatorio\\Sanatorio.csproj|d:\\sanatorio\\sanatorio\\sanatorio\\sanatorio\\datos\\datosinternacion.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{2D5752BA-BB7B-46F1-9175-9460AB73C69C}|Sanatorio\\Sanatorio.csproj|solutionrelative:sanatorio\\datos\\datosinternacion.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    }
-  ],
+  "WorkspaceRootPath": "C:\\Users\\camim\\OneDrive\\Documentos\\Sanatorio2\\Sanatorio\\",
+  "Documents": [],
   "DocumentGroupContainers": [
     {
       "Orientation": 0,
@@ -22,49 +9,11 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 2,
+          "SelectedChildIndex": -1,
           "Children": [
             {
               "$type": "Bookmark",
               "Name": "ST:1:0:{e8b06f52-6d01-11d2-aa7d-00c04f990343}"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "DatosInternacion.cs",
-              "DocumentMoniker": "D:\\Sanatorio\\Sanatorio\\Sanatorio\\Sanatorio\\Datos\\DatosInternacion.cs",
-              "RelativeDocumentMoniker": "Sanatorio\\Datos\\DatosInternacion.cs",
-              "ToolTip": "D:\\Sanatorio\\Sanatorio\\Sanatorio\\Sanatorio\\Datos\\DatosInternacion.cs",
-              "RelativeToolTip": "Sanatorio\\Datos\\DatosInternacion.cs",
-              "ViewState": "AgIAAGEAAAAAAAAAAAAIwG4AAAAtAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-06T05:53:32.496Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "frmNewInternacion.cs",
-              "DocumentMoniker": "D:\\Sanatorio\\Sanatorio\\Sanatorio\\Sanatorio\\Vista\\frmNewInternacion.cs",
-              "RelativeDocumentMoniker": "Sanatorio\\Vista\\frmNewInternacion.cs",
-              "ToolTip": "D:\\Sanatorio\\Sanatorio\\Sanatorio\\Sanatorio\\Vista\\frmNewInternacion.cs",
-              "RelativeToolTip": "Sanatorio\\Vista\\frmNewInternacion.cs",
-              "ViewState": "AgIAAJMAAAAAAAAAAAAswK8AAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-06T05:02:52.775Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "frmNewInternacion.cs [Dise\u00F1o]",
-              "DocumentMoniker": "D:\\Sanatorio\\Sanatorio\\Sanatorio\\Sanatorio\\Vista\\frmNewInternacion.cs",
-              "RelativeDocumentMoniker": "Sanatorio\\Vista\\frmNewInternacion.cs",
-              "ToolTip": "D:\\Sanatorio\\Sanatorio\\Sanatorio\\Sanatorio\\Vista\\frmNewInternacion.cs [Dise\u00F1o]",
-              "RelativeToolTip": "Sanatorio\\Vista\\frmNewInternacion.cs [Dise\u00F1o]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-06T05:02:50.321Z",
-              "EditorCaption": " [Dise\u00F1o]"
             }
           ]
         }

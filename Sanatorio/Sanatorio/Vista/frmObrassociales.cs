@@ -22,41 +22,42 @@ namespace Sanatorio.Vista
         }
 
         #region "Mis Métodos"
-        private void listado_Pacientes(string cTexto)
+        private void listado_ObraSocial(string cTexto)
         {
             dataGridobrasocial.Rows.Clear();
             try
             {
                 DataTable tabla = new DataTable();
-                tabla = (new DatosPaciente()).listarPaciente(cTexto);
+                tabla = (new DatosObraSocial()).listarObraSocial(cTexto);
 
                 foreach (DataRow fila in tabla.Rows)
                 {
                     dataGridobrasocial.Rows.Add(fila[0], fila[1], fila[2]);
                 }
 
+                dataGridobrasocial.RowHeadersVisible = false;
             }
             catch (Exception ex)
             {
 
                 MessageBox.Show(ex.Message + " " + ex.StackTrace);
-                // throw ex;
+                throw ex;
             }
             dataGridobrasocial.ClearSelection();
         }
 
-        private void actualizar_paciente()
+        private void actualizarObraSocial()
         {
-			frmNewPaciente nuevo = new frmNewPaciente();
+            frmObrassociales nuevo = new frmObrassociales();
             if (dataGridobrasocial.SelectedRows.Count > 0)
             {
-                nuevo.txtId.Text = dataGridobrasocial.CurrentRow.Cells[0].Value.ToString();
-                nuevo.txtHistoriClinica.Text = dataGridobrasocial.CurrentRow.Cells[1].Value.ToString();
-                nuevo.txtDni.Text = dataGridobrasocial.CurrentRow.Cells[2].Value.ToString();
+                //nuevo.txtBuscar.Text = dataGridobrasocial.CurrentRow.Cells[0].Value.ToString();
+                nuevo.txtBuscar.Text = dataGridobrasocial.CurrentRow.Cells[1].Value.ToString();
+                //nuevo.txtCodigo.Text = dataGridobrasocial.CurrentRow.Cells[2].Value.ToString();
             }
             else
             {
-                MessageBox.Show("Seleccione un Paciente");
+                MessageBox.Show("Seleccione una Obra social");
             }
         }
         #endregion
@@ -65,8 +66,8 @@ namespace Sanatorio.Vista
         {
             toolTip = new ToolTip();
             toolTip.SetToolTip(txtBuscar, "Ingrese una obra social");
-            toolTip.SetToolTip(btnBuscar, "Buscar precione F1");
-            toolTip.SetToolTip(btnNuevo, "Nuevo precione F2");
+            toolTip.SetToolTip(btnBuscar, "Buscar obra social F1");
+            toolTip.SetToolTip(btnNuevo, "Nuevo obra social F2");
             toolTip.SetToolTip(btnEditar, "Edita precione F3");
             toolTip.SetToolTip(btnEliminar, "Eliminar precione F4");
         }
@@ -76,17 +77,17 @@ namespace Sanatorio.Vista
             this.Close();
         }
 
-        private void frmObrassociales_Load(object sender, EventArgs e)
+        private void frmObrasSociales_Load(object sender, EventArgs e)
         {
 
-           this.listado_Pacientes("%");
+            listado_ObraSocial("%");
 
         }
 
         private void btnNuevo_Click(object sender, EventArgs e)
         {
-			frmNewPaciente nuevo = new frmNewPaciente();
-            nuevo.txtHistoriClinica.Focus();
+            frmObrassociales nuevo = new frmObrassociales();
+            nuevo.txtBuscar.Focus();
             nuevo.ShowDialog();
 
         }
@@ -105,42 +106,23 @@ namespace Sanatorio.Vista
 
         private void btnBuscar_Click(object sender, EventArgs e)
         {
-           listado_Pacientes(txtBuscar.Text.Trim());
+            listado_ObraSocial(txtBuscar.Text.Trim());
         }
 
         private void btnEditar_Click(object sender, EventArgs e)
         {
-            this.actualizar_paciente();
+            this.actualizarObraSocial();
         }
 
         private void btnEliminar_Click(object sender, EventArgs e)
         {
-            DialogResult respuesta;
-
-            if (dataGridobrasocial.SelectedRows.Count > 0)
-            {
-                respuesta = MessageBox.Show("¿Desea eliminar la obra social: " + dataGridobrasocial.CurrentRow.Cells[2].Value.ToString() + " " + dataGridobrasocial.CurrentRow.Cells[3].Value.ToString() + " " + dataGridobrasocial.CurrentRow.Cells[4].Value.ToString() + "?", "Sistemas Santa Rita", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
-
-                if (respuesta == DialogResult.Yes)
-                {
-                    DatosPaciente datos = new DatosPaciente();
-                    datos.eliminarPaciente(int.Parse(dataGridobrasocial.CurrentRow.Cells[0].Value.ToString()));
-                    MessageBox.Show("Cliente Eliminado", "Sistema Santa Rita", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                }
-            }
-            else
-            {
-                MessageBox.Show("Seleccione una Paciente a Eliminar", "Sistema Santa Rita", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-            }
-
-            listado_Pacientes("%");
 
         }
 
         private void dataGridObrasocial_DoubleClick(object sender, EventArgs e)
         {
 
-            this.actualizar_paciente();
+            this.actualizarObraSocial();
         }
 
         private void frmObrassociales_KeyDown(object sender, KeyEventArgs e)
@@ -167,5 +149,65 @@ namespace Sanatorio.Vista
             }
         }
 
+        private void button1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void frmObrassociales_Load_1(object sender, EventArgs e)
+        {
+            listado_ObraSocial("%");
+        }
+
+        private void dataGridobrasocial_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void btnNuevo_Click_2(object sender, EventArgs e)
+        {
+            frmNewObrasocial nuevo = new frmNewObrasocial();
+
+            //nuevo.txtBuscar.Focus();
+            nuevo.ShowDialog();
+        }
+
+        private void btnEditar_Click_2(object sender, EventArgs e)
+        {
+            this.actualizarObraSocial(); // no esta definido
+        }
+
+        private void btnEliminar_Click_2(object sender, EventArgs e)
+        {
+            DialogResult respuesta;
+
+            if (dataGridobrasocial.SelectedRows.Count > 0)
+            {
+                respuesta = MessageBox.Show("¿Desea eliminar la Obra Social: " + dataGridobrasocial.CurrentRow.Cells[2].Value.ToString() + " " + dataGridobrasocial.CurrentRow.Cells[3].Value.ToString() + " " + dataGridobrasocial.CurrentRow.Cells[4].Value.ToString() + "?", "Sistemas Santa Rita", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+
+                if (respuesta == DialogResult.Yes)
+                {
+                    DatosObraSocial datos = new DatosObraSocial();
+                    datos.eliminarObraSocial(int.Parse(dataGridobrasocial.CurrentRow.Cells[0].Value.ToString()));
+                    MessageBox.Show("Obra Social Eliminado", "Sistema Santa Rita", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+            }
+            else
+            {
+                MessageBox.Show("Seleccione una Obra Social", "Sistema Santa Rita", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+            }
+
+            this.listado_ObraSocial("%");
+        }
+
+        private void btnBuscar_Click_1(object sender, EventArgs e)
+        {
+            listado_ObraSocial(txtBuscar.Text.Trim());
+        }
     }
+
 }
+
+
+    
+
