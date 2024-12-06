@@ -46,10 +46,10 @@
             this.txtMotivo = new System.Windows.Forms.TextBox();
             this.txtdiagnostico = new System.Windows.Forms.TextBox();
             this.txttratamiento = new System.Windows.Forms.TextBox();
-            this.textBox6 = new System.Windows.Forms.TextBox();
+            this.txtObservaciones = new System.Windows.Forms.TextBox();
             this.btnGuardar = new System.Windows.Forms.Button();
             this.btnCancelar = new System.Windows.Forms.Button();
-            this.txtproxima_visita = new System.Windows.Forms.DateTimePicker();
+            this.dateTimePickerProxima = new System.Windows.Forms.DateTimePicker();
             this.SuspendLayout();
             // 
             // label8
@@ -232,15 +232,16 @@
             this.txttratamiento.Name = "txttratamiento";
             this.txttratamiento.Size = new System.Drawing.Size(324, 48);
             this.txttratamiento.TabIndex = 62;
+            this.txttratamiento.TextChanged += new System.EventHandler(this.txttratamiento_TextChanged);
             // 
-            // textBox6
+            // txtObservaciones
             // 
-            this.textBox6.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox6.Location = new System.Drawing.Point(125, 555);
-            this.textBox6.Multiline = true;
-            this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(324, 71);
-            this.textBox6.TabIndex = 63;
+            this.txtObservaciones.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtObservaciones.Location = new System.Drawing.Point(125, 555);
+            this.txtObservaciones.Multiline = true;
+            this.txtObservaciones.Name = "txtObservaciones";
+            this.txtObservaciones.Size = new System.Drawing.Size(324, 71);
+            this.txtObservaciones.TabIndex = 63;
             // 
             // btnGuardar
             // 
@@ -280,13 +281,13 @@
             this.btnCancelar.Text = "Cancelar";
             this.btnCancelar.UseVisualStyleBackColor = false;
             // 
-            // txtproxima_visita
+            // dateTimePickerProxima
             // 
-            this.txtproxima_visita.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtproxima_visita.Location = new System.Drawing.Point(125, 503);
-            this.txtproxima_visita.Name = "txtproxima_visita";
-            this.txtproxima_visita.Size = new System.Drawing.Size(271, 23);
-            this.txtproxima_visita.TabIndex = 66;
+            this.dateTimePickerProxima.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dateTimePickerProxima.Location = new System.Drawing.Point(125, 503);
+            this.dateTimePickerProxima.Name = "dateTimePickerProxima";
+            this.dateTimePickerProxima.Size = new System.Drawing.Size(271, 23);
+            this.dateTimePickerProxima.TabIndex = 66;
             // 
             // frmNewRegsitros
             // 
@@ -294,10 +295,10 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(202)))), ((int)(((byte)(219)))), ((int)(((byte)(183)))));
             this.ClientSize = new System.Drawing.Size(474, 749);
-            this.Controls.Add(this.txtproxima_visita);
+            this.Controls.Add(this.dateTimePickerProxima);
             this.Controls.Add(this.btnCancelar);
             this.Controls.Add(this.btnGuardar);
-            this.Controls.Add(this.textBox6);
+            this.Controls.Add(this.txtObservaciones);
             this.Controls.Add(this.txttratamiento);
             this.Controls.Add(this.txtdiagnostico);
             this.Controls.Add(this.txtMotivo);
@@ -344,9 +345,9 @@
         public System.Windows.Forms.TextBox txtMotivo;
         public System.Windows.Forms.TextBox txtdiagnostico;
         public System.Windows.Forms.TextBox txttratamiento;
-        public System.Windows.Forms.TextBox textBox6;
+        public System.Windows.Forms.TextBox txtObservaciones;
         private System.Windows.Forms.Button btnGuardar;
         private System.Windows.Forms.Button btnCancelar;
-        public System.Windows.Forms.DateTimePicker txtproxima_visita;
+        public System.Windows.Forms.DateTimePicker dateTimePickerProxima;
     }
 }

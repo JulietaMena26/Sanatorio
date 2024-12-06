@@ -83,28 +83,28 @@ namespace Sanatorio.Vista
             //}
             //else // sucede si se esta por actualizar un cliente
             //{
-            //    Registro_Clinico = new Registro_Clinico();
-            //    Registro_Clinico.IdRegistro = txtIdRegristro.text.trim();
-            //    Registro_Clinico.id_paciente = int.Parse(cmbPaciente.SelectedValues.ToString());
-            //    Registro_Clinico.id_medico = int.Parse(cmbPaciente.SelectedValues.ToString());
-            //    Registro_Clinico.fecha = dateTimePickerfecha();
-            //    Registro_Clinico.hora = datetimePickerhora();
-            //    Registro_Clinico.motivo = txtmotivo();
-            //    Registro_Clinico.diagnostico = txtdiagnostico();
-            //    Registro_Clinico.tratamiento = txttratamiento();
-            //    Registro_Clinico.proxima_visita = txtproxima_visita();
-            //    Registro_Clinico.observacion = txtobservacion();
-            //    DatosRegistroClinico datos = DatosRegistroClinico();
+              Registro_Clinico registros = new Registro_Clinico();
+              registros.idRegistro = int.Parse(txtIdRegistro.Text.Trim());
+              registros.id_paciente = int.Parse(txtIdPaciente.Text.Trim());
+              registros.id_medico = int.Parse(txtIdPaciente.Text.Trim());
+              registros.fecha = dateTimePickerFechaNaci.Value;
+              registros.hora = dateTimePicker1.Value;
+              registros.motivo = txtMotivo.Text.Trim();
+              registros.diagnostico = txtdiagnostico.Text.Trim();
+              registros.tratamiento = txttratamiento.Text.Trim();
+              registros.proxima_visita = txtproxima_visita.Value;
+              registros.observacion = cmbObservacion.Text.Trim();
+              DatosRegistroClinico Datos = new DatosRegistroClinico();
 
 
-            //    if (datos.actualizarRegistro(Registro_Clinico))
-            //    {
-            //        MessageBox.Show("Se actualizo con exito!!", "Sistema Santa Rita", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            //    }
-            //    else
-            //    {
-            //        MessageBox.Show("Error al Actualizar!!", "Sistema Santa Rita", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            //    }
+             if (datos.actualizarRegistro(registros))
+                {
+                    MessageBox.Show("Se actualizo con exito!!", "Sistema Santa Rita", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                else
+                {
+                    MessageBox.Show("Error al Actualizar!!", "Sistema Santa Rita", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
             //}
             this.Close();
         }

@@ -1,9 +1,17 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\Sanatorio2\\Sanatorio\\",
+  "WorkspaceRootPath": "C:\\Sanatorio\\Sanatorio\\Sanatorio\\Sanatorio\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{2D5752BA-BB7B-46F1-9175-9460AB73C69C}|Sanatorio\\Sanatorio.csproj|c:\\sanatorio2\\sanatorio\\sanatorio\\vista\\frm_datosmedicos.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{2D5752BA-BB7B-46F1-9175-9460AB73C69C}|Sanatorio\\Sanatorio.csproj|c:\\sanatorio\\sanatorio\\sanatorio\\sanatorio\\sanatorio\\vista\\frmnewregistros.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2D5752BA-BB7B-46F1-9175-9460AB73C69C}|Sanatorio\\Sanatorio.csproj|solutionrelative:sanatorio\\vista\\frmnewregistros.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2D5752BA-BB7B-46F1-9175-9460AB73C69C}|Sanatorio\\Sanatorio.csproj|c:\\sanatorio\\sanatorio\\sanatorio\\sanatorio\\sanatorio\\vista\\frmnewregistros.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{2D5752BA-BB7B-46F1-9175-9460AB73C69C}|Sanatorio\\Sanatorio.csproj|solutionrelative:sanatorio\\vista\\frmnewregistros.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2D5752BA-BB7B-46F1-9175-9460AB73C69C}|Sanatorio\\Sanatorio.csproj|c:\\sanatorio\\sanatorio\\sanatorio\\sanatorio\\sanatorio\\vista\\frm_datosmedicos.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{2D5752BA-BB7B-46F1-9175-9460AB73C69C}|Sanatorio\\Sanatorio.csproj|solutionrelative:sanatorio\\vista\\frm_datosmedicos.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
@@ -19,12 +27,37 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
+              "Title": "frmNewRegistros.cs",
+              "DocumentMoniker": "C:\\Sanatorio\\Sanatorio\\Sanatorio\\Sanatorio\\Sanatorio\\Vista\\frmNewRegistros.cs",
+              "RelativeDocumentMoniker": "Sanatorio\\Vista\\frmNewRegistros.cs",
+              "ToolTip": "C:\\Sanatorio\\Sanatorio\\Sanatorio\\Sanatorio\\Sanatorio\\Vista\\frmNewRegistros.cs",
+              "RelativeToolTip": "Sanatorio\\Vista\\frmNewRegistros.cs",
+              "ViewState": "AgIAAEIAAAAAAAAAAAAAAF0AAABBAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-06T23:20:09.971Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "frmNewRegistros.cs [Dise\u00F1o]",
+              "DocumentMoniker": "C:\\Sanatorio\\Sanatorio\\Sanatorio\\Sanatorio\\Sanatorio\\Vista\\frmNewRegistros.cs",
+              "RelativeDocumentMoniker": "Sanatorio\\Vista\\frmNewRegistros.cs",
+              "ToolTip": "C:\\Sanatorio\\Sanatorio\\Sanatorio\\Sanatorio\\Sanatorio\\Vista\\frmNewRegistros.cs [Dise\u00F1o]",
+              "RelativeToolTip": "Sanatorio\\Vista\\frmNewRegistros.cs [Dise\u00F1o]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-06T23:19:42.909Z",
+              "EditorCaption": " [Dise\u00F1o]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
               "Title": "frm_DatosMedicos.cs",
-              "DocumentMoniker": "C:\\Sanatorio2\\Sanatorio\\Sanatorio\\Vista\\frm_DatosMedicos.cs",
+              "DocumentMoniker": "C:\\Sanatorio\\Sanatorio\\Sanatorio\\Sanatorio\\Sanatorio\\Vista\\frm_DatosMedicos.cs",
               "RelativeDocumentMoniker": "Sanatorio\\Vista\\frm_DatosMedicos.cs",
-              "ToolTip": "C:\\Sanatorio2\\Sanatorio\\Sanatorio\\Vista\\frm_DatosMedicos.cs",
+              "ToolTip": "C:\\Sanatorio\\Sanatorio\\Sanatorio\\Sanatorio\\Sanatorio\\Vista\\frm_DatosMedicos.cs",
               "RelativeToolTip": "Sanatorio\\Vista\\frm_DatosMedicos.cs",
-              "ViewState": "AQIAACsAAAAAAAAAAAAAAIMAAABYAAAA",
+              "ViewState": "AgIAAF8AAAAAAAAAAADwv4MAAABYAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-12-06T20:13:32.474Z",
               "EditorCaption": ""

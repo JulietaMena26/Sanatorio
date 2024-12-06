@@ -67,8 +67,8 @@ namespace Sanatorio.Vista
             registro.motivo = txtMotivo.Text.Trim();
             registro.diagnostico = txtdiagnostico.Text.Trim();
             registro.tratamiento = txttratamiento.Text.Trim();
-            registro.proxima_visita = txtproxima_visita.Text.Trim();
-            registro.observacion = txtobservacion();
+            registro.proxima_visita = dateTimePickerProxima.Text.Trim();
+            registro.observacion = txtObservaciones.Text.Trim();
             DatosRegistroClinico datos = new DatosRegistroClinico();
                     
 
@@ -108,6 +108,11 @@ namespace Sanatorio.Vista
             //    }
             //}
             this.Close();
+        }
+
+        private void txttratamiento_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }
