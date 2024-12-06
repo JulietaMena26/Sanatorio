@@ -10,14 +10,11 @@ using System.Windows.Forms;
 
 namespace Sanatorio.Vista
 {
-    public partial class frmObrasocial : Form
+    public partial class frmNewRegistros : Form
     {
-        public frmObrasocial()
+        public frmNewRegistros()
         {
             InitializeComponent();
         }
-
-    
-    
     }
 }

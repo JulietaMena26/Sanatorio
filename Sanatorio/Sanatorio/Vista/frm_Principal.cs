@@ -105,7 +105,7 @@ namespace Sanatorio
 
         private void button3_Click(object sender, EventArgs e)
         {
-
+            abrirFormEnPanel(new frmObrassociales());
         }
 
         private void button4_Click(object sender, EventArgs e)
@@ -132,5 +132,10 @@ namespace Sanatorio
 		{
 			abrirFormEnPanel(new frmInternaciones());
 		}
-	}
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            abrirFormEnPanel(new frmRegistros());
+        }
+    }
 }

@@ -203,9 +203,9 @@ namespace Sanatorio.Datos
 
             try
             {
-                MySqlCommand command =  new MySqlCommand("psa_listado_pacientes", SQLdatos);
+                MySqlCommand command = new MySqlCommand("psa_listado_pacientes", SQLdatos);
                 command.CommandType = CommandType.StoredProcedure;
-                command.Parameters.Add("cTexto",MySqlDbType.VarChar).Value=cTexto;
+                command.Parameters.AddWithValue("cTexto", cTexto);
                 SQLdatos.Open();
 
                 resultado = command.ExecuteReader();
@@ -226,6 +226,7 @@ namespace Sanatorio.Datos
             }
             return table;
         }
+
 
         public DataTable listarPacienteid_ObraSocial(int id_obraSocial)
         {
