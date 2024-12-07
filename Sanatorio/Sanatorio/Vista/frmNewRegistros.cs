@@ -58,7 +58,7 @@ namespace Sanatorio.Vista
             //    else
             //    {
             Registro_Clinico registro = new Registro_Clinico();
-            registro.idRegistro = txtId.Text.trim();
+            registro.idRegistro = int.Parse(txtId.Text.Trim());
             registro.id_paciente = int.Parse(txtIdPaciente.Text.Trim());
             registro.id_medico = int.Parse(txtIdPaciente.Text.Trim());
             registro.fecha = dateTimePickerFechaNaci.Value;
@@ -66,8 +66,8 @@ namespace Sanatorio.Vista
             registro.motivo = txtMotivo.Text.Trim();
             registro.diagnostico = txtdiagnostico.Text.Trim();
             registro.tratamiento = txttratamiento.Text.Trim();
-            registro.proxima_visita = txtproxima_visita.Text.Trim();
-            registro.observacion = cmbObservacion();
+            registro.proxima_visita = txtproxima_visita.Value;
+            registro.observacion = txtObservacion.Text.Trim();
             DatosRegistroClinico datos = new DatosRegistroClinico();
 
 

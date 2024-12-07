@@ -76,6 +76,26 @@ namespace Sanatorio.Vista
                 MessageBox.Show("Seleccione una fila");
             }
         }
+
+        private void altaPaciente()
+        {
+			if (dataGridInternacion.SelectedRows.Count > 0)
+			{
+                string nombre = dataGridInternacion.CurrentRow.Cells[3].Value.ToString();
+                DialogResult resp = MessageBox.Show($"¿Quiere dar de alta al paciente {nombre}?","Sistema Santa Rita",MessageBoxButtons.YesNo,MessageBoxIcon.Question,MessageBoxDefaultButton.Button2);
+                if (resp == DialogResult.Yes)
+                {
+
+                }
+
+
+			}
+			else
+			{
+				MessageBox.Show("Seleccione una Paciente para dar de Alta ", "Sistema Santa Rita",MessageBoxButtons.OK,MessageBoxIcon.Information);
+			}
+
+		}
         #endregion
         
         private void mensajestoolTip()

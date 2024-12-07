@@ -244,7 +244,6 @@ D:\Sanatorio\Sanatorio\Sanatorio\Sanatorio\bin\Debug\System.Memory.xml
 D:\Sanatorio\Sanatorio\Sanatorio\Sanatorio\bin\Debug\System.Numerics.Vectors.xml
 D:\Sanatorio\Sanatorio\Sanatorio\Sanatorio\bin\Debug\System.Runtime.CompilerServices.Unsafe.xml
 D:\Sanatorio\Sanatorio\Sanatorio\Sanatorio\bin\Debug\System.Threading.Tasks.Extensions.xml
-D:\Sanatorio\Sanatorio\Sanatorio\Sanatorio\obj\Debug\Sanatorio.Vista.frmObrasocial.resources
 D:\Sanatorio\Sanatorio\Sanatorio\Sanatorio\obj\Debug\Sanatorio.Vista.frmObrassociales.resources
 D:\Sanatorio\Sanatorio\Sanatorio\Sanatorio\obj\Debug\Sanatorio.Vista.frmHabitaciones.resources
 D:\Sanatorio\Sanatorio\Sanatorio\Sanatorio\obj\Debug\Sanatorio.Vista.frmMedicos.resources
@@ -529,3 +528,5 @@ C:\Users\camim\OneDrive\Documentos\Sanatorio2\Sanatorio\Sanatorio\obj\Debug\Sana
 C:\Users\camim\OneDrive\Documentos\Sanatorio2\Sanatorio\Sanatorio\obj\Debug\Sanatorio.pdb
 C:\Users\camim\OneDrive\Documentos\Sanatorio2\Sanatorio\Sanatorio\obj\Debug\Sanatorio.Vista.frmNewObrasocial.resources
 C:\Users\camim\OneDrive\Documentos\Sanatorio2\Sanatorio\Sanatorio\obj\Debug\Sanatorio.Vista.frmNewRegistros.resources
+D:\Sanatorio\Sanatorio\Sanatorio\Sanatorio\obj\Debug\Sanatorio.Vista.frmNewRegistros.resources
+D:\Sanatorio\Sanatorio\Sanatorio\Sanatorio\obj\Debug\Sanatorio.Vista.frmNewObrasocial.resources

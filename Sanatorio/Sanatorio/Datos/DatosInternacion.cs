@@ -20,6 +20,46 @@ namespace Sanatorio.Datos
 			throw new NotImplementedException();
 		}
 
+		public bool altaInternacion(int id_) // método utilizado para dar de alta una internación
+		{
+			MySqlConnection SQLdatos = new MySqlConnection();
+			SQLdatos = conexion.crearConexion();
+			int resultado;
+
+			DateTime fecha_ = DateTime.Now; // obtengo el dia del sistema
+			TimeSpan hora_ = DateTime.Now.TimeOfDay; // obtengo la hora del sistema
+
+			try
+			{
+				MySqlCommand command = new MySqlCommand("psa_alta_internacion", SQLdatos);
+				command.CommandType = CommandType.StoredProcedure;
+				command.Parameters.Add("id_", MySqlDbType.Int16).Value = id_;
+				command.Parameters.Add("fecha_", MySqlDbType.Date).Value = fecha_.ToString("yyyy-MM-dd");
+				command.Parameters.Add("hora_", MySqlDbType.Time).Value = hora_;				
+				SQLdatos.Open();
+
+				resultado = command.ExecuteNonQuery();
+				if (resultado > 0)
+					return true;
+				else
+					return false;
+
+			}
+			catch (Exception ex)
+			{
+				//Funciones.Logs("Datos_metodolistpaciente", ex.ToString());
+				throw ex;
+			}
+			finally
+			{
+				if (SQLdatos.State == ConnectionState.Open)
+				{
+					SQLdatos.Close();
+				}
+			}
+
+		}
+
 		public DataTable buscarFechaEgreso(DateTime fecha)
 		{
 			throw new NotImplementedException();
@@ -49,7 +89,6 @@ namespace Sanatorio.Datos
 		{
 			throw new NotImplementedException();
 		}
-
 		public bool guardarInternacion(Internacion internacion)
 		{
 			MySqlConnection SQLdatos = new MySqlConnection();
@@ -59,14 +98,15 @@ namespace Sanatorio.Datos
 			// Obtener la fecha seleccionada en el DateTimePicker
 			DateTime fechaIngreso = internacion.fechaIngreso;
 			// Obtener la hora seleccionada en el DateTimePicker
-			DateTime horaIngreso = internacion.horaIngreso;
+			//DateTime horaIngreso = internacion.horaIngreso.TimeOfDay;
+			TimeSpan hora = internacion.horaIngreso.TimeOfDay; ;
 
 			try
 			{
 				MySqlCommand command = new MySqlCommand("psa_guardar_internacion", SQLdatos);
 				command.CommandType = CommandType.StoredProcedure;
 				command.Parameters.Add("fechaIngreso_", MySqlDbType.Date).Value = fechaIngreso.ToString("yyyy-MM-dd");
-				command.Parameters.Add("horaIngreso_", MySqlDbType.Time).Value = horaIngreso.ToString("HH:mm:ss"); ;
+				command.Parameters.Add("horaIngreso_", MySqlDbType.Time).Value = hora;
 				command.Parameters.Add("id_medico_", MySqlDbType.Int16).Value = internacion.id_medico;
 				command.Parameters.Add("id_paciente_", MySqlDbType.Int16).Value = internacion.id_paciente;
 				command.Parameters.Add("id_habitacion_", MySqlDbType.Int16).Value = internacion.id_habitacion;

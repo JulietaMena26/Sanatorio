@@ -142,7 +142,7 @@ namespace Sanatorio.Vista
 			this.medicoId = (int)cmbMedico.SelectedValue; // guardamos el id del medico
 			this.habitacionId = (int)cmbHabitacion.SelectedValue; // guardamos el id del habitacion
 																  // Cargamos con los datos la nueva internación
-			internacion.fechaEgreso = dateTimePickerFechIngreso.Value;
+			internacion.fechaIngreso = dateTimePickerFechIngreso.Value;
             internacion.horaIngreso = dateTimePickerHoraIngreso.Value;
             internacion.id_medico =  this.medicoId;
             internacion.id_paciente = this.pacienteId;
@@ -162,6 +162,7 @@ namespace Sanatorio.Vista
                 // Verificar que le paciente no este internado
                 if (!datos.isInternadoPaciente(internacion.id_paciente))
                 {
+                    MessageBox.Show("Control de Fecha Ingreso: " + internacion.fechaIngreso.ToString());
                     if (datos.guardarInternacion(internacion))
                     {
                         (new DatosHabitacion()).ocuparCama(this.habitacionId); // Actualiza la cama disponible en la tabla Habitaciones

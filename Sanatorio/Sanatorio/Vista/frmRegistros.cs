@@ -40,7 +40,7 @@ namespace Sanatorio.Vista
         private void frmRegistros_Load(object sender, EventArgs e)
         {
 
-            listado_Registros("%");
+           // this.listado_Registros("%"); ve listado de registros
 
         }
 
@@ -66,23 +66,23 @@ namespace Sanatorio.Vista
 
         private void btnBuscar_Click(object sender, EventArgs e)
         {
-            listado_Pacientes(txtBuscar.Text.Trim());
+            //this.listado_Pacientes(txtBuscar.Text.Trim());           
         }
 
         private void btnEditar_Click(object sender, EventArgs e)
         {
-            this.actualizarRegistro();
+            //this.actualizarRegistro();
         }
 
         private void btnEliminar_Click(object sender, EventArgs e)
         {
-            MessageBox.Show(dataGridRegistros.CurrentRow.Cells[11].Value.ToString());
+            //MessageBox.Show(dataGridRegistros.CurrentRow.Cells[11].Value.ToString());
         }
 
         private void dataGridPaciente_DoubleClick(object sender, EventArgs e)
         {
 
-            this.actualizarRegistro();
+            //this.actualizarRegistro();
         }
 
         private void frmPaciente_KeyDown(object sender, KeyEventArgs e)

@@ -35,13 +35,6 @@
 			this.btnNuevo = new System.Windows.Forms.Button();
 			this.lblCerrar = new System.Windows.Forms.Label();
 			this.dataGridInternacion = new System.Windows.Forms.DataGridView();
-			this.btnBuscar = new System.Windows.Forms.Button();
-			this.txtBuscar = new System.Windows.Forms.TextBox();
-			this.btnEditar = new System.Windows.Forms.Button();
-			this.btnEliminar = new System.Windows.Forms.Button();
-			this.groupBox1 = new System.Windows.Forms.GroupBox();
-			this.rdbAlta = new System.Windows.Forms.RadioButton();
-			this.rdbInternado = new System.Windows.Forms.RadioButton();
 			this.id = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.fechaIngreso = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.horaIngreso = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -51,6 +44,14 @@
 			this.motivoInternacion = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.estado = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.fechaEgreso = new System.Windows.Forms.DataGridViewTextBoxColumn();
+			this.btnBuscar = new System.Windows.Forms.Button();
+			this.txtBuscar = new System.Windows.Forms.TextBox();
+			this.btnEditar = new System.Windows.Forms.Button();
+			this.btnEliminar = new System.Windows.Forms.Button();
+			this.groupBox1 = new System.Windows.Forms.GroupBox();
+			this.rdbAlta = new System.Windows.Forms.RadioButton();
+			this.rdbInternado = new System.Windows.Forms.RadioButton();
+			this.button1 = new System.Windows.Forms.Button();
 			((System.ComponentModel.ISupportInitialize)(this.dataGridInternacion)).BeginInit();
 			this.groupBox1.SuspendLayout();
 			this.SuspendLayout();
@@ -76,7 +77,7 @@
 			this.btnNuevo.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(246)))), ((int)(((byte)(248)))), ((int)(((byte)(244)))));
 			this.btnNuevo.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
 			this.btnNuevo.ImageIndex = 0;
-			this.btnNuevo.Location = new System.Drawing.Point(43, 526);
+			this.btnNuevo.Location = new System.Drawing.Point(26, 525);
 			this.btnNuevo.Name = "btnNuevo";
 			this.btnNuevo.Size = new System.Drawing.Size(144, 34);
 			this.btnNuevo.TabIndex = 3;
@@ -146,113 +147,6 @@
 			this.dataGridInternacion.TabIndex = 7;
 			this.dataGridInternacion.DoubleClick += new System.EventHandler(this.dataGridPaciente_DoubleClick);
 			// 
-			// btnBuscar
-			// 
-			this.btnBuscar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-			this.btnBuscar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(72)))), ((int)(((byte)(89)))), ((int)(((byte)(53)))));
-			this.btnBuscar.FlatAppearance.BorderSize = 0;
-			this.btnBuscar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(126)))), ((int)(((byte)(158)))), ((int)(((byte)(92)))));
-			this.btnBuscar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-			this.btnBuscar.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.btnBuscar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(246)))), ((int)(((byte)(248)))), ((int)(((byte)(244)))));
-			this.btnBuscar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-			this.btnBuscar.ImageIndex = 0;
-			this.btnBuscar.Location = new System.Drawing.Point(583, 17);
-			this.btnBuscar.Name = "btnBuscar";
-			this.btnBuscar.Size = new System.Drawing.Size(133, 34);
-			this.btnBuscar.TabIndex = 2;
-			this.btnBuscar.Text = "Buscar (F1)";
-			this.btnBuscar.UseVisualStyleBackColor = false;
-			this.btnBuscar.Click += new System.EventHandler(this.btnBuscar_Click);
-			// 
-			// txtBuscar
-			// 
-			this.txtBuscar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(202)))), ((int)(((byte)(219)))), ((int)(((byte)(183)))));
-			this.txtBuscar.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.txtBuscar.ForeColor = System.Drawing.Color.White;
-			this.txtBuscar.Location = new System.Drawing.Point(251, 20);
-			this.txtBuscar.Name = "txtBuscar";
-			this.txtBuscar.Size = new System.Drawing.Size(304, 31);
-			this.txtBuscar.TabIndex = 0;
-			this.txtBuscar.Enter += new System.EventHandler(this.txtBuscar_Enter);
-			this.txtBuscar.Leave += new System.EventHandler(this.txtBuscar_Leave);
-			// 
-			// btnEditar
-			// 
-			this.btnEditar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-			this.btnEditar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(72)))), ((int)(((byte)(89)))), ((int)(((byte)(53)))));
-			this.btnEditar.FlatAppearance.BorderSize = 0;
-			this.btnEditar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(126)))), ((int)(((byte)(158)))), ((int)(((byte)(92)))));
-			this.btnEditar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-			this.btnEditar.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.btnEditar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(246)))), ((int)(((byte)(248)))), ((int)(((byte)(244)))));
-			this.btnEditar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-			this.btnEditar.ImageIndex = 0;
-			this.btnEditar.Location = new System.Drawing.Point(251, 526);
-			this.btnEditar.Name = "btnEditar";
-			this.btnEditar.Size = new System.Drawing.Size(144, 34);
-			this.btnEditar.TabIndex = 4;
-			this.btnEditar.Text = "Editar (F3)";
-			this.btnEditar.UseVisualStyleBackColor = false;
-			this.btnEditar.Click += new System.EventHandler(this.btnEditar_Click);
-			// 
-			// btnEliminar
-			// 
-			this.btnEliminar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-			this.btnEliminar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(72)))), ((int)(((byte)(89)))), ((int)(((byte)(53)))));
-			this.btnEliminar.FlatAppearance.BorderSize = 0;
-			this.btnEliminar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(126)))), ((int)(((byte)(158)))), ((int)(((byte)(92)))));
-			this.btnEliminar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-			this.btnEliminar.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.btnEliminar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(246)))), ((int)(((byte)(248)))), ((int)(((byte)(244)))));
-			this.btnEliminar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-			this.btnEliminar.ImageIndex = 0;
-			this.btnEliminar.Location = new System.Drawing.Point(450, 526);
-			this.btnEliminar.Name = "btnEliminar";
-			this.btnEliminar.Size = new System.Drawing.Size(144, 34);
-			this.btnEliminar.TabIndex = 5;
-			this.btnEliminar.Text = "Eliminar (F4)";
-			this.btnEliminar.UseVisualStyleBackColor = false;
-			this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click);
-			// 
-			// groupBox1
-			// 
-			this.groupBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(72)))), ((int)(((byte)(89)))), ((int)(((byte)(53)))));
-			this.groupBox1.Controls.Add(this.rdbAlta);
-			this.groupBox1.Controls.Add(this.rdbInternado);
-			this.groupBox1.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.groupBox1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(246)))), ((int)(((byte)(248)))), ((int)(((byte)(244)))));
-			this.groupBox1.Location = new System.Drawing.Point(717, 517);
-			this.groupBox1.Name = "groupBox1";
-			this.groupBox1.Size = new System.Drawing.Size(292, 43);
-			this.groupBox1.TabIndex = 9;
-			this.groupBox1.TabStop = false;
-			this.groupBox1.Text = "Estado";
-			// 
-			// rdbAlta
-			// 
-			this.rdbAlta.AutoSize = true;
-			this.rdbAlta.Location = new System.Drawing.Point(169, 17);
-			this.rdbAlta.Name = "rdbAlta";
-			this.rdbAlta.Size = new System.Drawing.Size(52, 20);
-			this.rdbAlta.TabIndex = 1;
-			this.rdbAlta.Text = "Alta";
-			this.rdbAlta.UseVisualStyleBackColor = true;
-			this.rdbAlta.CheckedChanged += new System.EventHandler(this.rdbAlta_CheckedChanged);
-			// 
-			// rdbInternado
-			// 
-			this.rdbInternado.AutoSize = true;
-			this.rdbInternado.Checked = true;
-			this.rdbInternado.Location = new System.Drawing.Point(16, 16);
-			this.rdbInternado.Name = "rdbInternado";
-			this.rdbInternado.Size = new System.Drawing.Size(88, 20);
-			this.rdbInternado.TabIndex = 0;
-			this.rdbInternado.TabStop = true;
-			this.rdbInternado.Text = "Internado";
-			this.rdbInternado.UseVisualStyleBackColor = true;
-			this.rdbInternado.CheckedChanged += new System.EventHandler(this.rdbInternado_CheckedChanged);
-			// 
 			// id
 			// 
 			this.id.FillWeight = 120F;
@@ -318,12 +212,138 @@
 			this.fechaEgreso.Name = "fechaEgreso";
 			this.fechaEgreso.ReadOnly = true;
 			// 
+			// btnBuscar
+			// 
+			this.btnBuscar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+			this.btnBuscar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(72)))), ((int)(((byte)(89)))), ((int)(((byte)(53)))));
+			this.btnBuscar.FlatAppearance.BorderSize = 0;
+			this.btnBuscar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(126)))), ((int)(((byte)(158)))), ((int)(((byte)(92)))));
+			this.btnBuscar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+			this.btnBuscar.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.btnBuscar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(246)))), ((int)(((byte)(248)))), ((int)(((byte)(244)))));
+			this.btnBuscar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+			this.btnBuscar.ImageIndex = 0;
+			this.btnBuscar.Location = new System.Drawing.Point(583, 17);
+			this.btnBuscar.Name = "btnBuscar";
+			this.btnBuscar.Size = new System.Drawing.Size(133, 34);
+			this.btnBuscar.TabIndex = 2;
+			this.btnBuscar.Text = "Buscar (F1)";
+			this.btnBuscar.UseVisualStyleBackColor = false;
+			this.btnBuscar.Click += new System.EventHandler(this.btnBuscar_Click);
+			// 
+			// txtBuscar
+			// 
+			this.txtBuscar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(202)))), ((int)(((byte)(219)))), ((int)(((byte)(183)))));
+			this.txtBuscar.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.txtBuscar.ForeColor = System.Drawing.Color.White;
+			this.txtBuscar.Location = new System.Drawing.Point(251, 20);
+			this.txtBuscar.Name = "txtBuscar";
+			this.txtBuscar.Size = new System.Drawing.Size(304, 31);
+			this.txtBuscar.TabIndex = 0;
+			this.txtBuscar.Enter += new System.EventHandler(this.txtBuscar_Enter);
+			this.txtBuscar.Leave += new System.EventHandler(this.txtBuscar_Leave);
+			// 
+			// btnEditar
+			// 
+			this.btnEditar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+			this.btnEditar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(72)))), ((int)(((byte)(89)))), ((int)(((byte)(53)))));
+			this.btnEditar.FlatAppearance.BorderSize = 0;
+			this.btnEditar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(126)))), ((int)(((byte)(158)))), ((int)(((byte)(92)))));
+			this.btnEditar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+			this.btnEditar.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.btnEditar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(246)))), ((int)(((byte)(248)))), ((int)(((byte)(244)))));
+			this.btnEditar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+			this.btnEditar.ImageIndex = 0;
+			this.btnEditar.Location = new System.Drawing.Point(197, 526);
+			this.btnEditar.Name = "btnEditar";
+			this.btnEditar.Size = new System.Drawing.Size(144, 34);
+			this.btnEditar.TabIndex = 4;
+			this.btnEditar.Text = "Editar (F3)";
+			this.btnEditar.UseVisualStyleBackColor = false;
+			this.btnEditar.Click += new System.EventHandler(this.btnEditar_Click);
+			// 
+			// btnEliminar
+			// 
+			this.btnEliminar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+			this.btnEliminar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(72)))), ((int)(((byte)(89)))), ((int)(((byte)(53)))));
+			this.btnEliminar.FlatAppearance.BorderSize = 0;
+			this.btnEliminar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(126)))), ((int)(((byte)(158)))), ((int)(((byte)(92)))));
+			this.btnEliminar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+			this.btnEliminar.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.btnEliminar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(246)))), ((int)(((byte)(248)))), ((int)(((byte)(244)))));
+			this.btnEliminar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+			this.btnEliminar.ImageIndex = 0;
+			this.btnEliminar.Location = new System.Drawing.Point(372, 526);
+			this.btnEliminar.Name = "btnEliminar";
+			this.btnEliminar.Size = new System.Drawing.Size(144, 34);
+			this.btnEliminar.TabIndex = 5;
+			this.btnEliminar.Text = "Eliminar (F4)";
+			this.btnEliminar.UseVisualStyleBackColor = false;
+			this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click);
+			// 
+			// groupBox1
+			// 
+			this.groupBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(72)))), ((int)(((byte)(89)))), ((int)(((byte)(53)))));
+			this.groupBox1.Controls.Add(this.rdbAlta);
+			this.groupBox1.Controls.Add(this.rdbInternado);
+			this.groupBox1.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.groupBox1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(246)))), ((int)(((byte)(248)))), ((int)(((byte)(244)))));
+			this.groupBox1.Location = new System.Drawing.Point(717, 517);
+			this.groupBox1.Name = "groupBox1";
+			this.groupBox1.Size = new System.Drawing.Size(292, 43);
+			this.groupBox1.TabIndex = 9;
+			this.groupBox1.TabStop = false;
+			this.groupBox1.Text = "Estado";
+			// 
+			// rdbAlta
+			// 
+			this.rdbAlta.AutoSize = true;
+			this.rdbAlta.Location = new System.Drawing.Point(169, 17);
+			this.rdbAlta.Name = "rdbAlta";
+			this.rdbAlta.Size = new System.Drawing.Size(52, 20);
+			this.rdbAlta.TabIndex = 1;
+			this.rdbAlta.Text = "Alta";
+			this.rdbAlta.UseVisualStyleBackColor = true;
+			this.rdbAlta.CheckedChanged += new System.EventHandler(this.rdbAlta_CheckedChanged);
+			// 
+			// rdbInternado
+			// 
+			this.rdbInternado.AutoSize = true;
+			this.rdbInternado.Checked = true;
+			this.rdbInternado.Location = new System.Drawing.Point(16, 16);
+			this.rdbInternado.Name = "rdbInternado";
+			this.rdbInternado.Size = new System.Drawing.Size(88, 20);
+			this.rdbInternado.TabIndex = 0;
+			this.rdbInternado.TabStop = true;
+			this.rdbInternado.Text = "Internado";
+			this.rdbInternado.UseVisualStyleBackColor = true;
+			this.rdbInternado.CheckedChanged += new System.EventHandler(this.rdbInternado_CheckedChanged);
+			// 
+			// button1
+			// 
+			this.button1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+			this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(72)))), ((int)(((byte)(89)))), ((int)(((byte)(53)))));
+			this.button1.FlatAppearance.BorderSize = 0;
+			this.button1.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(126)))), ((int)(((byte)(158)))), ((int)(((byte)(92)))));
+			this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+			this.button1.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.button1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(246)))), ((int)(((byte)(248)))), ((int)(((byte)(244)))));
+			this.button1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+			this.button1.ImageIndex = 0;
+			this.button1.Location = new System.Drawing.Point(544, 525);
+			this.button1.Name = "button1";
+			this.button1.Size = new System.Drawing.Size(144, 34);
+			this.button1.TabIndex = 10;
+			this.button1.Text = "Alta (F5)";
+			this.button1.UseVisualStyleBackColor = false;
+			// 
 			// frmInternaciones
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(202)))), ((int)(((byte)(219)))), ((int)(((byte)(183)))));
 			this.ClientSize = new System.Drawing.Size(1050, 600);
+			this.Controls.Add(this.button1);
 			this.Controls.Add(this.groupBox1);
 			this.Controls.Add(this.btnEliminar);
 			this.Controls.Add(this.btnEditar);
@@ -369,5 +389,6 @@
 		private System.Windows.Forms.DataGridViewTextBoxColumn motivoInternacion;
 		private System.Windows.Forms.DataGridViewTextBoxColumn estado;
 		private System.Windows.Forms.DataGridViewTextBoxColumn fechaEgreso;
+		private System.Windows.Forms.Button button1;
 	}
 }
