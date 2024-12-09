@@ -52,28 +52,25 @@ namespace Sanatorio.Vista
             dataGridInternacion.ClearSelection();
         }
 
-        private void actualizar_paciente()
+        private void actualizar_Internacion()
         {
-			frmNewPaciente nuevo = new frmNewPaciente();
+			
             if (dataGridInternacion.SelectedRows.Count > 0)
             {
-                nuevo.txtId.Text = dataGridInternacion.CurrentRow.Cells[0].Value.ToString();
-                nuevo.txtHistoriClinica.Text = dataGridInternacion.CurrentRow.Cells[1].Value.ToString();
-                nuevo.txtDni.Text = dataGridInternacion.CurrentRow.Cells[2].Value.ToString();
-                nuevo.txtApellido.Text = dataGridInternacion.CurrentRow.Cells[3].Value.ToString();
-                nuevo.txtNombre.Text = dataGridInternacion.CurrentRow.Cells[4].Value.ToString();
-                DateTime fechaDateTime = DateTime.ParseExact(dataGridInternacion.CurrentRow.Cells[5].Value.ToString(), "dd/MM/yyyy", CultureInfo.InvariantCulture);
-                nuevo.dateTimePickerFechaNaci.Value = fechaDateTime;
-                nuevo.txtEdad.Text = dataGridInternacion.CurrentRow.Cells[6].Value.ToString();
-                nuevo.txtDomicilio.Text = dataGridInternacion.CurrentRow.Cells[7].Value.ToString();
-                nuevo.txtTelefono.Text = dataGridInternacion.CurrentRow.Cells[8].Value.ToString();
-                nuevo.cmbObraSocial.Text = dataGridInternacion.CurrentRow.Cells[9].Value.ToString();
-                nuevo.txtNunAfiliado.Text = dataGridInternacion.CurrentRow.Cells[10].Value.ToString();
-                nuevo.ShowDialog();
+				Internacion _internacion = new Internacion();
+
+                int id_Interncion = (int)dataGridInternacion.CurrentRow.Cells[0].Value; 
+
+                _internacion = (new DatosInternacion()).buscarInternacionId(id_Interncion);
+
+                MessageBox.Show(_internacion.ToString());
+
+                frmNewInternacion nuevo = new frmNewInternacion();
+				nuevo.ShowDialog();
             }
             else
             {
-                MessageBox.Show("Seleccione una fila");
+                MessageBox.Show("Seleccione una Internación","Sistema Santa Rita",MessageBoxButtons.OK,MessageBoxIcon.Information);
             }
         }
 
@@ -85,10 +82,19 @@ namespace Sanatorio.Vista
                 DialogResult resp = MessageBox.Show($"¿Quiere dar de alta al paciente {nombre}?","Sistema Santa Rita",MessageBoxButtons.YesNo,MessageBoxIcon.Question,MessageBoxDefaultButton.Button2);
                 if (resp == DialogResult.Yes)
                 {
-
+                    if ((new DatosInternacion()).altaInternacion(int.Parse(dataGridInternacion.CurrentRow.Cells[0].Value.ToString())))
+                    {
+                        MessageBox.Show($"Paciente {nombre} dado de ALTA", "Sistema Santa Rita", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        Habitacion habitacion_ = (new DatosHabitacion()).buscarHabitacionNumero(dataGridInternacion.CurrentRow.Cells[5].Value.ToString());
+                        (new DatosHabitacion()).liberarCama(habitacion_.idHabitacion);
+						this.listado_Internaciones("%", "Internación");
+					}
+                    else 
+                    {
+						MessageBox.Show($"No se puedo dar de alta al Paciente {nombre} dado de ALTA", "Sistema Santa Rita", MessageBoxButtons.OK, MessageBoxIcon.Information);
+					}
                 }
-
-
+                dataGridInternacion.ClearSelection();
 			}
 			else
 			{
@@ -156,7 +162,7 @@ namespace Sanatorio.Vista
 
         private void btnEditar_Click(object sender, EventArgs e)
         {
-            this.actualizar_paciente();
+            this.actualizar_Internacion();
         }
 
         private void btnEliminar_Click(object sender, EventArgs e)
@@ -167,7 +173,7 @@ namespace Sanatorio.Vista
         private void dataGridPaciente_DoubleClick(object sender, EventArgs e)
         {
            
-            this.actualizar_paciente();
+            this.actualizar_Internacion();
         }
 
         private void frmPaciente_KeyDown(object sender, KeyEventArgs e)
@@ -216,6 +222,11 @@ namespace Sanatorio.Vista
 			{
 				this.listado_Internaciones(txtBuscar.Text.Trim(), "Internación");
 			}			
+		}
+
+		private void button1_Click(object sender, EventArgs e)
+		{
+            this.altaPaciente();
 		}
 	}
 }

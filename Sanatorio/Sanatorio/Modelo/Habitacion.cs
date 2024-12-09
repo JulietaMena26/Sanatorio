@@ -13,7 +13,7 @@ namespace Sanatorio.Modelos
         public int id_tipo { get; set; }
         public int piso { get; set; }
         public int capacidad { get; set; }
-		public int camaDisponible { get; set; } // camas disponibles para ser utilizadas
+		public int camaOcupada { get; set; } // camas ocupadas
 		public string estado { get; set; }
         public decimal precio { get; set; }
         public string comodidad { get; set; }
@@ -29,7 +29,7 @@ namespace Sanatorio.Modelos
             this.id_tipo = id_tipo;
             this.piso = piso;
             this.capacidad = capacidad;
-            this.camaDisponible = capacidad; // cuando se crea la habitacion las camas disponobles es igual a la capacidad
+            this.camaOcupada = 0; 
             this.estado = estado;
             this.precio = precio;
             this.comodidad = comodidad;
@@ -43,7 +43,7 @@ namespace Sanatorio.Modelos
             this.id_tipo = id_tipo;
             this.piso = piso;
             this.capacidad = capacidad;
-			this.camaDisponible = capacidad; // cuando se crea la habitacion las camas disponobles es igual a la capacidad
+			this.camaOcupada = 0; 
 			this.estado = estado;
             this.precio = precio;
             this.comodidad = comodidad;
@@ -52,7 +52,7 @@ namespace Sanatorio.Modelos
         }
         public override string ToString()
 		{
-			return $"idhabitacion: {this.idHabitacion}\nid_tipo: {this.id_tipo}\npiso: {this.piso}\ncapacidad: {this.capacidad}\nCama Disponible: ${this.camaDisponible}\n" + 
+			return $"idhabitacion: {this.idHabitacion}\nid_tipo: {this.id_tipo}\npiso: {this.piso}\ncapacidad: {this.capacidad}\nCama Disponible: ${this.camaOcupada}\n" + 
                    $"estado: {this.estado}\nprecio: {this.precio}\ncomodidad: {this.comodidad}\nobservacion: {this.observacion}\nactivo: {this.activo}";
 		}
 

@@ -102,7 +102,7 @@ namespace Sanatorio.Datos
 			SQLdatos = conexion.crearConexion();
 			MySqlDataReader resultado;
 			Habitacion habitacion = new Habitacion();
-
+			
 			try
 			{
 				MySqlCommand command = new MySqlCommand("psa_buscar_Habitacion_Numero", SQLdatos);
@@ -117,11 +117,12 @@ namespace Sanatorio.Datos
 					habitacion.id_tipo = resultado.GetInt16(2);
 					habitacion.piso = resultado.GetInt16(3);
 					habitacion.capacidad = resultado.GetInt16(4);
-					habitacion.estado = resultado.GetString(5);
-					habitacion.precio = resultado.GetDecimal(6);
-					habitacion.comodidad = resultado.GetString(7);
-					habitacion.observacion = resultado.GetString(8);
-					habitacion.activo = resultado.GetBoolean(9);
+					habitacion.camaOcupada = resultado.GetInt16(5);
+					habitacion.estado = resultado.GetString(6);
+					habitacion.precio = resultado.GetDecimal(7);
+					habitacion.comodidad = resultado.GetString(8);
+					habitacion.observacion = resultado.GetString(9);
+					habitacion.activo = resultado.GetBoolean(10);					
 				}
 				command.Dispose();
 			}
@@ -246,7 +247,7 @@ namespace Sanatorio.Datos
 			return table;
 		}
 
-		public void ocuparCama(int idHabitacion) // método que actualizar la camas disponibles, si es ocupada una cama.
+		public void ocuparCama(int id_) // método que se utiliza para ocupar cama cuado se interna un paciente.
 		{
 			MySqlConnection SQLdatos = new MySqlConnection();
 			SQLdatos = conexion.crearConexion();
@@ -254,9 +255,9 @@ namespace Sanatorio.Datos
 
 			try
 			{
-				MySqlCommand command = new MySqlCommand("psa_actualizar_cama_disponible", SQLdatos);
+				MySqlCommand command = new MySqlCommand("psa_actualizar_ocupar_cama", SQLdatos);
 				command.CommandType = CommandType.StoredProcedure;
-				command.Parameters.Add("_id", MySqlDbType.Int32).Value = idHabitacion;				
+				command.Parameters.Add("_id", MySqlDbType.Int16).Value = id_;				
 				SQLdatos.Open();
 				resultado = command.ExecuteNonQuery();
 				command.Dispose();				
@@ -274,7 +275,7 @@ namespace Sanatorio.Datos
 				}
 			}
 		}
-		public void liberarCama(int idHabitacion) // método que libera una cama cuando es dado de alta paciente
+		public void liberarCama(int _id) // método que libera una cama cuando es dado de alta paciente
 		{
 			MySqlConnection SQLdatos = new MySqlConnection();
 			SQLdatos = conexion.crearConexion();
@@ -284,7 +285,7 @@ namespace Sanatorio.Datos
 			{
 				MySqlCommand command = new MySqlCommand("psa_actualizar_libera_cama", SQLdatos);
 				command.CommandType = CommandType.StoredProcedure;
-				command.Parameters.Add("_id", MySqlDbType.Int32).Value = idHabitacion;
+				command.Parameters.Add("_id", MySqlDbType.Int16).Value = _id;
 				SQLdatos.Open();
 				resultado = command.ExecuteNonQuery();
 				command.Dispose();
@@ -319,17 +320,18 @@ namespace Sanatorio.Datos
                 resultado = command.ExecuteReader();
                 while (resultado.Read())
                 {
-                    habitacion.idHabitacion = resultado.GetInt16(0);
-                    habitacion.numero = resultado.GetString(1);
-                    habitacion.id_tipo = resultado.GetInt16(2);
-                    habitacion.piso = resultado.GetInt16(3);
-                    habitacion.capacidad = resultado.GetInt16(4);
-                    habitacion.estado = resultado.GetString(5);
-                    habitacion.precio = resultado.GetDecimal(6);
-                    habitacion.comodidad = resultado.GetString(7);
-                    habitacion.observacion = resultado.GetString(8);
-                    habitacion.activo = resultado.GetBoolean(9);
-                }
+					habitacion.idHabitacion = resultado.GetInt16(0);
+					habitacion.numero = resultado.GetString(1);
+					habitacion.id_tipo = resultado.GetInt16(2);
+					habitacion.piso = resultado.GetInt16(3);
+					habitacion.capacidad = resultado.GetInt16(4);
+					habitacion.camaOcupada = resultado.GetInt16(5);
+					habitacion.estado = resultado.GetString(6);
+					habitacion.precio = resultado.GetDecimal(7);
+					habitacion.comodidad = resultado.GetString(8);
+					habitacion.observacion = resultado.GetString(9);
+					habitacion.activo = resultado.GetBoolean(10);
+				}
                 command.Dispose();
             }
             catch (Exception ex)

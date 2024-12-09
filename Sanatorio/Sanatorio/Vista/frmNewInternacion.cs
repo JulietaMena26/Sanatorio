@@ -28,11 +28,11 @@ namespace Sanatorio.Vista
             mensajestoolTip();
         }
 
-		public frmNewInternacion(Paciente paciente)
+		public frmNewInternacion(Internacion internacion_)
         {
-            this.paciente = paciente;
             InitializeComponent();
             mensajestoolTip();
+            
         }
 
         #region "Mis Métodos"
@@ -162,7 +162,6 @@ namespace Sanatorio.Vista
                 // Verificar que le paciente no este internado
                 if (!datos.isInternadoPaciente(internacion.id_paciente))
                 {
-                    MessageBox.Show("Control de Fecha Ingreso: " + internacion.fechaIngreso.ToString());
                     if (datos.guardarInternacion(internacion))
                     {
                         (new DatosHabitacion()).ocuparCama(this.habitacionId); // Actualiza la cama disponible en la tabla Habitaciones

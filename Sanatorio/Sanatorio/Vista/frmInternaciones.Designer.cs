@@ -51,7 +51,7 @@
 			this.groupBox1 = new System.Windows.Forms.GroupBox();
 			this.rdbAlta = new System.Windows.Forms.RadioButton();
 			this.rdbInternado = new System.Windows.Forms.RadioButton();
-			this.button1 = new System.Windows.Forms.Button();
+			this.btnAlta = new System.Windows.Forms.Button();
 			((System.ComponentModel.ISupportInitialize)(this.dataGridInternacion)).BeginInit();
 			this.groupBox1.SuspendLayout();
 			this.SuspendLayout();
@@ -319,23 +319,24 @@
 			this.rdbInternado.UseVisualStyleBackColor = true;
 			this.rdbInternado.CheckedChanged += new System.EventHandler(this.rdbInternado_CheckedChanged);
 			// 
-			// button1
+			// btnAlta
 			// 
-			this.button1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-			this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(72)))), ((int)(((byte)(89)))), ((int)(((byte)(53)))));
-			this.button1.FlatAppearance.BorderSize = 0;
-			this.button1.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(126)))), ((int)(((byte)(158)))), ((int)(((byte)(92)))));
-			this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-			this.button1.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.button1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(246)))), ((int)(((byte)(248)))), ((int)(((byte)(244)))));
-			this.button1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-			this.button1.ImageIndex = 0;
-			this.button1.Location = new System.Drawing.Point(544, 525);
-			this.button1.Name = "button1";
-			this.button1.Size = new System.Drawing.Size(144, 34);
-			this.button1.TabIndex = 10;
-			this.button1.Text = "Alta (F5)";
-			this.button1.UseVisualStyleBackColor = false;
+			this.btnAlta.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+			this.btnAlta.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(72)))), ((int)(((byte)(89)))), ((int)(((byte)(53)))));
+			this.btnAlta.FlatAppearance.BorderSize = 0;
+			this.btnAlta.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(126)))), ((int)(((byte)(158)))), ((int)(((byte)(92)))));
+			this.btnAlta.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+			this.btnAlta.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.btnAlta.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(246)))), ((int)(((byte)(248)))), ((int)(((byte)(244)))));
+			this.btnAlta.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+			this.btnAlta.ImageIndex = 0;
+			this.btnAlta.Location = new System.Drawing.Point(544, 525);
+			this.btnAlta.Name = "btnAlta";
+			this.btnAlta.Size = new System.Drawing.Size(144, 34);
+			this.btnAlta.TabIndex = 10;
+			this.btnAlta.Text = "Alta (F5)";
+			this.btnAlta.UseVisualStyleBackColor = false;
+			this.btnAlta.Click += new System.EventHandler(this.button1_Click);
 			// 
 			// frmInternaciones
 			// 
@@ -343,7 +344,7 @@
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(202)))), ((int)(((byte)(219)))), ((int)(((byte)(183)))));
 			this.ClientSize = new System.Drawing.Size(1050, 600);
-			this.Controls.Add(this.button1);
+			this.Controls.Add(this.btnAlta);
 			this.Controls.Add(this.groupBox1);
 			this.Controls.Add(this.btnEliminar);
 			this.Controls.Add(this.btnEditar);
@@ -389,6 +390,6 @@
 		private System.Windows.Forms.DataGridViewTextBoxColumn motivoInternacion;
 		private System.Windows.Forms.DataGridViewTextBoxColumn estado;
 		private System.Windows.Forms.DataGridViewTextBoxColumn fechaEgreso;
-		private System.Windows.Forms.Button button1;
+		private System.Windows.Forms.Button btnAlta;
 	}
 }

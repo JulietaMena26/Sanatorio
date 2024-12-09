@@ -4,6 +4,7 @@ using Sanatorio.Modelos;
 using System;
 using System.Collections.Generic;
 using System.Data;
+using System.Globalization;
 using System.Linq;
 using System.Net;
 using System.Text;
@@ -73,6 +74,72 @@ namespace Sanatorio.Datos
 		public DataTable buscarFechaIngreso(DateTime ingreso, DateTime egreso)
 		{
 			throw new NotImplementedException();
+		}
+
+		public Internacion buscarInternacionId(int id) // Busca y devuelve una internación por el id
+		{
+			MySqlConnection SQLdatos = new MySqlConnection();
+			SQLdatos = conexion.crearConexion();
+			MySqlDataReader resultado;
+			Internacion internacion = new Internacion();
+
+			try
+			{
+				MySqlCommand command = new MySqlCommand("psa_buscar_internacion_id", SQLdatos);
+				command.CommandType = CommandType.StoredProcedure;
+				command.Parameters.Add("_id", MySqlDbType.Int16).Value = id;
+				SQLdatos.Open();
+				resultado = command.ExecuteReader();
+				while (resultado.Read())
+				{
+					internacion.idinternacion = resultado.GetInt16(0);
+					string fechaString = resultado.GetString(1);
+					internacion.fechaIngreso = resultado.GetDateTime(1); 
+					string horaString = resultado.GetString(2);
+					internacion.horaIngreso = DateTime.ParseExact(horaString, "HH:mm:ss", CultureInfo.InvariantCulture);
+					internacion.id_medico = resultado.GetInt16(3);
+					internacion.id_paciente = resultado.GetInt16(4);
+					internacion.id_habitacion = resultado.GetInt16(5);
+					internacion.motivoInternacion = resultado.GetString(6);
+					internacion.motivoInternacion = resultado.GetString(7);
+					internacion.deuda = resultado.GetBoolean(8);
+					internacion.estado = resultado.GetString(9);
+
+					if (!resultado.IsDBNull(resultado.GetOrdinal("fechaEgreso")))
+					{
+						internacion.fechaEgreso = resultado.GetDateTime(10);
+					}
+					else
+					{
+						internacion.fechaEgreso = new DateTime(2000, 1, 1); 
+					}
+
+					if (!resultado.IsDBNull(resultado.GetOrdinal("horaEgreso")))
+					{
+						internacion.horaEgreso = resultado.GetDateTime(11);
+					}
+					else
+					{
+						internacion.horaEgreso = new DateTime(2000, 1, 1 , 0 , 0, 0);
+					}					
+					internacion.activo = resultado.GetBoolean(12);
+					
+				}
+				command.Dispose();
+			}
+			catch (Exception ex)
+			{
+				//Funciones.Logs("Datos_metodolistpaciente", ex.ToString());
+				throw ex;
+			}
+			finally
+			{
+				if (SQLdatos.State == ConnectionState.Open)
+				{
+					SQLdatos.Close();
+				}
+			}
+			return internacion;
 		}
 
 		public DataTable buscarMedico(int id)

@@ -57,5 +57,22 @@ namespace Sanatorio.Modelos
             this.horaEgreso = horaEgreso;
             this.activo = activo;
         }
-    }
+
+		public override string ToString()
+		{
+			return $"Id Internación: {idinternacion}, " +
+				   $"Fecha Ingreso: {fechaIngreso:dd/MM/yyyy}, " +
+				   $"Hora Ingreso: {horaIngreso:HH:mm}, " +
+				   $"ID Médico: {id_medico}, " +
+				   $"ID Paciente: {id_paciente}, " +
+				   $"ID Habitación: {id_habitacion}, " +
+				   $"Motivo Internación: {motivoInternacion}, " +
+				   $"Diagnóstico: {diagnostico}, " +
+				   $"Deuda: {deuda}, " +
+				   $"Estado: {estado}, " +
+				   $"Fecha Egreso: {fechaEgreso?.ToString("dd/MM/yyyy") ?? "N/A"}, " +
+				   $"Hora Egreso: {horaEgreso?.ToString("HH:mm") ?? "N/A"}, " +
+				   $"Activo: {activo}";
+		}
+	}
 }
