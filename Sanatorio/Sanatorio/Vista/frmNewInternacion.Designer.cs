@@ -304,6 +304,7 @@
 			// 
 			// cmbEstado
 			// 
+			this.cmbEstado.Enabled = false;
 			this.cmbEstado.FormattingEnabled = true;
 			this.cmbEstado.Items.AddRange(new object[] {
             "Internación",

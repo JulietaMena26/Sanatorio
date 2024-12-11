@@ -18,8 +18,8 @@ namespace Sanatorio.Modelos
         public string diagnostico { get; set; }
         public bool deuda { get; set; }
         public string estado { get; set; }
-        public DateTime? fechaEgreso { get; set; }
-        public DateTime? horaEgreso { get; set; }
+        public DateTime fechaEgreso { get; set; }
+        public DateTime horaEgreso { get; set; }
         public bool activo { get; set; }
 
         public Internacion() { }
@@ -70,8 +70,8 @@ namespace Sanatorio.Modelos
 				   $"Diagnóstico: {diagnostico}, " +
 				   $"Deuda: {deuda}, " +
 				   $"Estado: {estado}, " +
-				   $"Fecha Egreso: {fechaEgreso?.ToString("dd/MM/yyyy") ?? "N/A"}, " +
-				   $"Hora Egreso: {horaEgreso?.ToString("HH:mm") ?? "N/A"}, " +
+				   $"Fecha Egreso: {fechaEgreso.ToString("dd/MM/yyyy") ?? "N/A"}, " +
+				   $"Hora Egreso: {horaEgreso.ToString("HH:mm") ?? "N/A"}, " +
 				   $"Activo: {activo}";
 		}
 	}

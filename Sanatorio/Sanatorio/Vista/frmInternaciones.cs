@@ -63,9 +63,9 @@ namespace Sanatorio.Vista
 
                 _internacion = (new DatosInternacion()).buscarInternacionId(id_Interncion);
 
-                MessageBox.Show(_internacion.ToString());
+                //MessageBox.Show(_internacion.ToString());
 
-                frmNewInternacion nuevo = new frmNewInternacion();
+                frmNewInternacion nuevo = new frmNewInternacion(_internacion);
 				nuevo.ShowDialog();
             }
             else

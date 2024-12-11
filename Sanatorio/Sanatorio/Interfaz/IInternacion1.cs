@@ -21,7 +21,7 @@ namespace Sanatorio.Interfaz
         DataTable listarInternacion(string cTexto,string _estado);
 		Internacion buscarInternacionId(int id);
 		bool isInternadoPaciente(int idPaciente);
-        bool altaInternacion(int id_);
+        bool altaInternacion(int _idInternacion);
 
 	}
 }

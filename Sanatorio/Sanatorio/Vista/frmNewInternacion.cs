@@ -1,4 +1,5 @@
 ﻿using Sanatorio.Datos;
+using Sanatorio.Interfaz;
 using Sanatorio.Modelos;
 using System;
 using System.Collections.Generic;
@@ -26,14 +27,20 @@ namespace Sanatorio.Vista
         {
             InitializeComponent();
             mensajestoolTip();
+            this.cmbEstado.SelectedIndex = 0;
         }
 
 		public frmNewInternacion(Internacion internacion_)
         {
             InitializeComponent();
             mensajestoolTip();
-            
-        }
+            this.cargar_controles(internacion_);
+            this.dateTimePickerFechIngreso.Focus();
+            this.btnBuscar.Enabled = false;
+            this.cmbEstado.Enabled = true;
+            //this.dateTimePickerFechaAlta.Value = DateTime.Now;
+            //this.dateTimePickerHoraAlta.Value = DateTime.Now;
+		}
 
         #region "Mis Métodos"
         private void mensajestoolTip()
@@ -82,14 +89,22 @@ namespace Sanatorio.Vista
         
         private bool verificarControlesVacios() // verifica que los controles los txtbox no esten vacios
         {
-            
-            if (cmbMedico.SelectedIndex == -1)
+
+            if (cmbMedico.SelectedIndex == -1 && string.IsNullOrEmpty(txtId.Text.Trim()))
             {
                 MessageBox.Show("Debe seleleccionar un medico", "Sistema Santa Rita", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 cmbMedico.Focus();
                 return false;
             }
-            if (string.IsNullOrEmpty(txtPaciente.Text.Trim()))
+            else if (!(cmbMedico.SelectedIndex == -1))
+            {
+                this.medicoId = (int)cmbMedico.SelectedValue;
+			}
+
+			//MessageBox.Show("ComboMEdico " + (cmbMedico.SelectedIndex));
+
+
+			if (string.IsNullOrEmpty(txtPaciente.Text.Trim()))
             {
                 MessageBox.Show("Debe buscar un Paciente", "Sistema Santa Rita", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 btnBuscar.Focus();              
@@ -117,6 +132,34 @@ namespace Sanatorio.Vista
 			}
             return true;
         }
+
+        private void cargar_controles(Internacion _internacion)
+        {
+            txtId.Text = _internacion.idinternacion.ToString();
+            dateTimePickerFechIngreso.Value = _internacion.fechaIngreso;
+			dateTimePickerHoraIngreso.Value = _internacion.horaIngreso;
+			cmbMedico.SelectedValue = _internacion.id_medico.ToString();
+            this.medicoId = _internacion.id_medico; // gusrdamos el id del medico
+
+			this.pacienteId = _internacion.id_paciente; // guardamos el id del paciente
+			// Utiliza el ID del paciente
+			this.paciente = (new DatosPaciente()).buscarPacienteId(this.pacienteId);
+			//MessageBox.Show("ID del paciente seleccionado: " + paciente.ToString()); 
+			txtPaciente.Text = paciente.apellido + " " + paciente.nombre;
+            this.habitacionId = _internacion.id_habitacion; // guardamos el id de l habitacion
+			cmbHabitacion.SelectedValue = _internacion.id_habitacion.ToString();
+            txtMotivo.Text = _internacion.motivoInternacion;
+			txtDiagnostico.Text = _internacion.diagnostico;
+            chcDeuda.Checked = _internacion.deuda;
+			cmbEstado.SelectedItem = _internacion.estado;
+			
+            dateTimePickerFechaAlta.Enabled = true;            
+			dateTimePickerFechaAlta.Value = (DateTime)_internacion.fechaEgreso;
+            dateTimePickerHoraAlta.Enabled = true;
+			dateTimePickerHoraAlta.Value = (DateTime)_internacion.horaEgreso;
+
+           // MessageBox.Show("Paciente:" + pacienteId + " Medico:" + medicoId + " habitacion:" + habitacionId  );
+		}
         #endregion
         private void btnCancelar_Click(object sender, EventArgs e)
         {
@@ -139,20 +182,22 @@ namespace Sanatorio.Vista
 
 			Internacion internacion = new Internacion();
 
-			this.medicoId = (int)cmbMedico.SelectedValue; // guardamos el id del medico
-			this.habitacionId = (int)cmbHabitacion.SelectedValue; // guardamos el id del habitacion
-																  // Cargamos con los datos la nueva internación
+            internacion.idinternacion = string.IsNullOrEmpty(txtId.Text.Trim()) ? 0 : int.Parse(txtId.Text.Trim());
+
+           	this.medicoId = this.medicoId; // guardamos el id del medico            
+            																 
 			internacion.fechaIngreso = dateTimePickerFechIngreso.Value;
             internacion.horaIngreso = dateTimePickerHoraIngreso.Value;
             internacion.id_medico =  this.medicoId;
             internacion.id_paciente = this.pacienteId;
-            internacion.id_habitacion = this.habitacionId;
-            internacion.motivoInternacion = txtMotivo.Text.Trim();
+            internacion.id_habitacion = (cmbHabitacion.SelectedIndex == -1) ? this.habitacionId : (int)cmbHabitacion.SelectedValue; // guardamos el id del habitacion
+			internacion.motivoInternacion = txtMotivo.Text.Trim();
             internacion.diagnostico = txtDiagnostico.Text.Trim();
             internacion.deuda = chcDeuda.Checked;
             internacion.estado = cmbEstado.SelectedItem.ToString();
-            internacion.fechaEgreso = null;
-            internacion.horaEgreso = null;
+            internacion.fechaEgreso = string.IsNullOrEmpty(txtId.Text.Trim()) ? new DateTime(2000, 1, 1) : dateTimePickerFechaAlta.Value;
+            internacion.horaEgreso = string.IsNullOrEmpty(txtId.Text.Trim()) ? new DateTime(2000, 1, 1, 0, 0, 0) : dateTimePickerHoraAlta.Value;
+            internacion.activo = true;
 
             DatosInternacion datos = new DatosInternacion();
 
@@ -164,7 +209,7 @@ namespace Sanatorio.Vista
                 {
                     if (datos.guardarInternacion(internacion))
                     {
-                        (new DatosHabitacion()).ocuparCama(this.habitacionId); // Actualiza la cama disponible en la tabla Habitaciones
+                        (new DatosHabitacion()).ocuparCama(internacion.id_habitacion); //cuando se Guarda Actualiza la cama disponible en la tabla Habitaciones
                         MessageBox.Show("Se registro una nueva Internacion","Sistema Santa Rita",MessageBoxButtons.OK,MessageBoxIcon.Information);
                     }
                     else 
@@ -179,7 +224,40 @@ namespace Sanatorio.Vista
             }
 			else // NO esta vacia el texbox txtId entonces se va actualizar la internación
 			{
-                internacion.idinternacion = int.Parse(txtId.Text.Trim()); // obtengo el id de la internación para actualizar
+                MessageBox.Show("Se va actualizar"  + internacion.ToString());
+
+                /* verificar si hay cambio de camas  para liberar la cama
+                 * verificar si cambio el estado y si el estado es "Alta", dar de alta al paciente
+                 * cambiar la fecha y hora.
+                 *  
+                 */
+
+                if (!(cmbHabitacion.SelectedIndex == -1)) // si es -1 es porque no se selecciono una nueva habitación
+                {
+                    //MessageBox.Show("cama actual: " + internacion.id_habitacion + " Cama anterior: " + this.habitacionId);
+					(new DatosHabitacion()).ocuparCama(internacion.id_habitacion); //cuando se "Actualiza" Actualiza la cama disponible en la tabla Habitaciones
+                    (new DatosHabitacion()).liberarCama(this.habitacionId); // libera cama anterior 
+				}
+                //else
+                //{
+                //    MessageBox.Show("No se selecciono una nueva habitacion no se hace nada");
+                //    MessageBox.Show("cama actual: " + internacion.id_habitacion + " Cama anterior: " + this.habitacionId);
+                //}
+
+                if ((new DatosInternacion()).actualizarInternacion(internacion))
+                {					
+					MessageBox.Show("Internación Actualizada", "Sistema Santa Rita", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);                    					
+				}
+                else
+                {
+					MessageBox.Show("No se puedo realizar la Actualización", "Sistema Santa Rita", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+				}
+
+                if (internacion.estado == "Alta") // si la actualización fue dar de alta hay que liberar la cama
+                {
+					(new DatosHabitacion()).liberarCama(internacion.id_habitacion);
+                    (new DatosInternacion()).altaInternacion(internacion.idinternacion);
+				}
             }
 
 			this.Close();
@@ -220,7 +298,7 @@ namespace Sanatorio.Vista
 			if (dateTimePickerFechaAlta.Value < dateTimePickerFechIngreso.Value)
 			{
 				MessageBox.Show("La fecha de alta no puede ser anterior a la fecha de ingreso.","Sistema Santa Rita",MessageBoxButtons.OK,MessageBoxIcon.Warning);
-				dateTimePickerFechaAlta.Value = dateTimePickerFechIngreso.Value; // O puedes dejar que el usuario corrija la fecha
+				dateTimePickerFechaAlta.Value = DateTime.Now; // O puedes dejar que el usuario corrija la fecha
 			}
 		}
 	}

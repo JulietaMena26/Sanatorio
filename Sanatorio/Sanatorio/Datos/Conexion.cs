@@ -13,10 +13,10 @@ namespace Sanatorio.Datos
      class Conexion
     {
         private readonly string bd = "bd_sanatorio";
-        private readonly string servidor = "127.0.0.1";
+        private readonly string servidor = "192.168.1.11";
         private readonly string puerto = "3306";
-        private readonly string usuario = "root";
-        private readonly string pasword = "";
+        private readonly string usuario = "emanuelunt";
+        private readonly string pasword = "sanatorio";
         private string cadenaConexion;
         private MySqlConnection conn = null;
 

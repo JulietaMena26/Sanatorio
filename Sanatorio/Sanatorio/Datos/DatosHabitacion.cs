@@ -275,7 +275,7 @@ namespace Sanatorio.Datos
 				}
 			}
 		}
-		public void liberarCama(int _id) // método que libera una cama cuando es dado de alta paciente
+		public void liberarCama(int _idHabitacion) // método que libera una cama cuando es dado de alta paciente
 		{
 			MySqlConnection SQLdatos = new MySqlConnection();
 			SQLdatos = conexion.crearConexion();
@@ -285,7 +285,7 @@ namespace Sanatorio.Datos
 			{
 				MySqlCommand command = new MySqlCommand("psa_actualizar_libera_cama", SQLdatos);
 				command.CommandType = CommandType.StoredProcedure;
-				command.Parameters.Add("_id", MySqlDbType.Int16).Value = _id;
+				command.Parameters.Add("_id", MySqlDbType.Int16).Value = _idHabitacion;
 				SQLdatos.Open();
 				resultado = command.ExecuteNonQuery();
 				command.Dispose();
