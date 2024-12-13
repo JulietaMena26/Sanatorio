@@ -9,6 +9,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Sanatorio.Datos;
+using Sanatorio.Interfaz;
 using Sanatorio.Modelos;
 
 namespace Sanatorio.Vista
@@ -167,8 +168,27 @@ namespace Sanatorio.Vista
 
         private void btnEliminar_Click(object sender, EventArgs e)
         {
-            MessageBox.Show(dataGridInternacion.CurrentRow.Cells[11].Value.ToString());
-        }
+            DialogResult respuesta;
+
+			if (dataGridInternacion.SelectedRows.Count > 0)
+			{
+
+				string nombre = dataGridInternacion.CurrentRow.Cells[3].Value.ToString();
+
+				respuesta = MessageBox.Show($"¿Desea eliminar el registro de Alta del paciente {nombre}?","Sistema Santa Rita", MessageBoxButtons.YesNo,MessageBoxIcon.Warning,MessageBoxDefaultButton.Button2);
+
+                if (respuesta == DialogResult.Yes)
+                {
+					(new DatosInternacion()).eliminarInternacion((int)dataGridInternacion.CurrentRow.Cells[0].Value);
+                    MessageBox.Show($"Se elimino el registro de alta de {nombre}","Sistema Santa Rita",MessageBoxButtons.OK,MessageBoxIcon.Information);
+					this.listado_Internaciones("%", "Alta");
+				}			
+			}
+			else
+			{
+				MessageBox.Show("Seleccione una Internación a Eliminar", "Sistema Santa Rita", MessageBoxButtons.OK, MessageBoxIcon.Information);
+			}
+		}
 
         private void dataGridPaciente_DoubleClick(object sender, EventArgs e)
         {
@@ -202,6 +222,10 @@ namespace Sanatorio.Vista
 
 		private void rdbAlta_CheckedChanged(object sender, EventArgs e)
 		{
+            btnEditar.Enabled = false;
+            btnEliminar.Enabled = true;
+            btnAlta.Enabled = false;
+            
             if (string.IsNullOrEmpty(txtBuscar.Text.Trim()))
             {
                 this.listado_Internaciones("%", "Alta");
@@ -214,7 +238,10 @@ namespace Sanatorio.Vista
 
 		private void rdbInternado_CheckedChanged(object sender, EventArgs e)
 		{
-			if (string.IsNullOrEmpty(txtBuscar.Text.Trim()))
+			btnEditar.Enabled = true;
+            btnEliminar.Enabled = false;
+            btnAlta.Enabled = true;
+            if (string.IsNullOrEmpty(txtBuscar.Text.Trim()))
 			{
 				this.listado_Internaciones("%", "Internación");
 			}

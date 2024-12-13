@@ -152,6 +152,12 @@
     <Compile Include="Modelo\Registro_Clinico.cs" />
     <Compile Include="Modelo\TipoHabitacion.cs" />
     <Compile Include="SqlServerTypes\Loader.cs" />
+    <Compile Include="Vista\frmBuscarMedico.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vista\frmBuscarMedico.Designer.cs">
+      <DependentUpon>frmBuscarMedico.cs</DependentUpon>
+    </Compile>
     <Compile Include="Vista\frmBuscarPaciente.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -277,6 +283,9 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Vista\frmBuscarMedico.resx">
+      <DependentUpon>frmBuscarMedico.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Vista\frmBuscarPaciente.resx">
       <DependentUpon>frmBuscarPaciente.cs</DependentUpon>
     </EmbeddedResource>

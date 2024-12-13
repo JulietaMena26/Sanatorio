@@ -18,7 +18,8 @@ namespace Sanatorio.Interfaz
         Paciente buscarPacienteId(int idpaciente);
         DataTable listadoPacienteApellido(string apellido);
         DataTable listarPaciente(string cTexto);
-        DataTable listarPacienteid_ObraSocial(int id_obraSocial);
+        DataTable listarPacienteInternados(string cTexto);
+		DataTable listarPacienteid_ObraSocial(int id_obraSocial);
 
     }
 }

@@ -48,6 +48,19 @@ namespace Sanatorio.Modelos
             this.direccion = direccion;
             this.email = email;
             this.activo = activo;
-        }        	
+        }
+		public override string ToString()
+		{
+			return $"Médico: {{ idMedico: {idMedico}, " +
+				   $"dni: {dni}, " +
+				   $"cuil: {cuil}, " +
+				   $"apellido: {apellido}, " +
+				   $"nombre: {nombre}, " +
+				   $"celular: {celular}, " +
+				   $"telefono: {telefono}, " +
+				   $"direccion: {direccion}, " +
+				   $"email: {email}, " +
+				   $"activo: {activo} }}";
+		}
 	}
 }

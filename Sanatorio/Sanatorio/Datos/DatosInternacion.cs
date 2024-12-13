@@ -201,9 +201,33 @@ namespace Sanatorio.Datos
 			throw new NotImplementedException();
 		}
 
-		public void eliminarInternacion(int id)
+		public void eliminarInternacion(int idInternacion)
 		{
-			throw new NotImplementedException();
+			MySqlConnection SQLdatos = new MySqlConnection();
+			SQLdatos = conexion.crearConexion();
+			int resultado;			
+
+			try
+			{
+				MySqlCommand command = new MySqlCommand("psa_eliminar_internacion", SQLdatos);
+				command.CommandType = CommandType.StoredProcedure;
+				command.Parameters.Add("id_", MySqlDbType.Int16).Value = idInternacion;				
+				SQLdatos.Open();
+
+				resultado = command.ExecuteNonQuery();
+			}
+			catch (Exception ex)
+			{
+				//Funciones.Logs("Datos_metodolistpaciente", ex.ToString());
+				throw ex;
+			}
+			finally
+			{
+				if (SQLdatos.State == ConnectionState.Open)
+				{
+					SQLdatos.Close();
+				}
+			}
 		}
 		public bool guardarInternacion(Internacion internacion)
 		{
@@ -321,7 +345,7 @@ namespace Sanatorio.Datos
 				}
 			}
 			return table;
-		}
+		}		
 	}
 }
 

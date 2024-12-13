@@ -12,12 +12,12 @@ namespace Sanatorio.Interfaz
     {
         bool guardarInternacion(Internacion internacion);
         bool actualizarInternacion(Internacion internacion);
-        void eliminarInternacion(int id);
+        void eliminarInternacion(int idInternacion);
         DataTable buscarFechaIngreso(DateTime fecha);
         DataTable buscarFechaIngreso(DateTime ingreso, DateTime egreso);
         DataTable buscarFechaEgreso(DateTime fecha);
-        DataTable buscarPaciente(int id);
-        DataTable buscarMedico(int id);
+        DataTable buscarPaciente(int id);		
+		DataTable buscarMedico(int id);
         DataTable listarInternacion(string cTexto,string _estado);
 		Internacion buscarInternacionId(int id);
 		bool isInternadoPaciente(int idPaciente);

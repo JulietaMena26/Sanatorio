@@ -16,7 +16,8 @@ namespace Sanatorio.Vista
     {
         public int idPaciente { set; get; }
         private ToolTip toolTip;
-        public frmBuscarPaciente()
+		private bool intenados { set; get; } // con este miembre determinados si se carga todo los paciente o solo los internados
+		public frmBuscarPaciente()
         {
             InitializeComponent();
             mensajestoolTip();
@@ -27,9 +28,15 @@ namespace Sanatorio.Vista
             InitializeComponent();
             mensajestoolTip();
         }
+		public frmBuscarPaciente(bool intenados) // costructor para obtener los pacientes solo intenados 
+		{
+			InitializeComponent();
+			mensajestoolTip();
+			this.intenados = intenados;
+		}
 
-        #region "Mis Métodos"
-        private void mensajestoolTip()
+		#region "Mis Métodos"
+		private void mensajestoolTip()
         {
             toolTip = new ToolTip();
             toolTip.SetToolTip(txtBuscar, "Solo ingrese el DNI o el Apellido");                      
@@ -41,11 +48,12 @@ namespace Sanatorio.Vista
 			try
 			{
 				DataTable tabla = new DataTable();
-				tabla = (new DatosPaciente()).listarPaciente(cTexto);
+				
+				tabla = this.intenados ? (new DatosPaciente()).listarPacienteInternados(cTexto) : (new DatosPaciente()).listarPaciente(cTexto);
 
 				foreach (DataRow fila in tabla.Rows)
 				{
-					dataGridPaciente.Rows.Add(fila[0], fila[2], fila[3], fila[4]);
+					dataGridPaciente.Rows.Add(fila["idPaciente"], fila["dni"], fila["apellido"], fila["nombre"]);
 				}
 
 			}

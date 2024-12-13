@@ -22,21 +22,22 @@ namespace Sanatorio.Datos
             MySqlConnection SQLdatos = new MySqlConnection();
             SQLdatos = conexion.crearConexion();
             int resultado;
+			TimeSpan hora = registro.hora.TimeOfDay;
 
-            try
+			try
             {
                 MySqlCommand command = new MySqlCommand("psa_actualizar_registrosclinico", SQLdatos);
                 command.CommandType = CommandType.StoredProcedure;
-                command.Parameters.Add("_idRegisto", MySqlDbType.Int32).Value = registro.idRegistro;
-                command.Parameters.Add("_id_paciente", MySqlDbType.Int32).Value = registro.id_paciente;
-                command.Parameters.Add("_id_medico", MySqlDbType.Int32).Value = registro.id_medico;
-                command.Parameters.Add("_fecha", MySqlDbType.Date).Value = registro.fecha;
-                command.Parameters.Add("_hora", MySqlDbType.Time).Value = registro.hora;
-                command.Parameters.Add("_motivo", MySqlDbType.VarChar).Value = registro.motivo;
-                command.Parameters.Add("_diagnostico", MySqlDbType.VarChar).Value = registro.diagnostico;
-                command.Parameters.Add("_tratamiento", MySqlDbType.VarChar).Value = registro.tratamiento;
-                command.Parameters.Add("_proxima_visita", MySqlDbType.Date).Value = registro.proxima_visita;
-                command.Parameters.Add("_observacion", MySqlDbType.VarChar).Value = registro.observacion;
+                command.Parameters.Add("_id", MySqlDbType.Int32).Value = registro.idRegistro;
+               // command.Parameters.Add("id_paciente_", MySqlDbType.Int32).Value = registro.id_paciente;
+               // command.Parameters.Add("id_medico_", MySqlDbType.Int32).Value = registro.id_medico;
+                command.Parameters.Add("fecha_", MySqlDbType.Date).Value = registro.fecha.ToString("yyyy-MM-dd");
+                command.Parameters.Add("hora_", MySqlDbType.Time).Value = hora;
+                command.Parameters.Add("motivo_", MySqlDbType.VarChar).Value = registro.motivo;
+                command.Parameters.Add("diagnostico_", MySqlDbType.VarChar).Value = registro.diagnostico;
+                command.Parameters.Add("tratamiento_", MySqlDbType.VarChar).Value = registro.tratamiento;
+                command.Parameters.Add("proxima_visita_", MySqlDbType.Date).Value = registro.proxima_visita.ToString("yyyy-MM-dd");
+                command.Parameters.Add("observacion_", MySqlDbType.VarChar).Value = registro.observacion;
                 SQLdatos.Open();
 
                 resultado = command.ExecuteNonQuery();
@@ -48,7 +49,7 @@ namespace Sanatorio.Datos
             }
             catch (Exception ex)
             {
-                Funciones.Logs("actualizar_registro", ex.ToString());
+                //Funciones.Logs("actualizar_registro", ex.ToString());
                 throw ex;
             }
             finally
@@ -66,20 +67,21 @@ namespace Sanatorio.Datos
             SQLdatos = conexion.crearConexion();
             int resultado;
 
-            try
+			TimeSpan hora = registro.hora.TimeOfDay;
+
+			try
             {
-                MySqlCommand command = new MySqlCommand("psa_guardar_registros_clinicos", SQLdatos);
+                MySqlCommand command = new MySqlCommand("psa_guardar_registro_clinico", SQLdatos);
                 command.CommandType = CommandType.StoredProcedure;
-                command.Parameters.Add("_idRegisto", MySqlDbType.Int32).Value = registro.idRegistro;
-                command.Parameters.Add("_id_paciente", MySqlDbType.Int32).Value = registro.id_paciente;
-                command.Parameters.Add("_id_medico", MySqlDbType.Int32).Value = registro.id_medico;
-                command.Parameters.Add("_fecha", MySqlDbType.Date).Value = registro.fecha;
-                command.Parameters.Add("_hora", MySqlDbType.Time).Value = registro.hora;
-                command.Parameters.Add("_motivo", MySqlDbType.VarChar).Value = registro.motivo;
-                command.Parameters.Add("_diagnostico", MySqlDbType.VarChar).Value = registro.diagnostico;
-                command.Parameters.Add("_tratamiento", MySqlDbType.VarChar).Value = registro.tratamiento;
-                command.Parameters.Add("_proxima_visita", MySqlDbType.Date).Value = registro.proxima_visita;
-                command.Parameters.Add("_observacion", MySqlDbType.VarChar).Value = registro.observacion;
+                command.Parameters.Add("id_paciente_", MySqlDbType.Int32).Value = registro.id_paciente;
+                command.Parameters.Add("id_medico_", MySqlDbType.Int32).Value = registro.id_medico;
+                command.Parameters.Add("fecha_", MySqlDbType.Date).Value = registro.fecha.ToString("yyyy-MM-dd");
+                command.Parameters.Add("hora_", MySqlDbType.Time).Value = hora;
+                command.Parameters.Add("motivo_", MySqlDbType.VarChar).Value = registro.motivo;
+                command.Parameters.Add("diagnostico_", MySqlDbType.VarChar).Value = registro.diagnostico;
+                command.Parameters.Add("tratamiento_", MySqlDbType.VarChar).Value = registro.tratamiento;
+                command.Parameters.Add("proxima_visita_", MySqlDbType.Date).Value = registro.proxima_visita.ToString("yyyy-MM-dd");
+                command.Parameters.Add("observacion_", MySqlDbType.VarChar).Value = registro.observacion;
                 SQLdatos.Open();
                 resultado = command.ExecuteNonQuery();
                 if (resultado > 0)
@@ -123,10 +125,38 @@ namespace Sanatorio.Datos
             throw new NotImplementedException();
         }
 
-        public DataTable listarRegistros()
+        public DataTable listarRegistros(string cTexto) // retorna una tabla con todo los registros clinicos activos
         {
-            throw new NotImplementedException();
-        }
+			MySqlConnection SQLdatos = new MySqlConnection();
+			SQLdatos = conexion.crearConexion();
+			MySqlDataReader resultado;
+			DataTable table = new DataTable();
+
+			try
+			{
+				MySqlCommand command = new MySqlCommand("psa_listado_registro_clinico", SQLdatos);
+				command.CommandType = CommandType.StoredProcedure;
+				command.Parameters.Add("cTexto", MySqlDbType.VarChar).Value = cTexto;
+				SQLdatos.Open();
+
+				resultado = command.ExecuteReader();
+				table.Load(resultado);				
+				command.Dispose();
+			}
+			catch (Exception ex)
+			{
+				//Funciones.Logs("Datos_metodolistpaciente", ex.ToString());
+				throw ex;
+			}
+			finally
+			{
+				if (SQLdatos.State == ConnectionState.Open)
+				{
+					SQLdatos.Close();
+				}
+			}
+			return table;
+		}
 
         public DataTable buscarRegistroId(int id_paciente)
         {

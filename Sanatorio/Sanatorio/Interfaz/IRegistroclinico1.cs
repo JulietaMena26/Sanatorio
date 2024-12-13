@@ -17,7 +17,7 @@ namespace Sanatorio.Interfaz
         DataTable buscarRegistroIdPaciente(int id_paciente);
         DataTable buscarRegistroIdMedico(int id_medico);
         DataTable buscarRegistroFecha(DateTime inicial, DateTime final);
-        DataTable listarRegistros();
+        DataTable listarRegistros(string cTexto);
        
     }
 }

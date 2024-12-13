@@ -530,3 +530,4 @@ C:\Users\camim\OneDrive\Documentos\Sanatorio2\Sanatorio\Sanatorio\obj\Debug\Sana
 C:\Users\camim\OneDrive\Documentos\Sanatorio2\Sanatorio\Sanatorio\obj\Debug\Sanatorio.Vista.frmNewRegistros.resources
 D:\Sanatorio\Sanatorio\Sanatorio\Sanatorio\obj\Debug\Sanatorio.Vista.frmNewRegistros.resources
 D:\Sanatorio\Sanatorio\Sanatorio\Sanatorio\obj\Debug\Sanatorio.Vista.frmNewObrasocial.resources
+D:\Sanatorio\Sanatorio\Sanatorio\Sanatorio\obj\Debug\Sanatorio.Vista.frmBuscarMedico.resources
