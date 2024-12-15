@@ -1,4 +1,5 @@
 ﻿using Sanatorio.Datos;
+using Sanatorio.Modelos;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -32,7 +33,7 @@ namespace Sanatorio.Vista
 
                 foreach (DataRow fila in tabla.Rows)
                 {
-                    dataGridobrasocial.Rows.Add(fila[0], fila[1], fila[2]);
+                    dataGridobrasocial.Rows.Add(fila[0], fila[1], fila[2], fila[3]);
                 }
 
                 dataGridobrasocial.RowHeadersVisible = false;
@@ -48,12 +49,17 @@ namespace Sanatorio.Vista
 
         private void actualizarObraSocial()
         {
-            frmObrassociales nuevo = new frmObrassociales();
+			
             if (dataGridobrasocial.SelectedRows.Count > 0)
             {
-                //nuevo.txtBuscar.Text = dataGridobrasocial.CurrentRow.Cells[0].Value.ToString();
-                nuevo.txtBuscar.Text = dataGridobrasocial.CurrentRow.Cells[1].Value.ToString();
-                //nuevo.txtCodigo.Text = dataGridobrasocial.CurrentRow.Cells[2].Value.ToString();
+				ObraSocial obraSocial = new ObraSocial();   
+                obraSocial.idSocial = (int)dataGridobrasocial.CurrentRow.Cells[0].Value;
+                obraSocial.sigla = dataGridobrasocial.CurrentRow.Cells[1].Value.ToString();
+                obraSocial.codigo = dataGridobrasocial.CurrentRow.Cells[2].Value.ToString();
+                obraSocial.nombre = dataGridobrasocial.CurrentRow.Cells[3].Value.ToString();
+
+				frmNewObrasocial nuevo = new frmNewObrasocial(obraSocial);
+                nuevo.ShowDialog();
             }
             else
             {
@@ -77,12 +83,7 @@ namespace Sanatorio.Vista
             this.Close();
         }
 
-        private void frmObrasSociales_Load(object sender, EventArgs e)
-        {
-
-            listado_ObraSocial("%");
-
-        }
+       
 
         private void btnNuevo_Click(object sender, EventArgs e)
         {
@@ -123,31 +124,7 @@ namespace Sanatorio.Vista
         {
 
             this.actualizarObraSocial();
-        }
-
-        private void frmObrassociales_KeyDown(object sender, KeyEventArgs e)
-        {
-            if (e.KeyCode == Keys.F1)
-            {
-                this.btnBuscar_Click(sender, e);
-            }
-            if (e.KeyCode == Keys.F2)
-            {
-                this.btnNuevo_Click(sender, e);
-            }
-            if (e.KeyCode == Keys.F3)
-            {
-                this.btnEditar_Click(sender, e);
-            }
-            if (e.KeyCode == Keys.F4)
-            {
-                this.btnEliminar_Click(sender, e);
-            }
-            if (e.KeyCode == Keys.Escape)
-            {
-                this.lblCerrar_Click(sender, e);
-            }
-        }
+        }      
 
         private void button1_Click(object sender, EventArgs e)
         {
@@ -156,7 +133,7 @@ namespace Sanatorio.Vista
 
         private void frmObrassociales_Load_1(object sender, EventArgs e)
         {
-            listado_ObraSocial("%");
+            this.listado_ObraSocial("%");
         }
 
         private void dataGridobrasocial_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -174,7 +151,7 @@ namespace Sanatorio.Vista
 
         private void btnEditar_Click_2(object sender, EventArgs e)
         {
-            this.actualizarObraSocial(); // no esta definido
+            this.actualizarObraSocial(); 
         }
 
         private void btnEliminar_Click_2(object sender, EventArgs e)
@@ -183,7 +160,7 @@ namespace Sanatorio.Vista
 
             if (dataGridobrasocial.SelectedRows.Count > 0)
             {
-                respuesta = MessageBox.Show("¿Desea eliminar la Obra Social: " + dataGridobrasocial.CurrentRow.Cells[2].Value.ToString() + " " + dataGridobrasocial.CurrentRow.Cells[3].Value.ToString() + " " + dataGridobrasocial.CurrentRow.Cells[4].Value.ToString() + "?", "Sistemas Santa Rita", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+                respuesta = MessageBox.Show("¿Desea eliminar la Obra Social: " + dataGridobrasocial.CurrentRow.Cells[3].Value.ToString() +  "?", "Sistemas Santa Rita", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
 
                 if (respuesta == DialogResult.Yes)
                 {
@@ -204,7 +181,46 @@ namespace Sanatorio.Vista
         {
             listado_ObraSocial(txtBuscar.Text.Trim());
         }
-    }
+
+		private void frmObrassociales_Load(object sender, EventArgs e)
+		{
+			this.listado_ObraSocial("%");
+		}
+
+		private void lblCerrar_Click_1(object sender, EventArgs e)
+		{
+			this.Close();
+		}
+
+		private void dataGridobrasocial_DoubleClick_1(object sender, EventArgs e)
+		{
+			this.actualizarObraSocial();
+		}
+
+		private void frmObrassociales_KeyDown(object sender, KeyEventArgs e)
+		{
+			if (e.KeyCode == Keys.F11)
+			{
+				txtBuscar.Focus();
+			}
+			if (e.KeyCode == Keys.F2)
+			{
+				this.btnNuevo_Click(sender, e);
+			}
+			if (e.KeyCode == Keys.F3)
+			{
+				this.btnEditar_Click(sender, e);
+			}
+			if (e.KeyCode == Keys.F4)
+			{
+				this.btnEliminar_Click(sender, e);
+			}
+			if (e.KeyCode == Keys.Escape)
+			{
+				this.lblCerrar_Click(sender, e);
+			}
+		}
+	}
 
 }
 

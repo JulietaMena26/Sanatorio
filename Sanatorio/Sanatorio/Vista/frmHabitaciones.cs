@@ -147,9 +147,9 @@ namespace Sanatorio.Vista
         
         private void frmHabitaciones_KeyDown(object sender, KeyEventArgs e)
         {
-            if (e.KeyCode == Keys.F1)
+            if (e.KeyCode == Keys.F11)
             {
-                this.btnBuscar_Click(sender,e);
+                this.txtBuscar.Focus();
             }
             if (e.KeyCode == Keys.F2)
             {

@@ -18,7 +18,7 @@ namespace Sanatorio
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new frm_Principal());
-			//Application.Run(new frmRegistros());
+			//Application.Run(new frmObrassociales());
 
 		}
     }

@@ -198,9 +198,9 @@ namespace Sanatorio.Vista
 
         private void frmPaciente_KeyDown(object sender, KeyEventArgs e)
         {
-            if (e.KeyCode == Keys.F1)
+            if (e.KeyCode == Keys.F11)
             {
-                this.btnBuscar_Click(sender,e);
+                txtBuscar.Focus();
             }
             if (e.KeyCode == Keys.F2)
             {
@@ -214,7 +214,11 @@ namespace Sanatorio.Vista
             {
                 this.btnEliminar_Click(sender, e);
             }
-            if (e.KeyCode == Keys.Escape)
+			if (e.KeyCode == Keys.F5)
+			{
+               this.btnAlta_Click(sender, e);
+			}
+			if (e.KeyCode == Keys.Escape)
             {
                 this.lblCerrar_Click(sender, e);
             }
@@ -251,9 +255,9 @@ namespace Sanatorio.Vista
 			}			
 		}
 
-		private void button1_Click(object sender, EventArgs e)
+		private void btnAlta_Click(object sender, EventArgs e)
 		{
-            this.altaPaciente();
+			this.altaPaciente();
 		}
 	}
 }

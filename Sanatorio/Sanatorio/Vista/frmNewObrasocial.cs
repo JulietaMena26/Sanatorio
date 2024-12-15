@@ -9,67 +9,91 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using MySql.Data.MySqlClient;
 using Sanatorio.Datos;
+using Sanatorio.Modelos;
 
 namespace Sanatorio.Vista
 {
     public partial class frmNewObrasocial : Form
     {
-        Conexion conexion = new Conexion();
+        private Conexion conexion = new Conexion();
+        private ObraSocial obraSocial;
         public frmNewObrasocial()
         {
             InitializeComponent();
         }
 
-        private void btnGuardar_Click(object sender, EventArgs e)
+		public frmNewObrasocial(ObraSocial _obraSocial)
+		{
+			InitializeComponent();
+            this.obraSocial = _obraSocial;
+            this.txtId.Text = _obraSocial.idSocial.ToString();
+            this.txtCodigo.Text = _obraSocial.codigo;
+            this.txtNombre.Text = _obraSocial.nombre;
+            this.txtSigla.Text = _obraSocial.sigla;
+            this.txtCodigo.Focus();
+		}
+
+		#region "Mis métodos"
+		private bool verificarControlesVacios()
+		{
+			if (string.IsNullOrWhiteSpace(txtNombre.Text) ||
+				string.IsNullOrWhiteSpace(txtCodigo.Text))
+			{
+				MessageBox.Show("Por favor, complete todos los campos.");
+				return false;
+			}
+			return true;
+		}
+
+       
+        
+
+		#endregion
+		private void btnGuardar_Click(object sender, EventArgs e)
         {
             if (!verificarControlesVacios())
             {
                 return;
             }
 
-            MySqlConnection SQLdatos = new MySqlConnection();
-            SQLdatos = conexion.crearConexion();
-            try
-            {
-                SQLdatos.Open();
-                MySqlCommand command = new MySqlCommand("psa_agregar_obrasocial", SQLdatos);
-                command.CommandType = CommandType.StoredProcedure;
+            ObraSocial obraSocial = new ObraSocial();
 
-                command.Parameters.AddWithValue("pCodigo", txtCodigo.Text.Trim());
-                command.Parameters.AddWithValue("pNombre", txtNombre.Text.Trim());
-                command.Parameters.AddWithValue("pActivo", 1);
+            obraSocial.codigo =  txtCodigo.Text.Trim();
+            obraSocial.nombre = txtNombre.Text.Trim();
+            obraSocial.sigla = txtSigla.Text.Trim();
 
-                command.ExecuteNonQuery();
-                MessageBox.Show("Obra social agregada con éxito.", "Sistema Santa Rita", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            }
-            catch (Exception ex)
+            if (string.IsNullOrEmpty(txtId.Text.Trim()))
             {
-                MessageBox.Show("Error al guardar los datos: " + ex.Message);
-            }
-            finally
-            {
-                if (SQLdatos.State == ConnectionState.Open)
+                if ((new DatosObraSocial()).agregarObraSocial(obraSocial))
                 {
-                    SQLdatos.Close();
+                    MessageBox.Show("Obra Social Creada con Exito", "Sistema Santa Rita", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                else
+                {
+                    MessageBox.Show("No se pudo crear la Obra Social", "Sistema Santa Rita", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
             }
+            else 
+            {
+                obraSocial.idSocial = int.Parse(txtId.Text.Trim());
+				if ((new DatosObraSocial()).agregarObraSocial(obraSocial))
+				{
+					MessageBox.Show("Obra Social Actualizada con Exito", "Sistema Santa Rita", MessageBoxButtons.OK, MessageBoxIcon.Information);
+				}
+				else
+				{
+					MessageBox.Show("No se pudo Actualizar la Obra Social", "Sistema Santa Rita", MessageBoxButtons.OK, MessageBoxIcon.Information);
+				}
+			}           
+
+            this.Close();
+
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
             this.Close();
-        }
-
-        private bool verificarControlesVacios()
-        {
-            if (string.IsNullOrWhiteSpace(txtNombre.Text) ||
-                string.IsNullOrWhiteSpace(txtCodigo.Text))
-            {
-                MessageBox.Show("Por favor, complete todos los campos.");
-                return false;
-            }
-            return true;
-        }
+        }      
 
         private void lblCerrar_Click(object sender, EventArgs e)
         {

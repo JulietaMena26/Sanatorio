@@ -140,33 +140,25 @@ namespace Sanatorio.Vista
 
         private void btnEliminar_Click(object sender, EventArgs e)
         {
-            //MessageBox.Show(dataGridRegistros.CurrentRow.Cells[11].Value.ToString());
-        }       
+			DialogResult respuesta;
+			if (dataGridRegsitros.SelectedRows.Count > 0)
+			{
+				respuesta = MessageBox.Show("¿Desea eliminar el registro del paciente: " + dataGridRegsitros.CurrentRow.Cells[1].Value.ToString() + "?", "Sistemas Santa Rita", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
 
-        private void frmPaciente_KeyDown(object sender, KeyEventArgs e)
-        {
-            if (e.KeyCode == Keys.F1)
-            {
-                this.btnBuscar_Click(sender, e);
-            }
-            if (e.KeyCode == Keys.F2)
-            {
-                this.btnNuevo_Click(sender, e);
-            }
-            if (e.KeyCode == Keys.F3)
-            {
-                this.btnEditar_Click(sender, e);
-            }
-            if (e.KeyCode == Keys.F4)
-            {
-                this.btnEliminar_Click(sender, e);
-            }
-            if (e.KeyCode == Keys.Escape)
-            {
-                this.lblCerrar_Click(sender, e);
-            }
-        }
+				if (respuesta == DialogResult.Yes)
+				{
+					DatosRegistroClinico datos = new DatosRegistroClinico();
+					datos.eliminarRegistroId(int.Parse(dataGridRegsitros.CurrentRow.Cells[0].Value.ToString()));
+					MessageBox.Show("Registro Clinico Eliminado", "Sistema Santa Rita", MessageBoxButtons.OK, MessageBoxIcon.Information);
+				}
+			}
+			else
+			{
+				MessageBox.Show("Seleccione una Registro a Eliminar", "Sistema Santa Rita", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+			}
 
+			this.listado_Registros("%");
+		}            
 		private void frmRegistros_Load(object sender, EventArgs e)
 		{
             this.listado_Registros("%");
@@ -175,6 +167,30 @@ namespace Sanatorio.Vista
 		private void dataGridRegsitros_DoubleClick(object sender, EventArgs e)
 		{
             this.actualizarRegistro();
+		}
+
+		private void frmRegistros_KeyDown(object sender, KeyEventArgs e)
+		{
+			if (e.KeyCode == Keys.F11)
+			{
+				this.txtBuscar.Focus();
+			}
+			if (e.KeyCode == Keys.F2)
+			{
+				this.btnNuevo_Click(sender, e);
+			}
+			if (e.KeyCode == Keys.F3)
+			{
+				this.btnEditar_Click(sender, e);
+			}
+			if (e.KeyCode == Keys.F4)
+			{
+				this.btnEliminar_Click(sender, e);
+			}
+			if (e.KeyCode == Keys.Escape)
+			{
+				this.lblCerrar_Click(sender, e);
+			}
 		}
 	}
 }

@@ -249,9 +249,9 @@ namespace Sanatorio.Vista
 
 		private void frmMedicos_KeyDown(object sender, KeyEventArgs e)
 		{
-			if (e.KeyCode == Keys.F1)
+			if (e.KeyCode == Keys.F11)
 			{
-				this.btnBuscar_Click(sender, e);
+				txtBuscar.Focus();
 			}
 			if (e.KeyCode == Keys.F2)
 			{
@@ -264,7 +264,11 @@ namespace Sanatorio.Vista
 			if (e.KeyCode == Keys.F4)
 			{
 				this.btnEliminar_Click(sender, e);
-			}			
+			}
+			if (e.KeyCode == Keys.F5)
+			{
+				this.btnAsignar_Click(sender, e);
+			}
 			if (e.KeyCode == Keys.Escape)
 			{
 				this.lblCerrar_Click(sender, e);

@@ -110,13 +110,13 @@ namespace Sanatorio.Vista
 
         private void txtBuscar_Leave(object sender, EventArgs e)
         {
-            txtBuscar.Text = "";
             txtBuscar.BackColor = Color.FromArgb(202,219,183);
         }
 
         private void btnBuscar_Click(object sender, EventArgs e)
         {
-            listado_Pacientes(txtBuscar.Text.Trim());           
+            listado_Pacientes(txtBuscar.Text.Trim());
+            txtBuscar.Text = "";
         }
 
         private void btnEditar_Click(object sender, EventArgs e)
@@ -172,7 +172,11 @@ namespace Sanatorio.Vista
             {
                 this.btnEliminar_Click(sender, e);
             }
-            if (e.KeyCode == Keys.Escape)
+			if (e.KeyCode == Keys.F11)
+			{
+				txtBuscar.Focus();
+			}
+			if (e.KeyCode == Keys.Escape)
             {
                 this.lblCerrar_Click(sender, e);
             }

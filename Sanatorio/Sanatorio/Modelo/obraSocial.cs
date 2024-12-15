@@ -11,6 +11,7 @@ namespace Sanatorio.Modelos
         public int idSocial { get; set; }
         public string codigo { get; set; }
         public string nombre { get; set; }
+        public string sigla { get; set; }
         public bool activo { get; set; }
 
         public ObraSocial() { }

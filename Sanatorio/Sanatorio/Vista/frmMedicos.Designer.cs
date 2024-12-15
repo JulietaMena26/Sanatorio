@@ -206,7 +206,7 @@
 			this.btnBuscar.Name = "btnBuscar";
 			this.btnBuscar.Size = new System.Drawing.Size(133, 34);
 			this.btnBuscar.TabIndex = 2;
-			this.btnBuscar.Text = "Buscar (F1)";
+			this.btnBuscar.Text = "Buscar (F11)";
 			this.btnBuscar.UseVisualStyleBackColor = false;
 			this.btnBuscar.Click += new System.EventHandler(this.btnBuscar_Click_1);
 			// 

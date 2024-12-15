@@ -1,6 +1,6 @@
 -- --------------------------------------------------------
 -- Host:                         127.0.0.1
--- Versión del servidor:         10.4.27-MariaDB - mariadb.org binary distribution
+-- Versión del servidor:         10.4.14-MariaDB - mariadb.org binary distribution
 -- SO del servidor:              Win64
 -- HeidiSQL Versión:             12.8.0.6908
 -- --------------------------------------------------------
@@ -16,7 +16,7 @@
 
 
 -- Volcando estructura de base de datos para bd_sanatorio
-CREATE DATABASE IF NOT EXISTS `bd_sanatorio` /*!40100 DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci */;
+CREATE DATABASE IF NOT EXISTS `bd_sanatorio` /*!40100 DEFAULT CHARACTER SET utf8mb4 */;
 USE `bd_sanatorio`;
 
 -- Volcando estructura para tabla bd_sanatorio.datosmedicos
@@ -30,7 +30,7 @@ CREATE TABLE IF NOT EXISTS `datosmedicos` (
   PRIMARY KEY (`idDato`),
   KEY `FK__medicos` (`id_medico`),
   CONSTRAINT `FK__medicos` FOREIGN KEY (`id_medico`) REFERENCES `medicos` (`idMedico`) ON DELETE NO ACTION ON UPDATE NO ACTION
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- Volcando datos para la tabla bd_sanatorio.datosmedicos: ~0 rows (aproximadamente)
 
@@ -40,7 +40,7 @@ CREATE TABLE IF NOT EXISTS `especialidades` (
   `especialidad` varchar(50) NOT NULL DEFAULT '0',
   `descripcion` varchar(255) DEFAULT '0',
   PRIMARY KEY (`idEspecialidad`)
-) ENGINE=InnoDB AUTO_INCREMENT=21 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=21 DEFAULT CHARSET=utf8mb4;
 
 -- Volcando datos para la tabla bd_sanatorio.especialidades: ~20 rows (aproximadamente)
 INSERT INTO `especialidades` (`idEspecialidad`, `especialidad`, `descripcion`) VALUES
@@ -76,7 +76,7 @@ CREATE TABLE IF NOT EXISTS `especialidad_medico` (
   KEY `FK_especialidad_medico_medicos` (`id_medico`),
   CONSTRAINT `FK_especialidad_medico_especialidades` FOREIGN KEY (`id_especialidad`) REFERENCES `especialidades` (`idEspecialidad`) ON DELETE NO ACTION ON UPDATE NO ACTION,
   CONSTRAINT `FK_especialidad_medico_medicos` FOREIGN KEY (`id_medico`) REFERENCES `medicos` (`idMedico`) ON DELETE NO ACTION ON UPDATE NO ACTION
-) ENGINE=InnoDB AUTO_INCREMENT=15 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=15 DEFAULT CHARSET=utf8mb4;
 
 -- Volcando datos para la tabla bd_sanatorio.especialidad_medico: ~13 rows (aproximadamente)
 INSERT INTO `especialidad_medico` (`id_`, `id_especialidad`, `id_medico`, `matricula`) VALUES
@@ -101,6 +101,7 @@ CREATE TABLE IF NOT EXISTS `habitaciones` (
   `id_tipo` int(11) DEFAULT 0,
   `piso` int(11) DEFAULT 0,
   `capacidad` int(11) NOT NULL DEFAULT 0,
+  `camaOcupada` int(11) DEFAULT 0,
   `estado` varchar(50) NOT NULL DEFAULT '0',
   `precio` decimal(10,2) DEFAULT NULL,
   `comodidad` varchar(255) DEFAULT NULL,
@@ -110,16 +111,16 @@ CREATE TABLE IF NOT EXISTS `habitaciones` (
   UNIQUE KEY `numero` (`numero`),
   KEY `FK_habitaciones_tipohabitacion` (`id_tipo`),
   CONSTRAINT `FK_habitaciones_tipohabitacion` FOREIGN KEY (`id_tipo`) REFERENCES `tipohabitacion` (`idTipo`) ON DELETE NO ACTION ON UPDATE NO ACTION
-) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=utf8mb4;
 
 -- Volcando datos para la tabla bd_sanatorio.habitaciones: ~6 rows (aproximadamente)
-INSERT INTO `habitaciones` (`idHabitacion`, `numero`, `id_tipo`, `piso`, `capacidad`, `estado`, `precio`, `comodidad`, `observacion`, `activo`) VALUES
-	(1, '101', 1, 2, 1, 'Disponible', 80.00, 'Vista al jardín', 'Habitación tranquila', 1),
-	(2, '203', 2, 3, 2, 'Ocupada', 120.00, 'Con sofá cama', 'Paciente alérgico a los gatos', 1),
-	(3, '305', 3, 4, 1, 'Mantenimiento', 150.00, 'Bañera hidromasaje', 'Reparación de la ducha', 1),
-	(4, '112', 4, 1, 1, 'Disponible', 123.00, 'Acceso para discapacitados', 'con acompañante', 1),
-	(5, '208', 5, 3, 1, 'Ocupada', 90.00, 'Cama articulada', 'Paciente con movilidad reducida', 1),
-	(6, '120', 4, 2, 2, 'Disponible', 18000.00, '', '', 1);
+INSERT INTO `habitaciones` (`idHabitacion`, `numero`, `id_tipo`, `piso`, `capacidad`, `camaOcupada`, `estado`, `precio`, `comodidad`, `observacion`, `activo`) VALUES
+	(1, '101', 1, 2, 1, 1, 'Ocupado', 80.00, 'Vista al jardín', 'Habitación tranquila', 1),
+	(2, '203', 2, 3, 2, 2, 'Ocupado', 120.00, 'Con sofá cama', 'Paciente alérgico a los gatos', 1),
+	(3, '305', 3, 4, 1, 1, 'Mantenimiento', 150.00, 'Bañera hidromasaje', 'Reparación de la ducha', 1),
+	(4, '112', 4, 1, 2, 0, 'Disponible', 123.00, 'Acceso para discapacitados', 'con acompañante', 1),
+	(5, '208', 5, 3, 1, 1, 'Ocupado', 90.00, 'Cama articulada', 'Paciente con movilidad reducida', 1),
+	(6, '120', 4, 2, 2, 0, 'Disponible', 18000.00, '', '', 1);
 
 -- Volcando estructura para tabla bd_sanatorio.internaciones
 CREATE TABLE IF NOT EXISTS `internaciones` (
@@ -130,7 +131,7 @@ CREATE TABLE IF NOT EXISTS `internaciones` (
   `id_paciente` int(11) NOT NULL DEFAULT 0,
   `id_habitacion` int(11) NOT NULL DEFAULT 0,
   `motivoInternacion` varchar(255) DEFAULT '0',
-  `dignostico` varchar(255) DEFAULT '0',
+  `diagnostico` varchar(255) DEFAULT '0',
   `deuda` tinyint(1) DEFAULT NULL,
   `estado` varchar(50) DEFAULT NULL,
   `fechaEgreso` date DEFAULT NULL,
@@ -143,9 +144,27 @@ CREATE TABLE IF NOT EXISTS `internaciones` (
   CONSTRAINT `FK_internaciones_habitaciones` FOREIGN KEY (`id_habitacion`) REFERENCES `habitaciones` (`idHabitacion`) ON DELETE NO ACTION ON UPDATE NO ACTION,
   CONSTRAINT `FK_internaciones_medicos` FOREIGN KEY (`id_medico`) REFERENCES `medicos` (`idMedico`) ON DELETE NO ACTION ON UPDATE NO ACTION,
   CONSTRAINT `FK_internaciones_pacientes` FOREIGN KEY (`id_paciente`) REFERENCES `pacientes` (`idPaciente`) ON DELETE NO ACTION ON UPDATE NO ACTION
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=19 DEFAULT CHARSET=utf8mb4;
 
--- Volcando datos para la tabla bd_sanatorio.internaciones: ~0 rows (aproximadamente)
+-- Volcando datos para la tabla bd_sanatorio.internaciones: ~17 rows (aproximadamente)
+INSERT INTO `internaciones` (`idInternacion`, `fechaIngreso`, `horaIngreso`, `id_medico`, `id_paciente`, `id_habitacion`, `motivoInternacion`, `diagnostico`, `deuda`, `estado`, `fechaEgreso`, `horaEgreso`, `activo`) VALUES
+	(1, '2023-11-22', '10:30:00', 65, 3, 2, 'Dolor abdominal', 'Apendicitis', 0, 'Alta', '2023-11-25', '12:00:00', 0),
+	(2, '2023-12-01', '15:45:00', 72, 7, 4, 'Fractura de muñeca', 'Caída', 1, 'Alta', '2024-12-11', '00:15:52', 0),
+	(3, '2023-11-28', '09:15:00', 67, 10, 1, 'Infección respiratoria', 'Neumonía', 0, 'Alta', '2023-12-02', '11:30:00', 1),
+	(4, '2023-12-05', '18:00:00', 75, 5, 6, 'Quemadura', 'Contacto con líquido caliente', 1, 'Alta', '2024-12-11', '00:16:01', 0),
+	(5, '2023-12-03', '13:30:00', 69, 2, 3, 'Dolor de cabeza', 'Migraña', 0, 'Alta', '2023-12-04', '15:00:00', 0),
+	(7, '0001-01-01', '17:43:36', 71, 6, 1, 'tos aguda', 'bronqueos', 0, 'Alta', '2024-12-09', '00:40:22', 1),
+	(8, '2024-12-09', '00:40:51', 68, 1, 2, 'Enfermedad 1', 'diagnostico 1', 1, 'Alta', '2024-12-11', '00:15:41', 0),
+	(9, '2024-12-05', '17:56:46', 71, 6, 2, 'enfermedad 2', 'diagnostico 2', 1, 'Alta', '2024-12-11', '00:15:46', 0),
+	(10, '2024-12-03', '10:00:30', 73, 8, 5, 'Enfermedad 3', 'Diagnostico 3', 0, 'Alta', '2024-12-11', '00:15:56', 0),
+	(11, '2024-12-10', '23:46:20', 76, 10, 5, 'enfermedad 11', 'diagnistico 11', 0, 'Alta', '2024-12-11', '00:52:18', 0),
+	(12, '2024-12-10', '23:49:59', 76, 4, 4, 'dfdfdfdfd', 'dfdfdfdfdf', 0, 'Alta', '2024-12-11', '00:52:10', 0),
+	(13, '2024-12-10', '23:55:33', 76, 3, 1, 'enfermedad 13', 'DIAGNISCO 13', 0, 'Alta', '2024-12-11', '00:52:06', 1),
+	(14, '2024-12-11', '00:16:49', 73, 1, 4, 'lalalalalaal', 'lalalalalalala', 0, 'Alta', '2024-12-11', '00:52:15', 0),
+	(15, '2024-12-12', '00:53:10', 76, 1, 1, 'enfermedad 1', 'Diagnostico 1', 0, 'Internación', '2024-12-12', '00:53:10', 1),
+	(16, '2024-12-11', '00:59:27', 1, 4, 2, 'enfermedad 2', 'diagnostico 2', 0, 'Internación', '2024-12-11', '00:59:27', 1),
+	(17, '2024-12-11', '01:00:35', 2, 7, 2, 'Enfermedad 3', 'Diagnostico 3', 0, 'Internación', '2024-12-11', '01:00:35', 1),
+	(18, '2024-12-11', '18:13:50', 72, 10, 5, 'enfermedad 4', 'Diagnostico 4', 1, 'Internación', '2024-12-11', '18:13:50', 1);
 
 -- Volcando estructura para tabla bd_sanatorio.medicos
 CREATE TABLE IF NOT EXISTS `medicos` (
@@ -162,7 +181,7 @@ CREATE TABLE IF NOT EXISTS `medicos` (
   PRIMARY KEY (`idMedico`),
   UNIQUE KEY `dni` (`dni`),
   UNIQUE KEY `cuil` (`cuil`)
-) ENGINE=InnoDB AUTO_INCREMENT=78 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=78 DEFAULT CHARSET=utf8mb4;
 
 -- Volcando datos para la tabla bd_sanatorio.medicos: ~17 rows (aproximadamente)
 INSERT INTO `medicos` (`idMedico`, `dni`, `cuil`, `apellido`, `nombre`, `celular`, `telefono`, `direccion`, `email`, `activo`) VALUES
@@ -187,17 +206,19 @@ INSERT INTO `medicos` (`idMedico`, `dni`, `cuil`, `apellido`, `nombre`, `celular
 -- Volcando estructura para tabla bd_sanatorio.obrassociales
 CREATE TABLE IF NOT EXISTS `obrassociales` (
   `idSocial` int(11) NOT NULL AUTO_INCREMENT,
-  `codigo` varchar(4) NOT NULL DEFAULT '0',
+  `codigo` varchar(6) DEFAULT '0',
   `nombre` varchar(50) NOT NULL DEFAULT '0',
+  `sigla` varchar(15) DEFAULT NULL,
   `activo` tinyint(1) NOT NULL DEFAULT 0,
   PRIMARY KEY (`idSocial`)
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8mb4;
 
--- Volcando datos para la tabla bd_sanatorio.obrassociales: ~3 rows (aproximadamente)
-INSERT INTO `obrassociales` (`idSocial`, `codigo`, `nombre`, `activo`) VALUES
-	(1, '0', 'Sin Obra Social', 1),
-	(2, '1', 'OSEP', 1),
-	(3, '2', 'OSDE', 1);
+-- Volcando datos para la tabla bd_sanatorio.obrassociales: ~4 rows (aproximadamente)
+INSERT INTO `obrassociales` (`idSocial`, `codigo`, `nombre`, `sigla`, `activo`) VALUES
+	(1, '0', 'Sin Obra Social', NULL, 1),
+	(2, '1', 'OSEP', NULL, 1),
+	(3, '2', 'OSDE', NULL, 1),
+	(4, '106302', 'Obra Social de docnete particular', '', 1);
 
 -- Volcando estructura para tabla bd_sanatorio.pacientes
 CREATE TABLE IF NOT EXISTS `pacientes` (
@@ -216,7 +237,7 @@ CREATE TABLE IF NOT EXISTS `pacientes` (
   UNIQUE KEY `dni` (`dni`),
   KEY `FK_pacientes_obrassociales` (`id_obraSocial`),
   CONSTRAINT `FK_pacientes_obrassociales` FOREIGN KEY (`id_obraSocial`) REFERENCES `obrassociales` (`idSocial`) ON DELETE NO ACTION ON UPDATE NO ACTION
-) ENGINE=InnoDB AUTO_INCREMENT=12 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=12 DEFAULT CHARSET=utf8mb4;
 
 -- Volcando datos para la tabla bd_sanatorio.pacientes: ~11 rows (aproximadamente)
 INSERT INTO `pacientes` (`idPaciente`, `dni`, `apellido`, `nombre`, `fechaNaci`, `domicilio`, `telefono`, `historiClinica`, `id_obraSocial`, `afiliadoN`, `activo`) VALUES
@@ -230,7 +251,7 @@ INSERT INTO `pacientes` (`idPaciente`, `dni`, `apellido`, `nombre`, `fechaNaci`,
 	(8, '99988877', 'Díaz', 'Laura', '1982-02-28', 'Av. Quinta 5', '1523456789', '8008', 2, '5678', 1),
 	(9, '66677788', 'Romero', 'Lucas', '1998-06-12', 'Calle Sexta 6', '1145678901', '9009', 3, '9012', 1),
 	(10, '33344455', 'Santos', 'Valentina', '2005-10-27', 'Av. Séptima 7', '1554321654', '1010', 1, '1234', 1),
-	(11, '29436853', 'cano', 'Marcelo Emanuel', '1982-07-25', 'barrio casa 31', '422653', '23652', 1, '5236', 0);
+	(11, '29436853', 'cano', 'Marcelo Emanuel', '1982-07-25', 'barrio casa 31', '422653', '23652', 1, '5236', 1);
 
 -- Volcando estructura para procedimiento bd_sanatorio.psa_actualizar_habitacion
 DELIMITER //
@@ -253,6 +274,48 @@ WHERE idHabitacion = _id;
 END//
 DELIMITER ;
 
+-- Volcando estructura para procedimiento bd_sanatorio.psa_actualizar_internacion
+DELIMITER //
+CREATE PROCEDURE `psa_actualizar_internacion`(
+	IN `id_` INT,
+	IN `_fechaIngreso` DATE,
+	IN `_horaIngreso` TIME,
+	IN `_id_medico` INT,
+	IN `_id_paciente` INT,
+	IN `_id_habitacion` INT,
+	IN `_motivoInternacion` VARCHAR(255),
+	IN `_diagnostico` VARCHAR(255),
+	IN `_deuda` TINYINT,
+	IN `_estado` VARCHAR(50),
+	IN `_fechaEgreso` DATE,
+	IN `_horaEgreso` TIME,
+	IN `_activo` TINYINT
+)
+BEGIN
+UPDATE  internaciones SET fechaIngreso = _fechaIngreso, horaIngreso = _horaIngreso, id_medico = _id_medico, id_paciente = _id_paciente,
+id_habitacion = _id_habitacion, motivoInternacion = _motivoInternacion, diagnostico = _diagnostico, deuda = _deuda, estado = _estado,
+fechaEgreso = _fechaEgreso, horaEgreso = _horaEgreso, activo = _activo
+WHERE  idInternacion = id_;
+END//
+DELIMITER ;
+
+-- Volcando estructura para procedimiento bd_sanatorio.psa_actualizar_libera_cama
+DELIMITER //
+CREATE PROCEDURE `psa_actualizar_libera_cama`(
+	IN `_id` INT
+)
+BEGIN
+UPDATE habitaciones
+SET
+    camaOcupada = camaOcupada - 1,
+    estado = CASE
+        WHEN camaOcupada <= capacidad THEN 'Disponible'
+        ELSE 'Ocupado'
+    END
+WHERE idHabitacion = _id;
+END//
+DELIMITER ;
+
 -- Volcando estructura para procedimiento bd_sanatorio.psa_actualizar_medico
 DELIMITER //
 CREATE PROCEDURE `psa_actualizar_medico`(
@@ -270,6 +333,37 @@ BEGIN
 UPDATE  medicos SET dni=dni_,cuil=cuil_,apellido=apellido_,nombre=nombre_,celular=celular_,
 telefono=telefono_,direccion=direccion_,email=email_
 WHERE  idMedico = id_;
+END//
+DELIMITER ;
+
+-- Volcando estructura para procedimiento bd_sanatorio.psa_actualizar_obrasocial
+DELIMITER //
+CREATE PROCEDURE `psa_actualizar_obrasocial`(
+	IN `id_` INT,
+	IN `codigo_` VARCHAR(6),
+	IN `nombre_` VARCHAR(50),
+	IN `sigla_` VARCHAR(15)
+)
+BEGIN
+UPDATE obrassociales AS o SET codigo=codigo_,nombre=nombre_,sigla=sigla_
+WHERE  idSocial = id_;
+END//
+DELIMITER ;
+
+-- Volcando estructura para procedimiento bd_sanatorio.psa_actualizar_ocupar_cama
+DELIMITER //
+CREATE PROCEDURE `psa_actualizar_ocupar_cama`(
+	IN `_id` INT
+)
+BEGIN
+UPDATE habitaciones
+SET
+    camaOcupada = camaOcupada + 1,
+    estado = CASE
+        WHEN camaOcupada >= capacidad THEN 'Ocupado'
+        ELSE 'Disponible'
+    END
+WHERE idHabitacion = _id;
 END//
 DELIMITER ;
 
@@ -295,6 +389,28 @@ WHERE idPaciente = _id;
 END//
 DELIMITER ;
 
+-- Volcando estructura para procedimiento bd_sanatorio.psa_actualizar_registrosclinico
+DELIMITER //
+CREATE PROCEDURE `psa_actualizar_registrosclinico`(
+	IN `_id` INT,
+	IN `fecha_` DATE,
+	IN `hora_` TIME,
+	IN `motivo_` VARCHAR(255),
+	IN `diagnostico_` VARCHAR(255),
+	IN `tratamiento_` VARCHAR(255),
+	IN `proxima_visita_` DATE,
+	IN `observacion_` VARCHAR(255)
+)
+BEGIN
+
+UPDATE registros_clinicos AS r
+SET fecha=fecha_,hora=hora_,
+motivo=motivo_,diganostico=diagnostico_,tratamiento=tratamiento_,
+proxima_visita=proxima_visita_,observacion=observacion_
+WHERE idRegistro = _id;
+END//
+DELIMITER ;
+
 -- Volcando estructura para procedimiento bd_sanatorio.psa_actualizar_tipohabitacion
 DELIMITER //
 CREATE PROCEDURE `psa_actualizar_tipohabitacion`(
@@ -308,13 +424,36 @@ WHERE idTipo = _id;
 END//
 DELIMITER ;
 
+-- Volcando estructura para procedimiento bd_sanatorio.psa_alta_internacion
+DELIMITER //
+CREATE PROCEDURE `psa_alta_internacion`(
+	IN `id_` INT,
+	IN `fecha_` DATE,
+	IN `hora_` TIME
+)
+BEGIN
+UPDATE internaciones
+SET fechaEgreso = fecha_, horaEgreso = hora_, estado = 'Alta' WHERE idInternacion = id_;
+END//
+DELIMITER ;
+
 -- Volcando estructura para procedimiento bd_sanatorio.psa_buscar_Habitacion_Numero
 DELIMITER //
 CREATE PROCEDURE `psa_buscar_Habitacion_Numero`(
 	IN `_num` VARCHAR(4)
 )
 BEGIN
-SELECT * FROM habitaciones WHERE habitaciones.numero = _num;
+SELECT * FROM habitaciones WHERE numero = _num;
+END//
+DELIMITER ;
+
+-- Volcando estructura para procedimiento bd_sanatorio.psa_buscar_internacion_id
+DELIMITER //
+CREATE PROCEDURE `psa_buscar_internacion_id`(
+	IN `_id` INT
+)
+BEGIN
+SELECT * FROM internaciones  WHERE idInternacion = _id and  activo = 1;
 END//
 DELIMITER ;
 
@@ -342,6 +481,26 @@ WHERE  m.idMedico = _id AND m.activo = 1;
 END//
 DELIMITER ;
 
+-- Volcando estructura para procedimiento bd_sanatorio.psa_buscar_obrasocial_codigo
+DELIMITER //
+CREATE PROCEDURE `psa_buscar_obrasocial_codigo`(
+	IN `codigo_` VARCHAR(4)
+)
+BEGIN
+SELECT * from obrassociales WHERE codigo = codigo_;
+END//
+DELIMITER ;
+
+-- Volcando estructura para procedimiento bd_sanatorio.psa_buscar_obrasocial_id
+DELIMITER //
+CREATE PROCEDURE `psa_buscar_obrasocial_id`(
+	IN `id_` INT
+)
+BEGIN
+SELECT * from obrassociales WHERE idSocial = id_;
+END//
+DELIMITER ;
+
 -- Volcando estructura para procedimiento bd_sanatorio.psa_buscar_paciente_dni
 DELIMITER //
 CREATE PROCEDURE `psa_buscar_paciente_dni`(
@@ -349,6 +508,26 @@ CREATE PROCEDURE `psa_buscar_paciente_dni`(
 )
 BEGIN
 SELECT * FROM pacientes WHERE dni = _dni;
+END//
+DELIMITER ;
+
+-- Volcando estructura para procedimiento bd_sanatorio.psa_buscar_paciente_id
+DELIMITER //
+CREATE PROCEDURE `psa_buscar_paciente_id`(
+	IN `_id` INT
+)
+BEGIN
+SELECT * FROM pacientes  WHERE idPaciente = _id;
+END//
+DELIMITER ;
+
+-- Volcando estructura para procedimiento bd_sanatorio.psa_buscar_paciente_internado
+DELIMITER //
+CREATE PROCEDURE `psa_buscar_paciente_internado`(
+	IN `_id` INT
+)
+BEGIN
+SELECT * FROM internaciones WHERE id_paciente = _id AND estado = 'Internación';
 END//
 DELIMITER ;
 
@@ -362,6 +541,16 @@ UPDATE habitaciones SET activo = false WHERE idHabitacion = _id;
 END//
 DELIMITER ;
 
+-- Volcando estructura para procedimiento bd_sanatorio.psa_eliminar_internacion
+DELIMITER //
+CREATE PROCEDURE `psa_eliminar_internacion`(
+	IN `id_` INT
+)
+BEGIN
+UPDATE internaciones SET activo = false WHERE idInternacion = id_;
+END//
+DELIMITER ;
+
 -- Volcando estructura para procedimiento bd_sanatorio.psa_eliminar_medico
 DELIMITER //
 CREATE PROCEDURE `psa_eliminar_medico`(
@@ -369,6 +558,17 @@ CREATE PROCEDURE `psa_eliminar_medico`(
 )
 BEGIN
 UPDATE  medicos AS m SET m.activo = 0 WHERE  idMedico = _id;
+END//
+DELIMITER ;
+
+-- Volcando estructura para procedimiento bd_sanatorio.psa_eliminar_obrasocial
+DELIMITER //
+CREATE PROCEDURE `psa_eliminar_obrasocial`(
+	IN `id_` INT
+)
+BEGIN
+UPDATE obrassociales SET activo = false
+WHERE  idSocial = id_;
 END//
 DELIMITER ;
 
@@ -380,6 +580,16 @@ CREATE PROCEDURE `psa_eliminar_paciente`(
 BEGIN
 UPDATE pacientes
 SET activo = false WHERE idPaciente = _id;
+END//
+DELIMITER ;
+
+-- Volcando estructura para procedimiento bd_sanatorio.psa_eliminar_registroClinico
+DELIMITER //
+CREATE PROCEDURE `psa_eliminar_registroClinico`(
+	IN `id_` INT
+)
+BEGIN
+UPDATE registros_clinicos SET activo = false WHERE idRegistro = id_;
 END//
 DELIMITER ;
 
@@ -424,6 +634,29 @@ VALUES (_numero,_id_tipo,_piso,_capacidad,_estado,_precio,_comodidad,_observacio
 END//
 DELIMITER ;
 
+-- Volcando estructura para procedimiento bd_sanatorio.psa_guardar_internacion
+DELIMITER //
+CREATE PROCEDURE `psa_guardar_internacion`(
+	IN `fechaIngreso_` DATE,
+	IN `horaIngreso_` TIME,
+	IN `id_medico_` INT,
+	IN `id_paciente_` INT,
+	IN `id_habitacion_` INT,
+	IN `motivoInternacion_` VARCHAR(255),
+	IN `diagnostico_` VARCHAR(255),
+	IN `deuda_` TINYINT,
+	IN `estado_` VARCHAR(50),
+	IN `fechaEgreso_` DATE,
+	IN `horaEgreso_` TIME
+)
+BEGIN
+INSERT INTO internaciones 
+(fechaIngreso,horaIngreso,id_medico,id_paciente,id_habitacion,motivoInternacion,diagnostico,deuda,estado,fechaEgreso,horaEgreso,activo)
+VALUES
+(fechaIngreso_,horaIngreso_,id_medico_,id_paciente_,id_habitacion_,motivoInternacion_,diagnostico_,deuda_,estado_,fechaEgreso_,horaEgreso_,true);
+END//
+DELIMITER ;
+
 -- Volcando estructura para procedimiento bd_sanatorio.psa_guardar_medico
 DELIMITER //
 CREATE PROCEDURE `psa_guardar_medico`(
@@ -439,6 +672,19 @@ CREATE PROCEDURE `psa_guardar_medico`(
 BEGIN
 INSERT INTO medicos (dni,cuil,apellido,nombre,celular,telefono,direccion,email,activo)
 VALUES (dni_,cuil_,apellido_,nombre_,celular_,telefono_,direccion_,email_,true);
+END//
+DELIMITER ;
+
+-- Volcando estructura para procedimiento bd_sanatorio.psa_guardar_obrasocial
+DELIMITER //
+CREATE PROCEDURE `psa_guardar_obrasocial`(
+	IN `codigo_` VARCHAR(6),
+	IN `nombre_` VARCHAR(50),
+	IN `sigla_` VARCHAR(15)
+)
+BEGIN
+INSERT INTO obrassociales (codigo,nombre,sigla,activo)
+VALUES (codigo_,nombre_,sigla_,true);
 END//
 DELIMITER ;
 
@@ -458,6 +704,25 @@ CREATE PROCEDURE `psa_guardar_paciente`(
 BEGIN
 INSERT INTO pacientes(dni,apellido,nombre,fechaNaci,domicilio,telefono,historiClinica,id_obraSocial,afiliadoN,activo)
 VALUES(_dni,_apellido,_nombre,_fechaNaci,_domicilio,_telefono,_historiClinica,_id_obraSocial,_afiliadoN,true);
+END//
+DELIMITER ;
+
+-- Volcando estructura para procedimiento bd_sanatorio.psa_guardar_registro_clinico
+DELIMITER //
+CREATE PROCEDURE `psa_guardar_registro_clinico`(
+	IN `id_paciente_` INT,
+	IN `id_medico_` INT,
+	IN `fecha_` DATE,
+	IN `hora_` TIME,
+	IN `motivo_` VARCHAR(255),
+	IN `diagnostico_` VARCHAR(255),
+	IN `tratamiento_` VARCHAR(255),
+	IN `proxima_visita_` DATE,
+	IN `observacion_` VARCHAR(255)
+)
+BEGIN
+INSERT INTO registros_clinicos(id_paciente,id_medico,fecha,hora,motivo,diganostico,tratamiento,proxima_visita,observacion,activo)
+VALUES (id_paciente_,id_medico_,fecha_,hora_,motivo_,diagnostico_,tratamiento_,proxima_visita_,observacion_,true);
 END//
 DELIMITER ;
 
@@ -487,8 +752,8 @@ CREATE PROCEDURE `psa_listado_obra_sociales`(
 	IN `cTexto` VARCHAR(50)
 )
 BEGIN
-SELECT idSocial, nombre FROM obrassociales   WHERE activo = 1 
-AND UPPER(TRIM(nombre)) LIKE CONCAT('%', UPPER(TRIM(cTexto)), '%');
+SELECT idSocial,codigo, sigla ,nombre FROM obrassociales WHERE activo = 1 
+AND UPPER(CONCAT(TRIM(nombre),TRIM(codigo))) LIKE CONCAT('%', UPPER(TRIM(cTexto)), '%');
 END//
 DELIMITER ;
 
@@ -504,6 +769,19 @@ p.domicilio,p.telefono,o.nombre AS obraSocial, p.afiliadoN,o.idSocial
 FROM pacientes AS p INNER JOIN obrassociales AS o ON p.id_obraSocial= o.idSocial
 WHERE p.activo = 1
 AND UPPER(CONCAT(TRIM(p.dni), TRIM(p.apellido))) LIKE CONCAT('%', UPPER(TRIM(cTexto)), '%');
+END//
+DELIMITER ;
+
+-- Volcando estructura para procedimiento bd_sanatorio.psa_listado_registro_clinico
+DELIMITER //
+CREATE PROCEDURE `psa_listado_registro_clinico`(
+	IN `cTexto` VARCHAR(50)
+)
+BEGIN
+SELECT r.idRegistro, CONCAT(p.apellido, ' ' ,p.nombre) AS paciente,CONCAT(m.apellido, ' ' ,m.apellido) AS medico,r.fecha,r.hora,r.motivo,r.diganostico,r.tratamiento,r.proxima_visita,r.observacion,
+p.idPaciente,m.idMedico
+FROM registros_clinicos AS r INNER JOIN pacientes AS p ON r.id_paciente = p.idPaciente INNER JOIN medicos AS m ON r.id_medico = m.idMedico
+WHERE r.activo = 1 AND UPPER(CONCAT(TRIM(CONCAT(p.apellido, ' ' ,p.nombre)), TRIM(CONCAT(m.apellido, ' ' ,m.apellido)))) LIKE CONCAT('%', UPPER(TRIM(cTexto)), '%');
 END//
 DELIMITER ;
 
@@ -529,6 +807,33 @@ WHERE  UPPER(CONCAT(TRIM(especialidad), TRIM(descripcion))) LIKE CONCAT('%', UPP
 END//
 DELIMITER ;
 
+-- Volcando estructura para procedimiento bd_sanatorio.psa_listar_habitacion_cama_disponible
+DELIMITER //
+CREATE PROCEDURE `psa_listar_habitacion_cama_disponible`()
+BEGIN
+SELECT idHabitacion,numero,(h.capacidad - h.camaOcupada )  AS camaDisponible,piso,estado 
+FROM habitaciones AS h  WHERE  estado = 'Disponible' AND activo = 1;
+END//
+DELIMITER ;
+
+-- Volcando estructura para procedimiento bd_sanatorio.psa_listar_internados
+DELIMITER //
+CREATE PROCEDURE `psa_listar_internados`(
+	IN `_estado` VARCHAR(50),
+	IN `cTexto` VARCHAR(50)
+)
+BEGIN
+SELECT i.idInternacion,i.fechaIngreso,i.horaIngreso,CONCAT(p.apellido, ' ',p.nombre) AS paciente,
+CONCAT(m.apellido, ' ',m.nombre) AS medico, h.numero AS habitacion, i.motivoInternacion,i.estado,i.fechaEgreso, h.idHabitacion
+FROM internaciones AS i
+INNER JOIN medicos AS m ON i.id_medico = m.idMedico
+INNER JOIN pacientes AS p ON i.id_paciente = p.idPaciente
+INNER JOIN habitaciones AS h ON i.id_habitacion = h.idHabitacion
+WHERE i.activo = 1 AND i.estado = _estado
+AND UPPER(CONCAT(p.apellido,' ',p.nombre)) LIKE CONCAT('%', UPPER(TRIM(cTexto)), '%');
+END//
+DELIMITER ;
+
 -- Volcando estructura para procedimiento bd_sanatorio.psa_listar_Medicos
 DELIMITER //
 CREATE PROCEDURE `psa_listar_Medicos`(
@@ -542,6 +847,18 @@ INNER JOIN especialidades AS esp ON e.id_especialidad = esp.idEspecialidad
 WHERE m.activo = 1
 AND UPPER(CONCAT(TRIM(m.apellido), TRIM(m.nombre), TRIM(esp.especialidad))) LIKE CONCAT('%', UPPER(TRIM(cTexto)), '%')
 GROUP BY m.idMedico, m.cuil, m.apellido, m.nombre, m.celular, m.telefono, esp.especialidad;
+END//
+DELIMITER ;
+
+-- Volcando estructura para procedimiento bd_sanatorio.psa_listar_pacientes_internados
+DELIMITER //
+CREATE PROCEDURE `psa_listar_pacientes_internados`(
+	IN `cTexto` VARCHAR(50)
+)
+BEGIN
+SELECT p.idPaciente,p.dni,p.apellido,p.nombre,p.fechaNaci,p.domicilio,p.telefono,p.historiClinica,p.id_obraSocial,p.afiliadoN
+FROM pacientes AS p INNER JOIN internaciones AS i ON p.idPaciente = i.id_paciente
+WHERE i.estado = 'Internación' AND UPPER(CONCAT(TRIM(p.dni), TRIM(p.apellido),TRIM(p.nombre))) LIKE CONCAT('%', UPPER(TRIM(cTexto)), '%');
 END//
 DELIMITER ;
 
@@ -561,27 +878,30 @@ CREATE TABLE IF NOT EXISTS `registros_clinicos` (
   `id_medico` int(11) NOT NULL DEFAULT 0,
   `fecha` date NOT NULL,
   `hora` time NOT NULL,
-  `motivo` varchar(255) NOT NULL DEFAULT '',
-  `diganostico` varchar(255) NOT NULL DEFAULT '',
-  `tratamiento` varchar(255) NOT NULL DEFAULT '',
-  `proxima_visita` date NOT NULL,
-  `observacion` varchar(255) NOT NULL DEFAULT '',
+  `motivo` varchar(255) DEFAULT '',
+  `diganostico` varchar(255) DEFAULT '',
+  `tratamiento` varchar(255) DEFAULT '',
+  `proxima_visita` date DEFAULT NULL,
+  `observacion` varchar(255) DEFAULT '',
   `activo` tinyint(1) NOT NULL DEFAULT 0,
   PRIMARY KEY (`idRegistro`),
   KEY `FK_registros_clinicos_pacientes` (`id_paciente`),
   KEY `FK_registros_clinicos_medicos` (`id_medico`),
   CONSTRAINT `FK_registros_clinicos_medicos` FOREIGN KEY (`id_medico`) REFERENCES `medicos` (`idMedico`) ON DELETE NO ACTION ON UPDATE NO ACTION,
   CONSTRAINT `FK_registros_clinicos_pacientes` FOREIGN KEY (`id_paciente`) REFERENCES `pacientes` (`idPaciente`) ON DELETE NO ACTION ON UPDATE NO ACTION
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4;
 
--- Volcando datos para la tabla bd_sanatorio.registros_clinicos: ~0 rows (aproximadamente)
+-- Volcando datos para la tabla bd_sanatorio.registros_clinicos: ~2 rows (aproximadamente)
+INSERT INTO `registros_clinicos` (`idRegistro`, `id_paciente`, `id_medico`, `fecha`, `hora`, `motivo`, `diganostico`, `tratamiento`, `proxima_visita`, `observacion`, `activo`) VALUES
+	(1, 1, 3, '2024-12-13', '17:11:51', 'sin novedades', 'con el mismo', 'sin novedades', '2024-12-14', '', 1),
+	(2, 4, 4, '2024-12-04', '18:22:03', 'varias observaciones', 'con el mismo', 'sin novedad', '2024-12-14', 'varias observaciones', 1);
 
 -- Volcando estructura para tabla bd_sanatorio.tipohabitacion
 CREATE TABLE IF NOT EXISTS `tipohabitacion` (
   `idTipo` int(11) NOT NULL AUTO_INCREMENT,
   `descripcion` varchar(255) NOT NULL DEFAULT '0',
   PRIMARY KEY (`idTipo`)
-) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8mb4;
 
 -- Volcando datos para la tabla bd_sanatorio.tipohabitacion: ~6 rows (aproximadamente)
 INSERT INTO `tipohabitacion` (`idTipo`, `descripcion`) VALUES

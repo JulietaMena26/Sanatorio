@@ -23,11 +23,12 @@ namespace Sanatorio.Datos
             {
                 MySqlCommand command = new MySqlCommand("psa_actualizar_obrasocial", SQLdatos);
                 command.CommandType = CommandType.StoredProcedure;
-                command.Parameters.Add("_id", MySqlDbType.Int32).Value = _obrasocial.idSocial;
-                command.Parameters.Add("_dni", MySqlDbType.VarChar).Value = _obrasocial.codigo;
-                command.Parameters.Add("_apellido", MySqlDbType.VarChar).Value = _obrasocial.nombre;
+                command.Parameters.Add("id_", MySqlDbType.Int32).Value = _obrasocial.idSocial;
+				command.Parameters.Add("codigo_", MySqlDbType.VarChar).Value = _obrasocial.codigo;
+				command.Parameters.Add("nombre_", MySqlDbType.VarChar).Value = _obrasocial.nombre;
+				command.Parameters.Add("sigla_", MySqlDbType.VarChar).Value = _obrasocial.sigla;
 
-                SQLdatos.Open();
+				SQLdatos.Open();
 
                 resultado = command.ExecuteNonQuery();
                 if (resultado > 0)
@@ -59,10 +60,10 @@ namespace Sanatorio.Datos
                 {
                     MySqlCommand command = new MySqlCommand("psa_guardar_obrasocial", SQLdatos);
                     command.CommandType = CommandType.StoredProcedure;
-                    command.Parameters.Add("_idObraSocial", MySqlDbType.VarChar).Value = _obrasocial.idSocial;
-                    command.Parameters.Add("_codigo", MySqlDbType.VarChar).Value = _obrasocial.codigo;
-                    command.Parameters.Add("_nombre", MySqlDbType.VarChar).Value = _obrasocial.nombre;
-                    SQLdatos.Open();
+                    command.Parameters.Add("codigo_", MySqlDbType.VarChar).Value = _obrasocial.codigo;
+                    command.Parameters.Add("nombre_", MySqlDbType.VarChar).Value = _obrasocial.nombre;
+			     	command.Parameters.Add("sigla_", MySqlDbType.VarChar).Value = _obrasocial.sigla;
+				    SQLdatos.Open();
 
                     resultado = command.ExecuteNonQuery();
                     if (resultado > 0)
@@ -87,18 +88,113 @@ namespace Sanatorio.Datos
 
         public ObraSocial buscaridSocial(int idSocial)
         {
-            throw new NotImplementedException();
-        }
+			MySqlConnection SQLdatos = new MySqlConnection();
+			SQLdatos = conexion.crearConexion();
+			MySqlDataReader resultado;
+			ObraSocial obrasocial = new ObraSocial();
+
+			try
+			{
+				MySqlCommand command = new MySqlCommand("psa_buscar_obrasocial_id", SQLdatos);
+				command.CommandType = CommandType.StoredProcedure;
+				command.Parameters.Add("id_", MySqlDbType.VarChar).Value = idSocial;
+				SQLdatos.Open();
+
+				resultado = command.ExecuteReader();
+				while (resultado.Read())
+				{
+					obrasocial.idSocial = resultado.GetInt32(0);
+					obrasocial.codigo = resultado.GetString(1);
+					obrasocial.nombre = resultado.GetString(2);
+					obrasocial.activo = resultado.GetBoolean(3);
+				}
+				command.Dispose();
+			}
+			catch (Exception ex)
+			{
+				//Funciones.Logs("Datos_metodolistpaciente", ex.ToString());
+				throw ex;
+			}
+			finally
+			{
+				if (SQLdatos.State == ConnectionState.Open)
+				{
+					SQLdatos.Close();
+				}
+			}
+			return obrasocial;
+		}
 
         public ObraSocial buscaridSocial(string codigo)
         {
-            throw new NotImplementedException();
-        }
+			MySqlConnection SQLdatos = new MySqlConnection();
+			SQLdatos = conexion.crearConexion();
+			MySqlDataReader resultado;
+			ObraSocial obrasocial = new ObraSocial();
 
-        public void eliminarObraSocial(int id)
+			try
+			{
+				MySqlCommand command = new MySqlCommand("psa_buscar_obrasocial_codigo", SQLdatos);
+				command.CommandType = CommandType.StoredProcedure;
+				command.Parameters.Add("codigo_", MySqlDbType.VarChar).Value = codigo;
+				SQLdatos.Open();
+
+				resultado = command.ExecuteReader();				
+				while (resultado.Read())
+				{
+                    obrasocial.idSocial = resultado.GetInt32(0);
+                    obrasocial.codigo = resultado.GetString(1);
+                    obrasocial.nombre = resultado.GetString(2);
+                    obrasocial.sigla = resultado.GetString(3);
+                    obrasocial.activo = resultado.GetBoolean(3);
+				}				
+				command.Dispose();
+			}
+			catch (Exception ex)
+			{
+				//Funciones.Logs("Datos_metodolistpaciente", ex.ToString());
+				throw ex;
+			}
+			finally
+			{
+				if (SQLdatos.State == ConnectionState.Open)
+				{
+					SQLdatos.Close();
+				}
+			}
+			return obrasocial;
+		}
+
+        public void eliminarObraSocial(int idObraSocial)
         {
-            throw new NotImplementedException();
-        }
+			MySqlConnection SQLdatos = new MySqlConnection();
+			SQLdatos = conexion.crearConexion();
+			int resultado;
+
+			try
+			{
+				MySqlCommand command = new MySqlCommand("psa_eliminar_obrasocial", SQLdatos);
+				command.CommandType = CommandType.StoredProcedure;
+				command.Parameters.Add("id_", MySqlDbType.Int32).Value = idObraSocial;				
+
+				SQLdatos.Open();
+
+				resultado = command.ExecuteNonQuery();
+				
+			}
+			catch (Exception ex)
+			{
+				//Funciones.Logs("actualizar_paciente", ex.ToString());
+				throw ex;
+			}
+			finally
+			{
+				if (SQLdatos.State == ConnectionState.Open)
+				{
+					SQLdatos.Close();
+				}
+			}
+		}
 
         public DataTable listaNombre(string nombre)
         {
@@ -130,7 +226,7 @@ namespace Sanatorio.Datos
             }
             catch (Exception ex)
             {
-                Funciones.Logs("Datos_metodolistpaciente", ex.ToString());
+               //Funciones.Logs("Datos_metodolistpaciente", ex.ToString());
                 throw ex;
             }
             finally

@@ -5,26 +5,6 @@
     {
       "AbsoluteMoniker": "D:0:0:{2D5752BA-BB7B-46F1-9175-9460AB73C69C}|Sanatorio\\Sanatorio.csproj|d:\\sanatorio\\sanatorio\\sanatorio\\sanatorio\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{2D5752BA-BB7B-46F1-9175-9460AB73C69C}|Sanatorio\\Sanatorio.csproj|solutionrelative:sanatorio\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{2D5752BA-BB7B-46F1-9175-9460AB73C69C}|Sanatorio\\Sanatorio.csproj|d:\\sanatorio\\sanatorio\\sanatorio\\sanatorio\\vista\\frmregistros.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{2D5752BA-BB7B-46F1-9175-9460AB73C69C}|Sanatorio\\Sanatorio.csproj|solutionrelative:sanatorio\\vista\\frmregistros.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{2D5752BA-BB7B-46F1-9175-9460AB73C69C}|Sanatorio\\Sanatorio.csproj|d:\\sanatorio\\sanatorio\\sanatorio\\sanatorio\\vista\\frmregistros.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{2D5752BA-BB7B-46F1-9175-9460AB73C69C}|Sanatorio\\Sanatorio.csproj|solutionrelative:sanatorio\\vista\\frmregistros.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{2D5752BA-BB7B-46F1-9175-9460AB73C69C}|Sanatorio\\Sanatorio.csproj|d:\\sanatorio\\sanatorio\\sanatorio\\sanatorio\\vista\\frmnewregistros.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{2D5752BA-BB7B-46F1-9175-9460AB73C69C}|Sanatorio\\Sanatorio.csproj|solutionrelative:sanatorio\\vista\\frmnewregistros.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{2D5752BA-BB7B-46F1-9175-9460AB73C69C}|Sanatorio\\Sanatorio.csproj|d:\\sanatorio\\sanatorio\\sanatorio\\sanatorio\\vista\\frmnewregistros.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{2D5752BA-BB7B-46F1-9175-9460AB73C69C}|Sanatorio\\Sanatorio.csproj|solutionrelative:sanatorio\\vista\\frmnewregistros.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{2D5752BA-BB7B-46F1-9175-9460AB73C69C}|Sanatorio\\Sanatorio.csproj|D:\\Sanatorio\\Sanatorio\\Sanatorio\\sanatorio\\datos\\datosregistroclinico.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{2D5752BA-BB7B-46F1-9175-9460AB73C69C}|Sanatorio\\Sanatorio.csproj|solutionrelative:sanatorio\\datos\\datosregistroclinico.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -48,72 +28,9 @@
               "RelativeDocumentMoniker": "Sanatorio\\Program.cs",
               "ToolTip": "D:\\Sanatorio\\Sanatorio\\Sanatorio\\Sanatorio\\Program.cs",
               "RelativeToolTip": "Sanatorio\\Program.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABMAAAAMAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABQAAAAFAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-13T21:29:24.926Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "frmNewRegistros.cs",
-              "DocumentMoniker": "D:\\Sanatorio\\Sanatorio\\Sanatorio\\Sanatorio\\Vista\\frmNewRegistros.cs",
-              "RelativeDocumentMoniker": "Sanatorio\\Vista\\frmNewRegistros.cs",
-              "ToolTip": "D:\\Sanatorio\\Sanatorio\\Sanatorio\\Sanatorio\\Vista\\frmNewRegistros.cs",
-              "RelativeToolTip": "Sanatorio\\Vista\\frmNewRegistros.cs",
-              "ViewState": "AgIAAFAAAAAAAAAAAAAowF8AAAAZAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-13T21:02:42.384Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "frmRegistros.cs [Dise\u00F1o]",
-              "DocumentMoniker": "D:\\Sanatorio\\Sanatorio\\Sanatorio\\Sanatorio\\Vista\\frmRegistros.cs",
-              "RelativeDocumentMoniker": "Sanatorio\\Vista\\frmRegistros.cs",
-              "ToolTip": "D:\\Sanatorio\\Sanatorio\\Sanatorio\\Sanatorio\\Vista\\frmRegistros.cs [Dise\u00F1o]",
-              "RelativeToolTip": "Sanatorio\\Vista\\frmRegistros.cs [Dise\u00F1o]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-13T20:14:26.846Z",
-              "EditorCaption": " [Dise\u00F1o]"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "frmRegistros.cs",
-              "DocumentMoniker": "D:\\Sanatorio\\Sanatorio\\Sanatorio\\Sanatorio\\Vista\\frmRegistros.cs",
-              "RelativeDocumentMoniker": "Sanatorio\\Vista\\frmRegistros.cs",
-              "ToolTip": "D:\\Sanatorio\\Sanatorio\\Sanatorio\\Sanatorio\\Vista\\frmRegistros.cs",
-              "RelativeToolTip": "Sanatorio\\Vista\\frmRegistros.cs",
-              "ViewState": "AgIAAKIAAAAAAAAAAAAIwLAAAAAmAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-13T20:14:30.131Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "frmNewRegistros.cs [Dise\u00F1o]",
-              "DocumentMoniker": "D:\\Sanatorio\\Sanatorio\\Sanatorio\\Sanatorio\\Vista\\frmNewRegistros.cs",
-              "RelativeDocumentMoniker": "Sanatorio\\Vista\\frmNewRegistros.cs",
-              "ToolTip": "D:\\Sanatorio\\Sanatorio\\Sanatorio\\Sanatorio\\Vista\\frmNewRegistros.cs [Dise\u00F1o]",
-              "RelativeToolTip": "Sanatorio\\Vista\\frmNewRegistros.cs [Dise\u00F1o]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-13T17:49:12.398Z",
-              "EditorCaption": " [Dise\u00F1o]"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "DatosRegistroClinico.cs",
-              "DocumentMoniker": "D:\\Sanatorio\\Sanatorio\\Sanatorio\\Sanatorio\\Datos\\DatosRegistroClinico.cs",
-              "RelativeDocumentMoniker": "Sanatorio\\Datos\\DatosRegistroClinico.cs",
-              "ToolTip": "D:\\Sanatorio\\Sanatorio\\Sanatorio\\Sanatorio\\Datos\\DatosRegistroClinico.cs",
-              "RelativeToolTip": "Sanatorio\\Datos\\DatosRegistroClinico.cs",
-              "ViewState": "AgIAABMAAAAAAAAAAAAlwCAAAAARAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-11T21:42:39.309Z",
+              "WhenOpened": "2024-12-15T20:32:50.564Z",
               "EditorCaption": ""
             }
           ]

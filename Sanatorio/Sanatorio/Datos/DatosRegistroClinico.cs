@@ -120,10 +120,34 @@ namespace Sanatorio.Datos
             throw new NotImplementedException();
         }
 
-        public void eliminarRegistroId(int id)
+        public void eliminarRegistroId(int idRegistroClinico)
         {
-            throw new NotImplementedException();
-        }
+			MySqlConnection SQLdatos = new MySqlConnection();
+			SQLdatos = conexion.crearConexion();
+			int resultado;
+
+			try
+			{
+				MySqlCommand command = new MySqlCommand("psa_eliminar_registroClinico", SQLdatos);
+				command.CommandType = CommandType.StoredProcedure;
+				command.Parameters.Add("id_", MySqlDbType.Int32).Value = idRegistroClinico;
+				SQLdatos.Open();
+
+				resultado = command.ExecuteNonQuery();
+			}
+			catch (Exception ex)
+			{
+				//Funciones.Logs("actualizar_paciente", ex.ToString());
+				throw ex;
+			}
+			finally
+			{
+				if (SQLdatos.State == ConnectionState.Open)
+				{
+					SQLdatos.Close();
+				}
+			}
+		}
 
         public DataTable listarRegistros(string cTexto) // retorna una tabla con todo los registros clinicos activos
         {
