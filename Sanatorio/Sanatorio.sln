@@ -5,6 +5,8 @@ VisualStudioVersion = 17.9.34714.143
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sanatorio", "Sanatorio\Sanatorio.csproj", "{2D5752BA-BB7B-46F1-9175-9460AB73C69C}"
 EndProject
+Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "SetupSanatorio", "SetupSanatorio\SetupSanatorio.vdproj", "{CA6464FF-1895-469E-8453-397BB5C4C5D8}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,8 @@ Global
 		{2D5752BA-BB7B-46F1-9175-9460AB73C69C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{2D5752BA-BB7B-46F1-9175-9460AB73C69C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{2D5752BA-BB7B-46F1-9175-9460AB73C69C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CA6464FF-1895-469E-8453-397BB5C4C5D8}.Debug|Any CPU.ActiveCfg = Debug
+		{CA6464FF-1895-469E-8453-397BB5C4C5D8}.Release|Any CPU.ActiveCfg = Release
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
